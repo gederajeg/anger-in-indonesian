@@ -1,17 +1,18 @@
 SEARCH_TERM	LU	CITATIONS	ENGLISH_TRANSLATION	SOURCES	PAGE_LOCATION	LU_GLOSS	SFRAME	CM_BROADER	BODY_PART	MAP_1	MAP_2	MAP_3	RELEVANCE	KBBI_SENSE	ORIGIN	NOTES
 marah	bergaduh			Indonesian WordNet	http://compling.hss.ntu.edu.sg/omw/cgi-bin/wn-gridx.cgi?usrname=&gridmode=wnbahasa&synset=01786906-v&lang=ind&lang2=eng		aggressive verbal behaviour	verbal behaviour for anger								
 marah	bersungut-sungut			Indonesian WordNet	http://compling.hss.ntu.edu.sg/omw/cgi-bin/wn-gridx.cgi?usrname=&gridmode=wnbahasa&synset=01136248-a&lang=ind&lang2=eng		aggressive verbal behaviour	verbal behaviour for anger								
-marah	mencela			Indonesian WordNet	http://compling.hss.ntu.edu.sg/omw/cgi-bin/wn-gridx.cgi?usrname=&gridmode=wnbahasa&synset=00824767-v&lang=ind&lang2=eng		aggressive verbal behaviour						duplicate			
+marah	mencela			Indonesian WordNet	http://compling.hss.ntu.edu.sg/omw/cgi-bin/wn-gridx.cgi?usrname=&gridmode=wnbahasa&synset=00824767-v&lang=ind&lang2=eng		aggressive verbal behaviour	verbal behaviour for anger					duplicate			
 marah	mencerca			Indonesian WordNet	http://compling.hss.ntu.edu.sg/omw/cgi-bin/wn-gridx.cgi?usrname=&gridmode=wnbahasa&synset=00824767-v&lang=ind&lang2=eng	to reprimand, vilify	aggressive verbal behaviour	verbal behaviour for anger								
 marah	mencercai			Indonesian WordNet	http://compling.hss.ntu.edu.sg/omw/cgi-bin/wn-gridx.cgi?usrname=&gridmode=wnbahasa&synset=00824767-v&lang=ind&lang2=eng	to reprimand, vilify	aggressive verbal behaviour	verbal behaviour for anger								
 marah	mendamprat			Indonesian WordNet	http://compling.hss.ntu.edu.sg/omw/cgi-bin/wn-gridx.cgi?usrname=&gridmode=wnbahasa&synset=00824767-v&lang=ind&lang2=eng	to scold	aggressive verbal behaviour	verbal behaviour for anger								
 marah	menembis			Indonesian WordNet	http://compling.hss.ntu.edu.sg/omw/cgi-bin/wn-gridx.cgi?usrname=&gridmode=wnbahasa&synset=00824767-v&lang=ind&lang2=eng		aggressive verbal behaviour	verbal behaviour for anger								
 marah	menengking			Indonesian WordNet	http://compling.hss.ntu.edu.sg/omw/cgi-bin/wn-gridx.cgi?usrname=&gridmode=wnbahasa&synset=00824767-v&lang=ind&lang2=eng		aggressive verbal behaviour	verbal behaviour for anger								
 marah	menggebos			Indonesian WordNet	http://compling.hss.ntu.edu.sg/omw/cgi-bin/wn-gridx.cgi?usrname=&gridmode=wnbahasa&synset=00824767-v&lang=ind&lang2=eng		aggressive verbal behaviour	verbal behaviour for anger								
-marah	mengomél			Indonesian WordNet	http://compling.hss.ntu.edu.sg/omw/cgi-bin/wn-gridx.cgi?usrname=&gridmode=wnbahasa&synset=01136248-a&lang=ind&lang2=eng		aggressive verbal behaviour						duplicate			
+marah	mengomél			Indonesian WordNet	http://compling.hss.ntu.edu.sg/omw/cgi-bin/wn-gridx.cgi?usrname=&gridmode=wnbahasa&synset=01136248-a&lang=ind&lang2=eng		aggressive verbal behaviour	verbal behaviour for anger					duplicate			
 marah	menyegak			Indonesian WordNet	http://compling.hss.ntu.edu.sg/omw/cgi-bin/wn-gridx.cgi?usrname=&gridmode=wnbahasa&synset=00824767-v&lang=ind&lang2=eng		aggressive verbal behaviour	verbal behaviour for anger								
 marah	menyemprot			Indonesian WordNet	http://compling.hss.ntu.edu.sg/omw/cgi-bin/wn-gridx.cgi?usrname=&gridmode=wnbahasa&synset=00824767-v&lang=ind&lang2=eng	"to spray, squirt; to reprimand, scold"	aggressive verbal behaviour	verbal behaviour for anger								
 marah	merajuki			Indonesian WordNet	http://compling.hss.ntu.edu.sg/omw/cgi-bin/wn-gridx.cgi?usrname=&gridmode=wnbahasa&synset=00824767-v&lang=ind&lang2=eng		aggressive verbal behaviour	verbal behaviour for anger								
+angry	gentus	<w>gentus</w>	"angry, hurtful, sharp words; lit push, shove"	stevens_and_schmidgall-tellings_2004	315	push, shove	aggressive verbal behaviour	verbal behaviour for anger								
 anger	bangkit	<w>bangkit</w> <t>amarah</t>	anger rose	stevens_and_schmidgall-tellings_2004	88	awake, rise/get up	awakening	anger is sleeping entity		anger_sleeping-entity	anger-near-the-limit_awaken-entity					
 anger	membangkit	<w>membangkit</w> <t>marah</t>	to arouse one’s anger	stevens_and_schmidgall-tellings_2004	88	to arouse sth.	awakening	anger is sleeping entity		anger_sleeping-entity	causing anger is fishing/awakening the calm entity					
 anger	unek-unek	<w>unek-unek</w>	pent-up anger	stevens_and_schmidgall-tellings_2004	1071		containment	anger is substance in a container		anger_contents/located-entity	controlling anger is suppressing the contents from going out					
@@ -27,7 +28,6 @@ kemarahan	pengacau			Indonesian WordNet	http://compling.hss.ntu.edu.sg/omw/cgi-b
 marah	naik setrum	<w>naik setrum</w>		tesaurus_kemdikbud	http://tesaurus.kemdikbud.go.id/tematis/lema/marah	rising electricity	electricity									
 marah	menggerendeng	<w>menggerendeng</w>		tesaurus_kemdikbud	http://tesaurus.kemdikbud.go.id/tematis/lema/marah	to act as if wanting to attack	enemy									
 kemarahan	meluru			Indonesian WordNet	http://compling.hss.ntu.edu.sg/omw/cgi-bin/wn-gridx.cgi?usrname=&gridmode=wnbahasa&synset=02723016-v&lang=ind&lang2=eng	mengejar cepat (hendak menyerang, menerkam, dan sebagainya)	enemy									
-marah	merengus			Indonesian WordNet	http://compling.hss.ntu.edu.sg/omw/cgi-bin/wn-gridx.cgi?usrname=&gridmode=wnbahasa&synset=01136248-a&lang=ind&lang2=eng	"surly; grumpy"	facial expression									
 anger	mengutik(-ngutik)	sebagai/seperti ular dikutik ékor	to start (with fright/anger/out of one’s sleep)	stevens_and_schmidgall-tellings_2004	543	touch with the finger (to get s.o.’s attention)	fierce animal									
 anger	ular	<w>seperti ular kena bedal/palu/pukul</w>	restless (due to anger)	stevens_and_schmidgall-tellings_2004	1065		fierce animal									
 anger	ular	<w>seperti ular dicubit ékor</w>	to face one’s enemy with anger	stevens_and_schmidgall-tellings_2004	1065		fierce animal									
@@ -66,15 +66,14 @@ angry	naik pitam	<w>naik pitam</w>	"get angry, become enraged; lit dizziness, ap
 angry	menaikkan darah	<w>menaikkan darah</w>	"make s.o. angry; lit to raise the blood"	stevens_and_schmidgall-tellings_2004	654	to raise sth.	fluid containment	anger is (heated) fluid in a container	darah	anger_(heated-)fluid	increased anger is fluid (being caused to) rises					
 marah	penaik darah	<w>penaik darah</w>		tesaurus_kemdikbud	http://tesaurus.kemdikbud.go.id/tematis/lema/marah	"person who raises the blood; angry person"	fluid containment	anger is (heated) fluid in a container		anger_(heated-)fluid	increased anger is fluid (being caused to) rises					
 kemarahan	naik darah	<w>naik darah</w>		Indonesian WordNet	http://compling.hss.ntu.edu.sg/omw/cgi-bin/wn-gridx.cgi?usrname=&gridmode=wnbahasa&synset=02723016-v&lang=ind&lang2=eng		fluid containment	anger is (heated) fluid in a container		anger_(heated-)fluid	increased anger is fluid (being caused to) rises					verticality
-angry	gentus	<w>gentus</w>	"angry, hurtful, sharp words; lit push, shove"	stevens_and_schmidgall-tellings_2004	315	push, shove	"force application; forced motion"									
-angry	meremas	"<w>meremas jantung</w>; <w>meremas perut</w>"	"to be angry; lit to knead/squeeze the heart/stomach"	stevens_and_schmidgall-tellings_2004	820	to knead, squeeze	"force application; harm"		jantung							
 angry	meremas	<w>meremas perut</w>	"to be angry; lit to knead/squeeze the belly/stomach"	stevens_and_schmidgall-tellings_2004	820	to knead, squeeze	"force application; harm"		perut				duplicate			
-angry	rengat	<w>rengat hati</w>	"aggrieved, angry; lit crack/split open the liver"	stevens_and_schmidgall-tellings_2004	823	crack, split	"force application; harm"		hati							
-marah	melabrak	<w>melabrak</w>		tesaurus_kemdikbud	http://tesaurus.kemdikbud.go.id/tematis/lema/marah	whack, hit, beat	"force application; harm"									
+angry	meremas	"<w>meremas jantung</w>; <w>meremas perut</w>"	"to be angry; lit to knead/squeeze the heart/stomach"	stevens_and_schmidgall-tellings_2004	820	to knead, squeeze	harm		jantung							
+angry	rengat	<w>rengat hati</w>	"aggrieved, angry; lit crack/split open the liver"	stevens_and_schmidgall-tellings_2004	823	crack, split	harm		hati							
+marah	melabrak	<w>melabrak</w>		tesaurus_kemdikbud	http://tesaurus.kemdikbud.go.id/tematis/lema/marah	whack, hit, beat	harm									
 angry	asah	<w>mengasah(kan) hati</w>	make angry	stevens_and_schmidgall-tellings_2004	57	sharpen	harm		hati							
 marah	pegal hati	Membiarkan teman beracun terus mencerocos soal nasib buruknya bukan hanya membuat seseorang <w>pegal hati</w>		"tesaurus_kemdikbud; tirto-id"	"http://tesaurus.kemdikbud.go.id/tematis/lema/marah; https://tirto.id/cAHy"	stiff and sore from strain or exertion	harm		hati							
-marah	mengkal			Indonesian WordNet	http://compling.hss.ntu.edu.sg/omw/cgi-bin/wn-gridx.cgi?usrname=&gridmode=wnbahasa&synset=00113818-a&lang=ind&lang2=eng	"hurt; irritated"	"harm; disease"									"metonymic basis; feeling hard in the stomach"
-marah	sakit hati			Indonesian WordNet	http://compling.hss.ntu.edu.sg/omw/cgi-bin/wn-gridx.cgi?usrname=&gridmode=wnbahasa&synset=00116529-a&lang=ind&lang2=eng		"harm; disease"									
+marah	mengkal			Indonesian WordNet	http://compling.hss.ntu.edu.sg/omw/cgi-bin/wn-gridx.cgi?usrname=&gridmode=wnbahasa&synset=00113818-a&lang=ind&lang2=eng	"hurt; irritated"	harm									"metonymic basis; feeling hard in the stomach"
+marah	sakit hati			Indonesian WordNet	http://compling.hss.ntu.edu.sg/omw/cgi-bin/wn-gridx.cgi?usrname=&gridmode=wnbahasa&synset=00116529-a&lang=ind&lang2=eng		harm									
 anger	pemakan bawang	<w>pemakan bawang</w>	"hothead; s.o. quick to anger"	stevens_and_schmidgall-tellings_2004	608		heat									
 anger	panas bara	<w>panas bara</w>	"pent-up wrath/anger; lit. hot embers"	stevens_and_schmidgall-tellings_2004	699	"pent-up wrath/anger; lit. hot embers"	heat									
 angry	bawang	<w>makan bawang</w>	to be angry (lit. eating onions)	stevens_and_schmidgall-tellings_2004	102	onions	heat									
@@ -99,7 +98,7 @@ kemarahan	histeria			Indonesian WordNet	http://compling.hss.ntu.edu.sg/omw/cgi-b
 kemarahan	igauan			Indonesian WordNet	http://compling.hss.ntu.edu.sg/omw/cgi-bin/wn-gridx.cgi?usrname=&gridmode=wnbahasa&synset=14391876-n&lang=ind&lang2=eng		insanity									
 kemarahan	membabi buta			Indonesian WordNet	http://compling.hss.ntu.edu.sg/omw/cgi-bin/wn-gridx.cgi?usrname=&gridmode=wnbahasa&synset=02723016-v&lang=ind&lang2=eng		insanity									blindness
 kemarahan	mengamuk			Indonesian WordNet	http://compling.hss.ntu.edu.sg/omw/cgi-bin/wn-gridx.cgi?usrname=&gridmode=wnbahasa&synset=02723016-v&lang=ind&lang2=eng		insanity									insanity
-marah	kalap	<w>kalap</w>		shaver_et_al_2001	211	besides oneself with anger	L&J1999									
+marah	kalap	<w>kalap</w>		shaver_et_al_2001	211	besides oneself with anger	insanity									
 anger	darah muda	<w>darah muda</w>	quick to anger	stevens_and_schmidgall-tellings_2004	226	quick to anger	liquid	anger is (heated) fluid in a container	darah	anger_(heated-)fluid						
 anger	mendamik	<w>mendamik dada</w>	beat one’s chest in anger	stevens_and_schmidgall-tellings_2004	223	beat sth. with the palm	metonymy		dada					memukuli dengan telapak tangan		
 anger	mengelus dada	<w>mengelus dada</w>	to hold in one’s feeling of anger	stevens_and_schmidgall-tellings_2004	263	to caress, stroke	metonymy		dada					mengusap-usap dengan rasa sayang		
@@ -135,6 +134,7 @@ angry	mérah telinga	<w>mérah telinga</w>	"angry; lit red ears"	stevens_and_schmi
 angry	radang	<w>naik radang</w>	"get very angry, flare up; lit raising feverish"	stevens_and_schmidgall-tellings_2004	795	feverish, hot	"metonymy; heat"	body heat for anger								
 marah	meradang			Indonesian WordNet	http://compling.hss.ntu.edu.sg/omw/cgi-bin/wn-gridx.cgi?usrname=&gridmode=wnbahasa&synset=01786906-v&lang=ind&lang2=eng	to become feverish/inflamed	"metonymy; heat"	body heat for anger								
 marah	meradangkan			Indonesian WordNet	http://compling.hss.ntu.edu.sg/omw/cgi-bin/wn-gridx.cgi?usrname=&gridmode=wnbahasa&synset=01786906-v&lang=ind&lang2=eng	"feverish; hot; to get very angry at; to make s.o. angry"	"metonymy; heat"	body heat for anger								
+marah	merengus			Indonesian WordNet	http://compling.hss.ntu.edu.sg/omw/cgi-bin/wn-gridx.cgi?usrname=&gridmode=wnbahasa&synset=01136248-a&lang=ind&lang2=eng	"surly; grumpy"	"metonymy; verbal behaviour"	verbal behaviour for anger								
 marah	berteriak-teriak	<w>berteriak-teriak</w>		tesaurus_kemdikbud	http://tesaurus.kemdikbud.go.id/tematis/lema/marah	to shout, yell, scream	"metonymy; verbal behaviour"	verbal behaviour for anger								
 marah	bertura-tura	<w>bertura-tura</w>		tesaurus_kemdikbud	http://tesaurus.kemdikbud.go.id/tematis/lema/marah	to grumble, nag, grouse, peevish	"metonymy; verbal behaviour"	verbal behaviour for anger								
 angry	judes	<w>judes</w>	speaking in an angry tone	stevens_and_schmidgall-tellings_2004	427	sharp (tongued)	"metonymy; verbal behaviour"	verbal behaviour for anger								
@@ -185,10 +185,10 @@ anger	sampai	<t>marah</t> yang tiada <w>sampai</w>	short-lived anger	stevens_and
 angry	berkecil hati	<w>berkecil hati</w>	"be angry; lit to have small liver"	stevens_and_schmidgall-tellings_2004	462	hurt/offended/piqued at	size		hati							
 marah	telinga tipis	<w>telinga tipis</w>		tesaurus_kemdikbud	http://tesaurus.kemdikbud.go.id/tematis/lema/marah	thin ear	size	degree of control for anger is object dimension		anger_entity	narrow dimension of an entity is reduced capability of managing anger					
 marah	sempit alam	<w>sempit alam</w>		tesaurus_kemdikbud	http://tesaurus.kemdikbud.go.id/tematis/lema/marah	narrow realm/world	size	degree of control for anger is object dimension		anger_entity	narrow dimension of an entity is reduced capability of managing anger					
-marah	getir	<w>getir</w>		tesaurus_kemdikbud	http://tesaurus.kemdikbud.go.id/tematis/lema/marah	bitter	taste									
-marah	pahit	<w>pahit</w>		tesaurus_kemdikbud	http://tesaurus.kemdikbud.go.id/tematis/lema/marah	bitter	taste									
-marah	pedar	<w>pedar hati</w>		"tesaurus_kemdikbud; kbbi"	"http://tesaurus.kemdikbud.go.id/tematis/lema/marah; https://kbbi.kemdikbud.go.id/entri/pedar"	bitter	taste		hati							
-kemarahan	kegetiran			Indonesian WordNet	http://compling.hss.ntu.edu.sg/omw/cgi-bin/wn-gridx.cgi?usrname=&gridmode=wnbahasa&synset=07548978-n&lang=ind&lang2=eng	bitterness	taste									
+marah	getir	<w>getir</w>		tesaurus_kemdikbud	http://tesaurus.kemdikbud.go.id/tematis/lema/marah	bitter	taste	anger is bitterness		anger_bitterness	person-tasting-bitterness_person-experiencing-unfairness	undesirability-of-bitterness_undesirability-of-anger				
+marah	pahit	<w>pahit</w>		tesaurus_kemdikbud	http://tesaurus.kemdikbud.go.id/tematis/lema/marah	bitter	taste	anger is bitterness		anger_bitterness	person-tasting-bitterness_person-experiencing-unfairness	undesirability-of-bitterness_undesirability-of-anger				
+marah	pedar	<w>pedar hati</w>		"tesaurus_kemdikbud; kbbi"	"http://tesaurus.kemdikbud.go.id/tematis/lema/marah; https://kbbi.kemdikbud.go.id/entri/pedar"	bitter	taste	anger is bitterness	hati	anger_bitterness	person-tasting-bitterness_person-experiencing-unfairness	undesirability-of-bitterness_undesirability-of-anger				
+kemarahan	kegetiran			Indonesian WordNet	http://compling.hss.ntu.edu.sg/omw/cgi-bin/wn-gridx.cgi?usrname=&gridmode=wnbahasa&synset=07548978-n&lang=ind&lang2=eng	bitterness	taste	anger is bitterness		anger_bitterness	person-tasting-bitterness_person-experiencing-unfairness	undesirability-of-bitterness_undesirability-of-anger				
 anger	segunung	<t>Dongkol</t>nya <w>segunung</w>	His anger was sky high	stevens_and_schmidgall-tellings_2004	337	as high as a mountain	verticality	intensity of anger is verticality		anger_vertical-entity	increasing intensity of anger is upward motion of the entity					
 anger	sirap hati	<w>sirap hati</w>	angry	stevens_and_schmidgall-tellings_2004	944	slightly lifted	verticality	intensity of anger is verticality	hati	anger_vertical-entity	increasing intensity of anger is upward motion of the entity					
 anger	menyirapkan	<w>menyirapkan</w>	to provoke/rouse/stir up anger/rage	stevens_and_schmidgall-tellings_2004	944	to lift slightly	verticality	intensity of anger is verticality		anger_vertical-entity	increasing intensity of anger is upward motion of the entity					
