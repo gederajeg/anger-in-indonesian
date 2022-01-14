@@ -1,0 +1,213 @@
+---
+title: "ANGER IN INDONESIAN"
+csl: "unified-style-sheet-for-linguistics.csl"
+bibliography: "anger-references.bib"
+link-citations: yes
+output: 
+  bookdown::word_document2:
+    df_print: kable
+    fig_caption: yes
+    fig_width: 6
+    reference_docx: "template.docx"
+  html_notebook:
+    code_folding: hide
+    fig_caption: yes
+    fig_width: 6
+    number_sections: yes
+    toc: yes
+    toc_float: no
+author: 'Gede Primahadi Wijaya Rajeg <a itemprop="sameAs" content="https://orcid.org/0000-0002-2047-8621" href="https://orcid.org/0000-0002-2047-8621" target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon"></a>'
+abstract: "This is the abstract"
+---
+
+<style type="text/css">
+  body{
+  font-size: 16pt;
+}
+</style>
+
+```{r setup, include = FALSE, message = FALSE, warning = FALSE, echo = FALSE}
+knitr::opts_chunk$set(fig.width = 6, 
+                      fig.asp = 0.618,
+                      dpi = 300,
+                      echo = FALSE,
+                      tidy = FALSE)
+
+library(tidyverse)
+```
+
+# Introduction {#intro}
+
+Indonesian (or *Bahasa Indonesia*) is the standardised and official variety of the Malay language used in the multilingual society of Indonesia; the other standard forms of Malay also serve as the national languages of Malaysia, Brunei, and Singapore [@tadmor_malay-indonesian_2009, 791]. Malay-Indonesian has the largest speakers in South-east Asia, with almost 280 million speakers combined in Indonesia, Malaysia, and Brunei [@tadmor_malay-indonesian_2009, 791; @adelaar_dialects_2017, 571]. Genetically, Malay-Indonesian belongs to the Austronesian language family, particularly to "the Malayic subgroup of Western Malayo-Polynesian" [@tadmor_malay-indonesian_2009, 791; @adelaar_dialects_2017, 571]. For centuries, Malay-Indonesian has been the "lingua franca" in the regions and developed the colloquial varieties that exhibit great differences among themselves and with the standard language in many aspects of linguistic structures, from phonology to pragmatics [@tadmor_malay-indonesian_2009, 793]. This paper then investigates the conceptualisation of ANGER in the standard Indonesian based on sample from the *Indonesian Leipzig Corpora* (hereafter ILC) collection [@biemann_leipzig_2007; @goldhahn_building_2012; @quasthoff_indonesian_2013], and database of ANGER expressions culled from thesaurus, Indonesian WordNet, and a bilingual dictionary.
+
+## Previous studies on emotion concepts in Indonesian {#previous-study-emotion}
+
+The EMOTION domain in Indonesian have been studied from the experimental psychological, ethnographical, and linguistic perspectives. Heider [-@heider_landscapes_1991] analysed large clusters of emotion concepts, including ANGER (see [Section \@ref(previous-study-anger)](#previous-study-anger)), based on 200 emotion words. The goals of Heider's study are twofold: (i) to map out the connection between emotion words of Minangkabau language spoken in West Sumatera and of Indonesian as spoken by the Minangkabau community and the Javanese community; and (ii) to identify prototypical scenarios of the emotions related to the behavioural correlates appropriate to various emotions, including the cause/antecedents and the outcomes/expressions of emotions. The study is based on a starter-list of Indonesian emotion words culled from dictionary, novels, and picture description task, and the synonyms of these words given by the respondents [@heider_landscapes_1991, 24-25]. The two points discussed by Heider provide important starting points for the lexical inventory and clusters of emotion words (both literal and figurative) and the cognitive models of the emotions based on different methodology. Heider's [-@heider_cultural_2011] follow-up study utilised open-ended interviews and focus-group discussion to gain richer data on the ethnographically complex construal of emotions clusters identified in Heider [-@heider_landscapes_1991] and situate them in the context of folk psychology. More recent anthropological linguistic studies of emotions in the regional, Austronesian languages of (Western and Eastern) Indonesia can be found in the collection of papers in Fox [-@fox_expressions_2018].
+
+Shaver et al. [-@shaver_structure_2001] is a psychological study on Indonesian emotion lexicons. They adopt the prototype approach and cluster analysis (based on sorting task) to determine the hierarchical and family-resemblance structure of Indonesian emotion concepts, and compare them with findings from American English. Shaver et al. found that American English and Indonesian exhibit similarity in conceptualising the emotion domain and lexicons at the superordinate level (i.e., positive and negative emotion clusters) [-@shaver_structure_2001, 215-216] and basic-level categories (i.e., Indonesian's prototypical terms for the five basic-level categories of emotions refer to the same categories as in American English, namely *cinta* [love], *senang* [happiness], *marah* [anger], *kawatir/takut* [anxiety/fear], and *sedih* [sadness] [-@shaver_structure_2001, 218]).
+
+There are several classic linguistic works on emotions in Indonesian/Malay and related languages. Matisoff [-@matisoff_hearts_1986] studies Sino-Tibetan languages of South-East Asian and highlights a subset of linguistic expressions that he calls "psycho-collocations" of emotions. These collocations are multiword, lexico-semantic metaphoric expressions referring to various kinds of mental activities and personhood, and which component parts are coming from body-part terms. Huang [-@huang_tsou_2002] investigates the psycho-collocation in Tsou, a Tsouic branch of the Austronesian family spoken in the highlands of Southwest Taiwan, and found that *koyu* 'ear' is the body part for the seat of cognition and feeling [@huang_tsou_2002, 171]. Extensive repertoires of psycho-collocations, especially for words referring to 'liver', can be found in Indonesian/Malay [@siahaan_did_2008;  @goddard_contrastive_2008; @oey_psycho-collocations_1990] and Iban (a Malayic language) [@sather_work_2018; @fox_towards_2018, 12]; liver is the prominent seat of feelings, cognition, and personhood in the Malay world. This study will offer some psycho-collocation data regarding to ANGER in Indonesian.
+
+Musgrave [-@musgrave_nonsubject_2001] and Mulyadi [-@mulyadi_verba_2012] are linguistic doctoral theses investigating emotion predicates in Indonesian. Based on observational data from an Indonesian novel, Musgrave [-@musgrave_nonsubject_2001] focuses on the syntactic properties of emotion predicates, particularly the grammatical status assigned to the second argument of emotion predicates, and the implication of such analysis to the *Lexical Functional Grammar* theory. One relevant insight from Musgrave's [-@musgrave_nonsubject_2001] study is the range of construction types in which an emotion predicate can occur, which is useful for the methodology used in this chapter in determining the nominal vs. non-nominal usage of ANGER predicate. Mulyadi's [-@mulyadi_verba_2012] dissertation is a contrastive semantic studies on emotion verbs between Indonesian and Asahan Malay variety spoken in Tanjungbalai (Asahan) area in the east coast of North Sumatera, Indonesia. Mulyadi uses a variety of methods for collecting the spoken and written data: introspection from the researcher, interview, and written texts of novels, newspapers, and dictionary of Indonesian (KBBI). Based on the *Role and Reference Grammar* and the *Natural Semantic Metalanguage* (NSM) theories, Mulyadi investigated extensive issues, namely (i) formal/syntactic and semantic parameters in determining the inclusion of emotion verbs; (ii) construction types of the emotion verbs in relation to the syntactic mapping of the experiencer (i.e., subject-experiencer, object-experiencer, and dative-experiencer) and the cause of emotions; (iii) categorisation of the emotion verbs (e.g., static vs. active emotion verbs); and (iv) sub-categorisation and meanings of the emotion verbs, based on the NSM explications. Mulyadi's [-@mulyadi_verba_2012] findings on the emotion lexicons and their semantic characterisation, especially on ANGER-like emotion, will offer important insights for the current study on the conceptualisation of ANGER.
+
+Lastly, Indonesian emotion concepts have also been analysed in terms of their metaphorical conceptualisations based on the *Conceptual Metaphor Theory* (CMT) [@siahaan_did_2008; @siahaan_why_2015; @rajeg_metafora_2013; @rajeg_metaphorical_2019]. Siahaan [-@siahaan_did_2008] examines the cultural conceptualisations and cultural models of the Indonesian word *hati* 'liver', which is the seat of emotion and cognition in the Malay/Indonesian culture. She proposes two underlying motives for the conceptualisations of Indonesian *hati* 'liver', namely the liver divination ritual and ethno-religious belief *hati* 'liver' as the locus for the living soul [see also @goddard_contrastive_2008 for a contrastive analysis of the conceptualisation of *hati* 'liver' in Malaysian Malay and the English *heart* from the NSM perspective]. Siahaan's [-@siahaan_why_2015] follow-up study investigates the figurative extensions of Indonesian terms for TEMPERATURE and found that emotion is a predominant extended sense of these terms. From the target-domain perspective, Rajeg [-@rajeg_metafora_2013] is the first study applying quantitative, corpus-based method to study metaphors for five Indonesian basic-level emotion concepts, including ANGER (see [Section \@ref(previous-study-anger)](#previous-study-anger)), based on self-compiled, literary corpus data. Rajeg's [-@rajeg_metafora_2013] analytical aspects include (i) identifying emotion-specific metaphors [@kovecses_emotionspecific_1998] using a statistical technique of *Configural Frequency Analysis* (CFA) [@gries_statistics_2009], and (ii) how these specific metaphors and their main meaning foci [@kovecses_metaphor_2010] semantically distinguish the emotions between one another. Rajeg [-@rajeg_metaphorical_2019] is a quantitative corpus-based study on metaphors for HAPPINESS near-synonyms that adopts the *MetaNet* approach to CMT [for a recent overview, see @oana_computational_2017; @petruck_introduction_2016] and *Metaphorical Pattern Analysis* (MPA) [@stefanowitsch_happiness_2004; @stefanowitsch_words_2006]. One of the themes in Rajeg's [-@rajeg_metaphorical_2019] study is investigating distinctive metaphors distinguishing emotion near-synonyms by applying *Multiple Distinctive Collexeme Analysis* (MDCA). Rajeg [-@rajeg_metaphorical_2019] identified that metaphors that strongly distinguish *happiness* and *joy* in English [@stefanowitsch_happiness_2004; @stefanowitsch_words_2006] are also amongst the metaphors strongly distinguishing the Indonesian equivalences of *happiness*, namely *kebahagiaan*, and of *joy*, namely *kegembiraan*.
+
+## Previous studies on ANGER in Indonesian {#previous-study-anger}
+  
+ANGER concept in particular has also been part of the previous studies discussed in [Section \@ref(previous-study-emotion)](#previous-study-emotion). Heider [-@heider_landscapes_1991, 57, Table 7] found that figurative expressions (i.e., *palak* 'stifling; angry' and *panas hati* 'lit. hot liver; angry') received higher rating rather than the literal expression (i.e. *marah*) to represent ANGER, suggesting a potentially higher prominence of the figurative expressions of ANGER. Heider [-@heider_landscapes_1991, 24-25] also proposed four ANGER-like clusters in Minangkabau Indonesian: (i) "anger" clusters (*naik darah* 'lit. rising blood; angry'), (ii) "anger/cruel" clusters (*bengis* 'cruel; harsness'), (iii) "anger/dislike" clusters (*gemas* 'irritated'), and (iv) "anger/trembling" clusters (*gemetar* 'trembling'). The elicited scenarios from words belonging to the second, "anger/cruel" clusters revealed that the antecedents, or cause, of ANGER "are hurtful acts by others, especially naughty children, and the outcomes are physical violence and verbal abuse" [@heider_landscapes_1991, 80, 116]^[The cause of ANGER can also be fed by words in the "annoyance" clusters [@heider_landscapes_1991, 81]]. However, Heider [-@heider_landscapes_1991, 80] further noted that in the actual (rather than elicited) behaviour, Indonesians "mask most anger, and the open expression of anger is strongly disapproved of and negatively sanctioned". The Javanese Indonesian respondents describe the masking of ANGER more prominently than the Minangkabau Indonesian. It is interesting to see how prominent this expression/suppression aspect of ANGER is from the corpus study. Overall, Heider's [-@heider_landscapes_1991] study is a fundamental, pioneering work in the study of cognitive model of ANGER in Indonesian varieties as it provides inventory and relationship of the lexical items in the ANGER clusters [@heider_landscapes_1991, 252-258] and the cause-response scenarios of the ANGER clusters [@heider_landscapes_1991, 258-263] that can be further checked with corpus study.
+
+Rajeg's [-@rajeg_metafora_2013, 211-213] CFA analyses reveal eight (out of the total 88) metaphors significantly attracted to *amarah/kemarahan* 'anger' and six metaphors are significantly repelled by *amarah/kemarahan* 'anger'. These attracted metaphors are CONTROLLING EMOTION IS CONTROLLING A MOVING OBJECT (N=75)^[The letter "N" inside a bracket represents observed, token frequency of a conceptualisation.], EMOTION IS PRESSURISED SUBSTANCE (N=95), EMOTION IS FLUID IN A CONTAINER (N=42), EMOTION IS HEATED FLUID IN A CONTAINER (N=30), EMOTION IS FIRE (N=50), (INTENSITY OF) EMOTION IS TEMPERATURE (HOT/COLD) (N=16), (INTENSITY OF) EMOTION IS VERTICALITY (HIGH/LOW) (N=27), and EMOTION IS NATURAL FORCES (N=60). The six metaphors repelled by ANGER are EMOTION IS A POSSESSION (N=23), CAUSING EMOTION IS OBJECT TRANSFER (N=8), EMOTION IS AN ACCIDENTAL MOTION (N=0), EMOTION IS A JOURNEY (N=0), BECOMING EMOTION IS FINDING AN OBJECT (N=0), and EMOTION IS LIQUID (N=0) [-@rajeg_metafora_2013, 213-214]. The statistical attraction of HEAT- and SUBSTANCE-related metaphors to ANGER (compared to the other emotions) in Indonesian seems to reflect the universality and centrality of these metaphors for ANGER as suggested in previous studies on different languages [see @kovecses_concept_2000 for details], including most notably English [@stefanowitsch_words_2006; @holland_cognitive_1987]. Most of the attracted metaphors semantically highlight the aspect of intensity of ANGER. The present study reassesses Rajeg's findings via a combination of different methods, namely the lexical and corpus-based approaches as well as the metaphorical salience approach [@heredia_anger_2015], which does not include comparison with other emotion concepts as in Rajeg's [-@rajeg_metafora_2013] and Stefanowitsch's [-@stefanowitsch_words_2006] studies. Rajeg's quantitative corpus-based study also fills a substantial gap from Yuditha's [-@yuditha_indonesian_2013] study on ANGER metaphors in Indonesian. Yuditha [-@yuditha_indonesian_2013] adopts the corpus-illustrated [@tummers_usage-based_2005] approach and does not provide a quantitative assessment for the specificity of certain metaphors that she introspectively proposed to be applicable to ANGER (compared to LOVE and HATERD). A follow-up, yet preliminary, quantitative corpus-based study of Indonesian ANGER is Rajeg [-@rajeg_metaphorical_2014], who uses a small sample of on-line newspapers retrieved via *WebCorp*^[*WebCorp* can be accessed via https://www.webcorp.org.uk/live/.] (CITATION). It investigates the distinctive metaphorical profiles of five ANGER synonyms. The metaphorical profiles are based on the distinctive metaphorical constructions [@stefanowitsch_words_2006] for each synonym identified via MDCA (CITATION). It is found that, overall, 'intensity' is the most prominent aspect highlighted by the metaphorical constructions across the synonyms.
+  
+
+
+> Heider (1991: 59): "Anger, especially, is note-worthy for the ways in which it is supressed, managed, controlled, diverted, and masked. There is quite a luxuriant elaboration of the Anger cluster, leading us to say that although the expression of anger in other respects is minimized in Indonesia, there is a huge vocabulary available in the national language to discuss anger."
+
+
+- Fox (2018) emotion in Rotenese:
+
+  - in Rotenese, anger is in "the tightening of the neck (*boto*-*lik*)" (Fox 2018: 136)
+  - anger and sadness is also internally conceived (i.e. as "matters of the heart" (Fox 2018: 134))
+  - someone who is habitually inclined to be angry is called bitter-hearted (i.e. internally bitter *dale nasa-meluk*). *Dale(k)* means 'inside' (Fox 2018: 134).
+  - advice and counsel over anger is typically offered as part of "ritual admonitions" such as during marriage negotiations. This is addressed by the household head, saying "*boso ma-oda dedeik do manasa boto-lik*", meaning that 'do not show a frown on your forehead (i.e. doubt) or do not show anger in your neck' (Fox 2018: 136).
+  - Anger is also associated with the concept of "shrieking and forced violence" and "is explicitly likened to a 'storm' that arises in the person" though the storm "is not specifically located within the heart (*dalek*)" (Fox 2018: 137).
+  - Social contexts in Rotenese motivate the admonition to control physical anger when it becomes aggressive.
+  - Rotenese has a set of repertoires of mockery expressions called *dede'ak a'ali-o'olek*, usually used during disputes in court hearing, that is intended explicitly to 'arouse anger' (*nafofoa nasak*) (Fox 2018: 139). The mockery is also called 'to pierce the liver/heart' (*natola boa-de'ek*), where the specific body part association normally with the liver (i.e., *boa-de'ek*) refers to anger (Fox 2018: 139).
+  
+- Barbara Dix Grimes (2018) "Describing the body, disclosing the person: Reflections of Tetun personhood and social-emotional agency" 
+
+  - Data from Eastern Indonesian language of Tetun spoken "in two regencies (*kabupaten*) of Belu and Malaka in the Indonesian province of Nusa Tenggara Timur on the western side of the Indonesian border with Timor-Leste" (Grimes 2018: 149).
+  - She analysed the linguistic expressions containing body-part term used to talk about "inner subjective experience" and the underlying conceptualisations evoked by those expressions for personhood and human agency in Tetun.
+  - *laran malirin* 'cool inside' used to refer to someone who is no longer angry (Grimes 2018: 151)
+  - in Tetun, expressions denoting to the rising and descending of breath/life force are used to refer to the existence and subsiding of anger respectively (Grimes 2018: 152). Short breath is also associated with inclnation to get angry quickly. But physiological experience with breath is also associated with social experience of troubled relationship (Grimes 2018: 153)
+  - Grimes (2018: 166) revealed that Tetun has richer inventory of body-part-based emotion terms (80%) than the Indonesian emotion terms studied by Shaver et al. (2001) that shows only less than 10% of the Indonesian terms are based on body-part expressions. Grime's (2018: 166) analysis on the verbal domain indicate the social-emotional agency of the emoters: rather than experiencing anger, the verbs indicate that the emoters are "enacting anger in relation to another" and this agentive act of their social-emotional states is reflected in the emoters' bodies.
+  
+- Susanne Kuehling (2018) emotions in Dobu, spoken in the south-eastern Papua New Guinea.
+
+  - Inner feelings both positive and negative are kept to oneself (Kuehling 2018: 178).
+
+  
+
+- *SO WHAT OF THIS PAPER*:
+
+  - We may expect common theme in the "type" of conceptual metaphor that "can" be used to talk about anger in Indonesian, however, this chapter combines different yet new approaches in investigating anger metaphors, namely:
+    - metaphorical salience approach
+    - quantitative
+    - frame-semantic, metanet approach
+    - predominantly different genres (mostly come from online newspapers and website materials)
+    - added focus on the role of contexts
+  - Therefore, it is expected that these new approaches offer a different perspective and enriche the description of anger metaphors that have been initiated in the previous studies.
+
+
+# Methodology {#method}
+
+```{r keywords-frequency-analyses, message = FALSE, echo = FALSE}
+# load the prepared data
+load(file = "data/leipzig-NON-MARAH-wlist.RData")
+load(file = "data/leipzig-MARAH-wlist.RData")
+
+# remove the PERSONAL PRONOUN suffixes
+MARAH_sum_lemma <- MARAH_sum %>% 
+  mutate(lemma = str_replace_all(match, "(nya|ku|mu)$", "")) %>% 
+  group_by(lemma) %>% 
+  summarise(n = sum(n), .groups = "drop") %>% 
+  arrange() %>% 
+  filter(lemma %in% c("amarah", "kemarahan", "marah"))
+
+NON_MARAH_sum_lemma <- NON_MARAH_sum %>% 
+  mutate(lemma = str_replace_all(match, "(nya|ku|mu)$", "")) %>% 
+  group_by(lemma) %>% 
+  summarise(n = sum(n), .groups = "drop") %>% 
+  arrange() %>% 
+  filter(lemma %in% c("geram", "berang", "gusar", "kegusaran", "keberangan", "kegeraman", "kekesalan", "kemurkaan", "keberangan", "kesal", "murka"))
+
+# compare frequency of the terms
+ALL_MARAH_sum_lemma <- bind_rows(MARAH_sum_lemma, NON_MARAH_sum_lemma)
+
+## ke- -an forms
+ke_an <- ALL_MARAH_sum_lemma %>% 
+  filter(str_detect(lemma, "^ke.+an$")) %>% 
+  filter(str_detect(lemma, "kesal", negate = TRUE)) %>% 
+  arrange(desc(n)) %>% 
+  mutate(perc = round(n/sum(n) * 100, 2))
+ke_an_count <- ke_an$n
+names(ke_an_count) <- ke_an$lemma
+ke_an_chisq <- chisq.test(ke_an_count)
+ke_an_chisq_residuals <- chisq.test(ke_an_count)$residuals
+ke_an_pvals <- if (ke_an_chisq$p.value < 0.05 & ke_an_chisq$p.value > 0.01) " < 0.05" else if (ke_an_chisq$p.value < 0.01 & ke_an_chisq$p.value > 0.001) " < 0.01" else if (ke_an_chisq$p.value < 0.001) " < 0.001"
+
+## root forms
+root <- ALL_MARAH_sum_lemma %>% 
+  filter(str_detect(lemma, "^ke.+an$", negate = TRUE)) %>% 
+  filter(str_detect(lemma, "kesal", negate = TRUE)) %>% 
+  mutate(lemma = if_else(str_detect(lemma, "marah"), "(a)marah", lemma)) %>%
+  group_by(lemma) %>% 
+  summarise(n = sum(n), .groups = "drop") %>% 
+  arrange(desc(n)) %>% 
+  mutate(perc = round(n/sum(n) * 100, 2))
+root_count <- root$n
+names(root_count) <- root$lemma
+root_chisq <- chisq.test(root_count)
+root_chisq_residuals <- chisq.test(root_count)$residuals
+root_pvals <- if (root_chisq$p.value < 0.05 & root_chisq$p.value > 0.01) " < 0.05" else if (root_chisq$p.value < 0.01 & root_chisq$p.value > 0.001) " < 0.01" else if (root_chisq$p.value < 0.001) " < 0.001"
+
+
+```
+
+
+The chosen keywords in Indonesian that best correspond to the English term "anger" are *marah* 'angry; anger'^[The English translations come from Stevens and Schmidgall-Tellings [-@stevens_comprehensive_2004].], *amarah*^[*Amarah* is the informal variant of *marah* as indicated by the official *Kamus Besar Bahasa Indonesia* (KBBI) *The Big Dictionary of Indonesian* and defined under the entry for *marah*: https://kbbi.kemdikbud.go.id/entri/marah (accessed on October 26, 2021).] 'anger', and *kemarahan* 'fury; rage; anger', which is the abstract noun derivative from the root *marah*. The choice is based on Shaver et al.'s [-@shaver_structure_2001, 217] experimental finding that *marah* emerges as the prototypical label for the <span style="font-variant:small-caps;">anger</span>-like category in Indonesian, as it is semantically broader and commonly used in everyday Indonesian. The suggested commonality of *(a)marah* is evident from the frequency data in the ILC. The combined frequency of occurrence of *(a)marah* (N=`r prettyNum(pull(filter(root, lemma == "(a)marah"), n), big.mark = ",")`) is highly significantly the highest (*X*^2^~goodness-of-fit~=`r format(round(root_chisq$statistic, 1))`; *df*=`r root_chisq$parameter`; *p*~two-tailed~`r root_pvals`) compared to the other two terms identified by Shaver et al [-@shaver_structure_2001, 218, Table 4] belonging to the same <span style="font-variant:small-caps;">anger</span>-like category, namely *geram* 'furious; angry' (N=`r prettyNum(pull(filter(root, lemma == "geram"), n), big.mark = ",")`) and *berang* 'furious; fury' (N=`r prettyNum(pull(filter(root, lemma == "berang"), n), big.mark = ",")`), as well as to the other near-synonyms of *marah* namely *murka* 'wrath; anger; fury' (N=`r prettyNum(pull(filter(root, lemma == "murka"), n), big.mark = ",")`) and *gusar* 'angry; offended; annoyed' (N=`r prettyNum(pull(filter(root, lemma == "gusar"), n), big.mark = ",")`). Moreover, *ke**marah**an* (N=`r prettyNum(pull(filter(ke_an, lemma == "kemarahan"), n), big.mark = ",")`) as the derivative of *marah* is also highly significantly the most frequent in ILC (*X*^2^~goodness-of-fit~=`r format(round(ke_an_chisq$statistic, 1))`; *df*=`r ke_an_chisq$parameter`; *p*~two-tailed~`r ke_an_pvals`) compared to the other derivatives based on the other roots, namely *ke**murka**an* (N=`r prettyNum(pull(filter(ke_an, lemma == "kemurkaan"), n), big.mark = ",")`), *ke**gusar**an* (N=`r prettyNum(pull(filter(ke_an, lemma == "kegusaran"), n), big.mark = ",")`), *ke**geram**an* (N=`r prettyNum(pull(filter(ke_an, lemma == "kegeraman"), n), big.mark = ",")`), and *ke**berang**an* (N=`r prettyNum(pull(filter(ke_an, lemma == "keberangan"), n), big.mark = ",")`).
+
+
+
+- Explanation and justification of the corpus used for the collection of the metaphorical linguistic examples. Ideally, contributors should base their data on contemporary language corpora (e.g., Corpus of Contemporary American English, Hungarian Gigaword Corpus, etc.) – if these are not available, then a corpus of online newspapers can be used. If no online newspapers exist in a particular language, then contributors will need to rely on either informants or the lexical approach – or both.
+
+
+The database for the type-based, lexical approach is culled from the Indonesian WordNet (CITATION), the official *Tesaurus Tematis Bahasa Indonesia* (the Indonesian Thematic Thesaurus) (http://tesaurus.kemdikbud.go.id/tematis/)^[The thesaurus is compiled and maintained by the Language Development and Cultivation Agency of the Ministy of Education and Culture of the Republic of Indonesia.], and a bilingual Indonesian-English dictionary (CITATION). The relevant linguistic expressions (word, phrases) were gathered as follows. For the Indonesian WordNet and the Thematic Thesaurus, the three ANGER words were used as the search terms to reveal the related expressions (words and phrases) for ANGER in Indonesian. Then, these related expressions were checked manually one by one for the conceptualisations (e.g., metaphor or metonymy) and the source domains evoked by looking at their meanings in *Kamus Besar Bahasa Indonesia* (hereafter KBBI) (the Big Indonesian Dictionary) following the procedure of the Metaphor Identification Procedure (MIP) (CITATION). To gather the data from the bilingual dictionary, the English terms "anger" and "angry" were entered in the search field of the PDF version of the dictionary. The Indonesian entry and example for each match was checked manually following the same procedure as with the Thesaurus and the WordNet data.
+
+
+- Ideally, each chapter should be based upon 1,000 tokens (linguistic metaphorical or metonymical examples). These could be collected and stored in an online and freely accessible database for future study (if possible). 
+
+- Explanation of metaphor identification procedure employed in data collection.
+
+
+# Salience-based metaphor analysis {#analysis}
+
+
+## Overview of the results {#salience-results}
+
+- Overview of the anger metaphors that the analysis uncovered, in a clear table format (as in Kövecses, et al., 2015). This would be based upon the aggregate value of each metaphor (cf. salience-based metaphor analysis)
+
+## ANGER IS ....
+
+- In order of frequency, the subsections should describe each metaphor, as well as the mappings with linguistic examples. Contributors should focus on which aspect of the emotion the respective metaphors highlight (how and why).
+
+## ANGER IS ....
+
+## ....
+
+# Metonymical basis of ANGER metaphors {#metonymic-basis}
+
+- Metonymical basis of the metaphors (as can be found, e.g., in Lakoff and Kövecses 1987; attached). Please explain in this section any possible metonymy that motivates ANGER metaphors.
+
+# Cultural model of ANGER {#cultural-model}
+
+- Schematic (prototypical) characterization of the cultural model of ANGER, as indicated by uncovered source domains in the respective language. Please follow similar structure as that depicted for the “cognitive model of emotion” in Kövecses (2015: 84-85).
+
+# The role of context {#contexts}
+
+- Influence of the context (see Kövecses 2019b; attached) on the metaphors and cultural model. Please elaborate by focusing on the following four subsections:
+
+- See James J. Fox (2018) study on emotion in Rotenese of eastern Indonesia where he discusses social context of the linguistic usage of emotion metaphors
+
+## Situational context {#situational-context}
+
+## Discourse context {#discourse-context}
+
+## Conceptual-cognitive context {#conceptual-context}
+
+## Bodily context {#bodily-context}
+
+# Conclusions {#conclusions}
+
+- Summary and conclusions of the main findings of the study.
+
+# References {-}
