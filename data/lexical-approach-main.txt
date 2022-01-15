@@ -186,12 +186,12 @@ angry	naik pan	<w>naik pan</w>	"get angry; lit get on the toaster"	stevens_and_s
 angry	naik pelak	<w>naik pelak</w>	"get angry; lit raising heat"	stevens_and_schmidgall-tellings_2004	653	"get angry; lit raising heat"	heat	anger is heat		anger_heat	intensity-of-anger_intensity-of-the-heat		metaphor			
 marah	kepiting rebus	<w>kepiting rebus</w>		tesaurus_kemdikbud	http://tesaurus.kemdikbud.go.id/tematis/lema/marah	stewed crab	heat	anger is heat		anger_heat	angry-person_heated-entity		metaphor			
 marah	udang rebus	<w>udang rebus</w>		tesaurus_kemdikbud	http://tesaurus.kemdikbud.go.id/tematis/lema/marah	stewed shrimp/prawn	heat	anger is heat		anger_heat	angry-person_heated-entity		metaphor			
-anger	mengelus dada	<w>mengelus dada</w>	to hold in one’s feeling of anger	stevens_and_schmidgall-tellings_2004	263	to caress, stroke	metonymy		dada				metonymy	mengusap-usap dengan rasa sayang		
-anger	menggenggamkan tangan	Anak itu <w>menggenggamkan tangannya</w> menahan <t>kemarahan</t>	The child clenched his fists trying to suppress his anger	stevens_and_schmidgall-tellings_2004	314	to clench fist	metonymy		tangan				metonymy			
-anger	menggigit bibir	<w>menggigit bibir</w> saja	to restrain one’s anger	stevens_and_schmidgall-tellings_2004	323		metonymy		bibir				metonymy			
-anger	menggigit gigi	<w>menggigit gigi</w>	to hold back one’s anger	stevens_and_schmidgall-tellings_2004	323		metonymy		gigi				metonymy			
-anger	mengetap(kan) bibir	<w>mengetapkan bibir</w>	to bite/press together one’s lips (from anger)	stevens_and_schmidgall-tellings_2004	495		metonymy		bibir				metonymy			
-marah	mata gelap	<w>mata gelap</w>		tesaurus_kemdikbud	http://tesaurus.kemdikbud.go.id/tematis/lema/marah	dark eyes	metonymy		mata				metonymy			
+anger	mengelus dada	<w>mengelus dada</w>	to hold in one’s feeling of anger	stevens_and_schmidgall-tellings_2004	263	to caress, stroke	caressing the chest	caressing chest for anger	dada				metonymy	mengusap-usap dengan rasa sayang		
+anger	menggenggamkan tangan	Anak itu <w>menggenggamkan tangannya</w> menahan <t>kemarahan</t>	The child clenched his fists trying to suppress his anger	stevens_and_schmidgall-tellings_2004	314	to clench fist	clenching fist	clenching fist for anger	tangan				metonymy			
+anger	menggigit bibir	<w>menggigit bibir</w> saja	to restrain one’s anger	stevens_and_schmidgall-tellings_2004	323	to bite/press together one’s lips	lip/teeth biting/pressing	lip/teeth biting/pressing for anger	bibir				metonymy			
+anger	menggigit gigi	<w>menggigit gigi</w>	to hold back one’s anger	stevens_and_schmidgall-tellings_2004	323	to bite/press together one’s teeth	lip/teeth biting/pressing	lip/teeth biting/pressing for anger	gigi				metonymy			
+anger	mengetap(kan) bibir	<w>mengetapkan bibir</w>	to bite/press together one’s lips (from anger)	stevens_and_schmidgall-tellings_2004	495	to bite/press together one’s lips	lip/teeth biting/pressing	lip/teeth biting/pressing for anger	bibir				metonymy			
+marah	mata gelap	<w>mata gelap</w>		tesaurus_kemdikbud	http://tesaurus.kemdikbud.go.id/tematis/lema/marah	dark eyes	visual interference	visual interference for anger	mata				metonymy			
 angry	ambil	Jangan <w>ambil</w> <t>marah</t>	Don't get angry	stevens_and_schmidgall-tellings_2004	30	take	possession	anger is possession		anger_possessable-object	experiencer_possessor	becoming-angry_taking-object	metaphor			
-anger	sampai	<t>marah</t> yang tiada <w>sampai</w>	short-lived anger	stevens_and_schmidgall-tellings_2004	867	"to arrive at; reach its destination"	scale						metaphor			
+anger	sampai	<t>marah</t> yang tiada <w>sampai</w>	short-lived anger	stevens_and_schmidgall-tellings_2004	867	"to arrive at; reach its destination"	scale	intensity of anger is object's dimension		anger_physical-object	intensity-of-anger_extent-of-dimension		metaphor			
 anger	perangsang	<w>membangkitkan perangsang</w>	"to annoy; irritate; anger"	stevens_and_schmidgall-tellings_2004	806	stimulus, spur							no			
