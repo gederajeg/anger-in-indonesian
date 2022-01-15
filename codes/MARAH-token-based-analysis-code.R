@@ -7,7 +7,7 @@ marah <- readxl::read_xlsx("data/leipzig-amarah-kemarahan-marah-conc.xlsx") %>%
 # count the token frequency of each metaphor
 n_metaphor <- marah %>% 
   count(CM_BROADER, sort = TRUE, name = "n_token") %>% 
-  mutate(n_perc_token = n_token/sum(n_token) * 100) %>% 
+  mutate(n_perc_token = round(n_token/sum(n_token) * 100, digits = 2)) %>% 
   arrange(desc(n_perc_token))
 n_metaphor
 
@@ -16,12 +16,12 @@ joining_column <- colnames(n_metaphor)[1]
 # count the number of mappings by metaphor
 n_mapping <- marah %>% 
   select(CM_BROADER, starts_with("MAP")) %>% 
-  pivot_longer(-CM_BROADER, names_to = 'MAPPING_ID', values_to = "MAPPING") %>% 
+  pivot_longer(-CM_BROADER, names_to = "MAPPING_ID", values_to = "MAPPING") %>% 
   filter(!is.na(MAPPING)) %>% 
   group_by(CM_BROADER) %>% 
   summarise(n_mapping = n_distinct(MAPPING), .groups = "drop") %>% 
   arrange(desc(n_mapping)) %>% 
-  mutate(n_perc_mapping = n_mapping/sum(n_mapping) * 100)
+  mutate(n_perc_mapping = round(n_mapping/sum(n_mapping) * 100, digits = 2))
 n_mapping
 
 # count the number of metaphorical lexical units/patterns by metaphor
@@ -29,7 +29,7 @@ n_lu <- marah %>%
   group_by(CM_BROADER) %>% 
   summarise(n_lu = n_distinct(MP), .groups = "drop") %>% 
   # summarise(n_lu = n_distinct(LU), .groups = "drop") %>% 
-  mutate(n_perc_lu = n_lu/sum(n_lu) * 100) %>% 
+  mutate(n_perc_lu = round(n_lu/sum(n_lu) * 100, digits = 2)) %>% 
   arrange(desc(n_perc_lu))
 n_lu
 
