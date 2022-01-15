@@ -1,7 +1,7 @@
 library(tidyverse)
 
 # read the data
-marah <- readxl::read_xlsx("data/leipzig-amarah-kemarahan-marah-conc.xlsx") %>% 
+marah <- read_tsv("data/leipzig-amarah-kemarahan-marah-conc.txt") %>% 
   filter(USE == "metaphor", !LU_POS %in% c("adj", "prepo"))
 
 # count the token frequency of each metaphor
