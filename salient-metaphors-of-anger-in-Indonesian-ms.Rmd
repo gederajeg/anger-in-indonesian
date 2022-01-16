@@ -169,20 +169,44 @@ The database for the type-based, lexical approach is culled from the Indonesian 
 - Explanation of metaphor identification procedure employed in data collection.
 
 
-# Salience-based metaphor analysis {#analysis}
+# Type-based salience analyses {#typebased-analysis}
 
 
-## Overview of the results {#salience-results}
+## Metaphor {#typebased-metaphor-salience-results}
 
 - Overview of the anger metaphors that the analysis uncovered, in a clear table format (as in Kövecses, et al., 2015). This would be based upon the aggregate value of each metaphor (cf. salience-based metaphor analysis)
 
-## ANGER IS ....
+### ANGER IS ....
 
 - In order of frequency, the subsections should describe each metaphor, as well as the mappings with linguistic examples. Contributors should focus on which aspect of the emotion the respective metaphors highlight (how and why).
 
-## ANGER IS ....
+### ANGER IS ....
 
-## ....
+### ....
+
+## Metonymy {#typebased-metonymy-salience-results}
+
+### METONYMY A
+
+### METONYMY B
+
+### ...
+
+# Token-based salience analyses {#tokenbased-analysis}
+
+## Metaphor {#tokenbased-metaphor-salience-results}
+
+### ANGER IS ....
+
+### ANGER IS ....
+
+## Metonymy {#tokenbased-metonymy-salience-results}
+
+### METONYMY A
+
+### METONYMY B
+
+### ...
 
 # Metonymical basis of ANGER metaphors {#metonymic-basis}
 
