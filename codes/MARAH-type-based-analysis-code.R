@@ -20,7 +20,7 @@ metaphor_typebased_n_type <- metaphor_typebased %>%
   count(CM_BROADER, sort = TRUE, name = "n_type") %>% 
   mutate(n_perc_type = round(n_type/sum(n_type) * 100, digits = 2)) %>% 
   rename(metaphor = CM_BROADER)
-metaphor_typebased_n_type
+# metaphor_typebased_n_type
 
 ## count the number of mappings per metaphor
 metaphor_typebased_n_mapping <- metaphor_typebased %>% 
@@ -32,7 +32,7 @@ metaphor_typebased_n_mapping <- metaphor_typebased %>%
   arrange(desc(n_mapping)) %>% 
   mutate(n_perc_mapping = round(n_mapping/sum(n_mapping) * 100, digits = 2)) %>% 
   rename(metaphor = CM_BROADER)
-metaphor_typebased_n_mapping
+# metaphor_typebased_n_mapping
 
 ## join the type and mapping tables
 metaphor_typebased_salience <- metaphor_typebased_n_type %>% 
@@ -45,4 +45,4 @@ metonymy_typebased_salience <- metonymy_typebased %>%
   count(CM_BROADER, sort = TRUE, name = "n_type") %>% 
   mutate(n_perc_type = round(n_type/sum(n_type) * 100, digits = 2)) %>% 
   rename(metonymy = CM_BROADER)
-metonymy_typebased_salience
+# metonymy_typebased_salience
