@@ -1,7 +1,9 @@
 library(tidyverse)
 
 # read the metaphor data
-marah <- read_tsv("data/token-based-approach-main.txt") %>% 
+marah0 <- read_tsv("data/token-based-approach-main.txt")
+
+marah <- marah0 %>% 
   filter(USE == "metaphor", !LU_POS %in% c("adj", "prepo"))
 
 # count the token frequency of each metaphor
