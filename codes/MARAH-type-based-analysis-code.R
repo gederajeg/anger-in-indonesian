@@ -18,7 +18,7 @@ metonymy_typebased <- marah_typebased %>%
 ## count the number of types per metaphor
 metaphor_typebased_n_type <- metaphor_typebased %>% 
   count(CM_BROADER, sort = TRUE, name = "n_type") %>% 
-  mutate(n_perc_type = round(n_type/sum(n_type) * 100, digits = 2)) %>% 
+  mutate(n_perc_type = round(n_type/sum(n_type) * 100, digits = 1)) %>% 
   rename(metaphor = CM_BROADER)
 # metaphor_typebased_n_type
 
@@ -30,7 +30,7 @@ metaphor_typebased_n_mapping <- metaphor_typebased %>%
   group_by(CM_BROADER) %>% 
   summarise(n_mapping = n_distinct(MAPPING), .groups = "drop") %>% 
   arrange(desc(n_mapping)) %>% 
-  mutate(n_perc_mapping = round(n_mapping/sum(n_mapping) * 100, digits = 2)) %>% 
+  mutate(n_perc_mapping = round(n_mapping/sum(n_mapping) * 100, digits = 1)) %>% 
   rename(metaphor = CM_BROADER)
 # metaphor_typebased_n_mapping
 
@@ -40,9 +40,21 @@ metaphor_typebased_salience <- metaphor_typebased_n_type %>%
   mutate(aggregate = n_perc_type + n_perc_mapping) %>% 
   arrange(desc(aggregate))
 
+metaphor_typebased_salience_print <- metaphor_typebased_salience %>% 
+  mutate(metaphor = str_replace(metaphor, "^anger is ", ""),
+         metaphor = str_replace(metaphor, "^\\(cause of\\) anger is ", ""),
+         # metaphor = str_c('<span style="font-variant:small-caps;">', metaphor, '</span>', sep = ""),
+         metaphor = paste("[", metaphor, "]{.smallcaps}", sep = "")) %>% 
+  rename(`Metaphorical source domains` = metaphor,
+         `No. of types of linguistic expression` = n_type,
+         `% of all types of conceptual metaphor` = n_perc_type,
+         `No. of metaphorical mappings` = n_mapping,
+         `% of all types of metaphorical mappings` = n_perc_mapping,
+         Aggregate = aggregate)
+
 # type-based METONYMY analysis ===========
 metonymy_typebased_salience <- metonymy_typebased %>% 
   count(CM_BROADER, sort = TRUE, name = "n_type") %>% 
-  mutate(n_perc_type = round(n_type/sum(n_type) * 100, digits = 2)) %>% 
+  mutate(n_perc_type = round(n_type/sum(n_type) * 100, digits = 1)) %>% 
   rename(metonymy = CM_BROADER)
 # metonymy_typebased_salience
