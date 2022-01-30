@@ -40,6 +40,7 @@ metaphor_typebased_salience <- metaphor_typebased_n_type %>%
   mutate(aggregate = n_perc_type + n_perc_mapping) %>% 
   arrange(desc(aggregate))
 
+# for printing in the MS Word
 metaphor_typebased_salience_print <- metaphor_typebased_salience %>% 
   mutate(metaphor = str_replace(metaphor, "^anger is ", ""),
          metaphor = str_replace(metaphor, "^\\(cause of\\) anger is ", ""),
@@ -51,6 +52,14 @@ metaphor_typebased_salience_print <- metaphor_typebased_salience %>%
          `No. of metaphorical mappings` = n_mapping,
          `% of all types of metaphorical mappings` = n_perc_mapping,
          Aggregate = aggregate)
+metaphor_typebased_salience_total <- metaphor_typebased_salience_print %>% 
+  summarise(across(where(is.numeric), ~sum(.))) %>% 
+  mutate(`Metaphorical source domains` = "**TOTAL**") %>% 
+  select(`Metaphorical source domains`, everything()) %>% 
+  mutate(Aggregate = replace(Aggregate, `Metaphorical source domains` == "**TOTAL**", NA))
+metaphor_salience_print <- metaphor_typebased_salience_print %>% 
+  bind_rows(metaphor_typebased_salience_total)
+
 
 # type-based METONYMY analysis ===========
 metonymy_typebased_salience <- metonymy_typebased %>% 
