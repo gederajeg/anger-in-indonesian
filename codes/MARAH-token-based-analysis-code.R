@@ -6,6 +6,8 @@ marah0 <- read_tsv("data/token-based-approach-main.txt")
 marah <- marah0 %>% 
   filter(USE == "metaphor", !LU_POS %in% c("adj", "prepo"))
 
+source("codes/MARAH-mapping-edits-code-SUBSTANCE.R")
+
 # count the token frequency of each metaphor
 n_metaphor <- marah %>% 
   count(CM_BROADER, sort = TRUE, name = "n_token") %>% 
