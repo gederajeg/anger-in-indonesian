@@ -4,11 +4,6 @@ csl: "unified-style-sheet-for-linguistics.csl"
 bibliography: "anger-references.bib"
 link-citations: yes
 output: 
-  bookdown::word_document2:
-    df_print: kable
-    fig_caption: yes
-    fig_width: 6
-    reference_docx: "template.docx"
   html_notebook:
     code_folding: hide
     fig_caption: yes
@@ -16,6 +11,11 @@ output:
     number_sections: yes
     toc: yes
     toc_float: no
+  bookdown::word_document2:
+    df_print: kable
+    fig_caption: yes
+    fig_width: 6
+    reference_docx: "template.docx"
 author: 'Gede Primahadi Wijaya Rajeg <a itemprop="sameAs" content="https://orcid.org/0000-0002-2047-8621" href="https://orcid.org/0000-0002-2047-8621" target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon"></a>'
 abstract: "This is the abstract"
 ---
@@ -205,7 +205,9 @@ source("codes/MARAH-token-based-analysis-code.R")
 ## Metaphor {#tokenbased-metaphor-salience-results}
 
 ```{r metaphor-table-token-based}
-knitr::kable(slice_max(metaphor_salience_print, n = 20, order_by = Aggregate), caption = "Top-20 source domains of ANGER ranked-ordered by their degree of metaphorical salience (token-based)")
+# knitr::kable(slice_max(metaphor_salience_print, n = 20, order_by = Aggregate), caption = "Top-20 source domains of ANGER ranked-ordered by their degree of metaphorical salience (token-based)")
+
+knitr::kable(filter(metaphor_salience_print, Aggregate > 5), caption = "Source domains of ANGER ranked-ordered by their degree of metaphorical salience (token-based; Aggregate values > 5%)")
 ```
 
 ### ANGER IS ....
