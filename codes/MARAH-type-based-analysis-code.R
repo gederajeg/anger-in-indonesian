@@ -14,6 +14,8 @@ metaphor_typebased <- marah_typebased %>%
 metonymy_typebased <- marah_typebased %>% 
   filter(RELEVANCE == "metonymy")
 
+source("codes/MARAH-type-based-mapping-edits.R")
+
 # type-based METAPHOR analysis ===========
 ## count the number of types per metaphor
 metaphor_typebased_n_type <- metaphor_typebased %>% 
