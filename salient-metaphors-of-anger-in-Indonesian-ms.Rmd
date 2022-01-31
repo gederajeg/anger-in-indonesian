@@ -187,6 +187,8 @@ knitr::kable(metaphor_typebased_salience_print, caption = "Source domains of ANG
 
 ### ....
 
+The slight difference between the [heat].{smallcaps} and [temperature].{smallcaps} source domains for ANGER in the databases is as follows. The former focuses on the characteristic of (easily) angered person as relatively always hot, reflected by the linguistic expressions that do not encode any reduction of the heat. Meanwhile, the latter highlights the dynamics of the intensity when feeling angry, which can be reduced (i.e., cooled off) or reaching highest temperature. In the MN frame repository, [heat].{smallcaps} is a different frame considered as a perspective of the [temperature].{smallcaps} frame, which covers the range of temperature scale (from hot to cold), and [heat].{smallcaps} is linked in scalar opposition to the [cold].{smallcaps} frame.
+
 ## Metonymy {#typebased-metonymy-salience-results}
 
 ### METONYMY A
