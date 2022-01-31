@@ -11,4 +11,5 @@ marah <- marah %>%
 
 # EDIT OTHER METAPHORS
 marah <- marah %>% 
-  mutate(CM_BROADER = replace(CM_BROADER, CM_BROADER == "anger is captive (dangerous) animal", "anger is (fierce) captive animal"))
+  mutate(CM_BROADER = replace(CM_BROADER, CM_BROADER == "anger is captive (dangerous) animal", "anger is (fierce) captive animal"),
+         CM_BROADER = replace(CM_BROADER, CM_BROADER == "anger is confining/impeding entity", "anger is impediment/confinement"))
