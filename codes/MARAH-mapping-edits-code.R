@@ -1,6 +1,6 @@
 # code for editing the metaphorical mapping dataset on the fly in R
 
-marah_mapping_df <- marah_mapping_df %>% 
+metaphor_tokenbased_mapping <- metaphor_tokenbased_mapping %>% 
   mutate(MAPPING = replace(MAPPING, 
                            MAPPING %in% c("non-experiencer_fighter2", "experiencer_fighter2") & CM_BROADER == "anger is adversary", 
                            "experiencer-or-other-states_fighter2"),

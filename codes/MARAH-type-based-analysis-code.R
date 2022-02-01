@@ -1,5 +1,16 @@
 library(tidyverse)
 
+get_mappings <- function(mapping_df, metaphor_regex) {
+  interim_df <- distinct(select(arrange(filter(mapping_df, str_detect(CM_BROADER, metaphor_regex)), MAPPING_ID), CM_BROADER, MAPPING))
+  interim_df <- mutate(interim_df, MAPPING2 = str_replace_all(MAPPING, "-", " "), MAPPING2 = str_replace_all(MAPPING2, "_", " <- "), MAPPING2 = str_replace_all(MAPPING2, " is ", " <- "))
+  return(interim_df)
+}
+get_salience_stats <- function(salience_df, col_names, metaphor_regex) {
+  salience_df_colnames <- colnames(salience_df)
+  interim_df <- filter(salience_df, str_detect(metaphor, metaphor_regex))
+  return(interim_df[[salience_df_colnames[salience_df_colnames == col_names]]])
+}
+
 # read the type-based, lexical-approach dataset
 marah_typebased <- read_tsv("data/lexical-approach-main.txt")
 
@@ -25,6 +36,13 @@ metaphor_typebased_n_type <- metaphor_typebased %>%
 # metaphor_typebased_n_type
 
 ## count the number of mappings per metaphor
+metaphor_typebased_mapping <- metaphor_typebased %>% 
+  select(CM_BROADER, starts_with("MAP"), matches("^(LU|PATTERN|SFRAME|CM_ROLEMAPPING|CITATIONS|ENGLISH_TRANSLATION|LU_GLOSS)$"))  %>%
+  pivot_longer(cols = starts_with("MAP"), names_to = "MAPPING_ID", values_to = "MAPPING") %>% 
+  filter(!is.na(MAPPING)) %>% 
+  mutate(status = "")
+
+
 metaphor_typebased_n_mapping <- metaphor_typebased %>% 
   select(CM_BROADER, starts_with("MAP")) %>% 
   pivot_longer(-CM_BROADER, names_to = "MAPPING_ID", values_to = "MAPPING") %>% 
