@@ -596,7 +596,7 @@ metonymy_typebased_salience %>%
 ```
 
 
-The salience of each metonymy can only be measured in terms of the number of the metonymic expressions (i.e., its metonymic types), given the metonymies only involve a single mapping. The mapping is reflected in the naming of the metonymy in the form of [metonymic source domain FOR metonymic target]{.smallcaps} (or [x FOR y]{.smallcaps} for short), which is different from the naming for conceptual metaphor in the form of [metaphoric target domain IS metaphoric source domain]{.smallcaps} (or [a IS b]{.smallcaps} for short).
+The salience of each metonymy can only be measured in terms of the number of the metonymic expressions (i.e., its metonymic types), given the metonymies only involve a single mapping. The mapping is reflected in the naming of the metonymy in the form of [metonymic source domain is metonymic target]{.smallcaps} (or [x is y]{.smallcaps} for short), which is different from the naming for conceptual metaphor in the form of [metaphoric target domain is metaphoric source domain]{.smallcaps} (or [a is b]{.smallcaps} for short).
 
 ### [Strong/aggressive verbal behaviour for anger]{.smallcaps}
 
@@ -607,9 +607,19 @@ The type-based analysis reveals that [`r str_replace(pull(slice_max(metonymy_typ
 
 These expressions are mostly verbs encoding the manner of speaking that metonymically points to the internal, emotional state of the speaker. More specifically, when someone speaks in the manner expressed by these expressions, the hearer could infer that the speaker is angry.
 
-### METONYMY B
+### [Violent frustated behaviour for anger]{.smallcaps}
 
-### ...
+Linguistic expressions evoking certain actions/behaviours that arguably harsh and violent can be metonymically used to refer to [anger]{.smallcaps}. This is motivated experientially in that frustration often leads to anger, which then brings about some irrational, harsh, dangerous, or violent actions.
+
+- `r paste(paste("*", pull(filter(metonymy_typebased, str_detect(CM_BROADER, "frustated")), LU), "* '", pull(filter(metonymy_typebased, str_detect(CM_BROADER, "frustated")), LU_GLOSS), "'", sep = ""), collapse = "; ")`
+
+The metonymy is related to a more generic metonymy for emotion, namely [effect of emotion stands for emotion]{.smallcaps}.
+
+### [Aggressive visual behaviour for anger]{.smallcaps}
+
+This metonymy represents the externalisation of [anger]{.smallcaps} via the aggressive forms of visual and/or facial behaviours. This is shown by the presence of facial-related body-parts (e.g., mouth, eyes, face) in some of the metonymic expressions, or in the inherent meaning of the expressions.
+
+- `r paste(paste("*", pull(filter(metonymy_typebased, str_detect(CM_BROADER, "visual behaviour")), LU), "* '", pull(filter(metonymy_typebased, str_detect(CM_BROADER, "visual behaviour")), LU_GLOSS), "'", sep = ""), collapse = "; ")`
 
 # Token-based salience analyses {#tokenbased-analysis}
 
