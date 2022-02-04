@@ -15,4 +15,5 @@ marah <- marah %>%
          CM_BROADER = replace(CM_BROADER, CM_BROADER == "anger is confining/impeding entity", "anger is impediment/confinement"),
          CM_BROADER = replace(CM_BROADER, CM_BROADER == "anger is (destructive) natural force", "anger is natural force"),
          CM_BROADER = replace(CM_BROADER, str_detect(CM_BROADER, "sence of object in some location"), "anger is (ab/pre)sence of an object"),
-         CM_BROADER = replace(CM_BROADER, str_detect(CM_BROADER, "is physical harm"), "anger is physical contact/harm"))
+         CM_BROADER = replace(CM_BROADER, str_detect(CM_BROADER, "is physical harm"), "anger is physical contact/harm"),
+         CM_BROADER = replace(CM_BROADER, CM_BROADER == "anger is sleeping entity", "anger is a sleeping organism"))

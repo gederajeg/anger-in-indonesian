@@ -6,4 +6,17 @@ metaphor_typebased <- metaphor_typebased %>%
          CM_BROADER = replace(CM_BROADER, CM_BROADER == "anger is fluid in a container", "anger is substance in a container"),
          CM_BROADER = replace(CM_BROADER, CM_BROADER == "anger is (heated) fluid in a container", "anger is heated fluid in a container"),
          CM_BROADER = replace(CM_BROADER, CM_BROADER == "anger is (destructive) natural force", "anger is natural force"),
-         CM_BROADER = replace(CM_BROADER, CM_BROADER == "anger is fierce (captive) animal", "anger is fierce, captive animal"))
+         CM_BROADER = replace(CM_BROADER, CM_BROADER == "anger is fierce (captive) animal", "anger is fierce, captive animal"),
+         MAP_3 = replace(MAP_3, CM_BROADER == "anger is substance in a container" & str_detect(CITATIONS, "memuntahkan"), "angry-person_container"),
+         MAP_2 = str_replace_all(MAP_2, "undersirability(?=\\-of\\-the\\-disease)", "undesirability"),
+         MAP_2 = replace(MAP_2, str_detect(CM_BROADER, "pressurised") & LU == "menaikkan darah", "causing increased intensity is exerting pressure to the fluid"),
+         MAP_2 = replace(MAP_2, str_detect(CM_BROADER, "pressurised") & LU == "naik spaneng", "increased anger is fluid (being caused to) rises"),
+         MAP_2 = replace(MAP_2, str_detect(CM_BROADER, "pressurised") & MAP_2 == "increased anger is fluid (being caused to) rises", "increased anger is fluid (being caused to) rises (by pressure)"),
+         MAP_2 = replace(MAP_2, str_detect(CM_BROADER, "pressurised") & MAP_2 == "intense anger is exploding container", "losing control over anger is explosion of container"),
+         MAP_1 = replace(MAP_1, str_detect(CM_BROADER, "pressurised") & LU == "penaik darah", "angry person's body_container"),
+         LU_GLOSS = replace(LU_GLOSS, LU == "naik darah", "rising blood"),
+         LU_GLOSS = replace(LU_GLOSS, LU == "naik spaneng", "rising tension/voltage"),
+         LU_GLOSS = replace(LU_GLOSS, LU == "pemakan bawang", "onion eater"),
+         MAP_2 = replace(MAP_2, str_detect(CM_BROADER, "heat$") & MAP_2 == "intensity-of-anger_degree-of-the-heat", "becoming-angry_being-heated-up"),
+         MAP_2 = replace(MAP_2, str_detect(CM_BROADER, "heat$") & LU %in% c("membawang", "makan bawang"), "becoming-angry_being-heated-up"),
+         MAP_1 = replace(MAP_1, str_detect(CM_BROADER, "verticality$"), "anger_verticality-scale"))

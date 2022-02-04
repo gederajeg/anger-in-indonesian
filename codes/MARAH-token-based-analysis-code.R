@@ -54,8 +54,13 @@ metaphor_salience %>% slice_head(n = 10)
 
 # for printing in the MS Word
 metaphor_salience_print <- metaphor_salience %>% 
-  mutate(metaphor = str_replace(metaphor, "^anger is ", ""),
+  mutate(metaphor = str_replace(metaphor, "^anger is (a\\s)?", ""),
          metaphor = str_replace(metaphor, "^\\(cause of\\) anger is ", ""),
+         metaphor = str_replace(metaphor, "^(heated fluid|pressurised substance) in a container$", "\\1"),
+         metaphor = str_replace(metaphor, "^(intensity) of anger( is .+)$", "\\1\\2"),
+         metaphor = str_replace(metaphor, "^(degree of control) for anger( is .+)$", "\\1\\2"),
+         metaphor = str_replace(metaphor, "(?<=intensity is )object (quantity)$", "\\1"),
+         metaphor = str_replace(metaphor, "^substance in a container$", "contained substance"),
          metaphor = paste("[", metaphor, "]{.smallcaps}", sep = "")) %>%
   select(metaphor, n_token, n_perc_token, n_type, n_perc_type, n_mapping, n_perc_mapping, aggregate) %>% 
   rename(`Metaphorical source domains` = metaphor,
@@ -68,9 +73,10 @@ metaphor_salience_print <- metaphor_salience %>%
          Aggregate = aggregate)
 metaphor_salience_total <- metaphor_salience_print %>% 
   summarise(across(where(is.numeric), ~sum(.))) %>% 
-  mutate(`Metaphorical source domains` = "**TOTAL**") %>% 
-  select(`Metaphorical source domains`, everything()) %>% 
-  mutate(Aggregate = replace(Aggregate, `Metaphorical source domains` == "**TOTAL**", NA))
+  mutate(across(where(is.numeric), ~round(.)),
+         `Metaphorical source domains` = "**TOTAL**",
+         Aggregate = replace(Aggregate, `Metaphorical source domains` == "**TOTAL**", NA)) %>% 
+  select(`Metaphorical source domains`, everything())
 metaphor_salience_print <- metaphor_salience_print %>% 
   bind_rows(metaphor_salience_total)
 

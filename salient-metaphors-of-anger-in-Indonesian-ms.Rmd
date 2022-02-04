@@ -10,7 +10,7 @@ output:
     fig_width: 6
     number_sections: yes
     toc: yes
-    toc_float: no
+    toc_float: yes
   bookdown::word_document2:
     df_print: kable
     fig_caption: yes
@@ -22,7 +22,7 @@ abstract: "This is the abstract"
 
 <style type="text/css">
   body{
-  font-size: 16pt;
+  font-size: 14pt;
 }
 </style>
 
@@ -176,12 +176,12 @@ source("codes/MARAH-type-based-analysis-code.R")
 The analysis on the lexical approach database reveals `r nrow(metaphor_typebased_salience)` types of conceptual metaphors. [Table \@ref(tab:metaphor-table-type-based)](#metaphor-table-type-based) presents the source domains of the metaphors ranked order by their degree of metaphorical salience measure shown in the `Aggregate` column.
 
 ```{r metaphor-table-type-based}
-knitr::kable(metaphor_typebased_salience_print, caption = "Source domains of [anger]{.smallcaps} based on the type-based, lexical approach")
+knitr::kable(metaphor_typebased_salience_print, caption = "Source domains of [anger]{.smallcaps} (Type-based, lexical approach)")
 ```
 
 In [Table \@ref(tab:metaphor-table-type-based)](#metaphor-table-type-based), `r happyr::numbers2words(length(grep(" is ", metaphor_typebased_salience_print[[1]], perl = TRUE)))` metaphors are shown in full, both with the source and target domains because they are the more general metaphors.
 
-### [anger is fierce, captive animal]{.smallcaps}
+### [Anger is fierce, captive animal]{.smallcaps}
 
 ```{r mapping-animal, message = FALSE, include = FALSE}
 mapping_animal <- filter(metaphor_typebased_mapping, str_detect(CM_BROADER, "fierce")) %>% 
@@ -219,7 +219,7 @@ The least frequent mapping (`r mapping_animal_discuss %>% filter(str_detect(MAPP
 The main meaning focus of this metaphor in the lexical approach is on aggressiveness of the angered person as reflected in the mapping "aggressive angry behaviour is aggressive animal behaviour" because this is the most productive mapping indicated by the highest number of lexical unit types.
 
 
-### [anger is fire]{.smallcaps}
+### [Anger is fire]{.smallcaps}
 
 ```{r mapping-fire, message = FALSE, include = FALSE}
 mapping_fire <- filter(metaphor_typebased_mapping, str_detect(CM_BROADER, "fire$")) %>% 
@@ -248,7 +248,7 @@ The less prominent mappings include:
 
 
 
-### [anger is physical contact/harm]{.smallcaps}
+### [Anger is physical contact/harm]{.smallcaps}
 
 ```{r mapping-harm, message = FALSE, include = FALSE}
 mapping_harm <- filter(metaphor_typebased_mapping, str_detect(CM_BROADER, "harm$")) %>% 
@@ -269,12 +269,343 @@ Then the remaining mapping is `r mapping_harm_stats %>% slice_min(order_by = n_l
 
 - `r paste(paste("*", mapping_harm_discuss %>% filter(str_detect(MAPPING, 'effect.of.touch')) %>% pull(LU), "* '", mapping_harm_discuss %>% filter(str_detect(MAPPING, 'effect.of.touch')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
+### [Anger is disease]{.smallcaps}
 
+```{r mapping-disease, message = FALSE, include = FALSE}
+mapping_disease <- filter(metaphor_typebased_mapping, str_detect(CM_BROADER, "disease$")) %>% 
+  mutate(status = if_else(str_detect(MAPPING, "(person_patient)"), "key", "no"))
+mapping_disease_stats <- mapping_disease %>% filter(status == 'no') %>% group_by(MAPPING) %>% summarise(n_lu = n_distinct(LU))
+mapping_disease_discuss <- get_mappings(metaphor_typebased_mapping, 'disease$') %>% left_join(mapping_disease %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_disease_stats)
+```
+
+Key mappings:
+
+- angry person <- patient
+- anger <- disease (*gondok* 'goitre')
+
+The disease metaphor focuses on the undesirability and effect of anger as a disease.
+
+The most productive mapping is `r mapping_disease_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING)` (type = `r mapping_disease_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`). This focuses on the undesirability:
+
+- `r paste(paste("*", mapping_disease_discuss %>% filter(str_detect(MAPPING, 'undesirability')) %>% pull(LU), "* '", mapping_disease_discuss %>% filter(str_detect(MAPPING, 'undesirability')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+
+The second most productive mapping is (`r mapping_disease_discuss %>% filter(str_detect(MAPPING, 'effect')) %>% pull(MAPPING2) %>% unique()`; type = `r mapping_disease_discuss %>% filter(str_detect(MAPPING, 'effect')) %>% pull(n_lu) %>% unique()`):
+
+- `r paste(paste("*", mapping_disease_discuss %>% filter(str_detect(MAPPING, 'effect')) %>% pull(LU), "* '", mapping_disease_discuss %>% filter(str_detect(MAPPING, 'effect')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+
+The other mapping indicates the treatment of the disease as calming the angry person (*__menawari__ hati yang sedang marah* 'to _cure_/_treat_ the liver of an angry person'). 
+
+### [Anger is insanity]{.smallcaps}
+
+```{r mapping-insanity, message = FALSE, include = FALSE}
+mapping_insanity <- filter(metaphor_typebased_mapping, str_detect(CM_BROADER, "insanity$")) %>% 
+  mutate(status = if_else(str_detect(MAPPING, "(angry-person_insane-person|anger_insanity)"), "key", "no"))
+mapping_insanity_stats <- mapping_insanity %>% filter(status == 'no') %>% group_by(MAPPING) %>% summarise(n_lu = n_distinct(LU))
+mapping_insanity_discuss <- get_mappings(metaphor_typebased_mapping, 'insanity$') %>% left_join(mapping_insanity %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_insanity_stats)
+```
+
+The key mappings are `r mapping_insanity %>% filter(status == "key") %>% pull(MAPPING) %>% unique() %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ") %>% paste(collapse = "; ")`
+
+The other mappings are:
+
+- `r mapping_insanity_discuss %>% filter(str_detect(MAPPING, 'becoming')) %>% pull(MAPPING2) %>% unique()`; type = `r mapping_insanity_discuss %>% filter(str_detect(MAPPING, 'becoming')) %>% pull(n_lu) %>% unique()`
+
+  - `r paste(paste("*", mapping_insanity_discuss %>% filter(str_detect(MAPPING, 'becoming')) %>% pull(LU), "* '", mapping_insanity_discuss %>% filter(str_detect(MAPPING, 'becoming')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+  
+- `r mapping_insanity_discuss %>% filter(str_detect(MAPPING, 'uncontrolled')) %>% pull(MAPPING2) %>% unique()`; type = `r mapping_insanity_discuss %>% filter(str_detect(MAPPING, 'uncontrolled')) %>% pull(n_lu) %>% unique()`
+
+  - `r paste(paste("*", mapping_insanity_discuss %>% filter(str_detect(MAPPING, 'uncontrolled')) %>% pull(LU), "* '", mapping_insanity_discuss %>% filter(str_detect(MAPPING, 'uncontrolled')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+
+### [Anger is pressurised substance in a container]{.smallcaps} {#pressurised-1}
+
+```{r mapping-pressurised-substance, message = FALSE, include = FALSE}
+mapping_pressurisedfluid <- filter(metaphor_typebased_mapping, str_detect(CM_BROADER, "pressurised substance in a container$")) %>% 
+  mutate(status = if_else(str_detect(MAPPING, "(anger_contents/located-entity|angry person\\'s body)"), "key", "no"))
+mapping_pressurisedfluid_stats <- mapping_pressurisedfluid %>% filter(status == 'no') %>% group_by(MAPPING) %>% summarise(n_lu = n_distinct(LU))
+mapping_pressurisedfluid_discuss <- get_mappings(metaphor_typebased_mapping, 'pressurised substance in a container$') %>% left_join(mapping_pressurisedfluid %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_pressurisedfluid_stats)
+```
+
+The source domain is evoked by `r metaphor_typebased_salience %>% filter(str_detect(metaphor, "pressurised")) %>% pull(n_type)` manifesting `r metaphor_typebased_salience %>% filter(str_detect(metaphor, "pressurised")) %>% pull(n_mapping)` mappings. The key mappings are `r mapping_pressurisedfluid %>% filter(status == "key") %>% pull(MAPPING) %>% unique() %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ") %>% paste(collapse = "; ")`.
+
+The most productive mapping is `r mapping_pressurisedfluid_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING)` (type = `r mapping_pressurisedfluid_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`):
+
+- `r paste(paste("*", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'caused to')) %>% pull(LU), "* '", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'caused to')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+
+This one relates to its causative variant: `r mapping_pressurisedfluid_stats %>% filter(str_detect(MAPPING, "causing increased")) %>% pull(MAPPING)` (type = `r mapping_pressurisedfluid_stats %>% filter(str_detect(MAPPING, "causing increased")) %>% pull(n_lu)`)
+
+- `r paste(paste("*", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'causing increased')) %>% pull(LU), "* '", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'causing increased')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`.
+
+The second productive mapping is (`r mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(MAPPING2) %>% unique()`; type = `r mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(n_lu) %>% unique()`):
+
+- `r paste(paste("*", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(LU), "* '", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+
+### [Anger is bitterness]{.smallcaps}
+
+```{r mapping-bitterness, message = FALSE, include = FALSE}
+mapping_bitterness <- filter(metaphor_typebased_mapping, str_detect(CM_BROADER, "bitterness$")) %>% 
+  mutate(status = if_else(str_detect(MAPPING, "(anger_bitterness|person-tasting)"), "key", "no"))
+mapping_bitterness_stats <- mapping_bitterness %>% filter(status == 'no') %>% group_by(MAPPING) %>% summarise(n_lu = n_distinct(LU))
+mapping_bitterness_discuss <- get_mappings(metaphor_typebased_mapping, 'bitterness$') %>% left_join(mapping_bitterness %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_bitterness_stats)
+```
+
+This source domain is evoked by `r metaphor_typebased_salience %>% filter(str_detect(metaphor, "bitterness")) %>% pull(n_type)` expressions manifesting `r metaphor_typebased_salience %>% filter(str_detect(metaphor, "bitterness")) %>% pull(n_mapping)` mappings.
+
+The key mappings are `r mapping_bitterness %>% filter(status == "key") %>% pull(MAPPING) %>% unique() %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ") %>% paste(collapse = "; ")`.
+
+The most productive mapping is `r mapping_bitterness_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING)  %>% str_replace_all("-", " ") %>% str_replace_all("_", " -> ")` (type = `r mapping_bitterness_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`):
+
+- `r paste(paste("*", mapping_bitterness_discuss %>% filter(str_detect(MAPPING, 'undesirability')) %>% pull(LU), "* '", mapping_bitterness_discuss %>% filter(str_detect(MAPPING, 'undesirability')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+
+The other mapping focuses on the reduced bitterness of [anger]{.smallcaps} as a plain taste (*tawar* 'plain (of taste)').
+
+### [Anger is heat]{.smallcaps}
+
+```{r mapping-heat, message = FALSE, include = FALSE}
+mapping_heat <- filter(metaphor_typebased_mapping, str_detect(CM_BROADER, "heat$")) %>% 
+  mutate(status = if_else(str_detect(MAPPING, "(anger_heat)"), "key", "no"))
+mapping_heat_stats <- mapping_heat %>% filter(status == 'no') %>% group_by(MAPPING) %>% summarise(n_lu = n_distinct(LU))
+mapping_heat_discuss <- get_mappings(metaphor_typebased_mapping, 'heat$') %>% left_join(mapping_heat %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_heat_stats)
+```
+
+The key mapping is anger <- heat (redness of the onion??)
+
+The most productive mapping is `r mapping_heat_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING)  %>% str_replace_all("-", " ") %>% str_replace_all("_", " -> ")` (type = `r mapping_heat_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`):
+
+- `r paste(paste("*", mapping_heat_discuss %>% filter(str_detect(MAPPING, 'heated\\-entity')) %>% pull(LU), "* '", mapping_heat_discuss %>% filter(str_detect(MAPPING, 'heated\\-entity')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+
+The other mapping is (`r mapping_heat_discuss %>% filter(str_detect(MAPPING, 'becoming')) %>% pull(MAPPING2) %>% unique()`; type = `r mapping_heat_discuss %>% filter(str_detect(MAPPING, 'becoming')) %>% pull(n_lu) %>% unique()`):
+
+- `r paste(paste("*", mapping_heat_discuss %>% filter(str_detect(MAPPING, 'becoming')) %>% pull(LU), "* '", mapping_heat_discuss %>% filter(str_detect(MAPPING, 'becoming')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+
+
+### [Intensity (of anger) is verticality]{.smallcaps}
+
+```{r mapping-verticality, message = FALSE, include = FALSE}
+mapping_verticality <- filter(metaphor_typebased_mapping, str_detect(CM_BROADER, "verticality$")) %>% 
+  mutate(status = if_else(str_detect(MAPPING, "(anger_verticality-scale)"), "key", "no"))
+mapping_verticality_stats <- mapping_verticality %>% filter(status == 'no') %>% group_by(MAPPING) %>% summarise(n_lu = n_distinct(LU))
+mapping_verticality_discuss <- get_mappings(metaphor_typebased_mapping, 'verticality$') %>% left_join(mapping_verticality %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_verticality_stats)
+```
+
+Total types for the [intensity is verticality]{.smallcaps} metaphor is `r pull(filter(metaphor_typebased_salience, metaphor == "intensity of anger is verticality"), n_type)` expressions evoking `r pull(filter(metaphor_typebased_salience, metaphor == "intensity of anger is verticality"), n_mapping)` mappings. The key mapping is intensity of `r mapping_verticality %>% filter(status == 'key') %>% select(MAPPING) %>% distinct() %>% pull(MAPPING) %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ") %>% paste(collapse = "; ")`.
+
+The most productive mapping is `r mapping_verticality_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING)  %>% str_replace_all("-", " ") %>% str_replace_all("_", " -> ")` (type = `r mapping_verticality_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`):
+
+- `r paste(paste("*", mapping_verticality_discuss %>% filter(str_detect(MAPPING, 'upward motion')) %>% pull(LU), "* '", mapping_verticality_discuss %>% filter(str_detect(MAPPING, 'upward motion')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+
+Another mapping indicates a short-lived, low intensity anger since the linguistic expression conveys the idea that the anger does not reach the end point of the scale (*marah __tiada sampai__* 'short-lived anger; lit. anger not reaching end point of a scale')
+
+The main meaning focus of this metaphor is on the increasing intensity of anger construed via the lexical units evoking the upward motion frame. This is shown by the high-type frequency of the lexical units of the mapping.
+
+### [Anger is contained substance]{.smallcaps}
+
+This is a short-hand label for the [emotion is substance/fluid in a container]{.smallcaps} metaphor. This is part of a larger network of the [substance]{.smallcaps}-related source frames family postulated in the database. The other source domain frames are [heated/hot fluid in a container]{.smallcaps} and [pressurised substance in a container]{.smallcaps} ([Section \@ref(pressurised-1)](#pressurised-1)). The difference between the [contained substance]{.smallcaps} and [heated/hot fluid in a container]{.smallcaps} or [pressurised substance in a container]{.smallcaps} is that the former does not include the heated and pressurised semantics of the frames. The intensity aspect in the [contained substance]{.smallcaps} domain is construed via the quantity of the substance and the expression of anger is construed via the externalisation of the substance.
+
+```{r mapping-containedfluid, message = FALSE, include = FALSE}
+mapping_containedfluid <- filter(metaphor_typebased_mapping, str_detect(CM_BROADER, "is substance in a container$")) %>% 
+  mutate(status = if_else(str_detect(MAPPING, "(anger_contents/located-entity)") & LU != "darah muda", "key", "no"),
+         status = if_else(str_detect(MAPPING, "angry-person_container"), "key", status),
+         status = if_else(str_detect(MAPPING, "(anger-level_substance-fullness-level)"), "key", status))
+mapping_containedfluid_stats <- mapping_containedfluid %>% filter(status == 'no') %>% group_by(MAPPING) %>% summarise(n_lu = n_distinct(LU))
+mapping_containedfluid_discuss <- get_mappings(metaphor_typebased_mapping, 'is substance in a container$') %>% left_join(mapping_containedfluid %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_containedfluid_stats)
+```
+
+Total types for the [contained substance]{.smallcaps} is `r pull(filter(metaphor_typebased_salience, metaphor == "anger is substance in a container"), n_type)` expressions evoking `r pull(filter(metaphor_typebased_salience, metaphor == "anger is substance in a container"), n_mapping)` mappings. The key mappings are `r mapping_containedfluid %>% filter(status == 'key') %>% select(MAPPING) %>% distinct() %>% pull(MAPPING) %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ") %>% paste(collapse = "; ")`.
+
+The most productive mapping is `r mapping_containedfluid_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING)` (type = `r mapping_containedfluid_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`):
+
+- `r paste(paste("*", mapping_containedfluid_discuss %>% filter(str_detect(MAPPING, 'channeling')) %>% pull(LU), "* '", mapping_containedfluid_discuss %>% filter(str_detect(MAPPING, 'channeling')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+
+
+### [Anger is heated fluid in a container]{.smallcaps}
+
+```{r mapping-hotfluid, message = FALSE, include = FALSE}
+mapping_hotfluid <- filter(metaphor_typebased_mapping, str_detect(CM_BROADER, "heated")) %>% 
+  mutate(status = if_else(str_detect(MAPPING, "angry-person_container"), "key", "no"),
+         status = if_else(MAPPING == "anger_(heated-)fluid", "key", status))
+mapping_hotfluid_stats <- mapping_hotfluid %>% filter(status == 'no') %>% group_by(MAPPING) %>% summarise(n_lu = n_distinct(LU))
+mapping_hotfluid_discuss <- get_mappings(metaphor_typebased_mapping, 'heated') %>% left_join(mapping_hotfluid %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_hotfluid_stats)
+```
+
+Key mappings: anger is heated fluid; angry person is the container.
+
+The most productive mapping is `r mapping_hotfluid_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING)  %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ")` (type = `r mapping_hotfluid_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`):
+
+- `r paste(paste("*", mapping_hotfluid_discuss %>% filter(str_detect(MAPPING, 'heat\\-level')) %>% pull(LU), "* '", mapping_hotfluid_discuss %>% filter(str_detect(MAPPING, 'heat\\-level')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+
+Another mapping indicates caused increasing intensity is heating up the fluid (*naik setum* 'steam/fume up').
+
+
+### [Degree of control is object dimension]{.smallcaps}
+
+```{r mapping-dimension, message = FALSE, include = FALSE}
+mapping_dimension <- filter(metaphor_typebased_mapping, str_detect(CM_BROADER, "dimension$")) %>% 
+  mutate(status = if_else(str_detect(MAPPING, "anger_entity"), "key", "no"))
+mapping_dimension_stats <- mapping_dimension %>% filter(status == 'no') %>% group_by(MAPPING) %>% summarise(n_lu = n_distinct(LU))
+mapping_dimension_discuss <- get_mappings(metaphor_typebased_mapping, 'dimension$') %>% left_join(mapping_dimension %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_dimension_stats)
+```
+
+The [dimension]{.smallcaps} source domain is based on the [size]{.smallcaps}. The smaller the dimension/space of an entity, the harder the angered person control the emotion. This is a difference inference in the use of the frame in construing the intensity level of [anger]{.smallcaps}, which is only found in the corpus-based data.
+
+The key mapping is anger <- physical entity
+
+The prominent mapping is `r mapping_dimension_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING)  %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ")` (type = `r mapping_dimension_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`)
+
+- `r paste(paste("*", mapping_dimension_discuss %>% filter(str_detect(MAPPING, 'narrow')) %>% pull(LU), "* '", mapping_dimension_discuss %>% filter(str_detect(MAPPING, 'narrow')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+
+### [Anger is natural force]{.smallcaps}
+
+```{r mapping-naturalforce, message = FALSE, include = FALSE}
+mapping_naturalforce <- filter(metaphor_typebased_mapping, str_detect(CM_BROADER, "natural force$")) %>% 
+  mutate(status = if_else(str_detect(MAPPING, "anger_natural-disaster"), "key", "no"))
+mapping_naturalforce_stats <- mapping_naturalforce %>% filter(status == 'no') %>% group_by(MAPPING) %>% summarise(n_lu = n_distinct(LU))
+mapping_naturalforce_discuss <- get_mappings(metaphor_typebased_mapping, 'natural force$') %>% left_join(mapping_naturalforce %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_naturalforce_stats)
+```
+
+This metaphor mainly focus on the intensity of anger construed as the powerful extent of natural forces. This is based on the [natural disaster]{.smallcaps} frame in MetaNet.
+
+Key mapping: anger <- natural disaster
+
+The prominent mapping is on the reduction/ceasing of anger: `r mapping_naturalforce_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING)  %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ")` (type = `r mapping_naturalforce_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`)
+
+- `r paste(paste("*", mapping_naturalforce_discuss %>% filter(str_detect(MAPPING, 'to cease')) %>% pull(LU), "* '", mapping_naturalforce_discuss %>% filter(str_detect(MAPPING, 'to cease')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+
+The other mapping is (`r mapping_naturalforce_discuss %>% filter(str_detect(MAPPING, 'ceasing')) %>% pull(MAPPING2) %>% unique()`; type = `r mapping_naturalforce_discuss %>% filter(str_detect(MAPPING, 'ceasing')) %>% pull(n_lu) %>% unique()`):
+
+- `r paste(paste("*", mapping_naturalforce_discuss %>% filter(str_detect(MAPPING, 'ceasing')) %>% pull(LU), "* '", mapping_naturalforce_discuss %>% filter(str_detect(MAPPING, 'ceasing')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+
+and intensity of anger is the intensity of the natural force (*angin-anginan* 'windy; capricious; unpredictable')
+
+
+### [Anger is solid entity]{.smallcaps}
+
+```{r mapping-solid, message = FALSE, include = FALSE}
+mapping_solid <- filter(metaphor_typebased_mapping, str_detect(CM_BROADER, "rough, solid entity$")) %>% 
+  mutate(status = if_else(str_detect(MAPPING, "(anger_entity|degree.of.solidity)"), "key", "no"))
+mapping_solid_stats <- mapping_solid %>% filter(status == 'no') %>% group_by(MAPPING) %>% summarise(n_lu = n_distinct(LU))
+mapping_solid_discuss <- get_mappings(metaphor_typebased_mapping, 'rough, solid entity$') %>% left_join(mapping_solid %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_solid_stats)
+```
+
+
+The key mappings are `r mapping_solid %>% filter(status == "key") %>% pull(MAPPING) %>% unique() %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ") %>% paste(collapse = "; ")`.
+
+The other mappings are: `r mapping_solid_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING)  %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ")` (type = `r mapping_solid_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`)
+
+- `r paste(paste("*", mapping_solid_discuss %>% filter(str_detect(MAPPING, 'calmness')) %>% pull(LU), "* '", mapping_solid_discuss %>% filter(str_detect(MAPPING, 'calmness')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+
+Other mapping is the reduction of [anger]{.smallcaps} as melting ice (*mencair* 'to melt').
+
+### [Anger is (un)veiled object]{.smallcaps}
+
+```{r mapping-hidden, message = FALSE, include = FALSE}
+mapping_hidden <- filter(metaphor_typebased_mapping, str_detect(CM_BROADER, "veiled object$")) %>% 
+  mutate(status = if_else(str_detect(MAPPING, "([(]un[)]hidden\\-object)"), "key", "no"))
+mapping_hidden_stats <- mapping_hidden %>% filter(status == 'no') %>% group_by(MAPPING) %>% summarise(n_lu = n_distinct(LU))
+mapping_hidden_discuss <- get_mappings(metaphor_typebased_mapping, 'veiled object$') %>% left_join(mapping_hidden %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_hidden_stats)
+```
+
+The key mapping is `r mapping_hidden %>% filter(status == "key") %>% pull(MAPPING) %>% unique() %>% str_replace_all("[-]", " ") %>% str_replace_all("_", " <- ")`. 
+
+The predominant mapping is `r mapping_hidden_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING)  %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ")` (type = `r mapping_hidden_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`)
+
+- `r paste(paste("*", mapping_hidden_discuss %>% filter(str_detect(MAPPING, 'hiding')) %>% pull(LU), "* '", mapping_hidden_discuss %>% filter(str_detect(MAPPING, 'hiding')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+
+The other mapping is expressing anger is unveiling a hidden object (e.g., cause to emerge) (*__menerbitkan__ amarah* '(of sun) to *raise* anger')
+
+The metaphor relates to the social expression and degree of control of the experiencer to keep or expose the anger.
+
+
+### [(Cause of) anger is annoyance]{.smallcaps}
+
+```{r mapping-annoyance, message = FALSE, include = FALSE}
+mapping_annoyance <- filter(metaphor_typebased_mapping, str_detect(CM_BROADER, "annoyance$")) %>% 
+  mutate(status = if_else(str_detect(MAPPING, "([(]un[)]hidden\\-object)"), "key", "no"))
+mapping_annoyance_stats <- mapping_annoyance %>% filter(status == 'no') %>% group_by(MAPPING) %>% summarise(n_lu = n_distinct(LU))
+mapping_annoyance_discuss <- get_mappings(metaphor_typebased_mapping, 'annoyance$') %>% left_join(mapping_annoyance %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_annoyance_stats)
+```
+
+The central mapping is `r mapping_annoyance_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING)  %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ")` (type = `r mapping_annoyance_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`)
+
+- `r paste(paste("*", mapping_annoyance_discuss %>% filter(str_detect(MAPPING, 'cause.of')) %>% pull(LU), "* '", mapping_annoyance_discuss %>% filter(str_detect(MAPPING, 'cause.of')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+
+The other mapping is `r mapping_annoyance_stats %>% slice_min(order_by = n_lu) %>% pull(MAPPING)  %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ")` (type = `r mapping_annoyance_stats %>% slice_min(order_by = n_lu) %>% pull(n_lu)`) (`r paste(paste("*", mapping_annoyance_discuss %>% filter(str_detect(MAPPING, 'person.causing')) %>% pull(LU), "* '", mapping_annoyance_discuss %>% filter(str_detect(MAPPING, 'person.causing')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`)
+
+### [Anger is a sleeping organism]{.smallcaps}
+
+```{r mapping-sleeping, message = FALSE, include = FALSE}
+mapping_sleeping <- filter(metaphor_typebased_mapping, str_detect(CM_BROADER, "sleeping organism$")) %>% 
+  mutate(status = if_else(str_detect(MAPPING, "(anger_slepping\\-entity$)"), "key", "no"))
+mapping_sleeping_stats <- mapping_sleeping %>% filter(status == 'no') %>% group_by(MAPPING) %>% summarise(n_lu = n_distinct(LU))
+mapping_sleeping_discuss <- get_mappings(metaphor_typebased_mapping, 'sleeping$') %>% left_join(mapping_sleeping %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_sleeping_stats)
+```
+
+This metaphor construes [anger]{.smallcaps} as a calm, sleeping organism with the following mappings:
+
+- anger <- sleeping organism
+- causing anger <- awakening/fishing out the organism (*__membangkitkan__ marah* 'to _arouse_ one's anger')
+- anger near the limit <- awaken entity (*__bangkit__ amarah* 'anger *rose*')
+
+The [awakening]{.smallcaps} frame underlying this metaphor, and in combination with the [fierce animal]{.smallcaps} frame in [anger is fierce, captive animal]{.smallcaps}, is reflected in the common Indonesian proverb for [anger]:
+
+(@bangunkan_macan) *membangunkan macan tidur* 'to awaken a sleeping tiger'
+
+Here, *membangunkan* 'to awaken; to wake s.b. up' and *tidur* '(a)sleep' evoke the [awakening]{.smallcaps} frame while *macan* 'tiger' evokes the [fierce animal]{.smallcaps} frame. The proverb highlights the danger of invoking anger out of a calm state.
+
+### [Anger is possession]{.smallcaps}
+
+This is not prominent metaphor in the database as it is realised by only one type (*ambil* 'take'):
+
+(@typebased_possession) *Jangan __ambil__ marah* 'Do not _take_ the anger' (Stevens Schimdgal Tellings 2004: 30)
+
+This example means that the person should stay calm by not taking the anger object into his/her possession. The mappings that are inferred from this metaphor are as follows:
+
+- anger <- possessable object
+- experiencer <- (candidate) possessor
+- becoming angry <- taking/gaining the possessable object
+
+The low salience of [possession]{.smallcaps} family of metaphors for [anger]{.small} is not surprising given that a previous study [@rajeg_metafora_2013, 213-214] found that this metaphor family is strongly repelled by [anger]{.smallcaps} in Indonesian (see [Section \@ref(intro)](#intro)).
+
+### [Anger is darkness]{.smallcaps}
+
+```{r mapping-darkness, message = FALSE, include = FALSE}
+mapping_darkness <- filter(metaphor_typebased_mapping, str_detect(CM_BROADER, "darkness$")) %>% 
+  mutate(status = if_else(str_detect(MAPPING, "(anger_darkness$)"), "key", "no"))
+mapping_darkness_stats <- mapping_darkness %>% filter(status == 'no') %>% group_by(MAPPING) %>% summarise(n_lu = n_distinct(LU))
+mapping_darkness_discuss <- get_mappings(metaphor_typebased_mapping, 'darkness$') %>% left_join(mapping_darkness %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_darkness_stats)
+```
+
+The [darkness]{.smallcaps} frame in the metaphor is used to assess [anger]{.smallcaps} as a negative state [cf. @stefanowitsch_words_2006, 77]. It is evoked by `r get_salience_stats(metaphor_typebased_salience, 'n_type', 'darkness')` types manifesting `r get_salience_stats(metaphor_typebased_salience, 'n_mapping', 'darkness')` mappings:
+
+- anger <- darkness
+- person being angry <- person('s body) being in darkness (`r paste(paste("*", mapping_darkness_discuss %>% filter(str_detect(MAPPING, 'dark.state')) %>% pull(LU), "* '", mapping_darkness_discuss %>% filter(str_detect(MAPPING, 'dark.state')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`)
+
+- `r metaphor_typebased %>% filter(str_detect(CM_BROADER, 'darkness'), LU == "kegelapan") %>% pull(CITATIONS)` (`r metaphor_typebased %>% filter(str_detect(CM_BROADER, 'darkness'), LU == "kegelapan") %>% pull(SOURCES)`: `r metaphor_typebased %>% filter(str_detect(CM_BROADER, 'darkness'), LU == "kegelapan") %>% pull(PAGE_LOCATION)`)
 
 
 ## Metonymy {#typebased-metonymy-salience-results}
 
-### METONYMY A
+In the lexical approach database, I identified `r sum(metonymy_typebased_salience$n_type)` metonymic expressions for [anger]{.smallcaps} grouped under `r nrow(metonymy_typebased_salience)` (conceptual) metonymies. These metonymies are rank-ordered in [Table \@ref(tab:metonymy-table-type-based)](#metonymy-table-type-based) by their number of metonymic expressions.
+
+```{r metonymy-table-type-based}
+metonymy_typebased_salience %>% 
+  mutate(metonymy = paste("[", metonymy, "]{.smallcaps}", sep = "")) %>% 
+  rename(Metonymy = metonymy,
+         `Number of types` = n_type,
+         `% of types` = n_perc_type) %>% 
+  knitr::kable(caption = "Conceptual metonymies for [anger]{.smallcaps} (Type-based, lexical approach)")
+```
+
+
+The salience of each metonymy can only be measured in terms of the number of the metonymic expressions (i.e., its metonymic types), given the metonymies only involve a single mapping. The mapping is reflected in the naming of the metonymy in the form of [metonymic source domain FOR metonymic target]{.smallcaps} (or [x FOR y]{.smallcaps} for short), which is different from the naming for conceptual metaphor in the form of [metaphoric target domain IS metaphoric source domain]{.smallcaps} (or [a IS b]{.smallcaps} for short).
+
+### [Strong/aggressive verbal behaviour for anger]{.smallcaps}
+
+The type-based analysis reveals that [`r str_replace(pull(slice_max(metonymy_typebased_salience, order_by = n_type), metonymy), " for anger", "")`]{.smallcaps} is the most predominant metonymic source domain for [anger]{.smallcaps} in Indonesian (*X*^2^~goodness~ ~of~ ~fit~=`r round(chisq.test(metonymy_typebased_salience$n_type)$statistic, digit = 2)`, *df*=`r chisq.test(metonymy_typebased_salience$n_type)$parameter`, *p*=`r format(chisq.test(metonymy_typebased_salience$n_type)$p.value, digit = 3)`), showing the largest inventory of metonymic expressions.
+
+- `r paste(paste("*", pull(filter(metonymy_typebased, str_detect(CM_BROADER, "verbal")), LU), "* '", pull(filter(metonymy_typebased, str_detect(CM_BROADER, "verbal")), LU_GLOSS), "'", sep = ""), collapse = "; ")`
+
+
+These expressions are mostly verbs encoding the manner of speaking that metonymically points to the internal, emotional state of the speaker. More specifically, when someone speaks in the manner expressed by these expressions, the hearer could infer that the speaker is angry.
 
 ### METONYMY B
 
@@ -291,7 +622,9 @@ source("codes/MARAH-token-based-analysis-code.R")
 
 ```{r difference-type-based-and-token-based}
 metaphor_in_corpus_only <- setdiff(pull(metaphor_salience, metaphor), metaphor_typebased_salience$metaphor)
+metaphor_in_corpus_only_top20 <- setdiff(pull(slice_max(metaphor_salience, n = 20, order_by = aggregate), metaphor), metaphor_typebased_salience$metaphor)
 metaphor_in_lexical_only <- setdiff(metaphor_typebased_salience$metaphor, pull(metaphor_salience, metaphor))
+metaphor_in_lexical_only_top20 <- setdiff(metaphor_typebased_salience$metaphor, pull(slice_max(metaphor_salience, n = 20, order_by = aggregate), metaphor))
 metaphor_in_lexical_only_aggregate <- as.data.frame(metaphor_typebased_salience)[metaphor_typebased_salience$metaphor %in% metaphor_in_lexical_only, "aggregate"]
 metaphor_in_lexical_only_ranking <- rownames(as.data.frame(metaphor_typebased_salience)[metaphor_typebased_salience$metaphor %in% metaphor_in_lexical_only, ])
 metaphor_in_all_database <- intersect(pull(metaphor_salience, metaphor), metaphor_typebased_salience$metaphor)
@@ -303,18 +636,18 @@ From `r length(metaphor_typebased_salience$metaphor)` metaphors identified in th
 
 The slight difference between the [heat]{.smallcaps} and [temperature]{.smallcaps} source domains for [anger]{.smallcaps} in the databases is as follows. The former focuses on the characteristic of (easily) angered person as relatively always hot, reflected by the linguistic expressions that do not encode any reduction of the heat. Meanwhile, the latter highlights the dynamics of the intensity when feeling angry, which can be reduced (i.e., cooled off) or reaching highest temperature. In the MN frame repository, [heat]{.smallcaps} is a different frame considered as a perspective of the [temperature]{.smallcaps} frame, which covers the range of temperature scale (from hot to cold), and [heat]{.smallcaps} is linked in scalar opposition to the [cold]{.smallcaps} frame.
 
-- In order of frequency, the subsections should describe each conceptual metaphor, as well as the mappings with examples. Contributors should focus on which aspect of the emotion the respective source domains highlight (how and why).
-
 
 ```{r metaphor-table-token-based}
 # knitr::kable(slice_max(metaphor_salience_print, n = 20, order_by = Aggregate), caption = "Top-20 source domains of [anger]{.smallcaps} ranked-ordered by their degree of metaphorical salience (token-based)")
 
-knitr::kable(filter(metaphor_salience_print, Aggregate > 5), caption = "Source domains of [anger]{.smallcaps} based on the token-based, corpus approach (Aggregate values > 5%)")
+# knitr::kable(filter(metaphor_salience_print, Aggregate > 5), caption = "Source domains of [anger]{.smallcaps} based on the token-based, corpus approach (Aggregate values > 5%)")
+
+knitr::kable(metaphor_salience_print, caption = "Source domains of [anger]{.smallcaps} (Token-based, corpus approach)")
 ```
 
-### [anger]{.smallcaps} IS ....
+### [Anger]{.smallcaps} IS ....
 
-### [anger]{.smallcaps} IS ....
+### [Anger]{.smallcaps} IS ....
 
 ## Metonymy {#tokenbased-metonymy-salience-results}
 
