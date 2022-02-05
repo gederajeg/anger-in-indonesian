@@ -565,7 +565,7 @@ This example means that the person should stay calm by not taking the anger obje
 
 The low salience of [possession]{.smallcaps} family of metaphors for [anger]{.small} is not surprising given that a previous study [@rajeg_metafora_2013, 213-214] found that this metaphor family is strongly repelled by [anger]{.smallcaps} in Indonesian (see [Section \@ref(intro)](#intro)).
 
-### [Anger is darkness]{.smallcaps}
+### [Anger is darkness]{.smallcaps} {#darkness-typebased}
 
 ```{r mapping-darkness, message = FALSE, include = FALSE}
 mapping_darkness <- filter(metaphor_typebased_mapping, str_detect(CM_BROADER, "darkness$")) %>% 
@@ -620,6 +620,68 @@ The metonymy is related to a more generic metonymy for emotion, namely [effect o
 This metonymy represents the externalisation of [anger]{.smallcaps} via the aggressive forms of visual and/or facial behaviours. This is shown by the presence of facial-related body-parts (e.g., mouth, eyes, face) in some of the metonymic expressions, or in the inherent meaning of the expressions.
 
 - `r paste(paste("*", pull(filter(metonymy_typebased, str_detect(CM_BROADER, "visual behaviour")), LU), "* '", pull(filter(metonymy_typebased, str_detect(CM_BROADER, "visual behaviour")), LU_GLOSS), "'", sep = ""), collapse = "; ")`
+
+### [Body heat for anger]{.smallcaps}
+
+In the classic CMT literature [e.g., @holland_cognitive_1987], the increased body heat is one of the experiential motivations for the [heat]{.smallcaps}-related metaphor for [anger]{.smallcaps}, such as [anger is fire]{.smallcaps}. Such bodily experience is felt during an intense anger and becomes a metonymic source domain for construing [anger]{.smallcaps}.
+
+- `r paste(paste("*", pull(filter(metonymy_typebased, str_detect(CM_BROADER, "body heat")), LU), "* '", pull(filter(metonymy_typebased, str_detect(CM_BROADER, "body heat")), LU_GLOSS), "'", sep = ""), collapse = "; ")`
+
+The metonymy is related to a more generic metonymy for emotion, namely [effect of emotion stands for emotion]{.smallcaps}. The metonymic expressions relate to situation of someone experiencing heat in their body (e.g., *radang* 'feverish', *kegerahan* 'stifling heat') that can be used to refer to [anger]{.smallcaps}.
+
+
+(@meradangkan) *manuver-manuver Rita yang berjuang dengan bendera Partai Berkarya cukup __meradangkan__ partai-partai lainnya, khususnya partai-partai besar seperti Golkar, PPP, PKB, PDIP, PAN atau Demokrat.* (https://www.metropolitan.id/2019/04/kunjungi-peternak-puyuh-di-akhir-kampanye/; last access: 5 February 2022)
+
+### [Internal pressure for anger]{.smallcaps}
+
+The linguistic expressions under this metonymy refer to different kind of internal bodily pressure, such as blood pressure, muscular pressure, and swollen chest.
+
+- `r paste(paste("*", pull(filter(metonymy_typebased, str_detect(CM_BROADER, "internal pressure")), LU), "* '", pull(filter(metonymy_typebased, str_detect(CM_BROADER, "internal pressure")), LU_GLOSS), "'", sep = ""), collapse = "; ")`
+
+### [Lip/teeth biting/pressing for anger]{.smallcaps} {#lip-biting-typebased}
+
+This metonymy can be related to the issue of emotional control. Given intense internal pressure forcing the angered persons to externalise and react due to their anger, the action of biting/pressing the lip/teeth may accompany the persons effort to stay under control, and it is here metonymically used to indicate [anger]{.smallcaps}.
+
+- `r paste(paste("*", pull(filter(metonymy_typebased, str_detect(CM_BROADER, "biting")), LU), "* '", pull(filter(metonymy_typebased, str_detect(CM_BROADER, "biting")), LU_GLOSS), "'", sep = ""), collapse = "; ")`
+
+### [Redness in the facial area for anger]{.smallcaps}
+
+Another physiological effect of [anger]{.smallcaps} is physiological change in the facial area, such as flushing or being livid. This bodily experience is then used to refer to [anger]{.smallcaps}.
+
+- `r paste(paste("*", pull(filter(metonymy_typebased, str_detect(CM_BROADER, "redness")), LU), "* '", pull(filter(metonymy_typebased, str_detect(CM_BROADER, "redness")), LU_GLOSS), "'", sep = ""), collapse = "; ")`
+
+As we can see, a different body part around the face can be involved, such as the ear (*telinga*).
+
+### [Visual interference for anger]{.smallcaps} {#visual-interference-typebased}
+
+This metonymy appears to become the bodily basis of the [darkness]{.smallcaps} metaphor for [anger]{.smallcaps} ([Section \@ref(darkness-typebased)](#darkness-typebased)). All the metonymic expressions capture the visual-perception interference as if the eyes are (seeing) dark; hence, inability to see and, by way of semantic extension, think rationally.
+
+- `r paste(paste("*", pull(filter(metonymy_typebased, str_detect(CM_BROADER, "interference")), LU), "* '", pull(filter(metonymy_typebased, str_detect(CM_BROADER, "interference")), LU_GLOSS), "'", sep = ""), collapse = "; ")`
+
+### [Breathing difficulty for anger]{.smallcaps}
+
+Intense, excited anger can lead to intense and potentially difficult breathing. In Indonesian, expressions referring to the difficulty of breathing due to excessive heat and/or no fresh air are used metonymically to refer to [anger]{.smallcaps}.
+
+- `r paste(paste("*", pull(filter(metonymy_typebased, str_detect(CM_BROADER, "breathing")), LU), "* '", pull(filter(metonymy_typebased, str_detect(CM_BROADER, "breathing")), LU_GLOSS), "'", sep = ""), collapse = "; ")`
+
+### [Standing body hair for anger]{.smallcaps}
+
+This metonymy might be thought of more relevant to [fear]{.smallcaps} rather than [anger]{.smallcaps}. However, in the Indonesian database, the expression related to body hair can also refer to [anger]{.smallcaps}. It is especially the case in the body-part where no body hair is (expected to) grow, namely the liver *hati*.
+
+- `r paste(paste("*", pull(filter(metonymy_typebased, str_detect(CM_BROADER, "body hair")), LU), "* '", pull(filter(metonymy_typebased, str_detect(CM_BROADER, "body hair")), LU_GLOSS), "'", sep = ""), collapse = "; ")`
+
+### [Caressing the chest for anger]{.smallcaps}
+
+The situation where someone holds onto, or caresses, their chest as if holding something from getting out can refer to someone's effort to stay under control (i.e., being patient) from his/her anger state (cf. [Section \@ref(lip-biting-typebased)](#lip-biting-typebased)). The metonymic expression below also indicates that *dada* is a kind of container of [anger]{.smallcaps}.
+
+- `r paste(paste("*", pull(filter(metonymy_typebased, str_detect(CM_BROADER, "caressing")), LU), "* '", pull(filter(metonymy_typebased, str_detect(CM_BROADER, "caressing")), LU_GLOSS), "'", sep = ""), collapse = "; ")`
+
+### [Clenching fist for anger]{.smallcaps}
+
+This metonymy can be interpreted as an issue of control or an expression of [anger]{.smallcaps} (e.g., ready to attack the wrongdoer with the punch/fist).
+
+- `r paste(paste("*", pull(filter(metonymy_typebased, str_detect(CM_BROADER, "clenching")), LU), "* '", pull(filter(metonymy_typebased, str_detect(CM_BROADER, "clenching")), LU_GLOSS), "'", sep = ""), collapse = "; ")`
+
 
 # Token-based salience analyses {#tokenbased-analysis}
 
