@@ -16,10 +16,10 @@ metaphor_tokenbased_mapping <- metaphor_tokenbased_mapping %>%
                            CM_BROADER == "anger is substance in a container" & 
                              MAPPING %in% c("high intensity of anger is a filled-up container", "intensity_fullness-degree", "intensity_level-of-contained-entity"),
                            "increased intensity is increased fullness of the substance in the container"),
-         MAPPING = replace(MAPPING,
-                           CM_BROADER == "anger is fire" & 
-                             MAPPING %in% c("causing anger is igniting fire (i.e. set on fire)"),
-                           "cause-of-anger_cause-of-fire"),
+         # MAPPING = replace(MAPPING,
+         #                   CM_BROADER == "anger is fire" & 
+         #                     MAPPING %in% c("causing anger is igniting fire (i.e. set on fire)"),
+         #                   "cause-of-anger_cause-of-fire"),
          MAPPING = replace(MAPPING,
                            CM_BROADER == "anger is substance in a container" &
                              MAPPING == "controlling anger is making the substance harden/sedimented",
