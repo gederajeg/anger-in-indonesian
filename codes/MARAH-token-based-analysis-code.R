@@ -56,7 +56,10 @@ get_metaphor_mapping_stat_typefreq <- function(mapping_sourcedomain_token_df, lu
   mapping_sourcedomain_token_df %>% 
     filter(status == 'no') %>% 
     group_by(!!mapping_var) %>% 
-    summarise(n_lu = n_distinct(!!lu_var)) %>% 
+    summarise(n_lu = n_distinct(!!lu_var),
+              n_token = n()) %>% 
+    mutate(ttr_mapping = n_lu/n_token,
+           ttr_mapping_perc = round(ttr_mapping * 100, digits = 1)) %>% 
     arrange(desc(n_lu)) %>% 
     return()
 }
