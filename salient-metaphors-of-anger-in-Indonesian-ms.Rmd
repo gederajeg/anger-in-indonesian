@@ -4,6 +4,11 @@ csl: "unified-style-sheet-for-linguistics.csl"
 bibliography: "anger-references.bib"
 link-citations: yes
 output: 
+  bookdown::word_document2:
+    df_print: kable
+    fig_caption: yes
+    fig_width: 6
+    reference_docx: "template.docx"
   html_notebook:
     code_folding: hide
     fig_caption: yes
@@ -11,11 +16,6 @@ output:
     number_sections: yes
     toc: yes
     toc_float: yes
-  bookdown::word_document2:
-    df_print: kable
-    fig_caption: yes
-    fig_width: 6
-    reference_docx: "template.docx"
 author: 'Gede Primahadi Wijaya Rajeg <a itemprop="sameAs" content="https://orcid.org/0000-0002-2047-8621" href="https://orcid.org/0000-0002-2047-8621" target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon"></a>'
 abstract: "This is the abstract"
 ---
@@ -219,7 +219,7 @@ The least frequent mapping (`r mapping_animal_discuss %>% filter(str_detect(MAPP
 The main meaning focus of this metaphor in the lexical approach is on aggressiveness of the angered person as reflected in the mapping "aggressive angry behaviour is aggressive animal behaviour" because this is the most productive mapping indicated by the highest number of lexical unit types.
 
 
-### [Anger is fire]{.smallcaps}
+### [Anger is fire]{.smallcaps} {#fire_typebased}
 
 ```{r mapping-fire, message = FALSE, include = FALSE}
 mapping_fire <- filter(metaphor_typebased_mapping, str_detect(CM_BROADER, "fire$")) %>% 
@@ -776,11 +776,94 @@ mapping_animal_token_discuss <- get_mappings(metaphor_tokenbased_mapping, 'anima
 ```
 
 
-The [fierce, captive animal]{.smallcaps} metaphor is consistently sitting in the top-two of the salient metaphors across the databases. This clearly indicate the prominence of this conceptualisation of [anger]{.smallcaps} in Indonesian. What differentiates this metaphor in the two databases is its main meaning focus indicated by the productivity of the mapping in the metaphor. In the type-based approach ([Section \@ref(animal-typebased)](#animal-typebased)), the linguistic expressions most predominantly highlight the aggressive behaviour of the animal (type=`r get_metaphor_mapping_n_lu(mapping_animal_stats, 'aggressive')`), while in the corpus-based approach, the predominant expressions evoke mapping concerning restraining the animal (type=`r get_metaphor_mapping_n_lu(mapping_animal_token_stats, 'restraining')`; token=`r get_metaphor_mapping_tokenfreq(mapping_animal_token, 'restraining')`); this mapping is on the contrary the least prominent in the type-based approach (type=`r get_metaphor_mapping_n_lu(mapping_animal_stats, 'restraining')`).
+The [fierce, captive animal]{.smallcaps} source domain is consistently sitting in the top-two of the salient metaphors across the databases. This clearly indicate the prominence of this conceptualisation of [anger]{.smallcaps} in Indonesian. What differentiates this metaphor in the two databases is its main meaning focus indicated by the productivity of the mapping in the metaphor. In the type-based approach ([Section \@ref(animal-typebased)](#animal-typebased)), the linguistic expressions most predominantly highlight the aggressive behaviour of the animal (type=`r get_metaphor_mapping_n_lu(mapping_animal_stats, 'aggressive')`), while in the corpus-based approach, the predominant expressions evoke mapping concerning restraining the animal (type=`r get_metaphor_mapping_n_lu(mapping_animal_token_stats, 'restraining')`; token=`r get_metaphor_mapping_tokenfreq(mapping_animal_token, 'restraining')`); this mapping is on the contrary the least prominent in the type-based approach (type=`r get_metaphor_mapping_n_lu(mapping_animal_stats, 'restraining')`).
+
+Key mappings: anger <- restrained, fierce animal; experiencer (or other states) <- restraining entity
 
 - regulating anger is restraining the animal (type=`r get_metaphor_mapping_n_lu(mapping_animal_token_stats, 'restraining')`; token=`r get_metaphor_mapping_tokenfreq(mapping_animal_token, 'restraining', lu_output = FALSE)`)
 
   - `r get_lu_gloss_n_printed(mapping_animal_token, 'restraining')`
+
+- expressing and losing control over anger is unleashing a captive (type=`r get_metaphor_mapping_n_lu(mapping_animal_token_stats, 'unleashing')`; token=`r get_metaphor_mapping_tokenfreq(mapping_animal_token, 'unleashing', lu_output = FALSE)`)
+
+  - `r get_lu_gloss_n_printed(mapping_animal_token, 'unleashing')`
+
+- aggressive animal behaviour is aggressive anger behaviour (type=`r get_metaphor_mapping_n_lu(mapping_animal_token_stats, 'aggressive anger')`; token=`r get_metaphor_mapping_tokenfreq(mapping_animal_token, 'aggressive anger', lu_output = FALSE)`)
+
+  - `r get_lu_gloss_n_printed(mapping_animal_token, 'aggressive anger')`
+
+- experiencing effect of anger is being attacked by animal (type=`r get_metaphor_mapping_n_lu(mapping_animal_token_stats, 'attacked')`; token=`r get_metaphor_mapping_tokenfreq(mapping_animal_token, 'attacked', lu_output = FALSE)`)
+
+  - `r get_lu_gloss_n_printed(mapping_animal_token, 'attacked')`
+  
+### [Anger is fire]{.smallcaps} {#fire_tokenbased}
+
+```{r mapping-fire-token, message = FALSE, include = FALSE}
+mapping_fire_token <- filter(metaphor_tokenbased_mapping, str_detect(CM_BROADER, "fire$")) %>% 
+  mutate(status = if_else(str_detect(MAPPING, "anger_fire|angry.person_burning.object|anger.level_fire.intensity"), "key", "no"),
+         status = if_else(str_detect(MAPPING, "anger_fire") & str_detect(LU, "^<w>api<\\/w>$"), "no", status),
+         MAPPING = if_else(str_detect(MAPPING, "anger_fire") & status == "no", "anger is fire", MAPPING))
+mapping_fire_token_stats <- get_metaphor_mapping_stat_typefreq(mapping_fire_token)
+mapping_fire_token_discuss <- get_mappings(metaphor_tokenbased_mapping, 'fire$') %>% left_join(mapping_fire_token %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_fire_token_stats)
+```
+
+Similar to the [anger is fierce, captive animal]{.smallcaps} metaphor, the [anger is fire]{.smallcaps} metaphor seems to be a prominent construal in Indonesian, given that it stays in the top-three list in the lexical ([Table \@ref(tab:metaphor-table-type-based)](#metaphor-table-type-based)) and corpus-based results ([Table \@ref(tab:metaphor-table-token-based)](#metaphor-table-token-based)). In terms of the main meaning focus, the [fire]{.smallcaps} metaphor in the two databases equally prominently focus on the intensity aspect, particularly the increased intensity of the fire given it has the greatest number of types of linguistic expressions compared to the other mappings. However, if the token frequency of the mapping is taken into account, the [fire]{.smallcaps} metaphor in the corpus data most frequently capture the cause of anger (token=`r get_metaphor_mapping_tokenfreq(mapping_fire_token, 'causing', lu_output = FALSE)`) (cf. below).
+
+Key mappings: anger <- fire; angry person <- burning/burnt object; anger level <- fire intensity
+
+- the increased degree of anger intensity is the increased degree of fire (type=`r get_metaphor_mapping_n_lu(mapping_fire_token_stats, 'highest')`; token=`r get_metaphor_mapping_tokenfreq(mapping_fire_token, 'highest', lu_output = FALSE)`)
+
+  - `r get_lu_gloss_n_printed(mapping_fire_token, 'highest')`
+
+- causing anger is igniting fire (i.e. set on fire) (type=`r get_metaphor_mapping_n_lu(mapping_fire_token_stats, 'causing')`; token=`r get_metaphor_mapping_tokenfreq(mapping_fire_token, 'causing', lu_output = FALSE)`)
+
+  - `r get_lu_gloss_n_printed(mapping_fire_token, 'causing')`
+
+- latent intensity is potential open fire (type=`r get_metaphor_mapping_n_lu(mapping_fire_token_stats, 'latent')`; token=`r get_metaphor_mapping_tokenfreq(mapping_fire_token, 'latent', lu_output = FALSE)`)
+
+  - `r get_lu_gloss_n_printed(mapping_fire_token, 'latent')`
+
+- ceasing anger is fire going out (type=`r get_metaphor_mapping_n_lu(mapping_fire_token_stats, 'ceasing')`; token=`r get_metaphor_mapping_tokenfreq(mapping_fire_token, 'ceasing', lu_output = FALSE)`)
+
+  - `r get_lu_gloss_n_printed(mapping_fire_token, 'ceasing')`
+
+- anger is fire (type=`r get_metaphor_mapping_n_lu(mapping_fire_token_stats, 'anger is fire$')`; token=`r get_metaphor_mapping_tokenfreq(mapping_fire_token, 'anger is fire$', lu_output = FALSE)`)
+
+  - `r get_lu_gloss_n_printed(mapping_fire_token, 'anger is fire$')`
+
+### [Anger is weapon]{.smallcaps} {#weapon_tokenbased}
+
+```{r mapping-weapon-token, message = FALSE, include = FALSE}
+mapping_weapon_token <- filter(metaphor_tokenbased_mapping, str_detect(CM_BROADER, "weapon$")) %>% 
+  mutate(status = if_else(str_detect(MAPPING, "anger_weapon"), "key", "no"))
+mapping_weapon_token_stats <- get_metaphor_mapping_stat_typefreq(mapping_weapon_token)
+mapping_weapon_token_discuss <- get_mappings(metaphor_tokenbased_mapping, 'weapon$') %>% left_join(mapping_weapon_token %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_weapon_token_stats)
+```
+
+The [weapon]{.smallcaps} metaphor is only identified in the corpus-based data. The main meaning focus of this metaphor in terms of the number of types manifesting the mapping is target of expression of anger is the wrongdoer or other people. Meanwhile, in terms of the token frequency of the mapping, the causation mapping is the most predominant (cf. below); but, given the high token frequency of the causation mapping, its linguistic realisation is relatively less varied compared to the target of anger's expression mapping, which has greater types despite its lower token.
+
+Key mapping: anger <- weapon
+
+- target of expression of anger is the wrongdoer or other people (type=`r get_metaphor_mapping_n_lu(mapping_weapon_token_stats, "target of expression of anger")`; token=`r get_metaphor_mapping_tokenfreq(mapping_weapon_token, "target of expression of anger", lu_output = FALSE)`)
+
+  - `r get_lu_gloss_n_printed(mapping_weapon_token, "target of expression of anger")`
+
+- causing anger is pulling the trigger (type=`r get_metaphor_mapping_n_lu(mapping_weapon_token_stats, "pulling the trigger")`; token=`r get_metaphor_mapping_tokenfreq(mapping_weapon_token, "pulling the trigger", lu_output = FALSE)`)
+
+  - `r get_lu_gloss_n_printed(mapping_weapon_token, "pulling the trigger")`
+  
+- retribution/avenge to wrongdoing is punishing with the weapon (type=`r get_metaphor_mapping_n_lu(mapping_weapon_token_stats, "punishing|avenging")`; token=`r get_metaphor_mapping_tokenfreq(mapping_weapon_token, "punishing|avenging", lu_output = FALSE)`)
+
+  - `r get_lu_gloss_n_printed(mapping_weapon_token, "punishing|avenging")`
+  
+- anger is weapon (type=`r get_metaphor_mapping_n_lu(mapping_weapon_token_stats, "^anger is weapon$")`; token=`r get_metaphor_mapping_tokenfreq(mapping_weapon_token, "^anger is weapon$", lu_output = FALSE)`)
+
+  - `r get_lu_gloss_n_printed(mapping_weapon_token, "^anger is weapon$")`
+  
+- channeling anger is redirecting weapon to constructive goal (type=`r get_metaphor_mapping_n_lu(mapping_weapon_token_stats, "constructive")`; token=`r get_metaphor_mapping_tokenfreq(mapping_weapon_token, "constructive", lu_output = FALSE)`)
+
+  - `r get_lu_gloss_n_printed(mapping_weapon_token, "constructive")`
+
 
 ## Metonymy {#tokenbased-metonymy-salience-results}
 
