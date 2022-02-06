@@ -181,7 +181,7 @@ knitr::kable(metaphor_typebased_salience_print, caption = "Source domains of [an
 
 In [Table \@ref(tab:metaphor-table-type-based)](#metaphor-table-type-based), `r happyr::numbers2words(length(grep(" is ", metaphor_typebased_salience_print[[1]], perl = TRUE)))` metaphors are shown in full, both with the source and target domains because they are the more general metaphors.
 
-### [Anger is fierce, captive animal]{.smallcaps}
+### [Anger is fierce, captive animal]{.smallcaps} {#animal-typebased}
 
 ```{r mapping-animal, message = FALSE, include = FALSE}
 mapping_animal <- filter(metaphor_typebased_mapping, str_detect(CM_BROADER, "fierce")) %>% 
@@ -690,26 +690,32 @@ source("codes/MARAH-token-based-analysis-code.R")
 ```
 
 
-## Metaphor {#tokenbased-metaphor-salience-results}
-
 ```{r difference-type-based-and-token-based}
 metaphor_in_corpus_only <- setdiff(pull(metaphor_salience, metaphor), metaphor_typebased_salience$metaphor)
-metaphor_in_corpus_only_top20 <- setdiff(pull(slice_max(metaphor_salience, n = 20, order_by = aggregate), metaphor), metaphor_typebased_salience$metaphor)
+metaphor_in_corpus_only_top20 <- setdiff(pull(slice_max(metaphor_salience, n = 20, order_by = aggregate, with_ties = FALSE), metaphor), metaphor_typebased_salience$metaphor)
 metaphor_in_lexical_only <- setdiff(metaphor_typebased_salience$metaphor, pull(metaphor_salience, metaphor))
-metaphor_in_lexical_only_top20 <- setdiff(metaphor_typebased_salience$metaphor, pull(slice_max(metaphor_salience, n = 20, order_by = aggregate), metaphor))
+metaphor_in_lexical_only_top20 <- setdiff(metaphor_typebased_salience$metaphor, pull(slice_max(metaphor_salience, n = 20, order_by = aggregate, with_ties = FALSE), metaphor))
 metaphor_in_lexical_only_aggregate <- as.data.frame(metaphor_typebased_salience)[metaphor_typebased_salience$metaphor %in% metaphor_in_lexical_only, "aggregate"]
 metaphor_in_lexical_only_ranking <- rownames(as.data.frame(metaphor_typebased_salience)[metaphor_typebased_salience$metaphor %in% metaphor_in_lexical_only, ])
 metaphor_in_all_database <- intersect(pull(metaphor_salience, metaphor), metaphor_typebased_salience$metaphor)
+metaphor_in_all_database_top20 <- intersect(pull(slice_max(metaphor_salience, n = 20, order_by = aggregate, with_ties = FALSE), metaphor), metaphor_typebased_salience$metaphor)
 binom_test_metaphor_lexical_and_corpus <- binom.test(c(nrow(metaphor_salience), length(metaphor_typebased_salience$metaphor)))
 ```
 
 
-From `r length(metaphor_typebased_salience$metaphor)` metaphors identified in the type-based, lexical approach ([Table \@ref(tab:metaphor-table-type-based)](#metaphor-table-type-based)), `r round((length(metaphor_in_all_database)/length(metaphor_typebased_salience$metaphor)) * 100, digits = 1)`% (i.e., `r length(metaphor_in_all_database)` metaphors) are also identified in the token-based, corpus approach ([Table \@ref(tab:metaphor-table-token-based)](#metaphor-table-token-based)). The metaphors identified only in the type-based analysis (ordered decreasingly by their salience) are `r paste(paste(paste("[", metaphor_in_lexical_only, "]{.smallcaps} (", metaphor_in_lexical_only_aggregate, "%; rank=", metaphor_in_lexical_only_ranking, ")", sep = "")[1:length(metaphor_in_lexical_only)-1], collapse = ", "), ", and ", paste("[", metaphor_in_lexical_only, "]{.smallcaps} (", metaphor_in_lexical_only_aggregate, "%; rank=", metaphor_in_lexical_only_ranking, ")", sep = "")[length(metaphor_in_lexical_only)], sep = "")`. From the token-based, corpus analysis, `r nrow(metaphor_salience)` metaphors are postulated and this number is significantly greater than the number of metaphors (`r length(metaphor_typebased_salience$metaphor)` types) in the type-based analysis (*p*~Binomial~~,~ ~two~~-~~tailed~ = `r round(binom_test_metaphor_lexical_and_corpus$p.value, digits = 4)`). Around `r round((length(metaphor_in_corpus_only)/nrow(metaphor_salience)) * 100, digits = 1)`% (`r length(metaphor_in_corpus_only)` types) of the token-based metaphors are absent from the type-based database. These results suggest that the corpus-based approach can complement the type-based, lexical approach by offering a higher likelihood to identify more metaphors (CITATION TO STEFANOWITSCH 2006).
+From the corpus-based analysis, I identified `r nrow(marah)` tokens of metaphorical expressions/patterns (manifesting `r nrow(metaphor_salience)` metaphors) and `r nrow(marah_metonymy)` tokens of metonymic expressions (manifesting `r nrow(marah_metonymy_salience)` metonymies), after manually discarding the literal, predicative, attributive, duplicated, and unclear cases from the total 3000 concordance lines across the three Indonesian [anger]{.smallcaps} terms. The number of metaphors in the corpus-based analysis (`r nrow(metaphor_salience)` types) is significantly greater than the number of metaphors in the type-based analysis (`r length(metaphor_typebased_salience$metaphor)` types) (*p*~Binomial~~,~ ~two~~-~~tailed~ = `r round(binom_test_metaphor_lexical_and_corpus$p.value, digits = 4)`).
 
-The slight difference between the [heat]{.smallcaps} and [temperature]{.smallcaps} source domains for [anger]{.smallcaps} in the databases is as follows. The former focuses on the characteristic of (easily) angered person as relatively always hot, reflected by the linguistic expressions that do not encode any reduction of the heat. Meanwhile, the latter highlights the dynamics of the intensity when feeling angry, which can be reduced (i.e., cooled off) or reaching highest temperature. In the MN frame repository, [heat]{.smallcaps} is a different frame considered as a perspective of the [temperature]{.smallcaps} frame, which covers the range of temperature scale (from hot to cold), and [heat]{.smallcaps} is linked in scalar opposition to the [cold]{.smallcaps} frame.
+From the total `r length(metaphor_typebased_salience$metaphor)` metaphors identified in the type-based, lexical approach ([Table \@ref(tab:metaphor-table-type-based)](#metaphor-table-type-based)), `r round((length(metaphor_in_all_database)/length(metaphor_typebased_salience$metaphor)) * 100, digits = 1)`% (i.e., `r length(metaphor_in_all_database)` metaphors) are also identified in the token-based, corpus approach ([Table \@ref(tab:metaphor-table-token-based)](#metaphor-table-token-based)). The metaphors identified only in the type-based analysis (ordered decreasingly by their salience) are `r paste(paste(paste("[", metaphor_in_lexical_only, "]{.smallcaps} (", metaphor_in_lexical_only_aggregate, "%; rank=", metaphor_in_lexical_only_ranking, ")", sep = "")[1:length(metaphor_in_lexical_only)-1], collapse = ", "), ", and ", paste("[", metaphor_in_lexical_only, "]{.smallcaps} (", metaphor_in_lexical_only_aggregate, "%; rank=", metaphor_in_lexical_only_ranking, ")", sep = "")[length(metaphor_in_lexical_only)], sep = "")`. The remaining `r round((length(metaphor_in_corpus_only)/nrow(metaphor_salience)) * 100, digits = 1)`% (`r length(metaphor_in_corpus_only)` types) of the token-based metaphors are absent from the type-based database. These results suggest that the corpus-based approach can complement the type-based, lexical approach by offering a higher likelihood to identify more metaphors.
+
+The difference between the [heat]{.smallcaps} source domain in the type-based approach, and the [temperature]{.smallcaps} source domain postulated in the token-based approach is as follows. The former focuses on the characteristic of (easily) angered person as relatively always hot, reflected by the linguistic expressions that do not encode any reduction of the heat. Meanwhile, the latter highlights the dynamics of the intensity when feeling angry, which can be reduced (i.e., cooled off) or reaching highest temperature; this is supported by the linguistic expression referring to coolness. In the MN frame repository, [heat]{.smallcaps} is a different frame and considered as a perspective of the [temperature]{.smallcaps} frame, which covers the range of temperature scale (from hot to cold). The [heat]{.smallcaps} frame itself is also linked to the [cold]{.smallcaps} frame via "in scalar opposition to" relation.
+
+## Metaphor {#tokenbased-metaphor-salience-results}
+
+[Table \@ref(tab:metaphor-table-token-based)](#metaphor-table-token-based) present all metaphor types identified from corpus-based analysis.
 
 
 ```{r metaphor-table-token-based}
+
 # knitr::kable(slice_max(metaphor_salience_print, n = 20, order_by = Aggregate), caption = "Top-20 source domains of [anger]{.smallcaps} ranked-ordered by their degree of metaphorical salience (token-based)")
 
 # knitr::kable(filter(metaphor_salience_print, Aggregate > 5), caption = "Source domains of [anger]{.smallcaps} based on the token-based, corpus approach (Aggregate values > 5%)")
@@ -717,9 +723,64 @@ The slight difference between the [heat]{.smallcaps} and [temperature]{.smallcap
 knitr::kable(metaphor_salience_print, caption = "Source domains of [anger]{.smallcaps} (Token-based, corpus approach)")
 ```
 
-### [Anger]{.smallcaps} IS ....
+In the following sub-sections, I will discuss the top-20 metaphors in [Table \@ref(tab:metaphor-table-token-based)](#metaphor-table-token-based) to match with the similar number of metaphors found in the lexical, type-based approach ([Table \@ref(tab:metaphor-table-type-based)](#metaphor-table-type-based)). Just over half (i.e., `r round(length(metaphor_in_all_database_top20)/20 * 100)`%; N=`r length(metaphor_in_all_database_top20)`) of the metaphors in the top-20 list are shared between the two databases/approaches; they will be mentioned in their respective sub-sections.
 
-### [Anger]{.smallcaps} IS ....
+
+### [Anger is contained substance]{.smallcaps}
+
+```{r mapping-containedfluid-token, message = FALSE, include = FALSE}
+mapping_containedfluid_token <- filter(metaphor_tokenbased_mapping, str_detect(CM_BROADER, "is substance in a container$")) %>% 
+  mutate(status = if_else(str_detect(MAPPING, "(_located\\-substance)"), "key", "no"),
+         status = if_else(str_detect(MAPPING, "experiencer_container"), "key", status),
+         status = if_else(str_detect(MAPPING, "(substance.fullness.level)"), "key", status))
+mapping_containedfluid_token_stats <- get_metaphor_mapping_stat_typefreq(mapping_containedfluid_token)
+mapping_containedfluid_token_discuss <- get_mappings(metaphor_tokenbased_mapping, 'is substance in a container$') %>% left_join(mapping_containedfluid_token %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_containedfluid_token_stats)
+```
+
+This metaphor is shared with the type-based database. However, it is the most salient one in the corpus-based database but at the rank `r get_metaphor_salience_rank(metaphor_typebased_salience, metaphor_regex = 'is substance in a container')` in the type-based database.
+
+- expressing anger is expelling/releasing/channeling substance out (at others) (type = `r get_metaphor_mapping_n_lu(mapping_containedfluid_token_stats, 'releasing')`; token = `r get_metaphor_mapping_tokenfreq(mapping_containedfluid_token, 'releasing', lu_output = FALSE)`)
+
+  - `r mapping_containedfluid_token %>% filter(status == 'no') %>% filter(MAPPING == "expressing anger is expelling/releasing/channeling substance out (at others)") %>% count(LU, LU_GLOSS) %>% mutate(lu_gloss_n = paste("*", str_replace_all(LU, "<\\/?w>", ""), "* '", LU_GLOSS, "' (", n, ")", sep = "")) %>% arrange(desc(n)) %>% pull(lu_gloss_n) %>% paste(collapse = "; ")`
+  
+- experiencing anger is the presence of object in a location (type=`r get_metaphor_mapping_n_lu(mapping_containedfluid_token_stats, 'presence of object')`; token=`r get_metaphor_mapping_tokenfreq(mapping_containedfluid_token, 'presence of object', lu_output = FALSE)`)
+
+  - `r mapping_containedfluid_token %>% filter(status == 'no') %>% filter(MAPPING == "experiencing anger is the presence of object in a location") %>% count(LU, LU_GLOSS) %>% mutate(lu_gloss_n = paste("*", str_replace_all(LU, "<\\/?w>", ""), "* '", LU_GLOSS, "' (", n, ")", sep = "")) %>% arrange(desc(n)) %>% pull(lu_gloss_n) %>% paste(collapse = "; ")`
+  
+- regulating anger is impeding flowing liquid (type=`r get_metaphor_mapping_n_lu(mapping_containedfluid_token_stats, 'impeding flowing')`; token=`r get_metaphor_mapping_tokenfreq(mapping_containedfluid_token, 'impeding flowing', lu_output = FALSE)`)
+  
+  - `r mapping_containedfluid_token %>% filter(status == 'no') %>% filter(str_detect(MAPPING, "impeding flowing")) %>% count(LU, LU_GLOSS) %>% mutate(lu_gloss_n = paste("*", str_replace_all(LU, "<\\/?w>", ""), "* '", LU_GLOSS, "' (", n, ")", sep = "")) %>% arrange(desc(n)) %>% pull(lu_gloss_n) %>% paste(collapse = "; ")`
+
+- cause of anger is source of the liquid (type=`r get_metaphor_mapping_n_lu(mapping_containedfluid_token_stats, '^cause of anger')`; token=`r get_metaphor_mapping_tokenfreq(mapping_containedfluid_token, 'cause of anger', lu_output = FALSE)`)
+
+  - `r get_lu_gloss_n_printed(mapping_containedfluid_token, '^cause of anger')`
+  
+- increased intensity is increased fullness of the substance in the container (type=`r get_metaphor_mapping_n_lu(mapping_containedfluid_token_stats, 'increased fullness')`; token=`r get_metaphor_mapping_tokenfreq(mapping_containedfluid_token, 'increased fullness', lu_output = FALSE)`)
+
+  - `r get_lu_gloss_n_printed(mapping_containedfluid_token, 'increased fullness')`
+
+- intense anger is substance becomes hard (type = `r get_metaphor_mapping_n_lu(mapping_containedfluid_token_stats, 'hard$')`; token = `r get_metaphor_mapping_tokenfreq(mapping_containedfluid_token, 'hard$', lu_output = FALSE)`)
+
+  - `r get_lu_gloss_n_printed(mapping_containedfluid_token, 'hard$')`
+
+
+
+### [Anger is fierce, captive animal]{.smallcaps} {#animal_tokenbased}
+
+```{r mapping-animal-token, message = FALSE, include = FALSE}
+mapping_animal_token <- filter(metaphor_tokenbased_mapping, str_detect(CM_BROADER, "animal$")) %>% 
+  mutate(status = if_else(str_detect(MAPPING, "anger_restrained-entity"), "key", "no"),
+         status = if_else(str_detect(MAPPING, "experiencer/other-emotion_restraining-entity"), "key", status))
+mapping_animal_token_stats <- get_metaphor_mapping_stat_typefreq(mapping_animal_token)
+mapping_animal_token_discuss <- get_mappings(metaphor_tokenbased_mapping, 'animal$') %>% left_join(mapping_animal_token %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_animal_token_stats)
+```
+
+
+The [fierce, captive animal]{.smallcaps} metaphor is consistently sitting in the top-two of the salient metaphors across the databases. This clearly indicate the prominence of this conceptualisation of [anger]{.smallcaps} in Indonesian. What differentiates this metaphor in the two databases is its main meaning focus indicated by the productivity of the mapping in the metaphor. In the type-based approach ([Section \@ref(animal-typebased)](#animal-typebased)), the linguistic expressions most predominantly highlight the aggressive behaviour of the animal (type=`r get_metaphor_mapping_n_lu(mapping_animal_stats, 'aggressive')`), while in the corpus-based approach, the predominant expressions evoke mapping concerning restraining the animal (type=`r get_metaphor_mapping_n_lu(mapping_animal_token_stats, 'restraining')`; token=`r get_metaphor_mapping_tokenfreq(mapping_animal_token, 'restraining')`); this mapping is on the contrary the least prominent in the type-based approach (type=`r get_metaphor_mapping_n_lu(mapping_animal_stats, 'restraining')`).
+
+- regulating anger is restraining the animal (type=`r get_metaphor_mapping_n_lu(mapping_animal_token_stats, 'restraining')`; token=`r get_metaphor_mapping_tokenfreq(mapping_animal_token, 'restraining', lu_output = FALSE)`)
+
+  - `r get_lu_gloss_n_printed(mapping_animal_token, 'restraining')`
 
 ## Metonymy {#tokenbased-metonymy-salience-results}
 

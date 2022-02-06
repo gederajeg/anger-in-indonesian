@@ -1,5 +1,66 @@
 library(tidyverse)
 
+get_metaphor_mapping_n_lu <- function(mapping_lu_stats_df, mapping_regex, mapping_var = "MAPPING", pull_lu = TRUE) {
+  mapping_var <- rlang::sym(mapping_var)
+  if (pull_lu) {
+    # return(pull(filter(mapping_lu_stats_df, str_detect(MAPPING, mapping_regex)), n_lu))
+    return(pull(filter(mapping_lu_stats_df, str_detect(!!mapping_var, mapping_regex)), n_lu))
+  } else {
+    # return(pull(filter(mapping_lu_stats_df, str_detect(MAPPING, mapping_regex)), MAPPING))
+    return(pull(filter(mapping_lu_stats_df, str_detect(!!mapping_var, mapping_regex)), !!mapping_var))
+  }
+}
+
+get_metaphor_mapping_tokenfreq <- function(mapping_sourcedomain_token_df, mapping_regex, lu_var = "LU", gloss_var = "LU_GLOSS", mapping_var = "MAPPING", key_mapping = FALSE, lu_output = FALSE) {
+  
+  lu_var <- rlang::sym(lu_var)
+  gloss_var <- rlang::sym(gloss_var)
+  mapping_var <- rlang::sym(mapping_var)
+  
+  if (key_mapping == FALSE) {
+    if (!lu_output) {
+      # return(sum(count(filter(mapping_sourcedomain_token_df, status == "no", str_detect(MAPPING, mapping_regex)), LU, LU_GLOSS)$n))
+      return(sum(count(filter(mapping_sourcedomain_token_df, status == "no", str_detect(!!mapping_var, mapping_regex)), !!lu_var, !!gloss_var)$n))
+    } else {
+      # return(arrange(count(filter(mapping_sourcedomain_token_df, status == "no", str_detect(MAPPING, mapping_regex)), LU, LU_GLOSS), desc(n)))
+      return(arrange(count(filter(mapping_sourcedomain_token_df, status == "no", str_detect(!!mapping_var, mapping_regex)), !!lu_var, !!gloss_var), desc(n)))
+    }
+    
+  } else {
+    return(distinct(filter(mapping_sourcedomain_token_df, status == "key")))
+  }
+}
+
+get_lu_gloss_n_printed <- function(mapping_sourcedomain_token_df, mapping_regex, lu_var = "LU", gloss_var = "LU_GLOSS", mapping_var = "MAPPING", key_mapping = FALSE) {
+  lu_var <- rlang::sym(lu_var)
+  gloss_var <- rlang::sym(gloss_var)
+  mapping_var <- rlang::sym(mapping_var)
+  
+  mapping_sourcedomain_token_df %>% 
+    filter(status == 'no') %>% 
+    # filter(str_detect(MAPPING, mapping_regex)) %>% 
+    filter(str_detect(!!mapping_var, mapping_regex)) %>% 
+    # count(LU, LU_GLOSS) %>% 
+    count(!!lu_var, !!gloss_var) %>% 
+    # mutate(lu_gloss_n = paste("*", str_replace_all(LU, "<\\/?w>", ""), "* '", LU_GLOSS, "' (", n, ")", sep = "")) %>% 
+    mutate(lu_gloss_n = paste("*", str_replace_all(!!lu_var, "<\\/?w>", ""), "* '", !!gloss_var, "' (", n, ")", sep = "")) %>% 
+    arrange(desc(n)) %>% 
+    pull(lu_gloss_n) %>% 
+    paste(collapse = "; ") %>% 
+    return()
+}
+
+get_metaphor_mapping_stat_typefreq <- function(mapping_sourcedomain_token_df, lu_var = "LU", mapping_var = "MAPPING") {
+  lu_var <- rlang::sym(lu_var)
+  mapping_var <- rlang::sym(mapping_var)
+  mapping_sourcedomain_token_df %>% 
+    filter(status == 'no') %>% 
+    group_by(!!mapping_var) %>% 
+    summarise(n_lu = n_distinct(!!lu_var)) %>% 
+    arrange(desc(n_lu)) %>% 
+    return()
+}
+
 # read the metaphor data
 marah0 <- read_tsv("data/token-based-approach-main.txt")
 
@@ -37,7 +98,7 @@ n_lu <- marah %>%
   group_by(CM_BROADER) %>% 
   # summarise(n_lu = n_distinct(MP), .groups = "drop") %>% 
   summarise(n_lu = n_distinct(LU), .groups = "drop") %>%
-  mutate(n_perc_lu = round(n_lu/sum(n_lu) * 100, digits = 1)) %>% 
+  mutate(n_perc_lu = round(n_lu/sum(n_lu) * 100, digits = 2)) %>% 
   arrange(desc(n_perc_lu))
 # n_lu
 
@@ -67,7 +128,7 @@ metaphor_salience_print <- metaphor_salience %>%
          `No of all tokens` = n_token,
          `% of all tokens` = n_perc_token,
          `No. of types of linguistic expression` = n_type,
-         `% of all types of conceptual metaphor` = n_perc_type,
+         `% of all types of linguistic expression` = n_perc_type,
          `No. of metaphorical mappings` = n_mapping,
          `% of all types of metaphorical mappings` = n_perc_mapping,
          Aggregate = aggregate)
@@ -78,6 +139,8 @@ metaphor_salience_total <- metaphor_salience_print %>%
          Aggregate = replace(Aggregate, `Metaphorical source domains` == "**TOTAL**", NA)) %>% 
   select(`Metaphorical source domains`, everything())
 metaphor_salience_print <- metaphor_salience_print %>% 
+  mutate(`% of all types of linguistic expression` = round(`% of all types of linguistic expression`, digits = 1),
+         Aggregate = round(Aggregate, digits = 1)) %>% 
   bind_rows(metaphor_salience_total)
 
 

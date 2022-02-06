@@ -11,6 +11,12 @@ get_salience_stats <- function(salience_df, col_names, metaphor_regex) {
   return(interim_df[[salience_df_colnames[salience_df_colnames == col_names]]])
 }
 
+get_metaphor_salience_rank <- function(salience_df, metaphor_regex) {
+  interim_df <- as.data.frame(salience_df)
+  return(rownames(subset(interim_df, grepl(metaphor_regex, metaphor, perl = TRUE))))
+}
+
+
 # read the type-based, lexical-approach dataset
 marah_typebased <- read_tsv("data/lexical-approach-main.txt")
 
@@ -82,7 +88,7 @@ metaphor_typebased_salience_total <- metaphor_typebased_salience_print %>%
          `Metaphorical source domains` = "**TOTAL**",
          Aggregate = replace(Aggregate, `Metaphorical source domains` == "**TOTAL**", NA)) %>% 
   select(`Metaphorical source domains`, everything())
-metaphor_salience_print <- metaphor_typebased_salience_print %>% 
+metaphor_typebased_salience_print <- metaphor_typebased_salience_print %>% 
   bind_rows(metaphor_typebased_salience_total)
 
 
