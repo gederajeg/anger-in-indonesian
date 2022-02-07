@@ -4,11 +4,6 @@ csl: "unified-style-sheet-for-linguistics.csl"
 bibliography: "anger-references.bib"
 link-citations: yes
 output: 
-  bookdown::word_document2:
-    df_print: kable
-    fig_caption: yes
-    fig_width: 6
-    reference_docx: "template.docx"
   html_notebook:
     code_folding: hide
     fig_caption: yes
@@ -16,6 +11,11 @@ output:
     number_sections: yes
     toc: yes
     toc_float: yes
+  bookdown::word_document2:
+    df_print: kable
+    fig_caption: yes
+    fig_width: 6
+    reference_docx: "template.docx"
 author: 'Gede Primahadi Wijaya Rajeg <a itemprop="sameAs" content="https://orcid.org/0000-0002-2047-8621" href="https://orcid.org/0000-0002-2047-8621" target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon"></a>'
 abstract: "This is the abstract"
 ---
@@ -414,7 +414,7 @@ Total types for the [contained substance]{.smallcaps} is `r pull(filter(metaphor
 
 The most productive mapping is `r mapping_containedfluid_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING)` (type = `r mapping_containedfluid_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`):
 
-- `r paste(paste("*", mapping_containedfluid_discuss %>% filter(str_detect(MAPPING, 'channeling')) %>% pull(LU), "* '", mapping_containedfluid_discuss %>% filter(str_detect(MAPPING, 'channeling')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+- `r paste(paste("*", mapping_containedfluid_discuss %>% filter(str_detect(MAPPING, 'channel+ing')) %>% pull(LU), "* '", mapping_containedfluid_discuss %>% filter(str_detect(MAPPING, 'channel+ing')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
 
 ### [Anger is heated fluid in a container]{.smallcaps}
@@ -445,7 +445,7 @@ mapping_dimension_stats <- mapping_dimension %>% filter(status == 'no') %>% grou
 mapping_dimension_discuss <- get_mappings(metaphor_typebased_mapping, 'dimension$') %>% left_join(mapping_dimension %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_dimension_stats)
 ```
 
-The [dimension]{.smallcaps} source domain is based on the [size]{.smallcaps}. The smaller the dimension/space of an entity, the harder the angered person control the emotion. This is a difference inference in the use of the frame in construing the intensity level of [anger]{.smallcaps}, which is only found in the corpus-based data.
+The [dimension]{.smallcaps} source domain is based on the [size]{.smallcaps} frame in MN. The smaller the dimension/space of an entity, the harder the angered person controls the emotion. This is a different inference in the use of the frame in construing the intensity level of [anger]{.smallcaps}, which is only found in the corpus-based data.
 
 The key mapping is anger <- physical entity
 
@@ -590,8 +590,8 @@ In the lexical approach database, I identified `r sum(metonymy_typebased_salienc
 metonymy_typebased_salience %>% 
   mutate(metonymy = paste("[", metonymy, "]{.smallcaps}", sep = "")) %>% 
   rename(Metonymy = metonymy,
-         `Number of types` = n_type,
-         `% of types` = n_perc_type) %>% 
+         `Types:` = n_type,
+         `% of all types` = n_perc_type) %>% 
   knitr::kable(caption = "Conceptual metonymies for [anger]{.smallcaps} (Type-based, lexical approach)")
 ```
 
@@ -723,7 +723,7 @@ The difference between the [heat]{.smallcaps} source domain in the type-based ap
 knitr::kable(metaphor_salience_print, caption = "Source domains of [anger]{.smallcaps} (Token-based, corpus approach)")
 ```
 
-In the following sub-sections, I will discuss the top-20 metaphors in [Table \@ref(tab:metaphor-table-token-based)](#metaphor-table-token-based) to match with the similar number of metaphors found in the lexical, type-based approach ([Table \@ref(tab:metaphor-table-type-based)](#metaphor-table-type-based)). Just over half (i.e., `r round(length(metaphor_in_all_database_top20)/20 * 100)`%; N=`r length(metaphor_in_all_database_top20)`) of the metaphors in the top-20 list are shared between the two databases/approaches; they will be mentioned in their respective sub-sections.
+In the following sub-sections, I will discuss the top-20 metaphors in [Table \@ref(tab:metaphor-table-token-based)](#metaphor-table-token-based) to match with the similar number of metaphors found in the lexical, type-based approach ([Table \@ref(tab:metaphor-table-type-based)](#metaphor-table-type-based)). Just over half (i.e., `r round(length(metaphor_in_all_database_top20)/20 * 100)`%; N=`r length(metaphor_in_all_database_top20)`) of the metaphors in the top-20 list are shared between the two databases/approaches; they will be mentioned in their respective sub-sections. Then, the metaphorical mappings for each metaphor will be presented in the decreasing order of their type frequencies (i.e., their manifesting linguistic expressions) to ease the identification of the "main meaning focus" of the metaphor that "can be seen from the metaphorical linguistic expressions that **dominate** a metaphor" [@kovecses_metaphor_2010, 140, boldface is mine].
 
 
 ### [Anger is contained substance]{.smallcaps}
@@ -739,21 +739,26 @@ mapping_containedfluid_token_discuss <- get_mappings(metaphor_tokenbased_mapping
 
 This metaphor is shared with the type-based database. However, it is the most salient one in the corpus-based database but at the rank `r get_metaphor_salience_rank(metaphor_typebased_salience, metaphor_regex = 'is substance in a container')` in the type-based database.
 
-- expressing anger is expelling/releasing/channeling substance out (at others) (type = `r get_metaphor_mapping_n_lu(mapping_containedfluid_token_stats, 'releasing')`; token = `r get_metaphor_mapping_tokenfreq(mapping_containedfluid_token, 'releasing', lu_output = FALSE)`)
+- expressing anger is expelling/releasing/channelling substance out (at others) (type = `r get_metaphor_mapping_n_lu(mapping_containedfluid_token_stats, 'releasing')`; token = `r get_metaphor_mapping_tokenfreq(mapping_containedfluid_token, 'releasing', lu_output = FALSE)`)
 
-  - `r mapping_containedfluid_token %>% filter(status == 'no') %>% filter(MAPPING == "expressing anger is expelling/releasing/channeling substance out (at others)") %>% count(LU, LU_GLOSS) %>% mutate(lu_gloss_n = paste("*", str_replace_all(LU, "<\\/?w>", ""), "* '", LU_GLOSS, "' (", n, ")", sep = "")) %>% arrange(desc(n)) %>% pull(lu_gloss_n) %>% paste(collapse = "; ")`
+  <!-- - `r mapping_containedfluid_token %>% filter(status == 'no') %>% filter(str_detect(MAPPING, "expressing anger is expelling.releasing.channel+ing substance out \\(at others\\)")) %>% count(LU, LU_GLOSS) %>% mutate(lu_gloss_n = paste("*", str_replace_all(LU, "<\\/?w>", ""), "* '", LU_GLOSS, "' (", n, ")", sep = "")) %>% arrange(desc(n)) %>% pull(lu_gloss_n) %>% paste(collapse = "; ")` -->
+  - `r get_lu_gloss_n_printed(mapping_containedfluid_token, 'releasing|expel+ing', lu_var = "MP", gloss_var = "MP_GLOSS")`
   
 - experiencing anger is the presence of object in a location (type=`r get_metaphor_mapping_n_lu(mapping_containedfluid_token_stats, 'presence of object')`; token=`r get_metaphor_mapping_tokenfreq(mapping_containedfluid_token, 'presence of object', lu_output = FALSE)`)
 
-  - `r mapping_containedfluid_token %>% filter(status == 'no') %>% filter(MAPPING == "experiencing anger is the presence of object in a location") %>% count(LU, LU_GLOSS) %>% mutate(lu_gloss_n = paste("*", str_replace_all(LU, "<\\/?w>", ""), "* '", LU_GLOSS, "' (", n, ")", sep = "")) %>% arrange(desc(n)) %>% pull(lu_gloss_n) %>% paste(collapse = "; ")`
+  <!-- - `r mapping_containedfluid_token %>% filter(status == 'no') %>% filter(MAPPING == "experiencing anger is the presence of object in a location") %>% count(LU, LU_GLOSS) %>% mutate(lu_gloss_n = paste("*", str_replace_all(LU, "<\\/?w>", ""), "* '", LU_GLOSS, "' (", n, ")", sep = "")) %>% arrange(desc(n)) %>% pull(lu_gloss_n) %>% paste(collapse = "; ")` -->
+
+  - `r get_lu_gloss_n_printed(mapping_containedfluid_token, 'experiencing anger is the presence of object in a location', lu_var = "MP", gloss_var = "MP_GLOSS")`
   
 - regulating anger is impeding flowing liquid (type=`r get_metaphor_mapping_n_lu(mapping_containedfluid_token_stats, 'impeding flowing')`; token=`r get_metaphor_mapping_tokenfreq(mapping_containedfluid_token, 'impeding flowing', lu_output = FALSE)`)
   
-  - `r mapping_containedfluid_token %>% filter(status == 'no') %>% filter(str_detect(MAPPING, "impeding flowing")) %>% count(LU, LU_GLOSS) %>% mutate(lu_gloss_n = paste("*", str_replace_all(LU, "<\\/?w>", ""), "* '", LU_GLOSS, "' (", n, ")", sep = "")) %>% arrange(desc(n)) %>% pull(lu_gloss_n) %>% paste(collapse = "; ")`
+  <!-- - `r mapping_containedfluid_token %>% filter(status == 'no') %>% filter(str_detect(MAPPING, "impeding flowing")) %>% count(LU, LU_GLOSS) %>% mutate(lu_gloss_n = paste("*", str_replace_all(LU, "<\\/?w>", ""), "* '", LU_GLOSS, "' (", n, ")", sep = "")) %>% arrange(desc(n)) %>% pull(lu_gloss_n) %>% paste(collapse = "; ")` -->
+  
+  - `r get_lu_gloss_n_printed(mapping_containedfluid_token, 'impeding flowing', lu_var = "MP", gloss_var = "MP_GLOSS")`
 
 - cause of anger is source of the liquid (type=`r get_metaphor_mapping_n_lu(mapping_containedfluid_token_stats, '^cause of anger')`; token=`r get_metaphor_mapping_tokenfreq(mapping_containedfluid_token, 'cause of anger', lu_output = FALSE)`)
 
-  - `r get_lu_gloss_n_printed(mapping_containedfluid_token, '^cause of anger')`
+  - `r get_lu_gloss_n_printed(mapping_containedfluid_token, '^cause of anger', lu_var = "MP", gloss_var = "MP_GLOSS")`
   
 - increased intensity is increased fullness of the substance in the container (type=`r get_metaphor_mapping_n_lu(mapping_containedfluid_token_stats, 'increased fullness')`; token=`r get_metaphor_mapping_tokenfreq(mapping_containedfluid_token, 'increased fullness', lu_output = FALSE)`)
 
@@ -860,9 +865,49 @@ Key mapping: anger <- weapon
 
   - `r get_lu_gloss_n_printed(mapping_weapon_token, "^anger is weapon$")`
   
-- channeling anger is redirecting weapon to constructive goal (type=`r get_metaphor_mapping_n_lu(mapping_weapon_token_stats, "constructive")`; token=`r get_metaphor_mapping_tokenfreq(mapping_weapon_token, "constructive", lu_output = FALSE)`)
+- channelling anger is redirecting weapon to constructive goal (type=`r get_metaphor_mapping_n_lu(mapping_weapon_token_stats, "constructive")`; token=`r get_metaphor_mapping_tokenfreq(mapping_weapon_token, "constructive", lu_output = FALSE)`)
 
   - `r get_lu_gloss_n_printed(mapping_weapon_token, "constructive")`
+
+### [Anger is adversary/opponent]{.smallcaps} {#adversary_tokenbased}
+
+```{r mapping-adversary-token, message = FALSE, include = FALSE}
+mapping_adversary_token <- filter(metaphor_tokenbased_mapping, str_detect(CM_BROADER, "adversary$")) %>% 
+  mutate(status = if_else(str_detect(MAPPING, "fighter[12]"), "key", "no"))
+mapping_adversary_token_stats <- get_metaphor_mapping_stat_typefreq(mapping_adversary_token)
+mapping_adversary_token_discuss <- get_mappings(metaphor_tokenbased_mapping, 'adversary$') %>% left_join(mapping_adversary_token %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_adversary_token_stats)
+
+opponent_frame_token <- count(filter(marah, str_detect(CM_BROADER, "adversary$")), SFRAME, sort = TRUE)
+opponent_frame_type <- arrange(summarise(group_by(filter(marah, str_detect(CM_BROADER, "adversary$")), SFRAME), n_lu = n_distinct(LU)), desc(n_lu))
+opponent_victim_token <- count(filter(marah, str_detect(CM_BROADER, "adversary$")), NOTES, sort = TRUE) %>% 
+  mutate(NOTES = replace(NOTES, is.na(NOTES), "self as victim of anger"))
+```
+
+
+The [adversary/opponent]{.smallcaps} metaphor is not found in the type-based analysis despite its prominence in the literature on [anger]{.smallcaps} metaphor. While the predominant linguistic expressions of this metaphor arguably evoke the MN [physical combat]{.smallcaps} frame (type=`r pull(slice_max(opponent_frame_type, order_by = n_lu), n_lu)`; token=`r pull(slice_max(opponent_frame_token, order_by = n), n)`), closer investigation on the context of the data reveal that the hostile encounter is not always between the anger-opponent and the self/experiencer/emoter, as suggested in the literature. Construing [anger]{.smallcaps} as an opponent/adversary can be opponent/adversary for external, non-self entity (predominantly external victim of a directed, externalised anger) (`r sum(pull(filter(opponent_victim_token, str_detect(NOTES, 'external|state')), n))` instances of the total `r sum(opponent_victim_token$n)` tokens of this metaphor). There are `r unlist(tally(filter(opponent_victim_token, str_detect(NOTES, 'external|state|^anger', negate = TRUE)), n))` instances where the victim is the self. This variation in the combatant of anger indicates that the adversarial nature of anger can not only endanger the experiencers but also social entities around them. 
+
+The main meaning focus of the metaphor is managing anger is winning over the opponent as well as experiencing anger is giving in/losing to anger. Both mappings share the same number of types though the former is lexically relatively more varied given its token frequency than the latter. That is, `r get_metaphor_mapping_ttr(mapping_adversary_token_stats, 'winning')`% of the `r get_metaphor_mapping_tokenfreq(mapping_adversary_token, 'winning')` tokens for managing anger is winning over the opponent mapping are expressed by different types (`r get_metaphor_mapping_n_lu(mapping_adversary_token_stats, 'winning')`), while only `r get_metaphor_mapping_ttr(mapping_adversary_token_stats, 'losing')`% of the `r get_metaphor_mapping_tokenfreq(mapping_adversary_token, 'losing')` tokens for experiencing anger is giving in/losing mapping are expressed by different types (`r get_metaphor_mapping_n_lu(mapping_adversary_token_stats, 'losing')`).
+
+- experiencing anger is giving in/losing (type=`r get_metaphor_mapping_n_lu(mapping_adversary_token_stats, "losing")`; token=`r get_metaphor_mapping_tokenfreq(mapping_adversary_token, "losing", lu_output = FALSE)`)
+
+  - `r get_lu_gloss_n_printed(mapping_adversary_token, "losing")`
+
+- managing anger is winning over the opponent (type=`r get_metaphor_mapping_n_lu(mapping_adversary_token_stats, "winning")`; token=`r get_metaphor_mapping_tokenfreq(mapping_adversary_token, "winning", lu_output = FALSE)`)
+
+  - `r get_lu_gloss_n_printed(mapping_adversary_token, "winning")`
+  
+- evading anger is being protected from the opponent (type=`r get_metaphor_mapping_n_lu(mapping_adversary_token_stats, "evading")`; token=`r get_metaphor_mapping_tokenfreq(mapping_adversary_token, "evading", lu_output = FALSE)`)
+
+  - `r get_lu_gloss_n_printed(mapping_adversary_token, "evading")`
+
+  
+- attempt to control anger is combating opponent (e.g., fighting, confronting) (type=`r get_metaphor_mapping_n_lu(mapping_adversary_token_stats, "combating")`; token=`r get_metaphor_mapping_tokenfreq(mapping_adversary_token, "combating", lu_output = FALSE)`)
+
+  - `r get_lu_gloss_n_printed(mapping_adversary_token, "combating")`
+
+- potential effect of anger is potential danger of the opponent (type=`r get_metaphor_mapping_n_lu(mapping_adversary_token_stats, "^potential")`; token=`r get_metaphor_mapping_tokenfreq(mapping_adversary_token, "^potential", lu_output = FALSE)`)
+
+  - `r get_lu_gloss_n_printed(mapping_adversary_token, "^potential")`
 
 
 ## Metonymy {#tokenbased-metonymy-salience-results}
