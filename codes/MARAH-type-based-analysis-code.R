@@ -77,10 +77,10 @@ metaphor_typebased_salience_print <- metaphor_typebased_salience %>%
          metaphor = str_replace(metaphor, "^substance in a container$", "contained substance"),
          metaphor = paste("[", metaphor, "]{.smallcaps}", sep = "")) %>% 
   rename(`Metaphorical source domains` = metaphor,
-         `No. of types of linguistic expression` = n_type,
-         `% of all types of conceptual metaphor` = n_perc_type,
+         `Types:` = n_type,
+         `% of all types` = n_perc_type,
          `No. of metaphorical mappings` = n_mapping,
-         `% of all types of metaphorical mappings` = n_perc_mapping,
+         `% of metaphorical mappings` = n_perc_mapping,
          Aggregate = aggregate)
 metaphor_typebased_salience_total <- metaphor_typebased_salience_print %>% 
   summarise(across(where(is.numeric), ~sum(.))) %>% 
