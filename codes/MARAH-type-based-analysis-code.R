@@ -1,22 +1,5 @@
 library(tidyverse)
 
-get_mappings <- function(mapping_df, metaphor_regex) {
-  interim_df <- distinct(select(arrange(filter(mapping_df, str_detect(CM_BROADER, metaphor_regex)), MAPPING_ID), CM_BROADER, MAPPING))
-  interim_df <- mutate(interim_df, MAPPING2 = str_replace_all(MAPPING, "-", " "), MAPPING2 = str_replace_all(MAPPING2, "_", " <- "), MAPPING2 = str_replace_all(MAPPING2, " is ", " <- "))
-  return(interim_df)
-}
-get_salience_stats <- function(salience_df, col_names, metaphor_regex) {
-  salience_df_colnames <- colnames(salience_df)
-  interim_df <- filter(salience_df, str_detect(metaphor, metaphor_regex))
-  return(interim_df[[salience_df_colnames[salience_df_colnames == col_names]]])
-}
-
-get_metaphor_salience_rank <- function(salience_df, metaphor_regex) {
-  interim_df <- as.data.frame(salience_df)
-  return(rownames(subset(interim_df, grepl(metaphor_regex, metaphor, perl = TRUE))))
-}
-
-
 # read the type-based, lexical-approach dataset
 marah_typebased <- read_tsv("data/lexical-approach-main.txt")
 
