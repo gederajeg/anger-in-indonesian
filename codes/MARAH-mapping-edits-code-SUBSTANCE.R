@@ -39,7 +39,10 @@ marah <- marah %>%
          CM_ROLEMAPPING = replace(CM_ROLEMAPPING, MP == "node <w>mengandung</w> STATE", "anger is (un)mixed substance"),
          CM_BROADER = replace(CM_BROADER, MP == "node <w>mengandung</w> STATE", "anger is (un)mixed substance"),
          MAP1 = replace(MAP1, MP == "node <w>mengandung</w> STATE", "anger_substance"),
-         MAP2 = replace(MAP2, MP == "node <w>mengandung</w> STATE", "intensity_mixed-substance")
+         MAP2 = replace(MAP2, MP == "node <w>mengandung</w> STATE", "intensity_mixed-substance"),
+         
+         ## source frame of SUBMERGED ENTITY
+         SFRAME = replace(SFRAME, SFRAME == "cause upward motion", "caused upward motion")
          )
 
 # OTHER METAPHORS ========
