@@ -84,16 +84,33 @@ metaphor_salience_print <- metaphor_salience_print %>%
 
 
 # read the metonymy data
-marah_metonymy <- read_tsv("data/token-based-approach-main.txt") %>% 
+metonymy_tokenbased <- read_tsv("data/token-based-approach-main.txt") %>% 
   filter(USE == "metonymy")
 
 # metonymic salience analysis
-marah_metonymy_salience <- marah_metonymy %>% 
+metonymy_tokenbased_salience <- metonymy_tokenbased %>% 
   group_by(METONYMY) %>% 
   summarise(n_token = n(), 
-            n_type = n_distinct(PATTERN),
+            n_type = n_distinct(MP),
             .groups = "drop") %>% 
   mutate(n_perc_token = round(n_token/sum(n_token) * 100, digits = 1),
          n_perc_type = round(n_type/sum(n_type) * 100, digits = 1),
          aggregate = n_perc_token + n_perc_type) %>% 
   arrange(desc(n_token))
+
+metonymy_tokenbased_salience_print <- metonymy_tokenbased_salience %>% 
+  mutate(METONYMY = paste("[", METONYMY, "]{.smallcaps}", sep = "")) %>% 
+  select(Metonymy = METONYMY, 
+         `Tokens:` = n_token, 
+         `% of all tokens:` = n_perc_token, 
+         `Types:` = n_type, 
+         `% of all types:` = n_perc_type,
+         Aggregate = aggregate)
+metonymy_tokenbased_salience_total <- metonymy_tokenbased_salience_print %>% 
+  summarise(across(where(is.numeric), ~sum(.))) %>% 
+  mutate(across(where(is.numeric), ~round(.)),
+         `Metonymy` = "**TOTAL**",
+         Aggregate = replace(Aggregate, `Metonymy` == "**TOTAL**", NA)) %>% 
+  select(`Metonymy`, everything())
+metonymy_tokenbased_salience_print <- metonymy_tokenbased_salience_print %>% 
+  bind_rows(metonymy_tokenbased_salience_total)

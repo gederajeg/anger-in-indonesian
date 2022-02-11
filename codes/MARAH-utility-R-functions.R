@@ -57,6 +57,9 @@ get_lu_gloss_n_printed <- function(mapping_sourcedomain_token_df, mapping_regex,
     filter(str_detect(!!mapping_var, mapping_regex)) %>% 
     # count(LU, LU_GLOSS) %>% 
     count(!!lu_var, !!gloss_var) %>% 
+    mutate(!!lu_var := str_replace_all(!!lu_var, "\\b(node)\\b", "[marah]{.smallcaps}")) %>%
+    mutate(!!lu_var := gsub("([[:upper:]]+)", "[\\L\\1]{.smallcaps}", !!lu_var, perl = TRUE)) %>%
+    mutate(!!gloss_var := gsub("([[:upper:]]+)", "[\\L\\1]{.smallcaps}", !!gloss_var, perl = TRUE)) %>%
     # mutate(lu_gloss_n = paste("*", str_replace_all(LU, "<\\/?w>", ""), "* '", LU_GLOSS, "' (", n, ")", sep = "")) %>% 
     mutate(lu_gloss_n = paste("*", str_replace_all(!!lu_var, "<\\/?w>", "__"), "* '", !!gloss_var, "' (", n, ")", sep = "")) %>% 
     arrange(desc(n)) %>% 
@@ -114,4 +117,23 @@ get_key_mappings <- function(mapping_sourcedomain_token_df, mapping_var = "MAPPI
   } else {
     return(interim_mapping)
   }
+}
+
+# helper function for determining the p-value to print in the text
+pval_print <- function(pval) {
+  
+  if (pval < 0.05 & pval > 0.01) {
+    pv <- " < 0.05"
+  } else if (pval < 0.01 & pval > 0.001) {
+    pv <- " < 0.01"
+  } else if (pval < 0.001) {
+    pv <- " < 0.001"
+  } else if (pval > 0.05 & pval < 0.1) {
+    pv <- " > 0.05"
+  } else if (pval > 0.1) {
+    pv <- " > 0.1"
+  }
+  
+  return(pv)
+  
 }

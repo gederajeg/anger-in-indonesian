@@ -42,7 +42,11 @@ marah <- marah %>%
          MAP2 = replace(MAP2, MP == "node <w>mengandung</w> STATE", "intensity_mixed-substance"),
          
          ## source frame of SUBMERGED ENTITY
-         SFRAME = replace(SFRAME, SFRAME == "cause upward motion", "caused upward motion")
+         SFRAME = replace(SFRAME, SFRAME == "cause upward motion", "caused upward motion"),
+         
+         ## pattern 'menempatkan node ke dalam state' & 'mengarahkan node ke(pada)'
+         MP = replace(MP, MP == "<w>menempatkan node ke dalam</w> STATE", "<w>menempatkan</w> node <w>ke dalam</w> STATE"),
+         MP = replace(MP, MP == "EXP <w>mengarahkan node ke(pada)</w> TARGET", "EXP <w>mengarahkan</w> node <w>ke(pada)</w> TARGET")
          )
 
 # OTHER METAPHORS ========
