@@ -250,7 +250,7 @@ The less prominent mappings include:
 
 
 
-### [Anger is physical contact/harm]{.smallcaps}
+### [Anger is physical contact/harm]{.smallcaps} {#harm-typebased}
 
 ```{r mapping-harm, message = FALSE, include = FALSE}
 mapping_harm <- filter(metaphor_typebased_mapping, str_detect(CM_BROADER, "harm$")) %>% 
@@ -497,7 +497,7 @@ The other mappings are: `r mapping_solid_stats %>% slice_max(order_by = n_lu) %>
 
 Other mapping is the reduction of [anger]{.smallcaps} as melting ice (*mencair* 'to melt').
 
-### [Anger is (un)veiled object]{.smallcaps}
+### [Anger is (un)veiled object]{.smallcaps} {#hidden-typebased}
 
 ```{r mapping-hidden, message = FALSE, include = FALSE}
 mapping_hidden <- filter(metaphor_typebased_mapping, str_detect(CM_BROADER, "veiled object$")) %>% 
@@ -588,6 +588,29 @@ The [darkness]{.smallcaps} frame in the metaphor is used to assess [anger]{.smal
 ## Metonymy {#typebased-metonymy-salience-results}
 
 In the lexical approach database, I identified `r sum(metonymy_typebased_salience$n_type)` metonymic expressions for [anger]{.smallcaps} grouped under `r nrow(metonymy_typebased_salience)` (conceptual) metonymies. These metonymies are rank-ordered in [Table \@ref(tab:metonymy-table-type-based)](#metonymy-table-type-based) by their number of metonymic expressions.
+
+```{r metonymy-category-typebased}
+physiological_response_regex <- "(body heat|internal pressure|redness|breathing|visual interference|body hair|teeth biting|foaming|speechless)"
+metonymy_typebased_salience_category <- metonymy_typebased_salience %>% 
+  mutate(category = if_else(str_detect(metonymy, physiological_response_regex), "physiological response", "social-communicative behaviour"))
+
+physiology_type_1 <- metonymy_typebased_salience_category %>% 
+  filter(category == "physiological response") %>% 
+  mutate(meto_stats = paste("[", metonymy, "]{.smallcaps} (type=", n_type, ")", sep = "")) %>% 
+  pull(meto_stats)
+physiology_type_1_total <- paste("*TOTAL~type~=", sum(filter(metonymy_typebased_salience_category, category == "physiological response")$n_type),"*", sep = "")
+physiology_type_1 <- c(physiology_type_1, physiology_type_1_total)
+
+social_type_1 <- metonymy_typebased_salience_category %>% 
+  filter(category != "physiological response") %>% 
+  mutate(meto_stats = paste("[", metonymy, "]{.smallcaps} (type=", n_type, ")", sep = "")) %>% 
+  pull(meto_stats)
+social_type_1_total <- paste("*TOTAL~type~=", sum(filter(metonymy_typebased_salience_category, category != "physiological response")$n_type),"*", sep = "")
+social_type_1 <- c(social_type_1, rep("", 2), social_type_1_total)
+
+metonymy_typebased_category_print <- tibble(`social-communicative behaviour:` = social_type_1, `physiological response:` = physiology_type_1)
+```
+
 
 ```{r metonymy-table-type-based}
 metonymy_typebased_salience %>% 
@@ -685,6 +708,18 @@ This metonymy can be interpreted as an issue of control or an expression of [ang
 
 - `r paste(paste("*", pull(filter(metonymy_typebased, str_detect(CM_BROADER, "clenching")), LU), "* '", pull(filter(metonymy_typebased, str_detect(CM_BROADER, "clenching")), LU_GLOSS), "'", sep = ""), collapse = "; ")`
 
+### Types of the metonymies (type-based dataset) {#metonymy-category-typebased}
+
+In general, the metonymies in [Table \@ref(tab:metonymy-table-type-based)](#metonymy-table-type-based) can be categorised into two broader categories: (i) social-communicative behaviours characteristic of anger and (ii) the associated physiological responses ([Table \@ref(tab:metonymy-category-table-typebased)](#metonymy-category-table-typebased)).
+
+```{r metonymy-category-table-typebased}
+metonymy_typebased_category_binomtest <- binom.test(sum(filter(metonymy_typebased_salience_category, category != "physiological response")$n_type), sum(sum(filter(metonymy_typebased_salience_category, category != "physiological response")$n_type), sum(filter(metonymy_typebased_salience_category, category == "physiological response")$n_type)))
+
+metonymy_typebased_category_print %>% knitr::kable(caption = "Two types of metonymies of [anger]{.smallcaps} (type-based dataset)")
+```
+
+It can be observed that [anger]{.smallcaps} in Indonesian is characterised predominantly by metonymies referring to the physiological responses in terms of their number compared to the social-communicative behaviour. However, the total number of types of metonymic linguistic expressions are still significantly higher for the social-communicative behaviour category (type=`r sum(filter(metonymy_typebased_salience_category, category != "physiological response")$n_type)`) than the physiological response category (type=`r sum(filter(metonymy_typebased_salience_category, category == "physiological response")$n_type)`) (*p*~Binomial~ ~two~~-~~tailed~`r pval_print(metonymy_typebased_category_binomtest$p.value)`).
+
 
 # Token-based salience analyses {#tokenbased-analysis}
 
@@ -704,10 +739,12 @@ metaphor_in_lexical_only_ranking <- rownames(as.data.frame(metaphor_typebased_sa
 metaphor_in_all_database <- intersect(pull(metaphor_salience, metaphor), metaphor_typebased_salience$metaphor)
 metaphor_in_all_database_top20 <- intersect(pull(slice_max(metaphor_salience, n = 20, order_by = aggregate, with_ties = FALSE), metaphor), metaphor_typebased_salience$metaphor)
 binom_test_metaphor_lexical_and_corpus <- binom.test(c(nrow(metaphor_salience), length(metaphor_typebased_salience$metaphor)))
+
+# The number of metaphors in the corpus-based analysis (`r nrow(metaphor_salience)` types) is significantly greater than the number of metaphors in the type-based analysis (`r length(metaphor_typebased_salience$metaphor)` types) (*p*~Binomial~~,~ ~two~~-~~tailed~ = `r round(binom_test_metaphor_lexical_and_corpus$p.value, digits = 4)`).
 ```
 
 
-From the corpus-based analysis, I identified `r nrow(marah)` tokens of metaphorical expressions/patterns (manifesting `r nrow(metaphor_salience)` metaphors) and `r nrow(marah_metonymy)` tokens of metonymic expressions (manifesting `r nrow(marah_metonymy_salience)` metonymies), after manually discarding the literal, predicative, attributive, duplicated, and unclear cases from the total 3000 concordance lines across the three Indonesian [anger]{.smallcaps} terms. The number of metaphors in the corpus-based analysis (`r nrow(metaphor_salience)` types) is significantly greater than the number of metaphors in the type-based analysis (`r length(metaphor_typebased_salience$metaphor)` types) (*p*~Binomial~~,~ ~two~~-~~tailed~ = `r round(binom_test_metaphor_lexical_and_corpus$p.value, digits = 4)`).
+From the corpus-based analysis, I identified `r nrow(marah)` tokens of metaphorical expressions/patterns (manifesting `r nrow(metaphor_salience)` metaphors) ([Section \@ref(tokenbased-metaphor-salience-results)](#tokenbased-metaphor-salience-results)) and `r nrow(metonymy_tokenbased)` tokens of metonymic expressions (manifesting `r nrow(metonymy_tokenbased_salience)` metonymies) ([Section \@ref(tokenbased-metonymy-salience-results)](#tokenbased-metonymy-salience-results)). These numbers are arrived at after manually discarding the literal, predicative, attributive, duplicated, and unclear cases from the total 3000 concordance lines across the three Indonesian [anger]{.smallcaps} terms (cf. [Section \@ref(method)](#method)).
 
 From the total `r length(metaphor_typebased_salience$metaphor)` metaphors identified in the type-based, lexical approach ([Table \@ref(tab:metaphor-table-type-based)](#metaphor-table-type-based)), `r round((length(metaphor_in_all_database)/length(metaphor_typebased_salience$metaphor)) * 100, digits = 1)`% (i.e., `r length(metaphor_in_all_database)` metaphors) are also identified in the token-based, corpus approach ([Table \@ref(tab:metaphor-table-token-based)](#metaphor-table-token-based)). The metaphors identified only in the type-based analysis (ordered decreasingly by their salience) are `r paste(paste(paste("[", metaphor_in_lexical_only, "]{.smallcaps} (", metaphor_in_lexical_only_aggregate, "%; rank=", metaphor_in_lexical_only_ranking, ")", sep = "")[1:length(metaphor_in_lexical_only)-1], collapse = ", "), ", and ", paste("[", metaphor_in_lexical_only, "]{.smallcaps} (", metaphor_in_lexical_only_aggregate, "%; rank=", metaphor_in_lexical_only_ranking, ")", sep = "")[length(metaphor_in_lexical_only)], sep = "")`. The remaining `r round((length(metaphor_in_corpus_only)/nrow(metaphor_salience)) * 100, digits = 1)`% (`r length(metaphor_in_corpus_only)` types) of the token-based metaphors are absent from the type-based database. These results suggest that the corpus-based approach can complement the type-based, lexical approach by offering a higher likelihood to identify more metaphors.
 
@@ -1232,7 +1269,7 @@ biological_frame_stats <- happyr::get_frames("biological entity", df = marah, fr
 ```
 
 
-Even though the [biological entity]{.smallcaps} metaphor has relatively low tokens (`r get_salience_stats(metaphor_salience, "n_token", "biological")`) and sits pretty low in the top-20 salience metaphor (rank `r get_metaphor_salience_rank(metaphor_salience, 'biological')`), it is expressed by relatively varied metaphorical patterns (`r get_salience_stats(metaphor_salience, "n_type", "biological")` types out of `r get_salience_stats(metaphor_salience, "n_token", "biological")` tokens) and elaborate mappings (`r get_salience_stats(metaphor_salience, "n_mapping", "biological")`). The followings are mappings postulated from the metaphorical patterns. 
+The [biological entity]{.smallcaps} metaphor has relatively low tokens (`r get_salience_stats(metaphor_salience, "n_token", "biological")`) and sits pretty low in the top-20 salience metaphor (rank `r get_metaphor_salience_rank(metaphor_salience, 'biological')`). However, it is expressed by relatively varied metaphorical patterns (`r get_salience_stats(metaphor_salience, "n_type", "biological")` types out of `r get_salience_stats(metaphor_salience, "n_token", "biological")` tokens) and elaborate mappings (`r get_salience_stats(metaphor_salience, "n_mapping", "biological")`). The followings are mappings postulated from the metaphorical patterns. 
 
 - anger leading to other effects is the root/base/seed of an organism from which sth. grows (type=`r get_metaphor_mapping_n_lu(mapping_biological_token_stats, "root\\/base\\/seed")`; token=`r get_metaphor_mapping_tokenfreq(mapping_biological_token, "root\\/base\\/seed", lu_output = FALSE)`)
 
@@ -1258,34 +1295,159 @@ Even though the [biological entity]{.smallcaps} metaphor has relatively low toke
 
   - `r get_lu_gloss_n_printed(mapping_biological_token, "fertilising")`
 
-
-
-
 As can be seen, no single mapping could be singled out as predominant. The metaphorical patterns utilise different components of the structure of the [organism]{.smallcaps} frame family (e.g., [plant life cycle]{.smallcaps} and [animate entity]{.smallcaps}) to highlight different aspects of [anger]{.smallcaps}. For instance, [anger]{.smallcaps} can be considered as a consequence of an event, or as a cause leading to another effect. The metaphor also includes patterns referring to the cause, existence, and effect of [anger]{.smallcaps}.
 
 
 ### [Anger is (un)veiled object]{.smallcaps} {#unveiled-tokenbased}
 
+```{r mapping-hidden-token, message = FALSE, include = FALSE}
+mapping_hidden_token <- filter(metaphor_tokenbased_mapping, str_detect(CM_BROADER, "veiled object")) %>% 
+  mutate(status = if_else(str_detect(MAPPING, "_"), "key", "no"))
+mapping_hidden_token_stats <- get_metaphor_mapping_stat_typefreq(mapping_hidden_token)
+mapping_hidden_token_discuss <- get_mappings(metaphor_tokenbased_mapping, 'veiled object') %>% left_join(mapping_hidden_token %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_hidden_token_stats)
+hidden_frame_stats <- happyr::get_frames("veiled object", df = marah, frame_var = "SFRAME", metaphor_var = "CM_BROADER", lexunit_var = "MP")
+```
+
+
+This metaphor is attested in the two datasets and occupies the lower rank in the top-20 tables (rank `r get_metaphor_salience_rank(metaphor_salience, 'veiled')` in the token-based dataset, and rank `r get_metaphor_salience_rank(metaphor_typebased_salience, 'veiled')` in the type-based one). In this metaphor, [anger]{.smallcaps} is construed as an object that the experiencer has control over in order to be either displayed (i.e., expressed for others to perceive), or keep it hidden, hence perceptually inaccessible by others. These two inferences, which are re-cast as the mappings in the metaphor, are based on the [hiding]{.smallcaps} and [cause to see]{.smallcaps} frames evoked by the metaphorical patterns.
+
+Key mappings: `r get_key_mappings(mapping_hidden_token)`
+
+- expressing anger is unveiling an object (type=`r get_metaphor_mapping_n_lu(mapping_hidden_token_stats, "expressing")`; token=`r get_metaphor_mapping_tokenfreq(mapping_hidden_token, "expressing", lu_output = FALSE)`)
+
+  - `r get_lu_gloss_n_printed(mapping_hidden_token, "expressing")`
+
+- suppressing anger is hiding/protecting an object (type=`r get_metaphor_mapping_n_lu(mapping_hidden_token_stats, "suppressing")`; token=`r get_metaphor_mapping_tokenfreq(mapping_hidden_token, "suppressing", lu_output = FALSE)`)
+
+  - `r get_lu_gloss_n_printed(mapping_hidden_token, "suppressing")`
+
+
+The main focus of this metaphor in the token-based dataset is on the externalisation or "unveiling" the anger as shown by the higher type and token frequencies of this mapping compared to the hiding of the object mapping. In contrast, in the type-based dataset ([Section \@ref(hidden-typebased)](#hidden-typebased)) it is the mapping referring to the suppression of anger (i.e., maintaining control by "hiding" the object) that is predominant. Overall, the [(un)veiled object]{.smallcaps} metaphor highlights the issue of control and expression of [anger]{.smallcaps}.
 
 
 ### [Anger is physical contact/harm]{.smallcaps} {#harm-tokenbased}
 
+The metaphor is a sub-case of the [emotional effect is physical contact]{.smallcaps} metaphor proposed by Lakoff and Johnson [@lakoff_metaphors_1980, 50]. It is part of the [force-dynamic]{.smallcaps} system of emotion metaphor [@kovecses_metaphor_2000, 83-85]. The metaphorical patterns evoke the [physical harm]{.smallcaps} frame capture the effect of [anger]{.smallcaps} as impacting both the experiencer and other entities that become the target of angry person, especially when the harmed entity role of the frame is filled with entity other than the experiencer of anger. The following are mappings postulated from the metaphor.
+
+```{r mapping-harm-token, message = FALSE, include = FALSE}
+mapping_harm_token <- filter(metaphor_tokenbased_mapping, str_detect(CM_BROADER, "harm$")) %>% 
+  mutate(status = if_else(str_detect(MAPPING, "_"), "key", "no"))
+mapping_harm_token_stats <- get_metaphor_mapping_stat_typefreq(mapping_harm_token)
+mapping_harm_token_discuss <- get_mappings(metaphor_tokenbased_mapping, 'harm$') %>% left_join(mapping_harm_token %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_harm_token_stats)
+harm_frame_stats <- happyr::get_frames("harm$", df = marah, frame_var = "SFRAME", metaphor_var = "CM_BROADER", lexunit_var = "MP")
+```
+
+Key mappings: `r get_key_mappings(mapping_harm_token)`
+
+- effect of anger is harmful effect (at others) (type=`r get_metaphor_mapping_n_lu(mapping_harm_token_stats, "harmful effect")`; token=`r get_metaphor_mapping_tokenfreq(mapping_harm_token, "harmful effect", lu_output = FALSE)`)
+
+  - `r get_lu_gloss_n_printed(mapping_harm_token, "harmful effect")`
+
+- experiencing anger is physical harm (type=`r get_metaphor_mapping_n_lu(mapping_harm_token_stats, "experiencing")`; token=`r get_metaphor_mapping_tokenfreq(mapping_harm_token, "experiencing", lu_output = FALSE)`)
+
+  - `r get_lu_gloss_n_printed(mapping_harm_token, "experiencing")`
 
 
-### [Anger is light]{.smallcaps} {#light-tokenbased}
+In Kövecses's [-@kovecses_metaphor_2000] [force-dynamic]{.smallcaps} system, the metaphor highlight predominantly the part where the experience of anger leads to experiencer's responses (e.g., directing the harm at others). This highlighted aspect is also an important part of the [anger is natural force]{.smallcaps}, [anger is subjugator]{.smallcaps}, and [anger is weapon]{.smallcaps} metaphor.
 
+The [contact/harm]{.smallcaps} metaphor is also attested in the type-based dataset and ranks in the top-3 of the type-based salience table ([Table \@ref(tab:metaphor-table-type-based)](#metaphor-table-type-based)), unlike in the token-based salience table. An interesting difference is that in the type-based dataset, the predominant types focuses the cause of anger. The expressions referring to physical touching or harm are used in the context of harming the candidate experiencer (i.e., causing the candidate experiencer to be angry) ([Section \@ref(harm-typebased)](#harm-typebased)). In the token-based dataset, however, the physical harm expressions are used in the context of showing the harmful effect when experiencing anger and when targeting that effect to others.
 
+### [Intensity is luminousity]{.smallcaps} {#luminousity-tokenbased}
+
+```{r mapping-luminousity-token, message = FALSE, include = FALSE}
+mapping_luminousity_token <- filter(metaphor_tokenbased_mapping, str_detect(CM_BROADER, "luminousity$")) %>% 
+  mutate(status = if_else(str_detect(MAPPING, "_"), "key", "no"))
+mapping_luminousity_token_stats <- get_metaphor_mapping_stat_typefreq(mapping_luminousity_token)
+mapping_luminousity_token_discuss <- get_mappings(metaphor_tokenbased_mapping, 'luminousity$') %>% left_join(mapping_luminousity_token %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_luminousity_token_stats)
+luminousity_frame_stats <- happyr::get_frames("luminousity$", df = marah, frame_var = "SFRAME", metaphor_var = "CM_BROADER", lexunit_var = "MP")
+```
+
+In the bottom five of the top-20 token-based metaphors ([Table \@ref(tab:metaphor-table-token-based)](#metaphor-table-token-based)), [intensity is luminousity]{.smallcaps} has the highest token (`r get_salience_stats(metaphor_salience, 'n_token', 'luminousity$')`) but also the lowest types (`r get_salience_stats(metaphor_salience, 'n_type', 'luminousity$')`) and mappings (`r get_salience_stats(metaphor_salience, 'n_mapping', 'luminousity$')`). Moreover, the metaphor is not attested in the type-based dataset. These are the metaphorical mappings.
+
+The key mappings: `r get_key_mappings(mapping_luminousity_token)`
+
+- reducing anger is reducing the level of light (type=`r get_metaphor_mapping_n_lu(mapping_luminousity_token_stats, "reducing")`; token=`r get_metaphor_mapping_tokenfreq(mapping_luminousity_token, "reducing", lu_output = FALSE)`)
+
+  - `r get_lu_gloss_n_printed(mapping_luminousity_token, "reducing")`
+
+The metaphor is based on lexical units evoking the [darkness]{.smallcaps} frame in MN, a perspective of the [luminosity]{.smallcaps} frame that characterises the amount of light from a light source. The frames are utilised in highlighting the ceasing intensity of anger. In this way, [intensity is luminousity]{.smallcaps} is related to the [anger is fire]{.smallcaps} ([Section \@ref(fire-tokenbased)](#fire-tokenbased)) but captures anger's intensity not via the degree of heat of fire, but via the amount of light.
 
 ### [Anger is person]{.smallcaps} {#person-tokenbased}
 
+```{r mapping-person-token, message = FALSE, include = FALSE}
+mapping_person_token <- filter(metaphor_tokenbased_mapping, str_detect(CM_BROADER, "person$")) %>% 
+  mutate(status = if_else(str_detect(MAPPING, "_"), "key", "no"))
+mapping_person_token_stats <- get_metaphor_mapping_stat_typefreq(mapping_person_token)
+mapping_person_token_discuss <- get_mappings(metaphor_tokenbased_mapping, 'person$') %>% left_join(mapping_person_token %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_person_token_stats)
+person_frame_stats <- happyr::get_frames("person$", df = marah, frame_var = "SFRAME", metaphor_var = "CM_BROADER", lexunit_var = "MP")
+```
+
+This metaphor could be considered as a soft personification of [anger]{.smallcaps}. Unlike the other personifying metaphors, such as [adversary]{.smallcaps} or [subjugator]{.smallcaps}, [anger is person]{.smallcaps} captures the causation and diminishing of anger, rather than the intensity and effect of it (see the mappings below). It is based on lexical units that evoke features of the MN [person]{.smallcaps} frame, which is a sub-case of the [animate entity]{.smallcaps} and [sentient]{.smallcaps} frames. 
+
+Key mappings: `r get_key_mappings(mapping_person_token)`
+
+- causing anger is inviting a person to come (type=`r get_metaphor_mapping_n_lu(mapping_person_token_stats, "inviting")`; token=`r get_metaphor_mapping_tokenfreq(mapping_person_token, "inviting", lu_output = FALSE)`)
+
+  - `r get_lu_gloss_n_printed(mapping_person_token, "inviting")`
+
+- experiencing anger is being friend with/welcome by a person (type=`r get_metaphor_mapping_n_lu(mapping_person_token_stats, "friend")`; token=`r get_metaphor_mapping_tokenfreq(mapping_person_token, "friend", lu_output = FALSE)`)
+
+  - `r get_lu_gloss_n_printed(mapping_person_token, "friend")`
+
+- reducing anger is dismissing the invited person (type=`r get_metaphor_mapping_n_lu(mapping_person_token_stats, "dismissing")`; token=`r get_metaphor_mapping_tokenfreq(mapping_person_token, "dismissing", lu_output = FALSE)`)
+
+  - `r get_lu_gloss_n_printed(mapping_person_token, "dismissing")`
+
+The metaphorical patterns refer to actions and objectives that animate as well as sentient/cognising entities such as a person typically do. These includes welcoming, inviting, dismissing, and befriend or playing with someone. In a way, such actions represent anger as a superficially safe emotion to be with.
 
 ## Metonymy {#tokenbased-metonymy-salience-results}
+
+```{r metonymy-category-tokenbased}
+physiological_response_regex <- "(body heat|internal pressure|redness|breathing|visual interference|body hair|teeth biting|foaming|speechless)"
+metonymy_tokenbased_salience_category <- metonymy_tokenbased_salience %>% 
+  mutate(category = if_else(str_detect(METONYMY, physiological_response_regex), "physiological response", "social-communicative behaviour"))
+
+physiology_type <- metonymy_tokenbased_salience_category %>% 
+  filter(category == "physiological response") %>% 
+  mutate(meto_stats = paste("[", METONYMY, "]{.smallcaps} (type=", n_type, "; token=", n_token, ")", sep = "")) %>% 
+  pull(meto_stats)
+physiology_type_total <- paste("*TOTAL~type~=", sum(filter(metonymy_tokenbased_salience_category, category == "physiological response")$n_type),"*; *TOTAL~token~=", sum(filter(metonymy_tokenbased_salience_category, category == "physiological response")$n_token), "*", sep = "")
+physiology_type <- c(physiology_type, physiology_type_total)
+
+social_type <- metonymy_tokenbased_salience_category %>% 
+  filter(category != "physiological response") %>% 
+  mutate(meto_stats = paste("[", METONYMY, "]{.smallcaps} (type=", n_type, "; token=", n_token, ")", sep = "")) %>% 
+  pull(meto_stats)
+social_type_total <- paste("*TOTAL~type~=", sum(filter(metonymy_tokenbased_salience_category, category != "physiological response")$n_type),"*; *TOTAL~token~=", sum(filter(metonymy_tokenbased_salience_category, category != "physiological response")$n_token), "*", sep = "")
+social_type <- c(social_type, rep("", 3), social_type_total)
+
+metonymy_tokenbased_category_print <- tibble(`social-communicative behaviour:` = social_type, `physiological response:` = physiology_type)
+```
+
+
+
+
 
 ### METONYMY A
 
 ### METONYMY B
 
 ### ...
+
+### Types of the metonymies (token-based dataset) {#metonymy-category-tokenbased}
+
+From `r nrow(metonymy_tokenbased_salience_category)` metonymies, `r nrow(filter(metonymy_tokenbased_salience_category, category == "physiological response"))` metonymies represent physiological responses (type=`r sum(filter(metonymy_tokenbased_salience_category, category == "physiological response")$n_type)`; token=`r sum(filter(metonymy_tokenbased_salience_category, category == "physiological response")$n_token)`), and `r nrow(filter(metonymy_tokenbased_salience_category, category != "physiological response"))` are of the social-communicative behaviour types (type=`r sum(filter(metonymy_tokenbased_salience_category, category != "physiological response")$n_type)`; token=`r sum(filter(metonymy_tokenbased_salience_category, category != "physiological response")$n_token)`).
+
+```{r metonymy-category-table-tokenbased}
+metonymy_tokenbased_category_binomtest_type <- binom.test(sum(filter(metonymy_tokenbased_salience_category, category != "physiological response")$n_type), sum(sum(filter(metonymy_tokenbased_salience_category, category != "physiological response")$n_type), sum(filter(metonymy_tokenbased_salience_category, category == "physiological response")$n_type)))
+
+metonymy_tokenbased_category_binomtest_token <- binom.test(sum(filter(metonymy_tokenbased_salience_category, category != "physiological response")$n_token), sum(sum(filter(metonymy_tokenbased_salience_category, category != "physiological response")$n_token), sum(filter(metonymy_tokenbased_salience_category, category == "physiological response")$n_token)))
+
+metonymy_tokenbased_category_print %>% knitr::kable(caption = "Two types of metonymies of [anger]{.smallcaps} (token-based dataset)")
+```
+
+As in the type-based dataset ([Section \@ref(metonymy-category-typebased)](#metonymy-category-typebased)), the number of metonymies in the physiological response category are greater than the ones in the social-communicative behaviour. However, the social-communicative behaviour category in total still exhibits significantly greater number of types (*p*~Binomial~ ~two~~-~~tailed~`r pval_print(metonymy_tokenbased_category_binomtest_type$p.value)`) and tokens (*p*~Binomial~ ~two~~-~~tailed~`r pval_print(metonymy_tokenbased_category_binomtest_token$p.value)`) than the physiological response category. So the type-based and token-based datasets converge along these distributional aspects of the metonymies.
+
 
 # Metonymical basis of [anger]{.smallcaps} metaphors {#metonymic-basis}
 
