@@ -46,26 +46,44 @@ get_metaphor_mapping_tokenfreq <- function(mapping_sourcedomain_token_df, mappin
   }
 }
 
-get_lu_gloss_n_printed <- function(mapping_sourcedomain_token_df, mapping_regex, lu_var = "MP", gloss_var = "MP_GLOSS", mapping_var = "MAPPING", key_mapping = FALSE) {
+get_lu_gloss_n_printed <- function(mapping_sourcedomain_token_df, mapping_regex, lu_var = "MP", gloss_var = "MP_GLOSS", mapping_var = "MAPPING", key_mapping = FALSE, metaphor_data = TRUE) {
   lu_var <- rlang::sym(lu_var)
   gloss_var <- rlang::sym(gloss_var)
   mapping_var <- rlang::sym(mapping_var)
   
-  mapping_sourcedomain_token_df %>% 
-    filter(status == 'no') %>% 
-    # filter(str_detect(MAPPING, mapping_regex)) %>% 
-    filter(str_detect(!!mapping_var, mapping_regex)) %>% 
-    # count(LU, LU_GLOSS) %>% 
-    count(!!lu_var, !!gloss_var) %>% 
-    mutate(!!lu_var := str_replace_all(!!lu_var, "\\b(node)\\b", "[marah]{.smallcaps}")) %>%
-    mutate(!!lu_var := gsub("([[:upper:]]+)", "[\\L\\1]{.smallcaps}", !!lu_var, perl = TRUE)) %>%
-    mutate(!!gloss_var := gsub("([[:upper:]]+)", "[\\L\\1]{.smallcaps}", !!gloss_var, perl = TRUE)) %>%
-    # mutate(lu_gloss_n = paste("*", str_replace_all(LU, "<\\/?w>", ""), "* '", LU_GLOSS, "' (", n, ")", sep = "")) %>% 
-    mutate(lu_gloss_n = paste("*", str_replace_all(!!lu_var, "<\\/?w>", "__"), "* '", !!gloss_var, "' (", n, ")", sep = "")) %>% 
-    arrange(desc(n)) %>% 
-    pull(lu_gloss_n) %>% 
-    paste(collapse = "; ") %>% 
-    return()
+  if (metaphor_data == TRUE) { # printing for metaphor
+    
+    mapping_sourcedomain_token_df %>% 
+      filter(status == 'no') %>% 
+      # filter(str_detect(MAPPING, mapping_regex)) %>% 
+      filter(str_detect(!!mapping_var, mapping_regex)) %>% 
+      # count(LU, LU_GLOSS) %>% 
+      count(!!lu_var, !!gloss_var) %>% 
+      mutate(!!lu_var := str_replace_all(!!lu_var, "\\b(node)\\b", "[marah]{.smallcaps}")) %>%
+      mutate(!!lu_var := gsub("([[:upper:]]+)", "[\\L\\1]{.smallcaps}", !!lu_var, perl = TRUE)) %>%
+      mutate(!!gloss_var := gsub("([[:upper:]]+)", "[\\L\\1]{.smallcaps}", !!gloss_var, perl = TRUE)) %>%
+      # mutate(lu_gloss_n = paste("*", str_replace_all(LU, "<\\/?w>", ""), "* '", LU_GLOSS, "' (", n, ")", sep = "")) %>% 
+      mutate(lu_gloss_n = paste("*", str_replace_all(!!lu_var, "<\\/?w>", "__"), "* '", !!gloss_var, "' (", n, ")", sep = "")) %>% 
+      arrange(desc(n)) %>% 
+      pull(lu_gloss_n) %>% 
+      paste(collapse = "; ") %>% 
+      return()
+    
+  } else if (metaphor_data == FALSE) { # printing for metonymy
+    
+    mapping_sourcedomain_token_df %>% 
+      filter(str_detect(!!mapping_var, mapping_regex)) %>% 
+      count(!!lu_var, !!gloss_var) %>% 
+      mutate(!!lu_var := str_replace_all(!!lu_var, "\\b(node)\\b", "[marah]{.smallcaps}")) %>%
+      mutate(!!lu_var := gsub("([[:upper:]]+)", "[\\L\\1]{.smallcaps}", !!lu_var, perl = TRUE)) %>%
+      mutate(!!gloss_var := gsub("([[:upper:]]+)", "[\\L\\1]{.smallcaps}", !!gloss_var, perl = TRUE)) %>%
+      mutate(lu_gloss_n = paste("*", str_replace_all(!!lu_var, "<\\/?w>", "__"), "* '", !!gloss_var, "' (", n, ")", sep = "")) %>% 
+      arrange(desc(n)) %>% 
+      pull(lu_gloss_n) %>% 
+      paste(collapse = "; ") %>% 
+      return()
+    
+  }
 }
 
 get_metaphor_mapping_stat_typefreq <- function(mapping_sourcedomain_token_df, lu_var = "MP", mapping_var = "MAPPING") {
