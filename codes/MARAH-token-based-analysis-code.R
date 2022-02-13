@@ -89,6 +89,7 @@ metonymy_tokenbased <- read_tsv("data/token-based-approach-main.txt") %>%
 
 # metonymic salience analysis
 metonymy_tokenbased_salience <- metonymy_tokenbased %>% 
+  mutate(METONYMY = replace(METONYMY, METONYMY == "angry/aggresive visual behaviour for anger", "aggressive visual behaviour for anger")) %>% 
   group_by(METONYMY) %>% 
   summarise(n_token = n(), 
             n_type = n_distinct(MP),
