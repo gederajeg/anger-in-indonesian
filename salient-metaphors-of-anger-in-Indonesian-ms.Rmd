@@ -4,11 +4,6 @@ csl: "unified-style-sheet-for-linguistics.csl"
 bibliography: "anger-references.bib"
 link-citations: yes
 output: 
-  bookdown::word_document2:
-    df_print: kable
-    fig_caption: yes
-    fig_width: 6
-    reference_docx: "template.docx"
   html_notebook:
     code_folding: hide
     fig_caption: yes
@@ -16,6 +11,11 @@ output:
     number_sections: yes
     toc: yes
     toc_float: yes
+  bookdown::word_document2:
+    df_print: kable
+    fig_caption: yes
+    fig_width: 6
+    reference_docx: "template.docx"
 author: 'Gede Primahadi Wijaya Rajeg <a itemprop="sameAs" content="https://orcid.org/0000-0002-2047-8621" href="https://orcid.org/0000-0002-2047-8621" target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon"></a>'
 abstract: "This is the abstract"
 ---
@@ -617,7 +617,7 @@ metonymy_typebased_salience %>%
   mutate(metonymy = paste("[", metonymy, "]{.smallcaps}", sep = "")) %>% 
   rename(Metonymy = metonymy,
          `Types:` = n_type,
-         `% of all types` = n_perc_type) %>% 
+         `% of all types:` = n_perc_type) %>% 
   knitr::kable(caption = "Conceptual metonymies for [anger]{.smallcaps} (Type-based, lexical approach)")
 ```
 
@@ -684,25 +684,25 @@ This metonymy appears to become the bodily basis of the [darkness]{.smallcaps} m
 
 - `r paste(paste("*", pull(filter(metonymy_typebased, str_detect(CM_BROADER, "interference")), LU), "* '", pull(filter(metonymy_typebased, str_detect(CM_BROADER, "interference")), LU_GLOSS), "'", sep = ""), collapse = "; ")`
 
-### [Breathing difficulty for anger]{.smallcaps}
+### [Breathing difficulty for anger]{.smallcaps} {#breathing-typebased}
 
 Intense, excited anger can lead to intense and potentially difficult breathing. In Indonesian, expressions referring to the difficulty of breathing due to excessive heat and/or no fresh air are used metonymically to refer to [anger]{.smallcaps}.
 
 - `r paste(paste("*", pull(filter(metonymy_typebased, str_detect(CM_BROADER, "breathing")), LU), "* '", pull(filter(metonymy_typebased, str_detect(CM_BROADER, "breathing")), LU_GLOSS), "'", sep = ""), collapse = "; ")`
 
-### [Standing body hair for anger]{.smallcaps}
+### [Standing body hair for anger]{.smallcaps} {#bodyhair-typebased}
 
 This metonymy might be thought of more relevant to [fear]{.smallcaps} rather than [anger]{.smallcaps}. However, in the Indonesian database, the expression related to body hair can also refer to [anger]{.smallcaps}. It is especially the case in the body-part where no body hair is (expected to) grow, namely the liver *hati*.
 
 - `r paste(paste("*", pull(filter(metonymy_typebased, str_detect(CM_BROADER, "body hair")), LU), "* '", pull(filter(metonymy_typebased, str_detect(CM_BROADER, "body hair")), LU_GLOSS), "'", sep = ""), collapse = "; ")`
 
-### [Caressing the chest for anger]{.smallcaps}
+### [Caressing the chest for anger]{.smallcaps} {#caressing-chest-typebased}
 
 The situation where someone holds onto, or caresses, their chest as if holding something from getting out can refer to someone's effort to stay under control (i.e., being patient) from his/her anger state (cf. [Section \@ref(lip-biting-typebased)](#lip-biting-typebased)). The metonymic expression below also indicates that *dada* is a kind of container of [anger]{.smallcaps}.
 
 - `r paste(paste("*", pull(filter(metonymy_typebased, str_detect(CM_BROADER, "caressing")), LU), "* '", pull(filter(metonymy_typebased, str_detect(CM_BROADER, "caressing")), LU_GLOSS), "'", sep = ""), collapse = "; ")`
 
-### [Clenching fist for anger]{.smallcaps}
+### [Clenching fist for anger]{.smallcaps} {#fist-typebased}
 
 This metonymy can be interpreted as an issue of control or an expression of [anger]{.smallcaps} (e.g., ready to attack the wrongdoer with the punch/fist).
 
@@ -1424,13 +1424,35 @@ social_type <- c(social_type, rep("", 3), social_type_total)
 metonymy_tokenbased_category_print <- tibble(`social-communicative behaviour:` = social_type, `physiological response:` = physiology_type)
 ```
 
+The token-based, corpus analysis of the metonymy for [anger]{.smallcaps} now includes the token frequencies for the conceptual metonymies, in addition to their type frequencies. These metonymies are rank-ordered in [Table \@ref(tab:metonymy-table-token-based)](#metonymy-table-token-based) by their token frequencies.
+
+
+```{r metonymy-table-token-based}
+metonymy_tokenbased_salience_print %>% 
+  select(-Aggregate) %>% 
+  knitr::kable(caption = "Conceptual metonymies for [anger]{.smallcaps} (Token-based, corpus approach)")
+```
+
+
+```{r metonymy-tokenbased-typebased-comparison}
+metonymy_tokenbased_typebased_shared <- intersect(metonymy_tokenbased_salience$METONYMY, metonymy_typebased_salience$metonymy)
+metonymy_tokenbased_only <- setdiff(metonymy_tokenbased_salience$METONYMY, metonymy_typebased_salience$metonymy)
+metonymy_typebased_only <- setdiff(metonymy_typebased_salience$metonymy, metonymy_tokenbased_salience$METONYMY)
+metonymy_tokenbased_typebased_ALL <- unique(metonymy_tokenbased_salience$METONYMY, metonymy_typebased_salience$metonymy)
+```
+
+In the two datasets, there are total `r length(unique(metonymy_tokenbased_salience$METONYMY, metonymy_typebased_salience$metonymy))` unique metonymies, and most of them (i.e., `r length(intersect(metonymy_tokenbased_salience$METONYMY, metonymy_typebased_salience$metonymy))` metonymies [`r round(length(intersect(metonymy_tokenbased_salience$METONYMY, metonymy_typebased_salience$metonymy))/length(unique(metonymy_tokenbased_salience$METONYMY, metonymy_typebased_salience$metonymy)) * 100, digits = 1)`%]) occur in the two datasets. This suggests rather consistent metonymic construal for [anger]{.smallcaps} in the two datasets, especially [strong/aggressive verbal behaviour for anger]{.smallcaps} that tops the metonymy tables in the two datasets. The metonymies found only in the type-based dataset are `r paste(paste(paste("[", metonymy_typebased_only, "]{.smallcaps}", sep = "")[1:length(metonymy_typebased_only)-1], collapse = ", "), ", and ", paste("[", metonymy_typebased_only, "]{.smallcaps}", sep = "")[length(metonymy_typebased_only)], sep = "")`. Meanwhile, those identified only in the token-based dataset are `r paste(paste(paste("[", metonymy_tokenbased_only, "]{.smallcaps}", sep = "")[1:length(metonymy_tokenbased_only)-1], collapse = ", "), ", and ", paste("[", metonymy_tokenbased_only, "]{.smallcaps}", sep = "")[length(metonymy_tokenbased_only)], sep = "")`. 
+
+### [Strong/aggressive verbal behaviour for anger]{.smallcaps} {#verbal-tokenbased}
+
+
+- `r get_lu_gloss_n_printed(metonymy_tokenbased, mapping_regex = 'verbal', mapping_var = "METONYMY", metaphor_data = FALSE)`
 
 
 
+### [Aggressive visual behaviour for anger]{.smallcaps} {#visual-behaviour-tokenbased}
 
-### METONYMY A
-
-### METONYMY B
+- `r get_lu_gloss_n_printed(metonymy_tokenbased, mapping_regex = 'visual', mapping_var = "METONYMY", metaphor_data = FALSE)`
 
 ### ...
 
