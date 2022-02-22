@@ -4,15 +4,26 @@ get_mappings <- function(mapping_df, metaphor_regex) {
   return(interim_df)
 }
 
-get_salience_stats <- function(salience_df, col_names, metaphor_regex) {
+get_salience_stats <- function(salience_df, col_names, metaphor_regex, metaphor_data = TRUE) {
   salience_df_colnames <- colnames(salience_df)
-  interim_df <- filter(salience_df, str_detect(metaphor, metaphor_regex))
+  
+  if (metaphor_data) {
+    interim_df <- filter(salience_df, str_detect(metaphor, metaphor_regex))
+  } else {
+    col_var <- rlang::sym(colnames(salience_df)[1])
+    interim_df <- filter(salience_df, str_detect(!!col_var, metaphor_regex))
+  }
+  
   return(interim_df[[salience_df_colnames[salience_df_colnames == col_names]]])
 }
 
-get_metaphor_salience_rank <- function(salience_df, metaphor_regex) {
+get_metaphor_salience_rank <- function(salience_df, metaphor_regex, metaphor_data =TRUE) {
   interim_df <- as.data.frame(salience_df)
-  return(rownames(subset(interim_df, grepl(metaphor_regex, metaphor, perl = TRUE))))
+  if (metaphor_data) {
+    return(rownames(subset(interim_df, grepl(metaphor_regex, metaphor, perl = TRUE))))
+  } else {
+    return(rownames(subset(interim_df, grepl(metaphor_regex, interim_df[[1]], perl = TRUE))))
+  }
 }
 
 get_metaphor_mapping_n_lu <- function(mapping_lu_stats_df, mapping_regex, mapping_var = "MAPPING", pull_lu = TRUE) {
