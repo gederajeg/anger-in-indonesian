@@ -4,6 +4,11 @@ csl: "unified-style-sheet-for-linguistics.csl"
 bibliography: "anger-references.bib"
 link-citations: yes
 output: 
+  bookdown::word_document2:
+    df_print: kable
+    fig_caption: yes
+    fig_width: 6
+    reference_docx: "template.docx"
   html_notebook:
     code_folding: hide
     fig_caption: yes
@@ -11,11 +16,6 @@ output:
     number_sections: yes
     toc: yes
     toc_float: yes
-  bookdown::word_document2:
-    df_print: kable
-    fig_caption: yes
-    fig_width: 6
-    reference_docx: "template.docx"
 author: 'Gede Primahadi Wijaya Rajeg <a itemprop="sameAs" content="https://orcid.org/0000-0002-2047-8621" href="https://orcid.org/0000-0002-2047-8621" target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon"></a>'
 abstract: "This is the abstract"
 ---
@@ -1445,16 +1445,49 @@ In the two datasets, there are total `r length(unique(metonymy_tokenbased_salien
 
 ### [Strong/aggressive verbal behaviour for anger]{.smallcaps} {#verbal-tokenbased}
 
+- `r get_lu_gloss_n_printed(metonymy_tokenbased, mapping_regex = 'aggressive verbal', mapping_var = "METONYMY", metaphor_data = FALSE)`
 
-- `r get_lu_gloss_n_printed(metonymy_tokenbased, mapping_regex = 'verbal', mapping_var = "METONYMY", metaphor_data = FALSE)`
-
-
+This metonymy is the most salient in both datasets, having `r get_salience_stats(metonymy_typebased_salience, "n_type", "aggressive verbal", metaphor_data = FALSE)` and `r get_salience_stats(metonymy_tokenbased_salience, "n_type", "aggressive verbal", metaphor_data = FALSE)` types in the type-based and token-based datasets respectively.
 
 ### [Aggressive visual behaviour for anger]{.smallcaps} {#visual-behaviour-tokenbased}
 
-- `r get_lu_gloss_n_printed(metonymy_tokenbased, mapping_regex = 'visual', mapping_var = "METONYMY", metaphor_data = FALSE)`
+- `r get_lu_gloss_n_printed(metonymy_tokenbased, mapping_regex = 'visual behaviour', mapping_var = "METONYMY", metaphor_data = FALSE)`
 
-### ...
+This is another metonymy that is also salient in the two datasets, ranked in the top-3 metonymies. However, the token-based dataset for this metonymy reveals significantly greater number of types (`r get_salience_stats(metonymy_tokenbased_salience, "n_type", "aggressive visual behaviour", metaphor_data = FALSE)`) compared to the type-based dataset (`r get_salience_stats(metonymy_typebased_salience, "n_type", "aggressive visual behaviour", metaphor_data = FALSE)`) (*p*~Binomial~ ~two~~-~~tailed~`r pval_print(binom.test(c(get_salience_stats(metonymy_typebased_salience, "n_type", "aggressive visual behaviour", metaphor_data = FALSE), get_salience_stats(metonymy_tokenbased_salience, "n_type", "aggressive visual behaviour", metaphor_data = FALSE)))$p.value)`). 
+
+From the list of metonymic expressions above, one expression does not contain the target term [marah]{.smallcaps} but the context of the concordance clearly indicates that such expression has to do with anger.
+
+(@pandangan_liar) *__Pandangan matanya liar__ dan memancarkan amarah yang meluap.* (ind_mixed_2012_1M: 575480)
+
+In this example, the eyes both spurt out boiled over anger and show wild gaze.
+
+### [Redness in the facial area for anger]{.smallcaps} {#redness-tokenbased}
+
+- `r get_lu_gloss_n_printed(metonymy_tokenbased, mapping_regex = 'redness', mapping_var = "METONYMY", metaphor_data = FALSE)`
+
+This metonymy has significantly greater number of types (and thus ranked higher) in the token-based dataset (`r get_salience_stats(metonymy_tokenbased_salience, "n_type", "redness", metaphor_data = FALSE)`; rank=`r get_metaphor_salience_rank(metonymy_tokenbased_salience, "redness", FALSE)`) than in the type-based one (`r get_salience_stats(metonymy_typebased_salience, "n_type", "redness", metaphor_data = FALSE)`; rank=`r get_metaphor_salience_rank(metonymy_typebased_salience, "redness", FALSE)`) (*p*~Binomial~ ~two~~-~~tailed~`r pval_print(binom.test(c(get_salience_stats(metonymy_typebased_salience, "n_type", "redness", metaphor_data = FALSE), get_salience_stats(metonymy_tokenbased_salience, "n_type", "redness", metaphor_data = FALSE)))$p.value)`). The metonymic expressions indicate that anger causes such physiological effects of redness in the facial area of the experiencer.
+
+### [Internal pressure for anger]{.smallcaps} {#internal-pressure-tokenbased}
+
+- `r get_lu_gloss_n_printed(metonymy_tokenbased, mapping_regex = 'internal pressure', mapping_var = "METONYMY", metaphor_data = FALSE)`
+
+The [internal pressure]{.smallcaps} metonymy shares the same number of types between the two datasets (`r get_salience_stats(metonymy_tokenbased_salience, "n_type", "pressure", metaphor_data = FALSE)` types in the token-based data, and `r get_salience_stats(metonymy_typebased_salience, "n_type", "pressure", metaphor_data = FALSE)` types in the type-based one). The internal pressure predominantly goes with trembling body parts and voice.
+
+### [Body heat for anger]{.smallcaps} {#body-heat-tokenbased}
+
+- `r get_lu_gloss_n_printed(metonymy_tokenbased, mapping_regex = "body heat", mapping_var = "METONYMY", metaphor_data = FALSE)`
+
+The [body heat]{.smallcaps} metonymy is less productive in terms of its type in the token-based dataset (`r get_salience_stats(metonymy_tokenbased_salience, "n_type", "body heat", metaphor_data = FALSE)`) compared to the type-based one (`r get_salience_stats(metonymy_typebased_salience, "n_type", "body heat", metaphor_data = FALSE)`).
+
+### [Violent frustated behaviour for anger]{.smallcaps} {#frustation-tokenbased}
+
+- `r get_lu_gloss_n_printed(metonymy_tokenbased, mapping_regex = "violent frustated", mapping_var = "METONYMY", metaphor_data = FALSE)`
+
+This metonymy appears to be less prominent in the token-based dataset than in the type-based one in terms of the number of metonymic expressions and, by consequence, the ranking. In the type-based dataset it is evoked by `r get_salience_stats(metonymy_typebased_salience, "n_type", "violent", metaphor_data = FALSE)` expressions (rank=`r get_metaphor_salience_rank(metonymy_typebased_salience, 'violent', FALSE)`), which is significantly greater than the number of expressions in the token-based dataset (`r get_salience_stats(metonymy_tokenbased_salience, "n_type", "violent", metaphor_data = FALSE)`; rank=`r get_metaphor_salience_rank(metonymy_tokenbased_salience, 'violent', FALSE)`) (*p*~Binomial~ ~two~~-~~tailed~`r pval_print(binom.test(c(get_salience_stats(metonymy_typebased_salience, "n_type", "violent", metaphor_data = FALSE), get_salience_stats(metonymy_tokenbased_salience, "n_type", "violent", metaphor_data = FALSE)))$p.value)`).
+
+### Other singleton metonymies
+
+There are `r nrow(filter(metonymy_tokenbased_salience, n_type < 2))` metonymies that only have a single type; they are (i) [`r filter(metonymy_tokenbased_salience, n_type < 2)[[1]][1]`]{.smallcaps} (`r get_lu_gloss_n_printed(metonymy_tokenbased, mapping_regex = "crying", mapping_var = "METONYMY", metaphor_data = FALSE)`), (ii) [`r filter(metonymy_tokenbased_salience, n_type < 2)[[1]][2]`]{.smallcaps} (`r get_lu_gloss_n_printed(metonymy_tokenbased, mapping_regex = "foaming", mapping_var = "METONYMY", metaphor_data = FALSE)`), (iii) [`r filter(metonymy_tokenbased_salience, n_type < 2)[[1]][3]`]{.smallcaps} (`r get_lu_gloss_n_printed(metonymy_tokenbased, mapping_regex = "teeth biting", mapping_var = "METONYMY", metaphor_data = FALSE)`), (iv) [`r filter(metonymy_tokenbased_salience, n_type < 2)[[1]][4]`]{.smallcaps} (`r get_lu_gloss_n_printed(metonymy_tokenbased, mapping_regex = "speechless", mapping_var = "METONYMY", metaphor_data = FALSE)`), and (v) [`r filter(metonymy_tokenbased_salience, n_type < 2)[[1]][5]`]{.smallcaps} (`r get_lu_gloss_n_printed(metonymy_tokenbased, mapping_regex = "visual interference", mapping_var = "METONYMY", metaphor_data = FALSE)`). Two metonymies here have greater number of types in the type-based dataset, namely [visual interference for anger]{.smallcaps} (`r get_salience_stats(metonymy_typebased_salience, "n_type", "visual interference", metaphor_data = FALSE)`) and [lip/teeth biting/pressing for anger]{.smallcaps} (`r get_salience_stats(metonymy_typebased_salience, "n_type", "teeth biting", metaphor_data = FALSE)`).
 
 ### Types of the metonymies (token-based dataset) {#metonymy-category-tokenbased}
 
