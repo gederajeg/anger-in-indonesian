@@ -4,11 +4,6 @@ csl: "unified-style-sheet-for-linguistics.csl"
 bibliography: "anger-references.bib"
 link-citations: yes
 output: 
-  bookdown::word_document2:
-    df_print: kable
-    fig_caption: yes
-    fig_width: 6
-    reference_docx: "template.docx"
   html_notebook:
     code_folding: hide
     fig_caption: yes
@@ -16,6 +11,11 @@ output:
     number_sections: yes
     toc: yes
     toc_float: yes
+  bookdown::word_document2:
+    df_print: kable
+    fig_caption: yes
+    fig_width: 6
+    reference_docx: "template.docx"
 author: 'Gede Primahadi Wijaya Rajeg <a itemprop="sameAs" content="https://orcid.org/0000-0002-2047-8621" href="https://orcid.org/0000-0002-2047-8621" target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon"></a>'
 abstract: "This is the abstract"
 ---
@@ -194,29 +194,25 @@ mapping_animal_discuss <- get_mappings(metaphor_typebased_mapping, 'fierce') %>%
 ```
 
 
-The lexical database reveals that [anger]{.smallcaps} is most saliently conceptualised as [fierce, captive animal]{.smallcaps}. The [anger is fierce, captive animal]{.smallcaps} metaphor is evoked in `r get_salience_stats(metaphor_typebased_salience, "n_type", "fierce, captive")` lexical units manifesting `r happyr::numbers2words(get_salience_stats(metaphor_typebased_salience, "n_mapping", "fierce, captive"))` conceptual correspondences/mappings between [anger]{.smallcaps} and [fierce, captive animal]{.smallcaps}:
-
-key mappings:
+The lexical database reveals that [anger]{.smallcaps} is most saliently conceptualised as [fierce, captive animal]{.smallcaps}. The [anger is fierce, captive animal]{.smallcaps} metaphor is evoked in `r get_salience_stats(metaphor_typebased_salience, "n_type", "fierce, captive")` lexical units manifesting `r happyr::numbers2words(get_salience_stats(metaphor_typebased_salience, "n_mapping", "fierce, captive"))` conceptual correspondences/mappings between [anger]{.smallcaps} and [fierce, captive animal]{.smallcaps} as shown below^[Throughout this paper, the linguistic expressions of each mapping are given below the respective mapping. The mappings with their linguistic expressions are then presented in the decreasing order of its number of linguistic type (i.e., the mapping's type frequency), below the foundational mapping(s) of the metaphor; this allows us to highlight the central mapping and main meaning focus of the metaphor [@kovecses_metaphor_2010, 140]]. The first two mappings are the foundational mappings underlying each of the metaphorical expressions.
 
 - anger <- restrained/captive, fierce animal
 - experiencer <- entity who restrains/makes captive the animal
+- `r mapping_animal_discuss %>% slice_max(order_by = n_lu) %>% pull(MAPPING2) %>% unique()` (type=`r mapping_animal_discuss %>% slice_max(order_by = n_lu) %>% pull(n_lu) %>% unique()`)
 
+  - `r paste(paste("*", mapping_animal_discuss %>% filter(str_detect(MAPPING, 'aggressive')) %>% pull(LU), "* '", mapping_animal_discuss %>% filter(str_detect(MAPPING, 'aggressive')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`. 
 
-The most productive mapping/correspondence (`r mapping_animal_discuss %>% slice_max(order_by = n_lu) %>% pull(MAPPING2) %>% unique()`; type=`r mapping_animal_discuss %>% slice_max(order_by = n_lu) %>% pull(n_lu) %>% unique()`)
+- `r mapping_animal_discuss %>% filter(str_detect(MAPPING, 'deliberately')) %>% pull(MAPPING2) %>% unique()` (type=`r mapping_animal_discuss %>% filter(str_detect(MAPPING, 'deliberately')) %>% pull(n_lu) %>% unique()`)
 
-- `r paste(paste("*", mapping_animal_discuss %>% filter(str_detect(MAPPING, 'aggressive')) %>% pull(LU), "* '", mapping_animal_discuss %>% filter(str_detect(MAPPING, 'aggressive')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`. 
+  - `r paste(paste("*", mapping_animal_discuss %>% filter(str_detect(MAPPING, 'deliberately')) %>% pull(LU), "* '", mapping_animal_discuss %>% filter(str_detect(MAPPING, 'deliberately')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-The second most frequent mapping (`r mapping_animal_discuss %>% filter(str_detect(MAPPING, 'deliberately')) %>% pull(MAPPING2) %>% unique()`; type=`r mapping_animal_discuss %>% filter(str_detect(MAPPING, 'deliberately')) %>% pull(n_lu) %>% unique()`)
+- `r mapping_animal_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(MAPPING2) %>% unique()` (type=`r mapping_animal_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(n_lu) %>% unique()`)
 
-- `r paste(paste("*", mapping_animal_discuss %>% filter(str_detect(MAPPING, 'deliberately')) %>% pull(LU), "* '", mapping_animal_discuss %>% filter(str_detect(MAPPING, 'deliberately')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+  - `r paste(paste("*", mapping_animal_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(LU), "* '", mapping_animal_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-The third most frequent mapping (`r mapping_animal_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(MAPPING2) %>% unique()`; type=`r mapping_animal_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(n_lu) %>% unique()`)
+- `r mapping_animal_discuss %>% filter(str_detect(MAPPING, 'regulating')) %>% pull(MAPPING2) %>% unique()` (type=`r mapping_animal_discuss %>% filter(str_detect(MAPPING, 'regulating')) %>% pull(n_lu) %>% unique()`)
 
-- `r paste(paste("*", mapping_animal_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(LU), "* '", mapping_animal_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
-
-The least frequent mapping (`r mapping_animal_discuss %>% filter(str_detect(MAPPING, 'regulating')) %>% pull(MAPPING2) %>% unique()`; type=`r mapping_animal_discuss %>% filter(str_detect(MAPPING, 'regulating')) %>% pull(n_lu) %>% unique()`)
-
-- `r paste(paste("*", mapping_animal_discuss %>% filter(str_detect(MAPPING, 'regulating')) %>% pull(LU), "* '", mapping_animal_discuss %>% filter(str_detect(MAPPING, 'regulating')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+  - `r paste(paste("*", mapping_animal_discuss %>% filter(str_detect(MAPPING, 'regulating')) %>% pull(LU), "* '", mapping_animal_discuss %>% filter(str_detect(MAPPING, 'regulating')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
 The main meaning focus of this metaphor in the lexical approach is on aggressiveness of the angered person as reflected in the mapping "aggressive angry behaviour is aggressive animal behaviour" because this is the most productive mapping indicated by the highest number of lexical unit types.
 
@@ -230,25 +226,27 @@ mapping_fire_stats <- mapping_fire %>% filter(status == 'no') %>% group_by(MAPPI
 mapping_fire_discuss <- get_mappings(metaphor_typebased_mapping, 'fire$') %>% left_join(mapping_fire %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_fire_stats)
 ```
 
-Key mappings:
+The [anger is fire]{.smallcaps} metaphor is the second most salient in the type-based dataset (`r get_salience_stats(metaphor_typebased_salience, 'n_type', 'fire')` types and `r get_salience_stats(metaphor_typebased_salience, 'n_mapping', 'fire')` mappings). The metaphor has also been identified to be significantly associated with anger (compared to other basic emotions) in Indonesian in a previous corpus-based work by Rajeg [-@rajeg_metafora_2013]. The mappings are shown below; the first two are the foundational mappings.
 
 - anger <- fire
 - angry person <- burning object
+- `r mapping_fire_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING)` (type=`r mapping_fire_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu) %>% unique()`)
 
-The most productive mapping/correspondence is `r mapping_fire_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING)` (type=`r mapping_fire_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu) %>% unique()`)
+  - `r paste(paste("*", mapping_fire_discuss %>% filter(str_detect(MAPPING, 'highest degree')) %>% pull(LU), "* '", mapping_fire_discuss %>% filter(str_detect(MAPPING, 'highest degree')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")` 
 
-- `r paste(paste("*", mapping_fire_discuss %>% filter(str_detect(MAPPING, 'highest degree')) %>% pull(LU), "* '", mapping_fire_discuss %>% filter(str_detect(MAPPING, 'highest degree')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`. 
+- `r mapping_fire_discuss %>% filter(str_detect(MAPPING, 'ceasing')) %>% pull(MAPPING2) %>% unique()` (type=`r mapping_fire_discuss %>% filter(str_detect(MAPPING, 'ceasing')) %>% pull(n_lu) %>% unique()`)
 
-The less prominent mappings include:
+  - `r paste(paste("*", mapping_fire_discuss %>% filter(str_detect(MAPPING, 'ceasing')) %>% pull(LU), "* '", mapping_fire_discuss %>% filter(str_detect(MAPPING, 'ceasing')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-- `r paste(paste("*", mapping_fire_discuss %>% filter(str_detect(MAPPING, 'ceasing')) %>% pull(LU), "* '", mapping_fire_discuss %>% filter(str_detect(MAPPING, 'ceasing')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`. (`r mapping_fire_discuss %>% filter(str_detect(MAPPING, 'ceasing')) %>% pull(MAPPING2) %>% unique()`; type=`r mapping_fire_discuss %>% filter(str_detect(MAPPING, 'ceasing')) %>% pull(n_lu) %>% unique()`)
+- `r mapping_fire_discuss %>% filter(str_detect(MAPPING, 'anger\\-level')) %>% pull(MAPPING2) %>% unique()` (type=`r mapping_fire_discuss %>% filter(str_detect(MAPPING, 'anger\\-level')) %>% pull(n_lu) %>% unique()`)
 
-- `r paste(paste("*", mapping_fire_discuss %>% filter(str_detect(MAPPING, 'anger[-]level')) %>% pull(LU), "* '", mapping_fire_discuss %>% filter(str_detect(MAPPING, 'anger[-]level')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`. (`r mapping_fire_discuss %>% filter(str_detect(MAPPING, 'anger\\-level')) %>% pull(MAPPING2) %>% unique()`; type=`r mapping_fire_discuss %>% filter(str_detect(MAPPING, 'anger\\-level')) %>% pull(n_lu) %>% unique()`)
+  - `r paste(paste("*", mapping_fire_discuss %>% filter(str_detect(MAPPING, 'anger[-]level')) %>% pull(LU), "* '", mapping_fire_discuss %>% filter(str_detect(MAPPING, 'anger[-]level')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-- `r paste(paste("*", mapping_fire_discuss %>% filter(str_detect(MAPPING, 'causing anger')) %>% pull(LU), "* '", mapping_fire_discuss %>% filter(str_detect(MAPPING, 'causing anger')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`. (`r mapping_fire_discuss %>% filter(str_detect(MAPPING, 'causing')) %>% pull(MAPPING2) %>% unique()`; type=`r mapping_fire_discuss %>% filter(str_detect(MAPPING, 'causing')) %>% pull(n_lu) %>% unique()`) 
+- `r mapping_fire_discuss %>% filter(str_detect(MAPPING, 'causing')) %>% pull(MAPPING2) %>% unique()` (type=`r mapping_fire_discuss %>% filter(str_detect(MAPPING, 'causing')) %>% pull(n_lu) %>% unique()`)
 
+  - `r paste(paste("*", mapping_fire_discuss %>% filter(str_detect(MAPPING, 'causing anger')) %>% pull(LU), "* '", mapping_fire_discuss %>% filter(str_detect(MAPPING, 'causing anger')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-
+Based on the number of the linguistic expressions of the mapping, the main focus of the [fire]{.smallcaps} metaphor is on the increased intensity of anger, which is the same in the token-based dataset ([Section \@ref(fire-tokenbased)](#fire-tokenbased)).
 
 ### [Anger is physical contact/harm]{.smallcaps} {#harm-typebased}
 
@@ -259,17 +257,18 @@ mapping_harm_stats <- mapping_harm %>% filter(status == 'no') %>% group_by(MAPPI
 mapping_harm_discuss <- get_mappings(metaphor_typebased_mapping, 'harm$') %>% left_join(mapping_harm %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_harm_stats)
 ```
 
-Key mappings: 
+The metaphor is a sub-case of the [emotional effect is physical contact]{.smallcaps} metaphor proposed by Lakoff and Johnson [@lakoff_metaphors_1980, 50]. It is part of the [force-dynamic]{.smallcaps} system of emotion metaphor [@kovecses_metaphor_2000, 83-85]. In the type-based dataset, it is the third most salient metaphor for anger with `r get_salience_stats(metaphor_typebased_salience, 'n_type', 'physical contact')` types and `r get_salience_stats(metaphor_typebased_salience, 'n_mapping', 'physical contact')` mappings as shown below.
 
 - person('s body) <- harmed/contacted entity
+- `r mapping_harm_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING)` (type=`r mapping_harm_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`)
 
-The most productive mapping is `r mapping_harm_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING)` (type=`r mapping_harm_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`):
+  - `r paste(paste("*", mapping_harm_discuss %>% filter(str_detect(MAPPING, 'causing anger')) %>% pull(LU), "* '", mapping_harm_discuss %>% filter(str_detect(MAPPING, 'causing anger')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-- `r paste(paste("*", mapping_harm_discuss %>% filter(str_detect(MAPPING, 'causing anger')) %>% pull(LU), "* '", mapping_harm_discuss %>% filter(str_detect(MAPPING, 'causing anger')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+- `r mapping_harm_stats %>% slice_min(order_by = n_lu) %>% pull(MAPPING) %>% gsub(x = ., pattern = "-", replacement = " ") %>% gsub(x = ., pattern = "_", replacement = " <- ")` (type=`r mapping_harm_stats %>% slice_min(order_by = n_lu) %>% pull(n_lu)`)
 
-Then the remaining mapping is `r mapping_harm_stats %>% slice_min(order_by = n_lu) %>% pull(MAPPING)` (type=`r mapping_harm_stats %>% slice_min(order_by = n_lu) %>% pull(n_lu)`):
+  - `r paste(paste("*", mapping_harm_discuss %>% filter(str_detect(MAPPING, 'effect.of.touch')) %>% pull(LU), "* '", mapping_harm_discuss %>% filter(str_detect(MAPPING, 'effect.of.touch')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-- `r paste(paste("*", mapping_harm_discuss %>% filter(str_detect(MAPPING, 'effect.of.touch')) %>% pull(LU), "* '", mapping_harm_discuss %>% filter(str_detect(MAPPING, 'effect.of.touch')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+Judging from the number of types per mapping, this metaphor focuses on the cause of anger, construed as physical touching or harm to a person('s body). We will see that, in the token-based dataset ([Section \@ref(harm-tokenbased)](#harm-tokenbased)), this metaphor not only ranks very low in the salience table (rank `r get_metaphor_salience_rank(metaphor_salience, 'physical contact')`), but also highlights different aspect given the most productive mapping is different.
 
 ### [Anger is disease]{.smallcaps} {#disease-typebased}
 
@@ -280,22 +279,23 @@ mapping_disease_stats <- mapping_disease %>% filter(status == 'no') %>% group_by
 mapping_disease_discuss <- get_mappings(metaphor_typebased_mapping, 'disease$') %>% left_join(mapping_disease %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_disease_stats)
 ```
 
-Key mappings:
+The [anger is disease]{.smallcaps} metaphor sits in the top-5 most salient metaphor for the type-based dataset, manifesting `r get_salience_stats(metaphor_typebased_salience, "n_type", "disease")` types and `r get_salience_stats(metaphor_typebased_salience, "n_mapping", "disease")` different mappings, shown below. 
 
 - angry person <- patient
 - anger <- disease (*gondok* 'goitre')
+- `r mapping_disease_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING) %>% gsub(x = ., pattern = "-", replacement = " ") %>% gsub(x = ., pattern = "_", replacement = " <- ")` (type=`r mapping_disease_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`)
 
-The disease metaphor focuses on the undesirability and effect of anger as a disease.
+  - `r paste(paste("*", mapping_disease_discuss %>% filter(str_detect(MAPPING, 'undesirability')) %>% pull(LU), "* '", mapping_disease_discuss %>% filter(str_detect(MAPPING, 'undesirability')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-The most productive mapping is `r mapping_disease_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING)` (type=`r mapping_disease_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`). This focuses on the undesirability:
+- `r mapping_disease_discuss %>% filter(str_detect(MAPPING, 'effect')) %>% pull(MAPPING2) %>% unique()` (type=`r mapping_disease_discuss %>% filter(str_detect(MAPPING, 'effect')) %>% pull(n_lu) %>% unique()`)
 
-- `r paste(paste("*", mapping_disease_discuss %>% filter(str_detect(MAPPING, 'undesirability')) %>% pull(LU), "* '", mapping_disease_discuss %>% filter(str_detect(MAPPING, 'undesirability')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+  - `r paste(paste("*", mapping_disease_discuss %>% filter(str_detect(MAPPING, 'effect')) %>% pull(LU), "* '", mapping_disease_discuss %>% filter(str_detect(MAPPING, 'effect')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-The second most productive mapping is (`r mapping_disease_discuss %>% filter(str_detect(MAPPING, 'effect')) %>% pull(MAPPING2) %>% unique()`; type=`r mapping_disease_discuss %>% filter(str_detect(MAPPING, 'effect')) %>% pull(n_lu) %>% unique()`):
+- `r mapping_disease_discuss %>% filter(str_detect(MAPPING, 'calm')) %>% pull(MAPPING2) %>% unique()` (type=`r mapping_disease_discuss %>% filter(str_detect(MAPPING, 'calm')) %>% pull(n_lu) %>% unique()`)
 
-- `r paste(paste("*", mapping_disease_discuss %>% filter(str_detect(MAPPING, 'effect')) %>% pull(LU), "* '", mapping_disease_discuss %>% filter(str_detect(MAPPING, 'effect')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+  - `r paste(paste("*", mapping_disease_discuss %>% filter(str_detect(MAPPING, 'calm')) %>% pull(LU), "* '", mapping_disease_discuss %>% filter(str_detect(MAPPING, 'calm')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-The other mapping indicates the treatment of the disease as calming the angry person (*__menawari__ hati yang sedang marah* 'to _cure_/_treat_ the liver of an angry person'). 
+Overall, the productivity of the mappings suggests that the main meaning foci of this metaphor are on the undesirability and effect of anger as a disease. In the token-based dataset, the [disease]{.smallcaps} metaphor does not even make into the top-20 most salient metaphors as it is in rank `r get_metaphor_salience_rank(metaphor_salience, 'disease')` (token=`r get_salience_stats(metaphor_salience, "n_token", "disease")`; type=`r get_salience_stats(metaphor_salience, "n_type", "disease")`; mapping=`r get_salience_stats(metaphor_salience, "n_mapping", "disease")`).
 
 ### [Anger is insanity]{.smallcaps} {#insanity-typebased}
 
@@ -1327,7 +1327,7 @@ The main focus of this metaphor in the token-based dataset is on the externalisa
 
 ### [Anger is physical contact/harm]{.smallcaps} {#harm-tokenbased}
 
-The metaphor is a sub-case of the [emotional effect is physical contact]{.smallcaps} metaphor proposed by Lakoff and Johnson [@lakoff_metaphors_1980, 50]. It is part of the [force-dynamic]{.smallcaps} system of emotion metaphor [@kovecses_metaphor_2000, 83-85]. The metaphorical patterns evoke the [physical harm]{.smallcaps} frame capture the effect of [anger]{.smallcaps} as impacting both the experiencer and other entities that become the target of angry person, especially when the harmed entity role of the frame is filled with entity other than the experiencer of anger. The following are mappings postulated from the metaphor.
+The metaphorical patterns evoke the [physical harm]{.smallcaps} frame capture the effect of [anger]{.smallcaps} as impacting both the experiencer and other entities that become the target of angry person, especially when the harmed entity role of the frame is filled with entity other than the experiencer of anger. The following are mappings postulated from the metaphor.
 
 ```{r mapping-harm-token, message = FALSE, include = FALSE}
 mapping_harm_token <- filter(metaphor_tokenbased_mapping, str_detect(CM_BROADER, "harm$")) %>% 
