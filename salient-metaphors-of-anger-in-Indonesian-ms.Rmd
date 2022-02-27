@@ -171,6 +171,7 @@ The metaphorical salience measure in the database for the lexical, type-based ap
 
 ```{r type-based-analysis-computation, message=FALSE, include=FALSE, warning=FALSE, error=FALSE}
 source("codes/MARAH-type-based-analysis-code.R")
+source("codes/MARAH-token-based-analysis-code.R")
 ```
 
 ## Metaphor {#typebased-metaphor-salience-results}
@@ -268,7 +269,7 @@ The metaphor is a sub-case of the [emotional effect is physical contact]{.smallc
 
   - `r paste(paste("*", mapping_harm_discuss %>% filter(str_detect(MAPPING, 'effect.of.touch')) %>% pull(LU), "* '", mapping_harm_discuss %>% filter(str_detect(MAPPING, 'effect.of.touch')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-Judging from the number of types per mapping, this metaphor focuses on the cause of anger, construed as physical touching or harm to a person('s body). We will see that, in the token-based dataset ([Section \@ref(harm-tokenbased)](#harm-tokenbased)), this metaphor not only ranks very low in the salience table (rank `r get_metaphor_salience_rank(metaphor_salience, 'physical contact')`), but also highlights different aspect given the most productive mapping is different.
+Judging from the number of metaphorical patterns per mapping, this metaphor focuses on the cause of anger that is conceptualised as physical touching or harm to a person('s body). In the token-based dataset ([Section \@ref(harm-tokenbased)](#harm-tokenbased)), this [physical contact/harm]{.smallcaps} metaphor ranks very low in the salience table (rank `r get_metaphor_salience_rank(metaphor_salience, 'physical contact')`), and also highlights different aspect given the most productive mapping is different.
 
 ### [Anger is disease]{.smallcaps} {#disease-typebased}
 
@@ -306,17 +307,21 @@ mapping_insanity_stats <- mapping_insanity %>% filter(status == 'no') %>% group_
 mapping_insanity_discuss <- get_mappings(metaphor_typebased_mapping, 'insanity$') %>% left_join(mapping_insanity %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_insanity_stats)
 ```
 
-The key mappings are `r mapping_insanity %>% filter(status == "key") %>% pull(MAPPING) %>% unique() %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ") %>% paste(collapse = "; ")`
+Kövecses [-@kovecses_metaphors_1986, 20-22] proposes that [anger is insanity]{.smallcaps} metaphor is a principal metaphor for anger in addition to the centrality of the [heat]{.smallcaps}-related metaphors [see also @holland_cognitive_1987, 204-205]. It appears to be the case for anger in Indonesian as revealed by the rank of the metaphor in the top-5 most salient metaphors based on the type-based analysis. The following mappings are captured in the [insanity]{.smallcaps} metaphor; all metaphorical patterns (type=`r get_salience_stats(metaphor_typebased_salience, "n_type", "insanity")`) evoke the [insanity]{.smallcaps} frame available in the MN repository.
 
-The other mappings are:
+- `r mapping_insanity %>% filter(status == "key") %>% pull(MAPPING) %>% unique() %>% .[1] %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ")`
 
-- `r mapping_insanity_discuss %>% filter(str_detect(MAPPING, 'becoming')) %>% pull(MAPPING2) %>% unique()`; type=`r mapping_insanity_discuss %>% filter(str_detect(MAPPING, 'becoming')) %>% pull(n_lu) %>% unique()`
+- `r mapping_insanity %>% filter(status == "key") %>% pull(MAPPING) %>% unique() %>% .[2] %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ")`
+
+- `r mapping_insanity_discuss %>% filter(str_detect(MAPPING, 'becoming')) %>% pull(MAPPING2) %>% unique()` (type=`r mapping_insanity_discuss %>% filter(str_detect(MAPPING, 'becoming')) %>% pull(n_lu) %>% unique()`)
 
   - `r paste(paste("*", mapping_insanity_discuss %>% filter(str_detect(MAPPING, 'becoming')) %>% pull(LU), "* '", mapping_insanity_discuss %>% filter(str_detect(MAPPING, 'becoming')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
   
-- `r mapping_insanity_discuss %>% filter(str_detect(MAPPING, 'uncontrolled')) %>% pull(MAPPING2) %>% unique()`; type=`r mapping_insanity_discuss %>% filter(str_detect(MAPPING, 'uncontrolled')) %>% pull(n_lu) %>% unique()`
+- `r mapping_insanity_discuss %>% filter(str_detect(MAPPING, 'uncontrolled')) %>% pull(MAPPING2) %>% unique()` (type=`r mapping_insanity_discuss %>% filter(str_detect(MAPPING, 'uncontrolled')) %>% pull(n_lu) %>% unique()`)
 
   - `r paste(paste("*", mapping_insanity_discuss %>% filter(str_detect(MAPPING, 'uncontrolled')) %>% pull(LU), "* '", mapping_insanity_discuss %>% filter(str_detect(MAPPING, 'uncontrolled')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+
+From the data, the metaphor mainly focuses on the issue of control, particularly the experiencer has become "completely incapacitated cognitively as well as in terms of behavior" [@kovecses_metaphor_2000, 74], manifesting into insane behaviours (shown by the third and fourth mappings from the top). This main meaning focus implies that anger can be viewed as an intense emotion forcing the experiencer to lose all controls. It is important to note that the [insanity]{.smallcaps} metaphor is found in the token-based dataset but much less prominent since it occupies the rank outside the top-20 metaphors and having a lower number of types (`r get_salience_stats(metaphor_salience, "n_type", "insanity")`) but the same number of mappings. Previous corpus-based work by Rajeg [-@rajeg_metafora_2013, 111] also found only one token for the [insanity]{.smallcaps} metaphor (*[exp]{.smallcaps} __mabuk karena__ amarah* '[exp]{.smallcaps} be _drunk with_ anger'). This indicates the importance of combining the lexical- and corpus-based approach to emotion metaphors.
 
 ### [Anger is pressurised substance in a container]{.smallcaps} {#pressurised-typebased}
 
@@ -327,19 +332,26 @@ mapping_pressurisedfluid_stats <- mapping_pressurisedfluid %>% filter(status == 
 mapping_pressurisedfluid_discuss <- get_mappings(metaphor_typebased_mapping, 'pressurised substance in a container$') %>% left_join(mapping_pressurisedfluid %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_pressurisedfluid_stats)
 ```
 
-The source domain is evoked by `r metaphor_typebased_salience %>% filter(str_detect(metaphor, "pressurised")) %>% pull(n_type)` manifesting `r metaphor_typebased_salience %>% filter(str_detect(metaphor, "pressurised")) %>% pull(n_mapping)` mappings. The key mappings are `r mapping_pressurisedfluid %>% filter(status == "key") %>% pull(MAPPING) %>% unique() %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ") %>% paste(collapse = "; ")`.
+The [pressurised substance in a container]{.smallcaps} is part of the [substance/containment]{.smallcaps}-related family of metaphors found in this study and in previous works. The current metaphor is based on the lexical unit evoking two frames in the MN frame repository: the [pressure in a container]{.smallcaps} (see the fourth mapping from the top below) and the [(caused) upward motion]{.smallcaps} frames (the third and fifth mappings). The metaphor realises `r metaphor_typebased_salience %>% filter(str_detect(metaphor, "pressurised")) %>% pull(n_type)` types of metaphorical patterns evoking `r metaphor_typebased_salience %>% filter(str_detect(metaphor, "pressurised")) %>% pull(n_mapping)` mappings as shown below.
 
-The most productive mapping is `r mapping_pressurisedfluid_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING)` (type=`r mapping_pressurisedfluid_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`):
+- `r mapping_pressurisedfluid %>% filter(status == "key") %>% pull(MAPPING) %>% unique() %>% .[1] %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ")`
 
-- `r paste(paste("*", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'caused to')) %>% pull(LU), "* '", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'caused to')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+- `r mapping_pressurisedfluid %>% filter(status == "key") %>% pull(MAPPING) %>% unique() %>% .[2] %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ")`
 
-This one relates to its causative variant: `r mapping_pressurisedfluid_stats %>% filter(str_detect(MAPPING, "causing increased")) %>% pull(MAPPING)` (type=`r mapping_pressurisedfluid_stats %>% filter(str_detect(MAPPING, "causing increased")) %>% pull(n_lu)`)
+- `r mapping_pressurisedfluid_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING)` (type=`r mapping_pressurisedfluid_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`)
 
-- `r paste(paste("*", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'causing increased')) %>% pull(LU), "* '", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'causing increased')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`.
+  - `r paste(paste("*", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'caused to')) %>% pull(LU), "* '", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'caused to')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-The second productive mapping is (`r mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(MAPPING2) %>% unique()`; type=`r mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(n_lu) %>% unique()`):
+- `r mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(MAPPING2) %>% unique()` (type=`r mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(n_lu) %>% unique()`)
 
-- `r paste(paste("*", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(LU), "* '", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+  - `r paste(paste("*", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(LU), "* '", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+
+- `r mapping_pressurisedfluid_stats %>% filter(str_detect(MAPPING, "causing increased")) %>% pull(MAPPING)` (type=`r mapping_pressurisedfluid_stats %>% filter(str_detect(MAPPING, "causing increased")) %>% pull(n_lu)`)
+
+  - `r paste(paste("*", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'causing increased')) %>% pull(LU), "* '", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'causing increased')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+
+The predominant metaphorical patterns show that the anger-substance is represented by the blood. It is mostly depicted as being increased/raised presumably due to high pressure as captured by the third and the fifth mappings. These mappings reveal that the metaphor mainly focuses on the (caused) increased intensity of the experienced anger and is related to the generic metaphor [intensity is verticality]{.smallcaps} ([Section \@ref(verticality-typebased)](#verticality-typebased)). The inability to control such an (explosive) increase causes the person explodes, which is captured in the fourth mapping. This metaphor is also attested in the top-10 list of the token-based dataset ([Section \@ref(pressurised-tokenbased)](#pressurised-tokenbased)).
+
 
 ### [Anger is bitterness]{.smallcaps} {#bitterness-typebased}
 
@@ -350,15 +362,22 @@ mapping_bitterness_stats <- mapping_bitterness %>% filter(status == 'no') %>% gr
 mapping_bitterness_discuss <- get_mappings(metaphor_typebased_mapping, 'bitterness$') %>% left_join(mapping_bitterness %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_bitterness_stats)
 ```
 
-This source domain is evoked by `r metaphor_typebased_salience %>% filter(str_detect(metaphor, "bitterness")) %>% pull(n_type)` expressions manifesting `r metaphor_typebased_salience %>% filter(str_detect(metaphor, "bitterness")) %>% pull(n_mapping)` mappings.
+This metaphor is manifested into `r metaphor_typebased_salience %>% filter(str_detect(metaphor, "bitterness")) %>% pull(n_type)` metaphorical patterns reflecting `r metaphor_typebased_salience %>% filter(str_detect(metaphor, "bitterness")) %>% pull(n_mapping)` metaphorical mappings.
 
-The key mappings are `r mapping_bitterness %>% filter(status == "key") %>% pull(MAPPING) %>% unique() %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ") %>% paste(collapse = "; ")`.
+- `r mapping_bitterness %>% filter(status == "key") %>% pull(MAPPING) %>% unique() %>% .[1] %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ")`
 
-The most productive mapping is `r mapping_bitterness_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING)  %>% str_replace_all("-", " ") %>% str_replace_all("_", " -> ")` (type=`r mapping_bitterness_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`):
+- `r mapping_bitterness %>% filter(status == "key") %>% pull(MAPPING) %>% unique() %>% .[2] %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ")`
 
-- `r paste(paste("*", mapping_bitterness_discuss %>% filter(str_detect(MAPPING, 'undesirability')) %>% pull(LU), "* '", mapping_bitterness_discuss %>% filter(str_detect(MAPPING, 'undesirability')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+- `r mapping_bitterness_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING)  %>% str_replace_all("-", " ") %>% str_replace_all("([^_]+)_([^_]+)", "\\2 <- \\1")` (type=`r mapping_bitterness_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`)
 
-The other mapping focuses on the reduced bitterness of [anger]{.smallcaps} as a plain taste (*tawar* 'plain (of taste)').
+  - `r paste(paste("*", mapping_bitterness_discuss %>% filter(str_detect(MAPPING, 'undesirability')) %>% pull(LU), "* '", mapping_bitterness_discuss %>% filter(str_detect(MAPPING, 'undesirability')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+
+- `r mapping_bitterness_stats %>% slice_min(order_by = n_lu) %>% pull(MAPPING)  %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ")` (type=`r mapping_bitterness_stats %>% slice_min(order_by = n_lu) %>% pull(n_lu)`)
+
+  - `r paste(paste("*", mapping_bitterness_discuss %>% filter(str_detect(MAPPING, 'reduced')) %>% pull(LU), "* '", mapping_bitterness_discuss %>% filter(str_detect(MAPPING, 'reduced')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+
+As can be seen from the number of linguistic expressions dominating the third mapping, the [bitterness]{.smallcaps} metaphor highlights the fact that anger is not only an intense emotion but also an undesirable one. The final mapping suggests that the degree of bitterness could be reduced (i.e., turned into a plainer taste), which is mapped onto reducing the undesirability (and perhaps the intensity) of anger. In the token-based dataset, the metaphor is also attested but proves to be not essentially salient as it sits in rank `r get_metaphor_salience_rank(metaphor_salience, 'bitternes')` out of the total `r nrow(metaphor_salience)` metaphors found (see [Table \@ref(tab:metaphor-table-token-based)](#metaphor-table-token-based)).
+
 
 ### [Anger is heat]{.smallcaps} {#heat-typebased}
 
@@ -401,7 +420,7 @@ The main meaning focus of this metaphor is on the increasing intensity of anger,
 
 ### [Anger is contained substance]{.smallcaps} {#contained-substance-typebased}
 
-This is a short-hand label for the [emotion is substance in a container]{.smallcaps} metaphor. This is part of a larger network of the [substance]{.smallcaps}-related source frames family postulated in the database. The other source domain frames are [heated/hot fluid in a container]{.smallcaps} ([Section \@ref(hotfluid-typebased)](#hotfluid-typebased)) and [pressurised substance in a container]{.smallcaps} ([Section \@ref(pressurised-typebased)](#pressurised-typebased)). The difference between the [contained substance]{.smallcaps} and [heated/hot fluid in a container]{.smallcaps} or [pressurised substance in a container]{.smallcaps} is that the former does not highlight the heated and pressurised semantics of the frames. The intensity aspect in the [contained substance]{.smallcaps} domain is construed via the quantity of the substance and the expression of anger is construed via the externalisation of the substance.
+This is a short-hand label for the [emotion is substance in a container]{.smallcaps} metaphor. This is part of a larger network of the [substance/containment]{.smallcaps}-related source frames family postulated in the database. The other source domain frames are [heated/hot fluid in a container]{.smallcaps} ([Section \@ref(hotfluid-typebased)](#hotfluid-typebased)) and [pressurised substance in a container]{.smallcaps} ([Section \@ref(pressurised-typebased)](#pressurised-typebased)). The difference between the [contained substance]{.smallcaps} and [heated/hot fluid in a container]{.smallcaps} or [pressurised substance in a container]{.smallcaps} is that the former does not highlight the heated and pressurised semantics of the frames. The intensity aspect in the [contained substance]{.smallcaps} domain is construed via the quantity of the substance and the expression of anger is construed via the externalisation of the substance.
 
 ```{r mapping-containedfluid, message = FALSE, include = FALSE}
 mapping_containedfluid <- filter(metaphor_typebased_mapping, str_detect(CM_BROADER, "is substance in a container$")) %>% 
@@ -791,6 +810,10 @@ This metaphor is shared with the type-based database. However, it is the most sa
 
   - `r get_lu_gloss_n_printed(mapping_containedfluid_token, 'experiencing anger is the presence of object in a location', lu_var = "MP", gloss_var = "MP_GLOSS")`
   
+- increased intensity is increased fullness of the substance in the container (type=`r get_metaphor_mapping_n_lu(mapping_containedfluid_token_stats, 'increased fullness')`; token=`r get_metaphor_mapping_tokenfreq(mapping_containedfluid_token, 'increased fullness', lu_output = FALSE)`)
+
+  - `r get_lu_gloss_n_printed(mapping_containedfluid_token, 'increased fullness')`
+  
 - regulating anger is impeding flowing liquid (type=`r get_metaphor_mapping_n_lu(mapping_containedfluid_token_stats, 'impeding flowing')`; token=`r get_metaphor_mapping_tokenfreq(mapping_containedfluid_token, 'impeding flowing', lu_output = FALSE)`)
   
   <!-- - `r mapping_containedfluid_token %>% filter(status == 'no') %>% filter(str_detect(MAPPING, "impeding flowing")) %>% count(LU, LU_GLOSS) %>% mutate(lu_gloss_n = paste("*", str_replace_all(LU, "<\\/?w>", ""), "* '", LU_GLOSS, "' (", n, ")", sep = "")) %>% arrange(desc(n)) %>% pull(lu_gloss_n) %>% paste(collapse = "; ")` -->
@@ -800,10 +823,6 @@ This metaphor is shared with the type-based database. However, it is the most sa
 - cause of anger is source of the liquid (type=`r get_metaphor_mapping_n_lu(mapping_containedfluid_token_stats, '^cause of anger')`; token=`r get_metaphor_mapping_tokenfreq(mapping_containedfluid_token, 'cause of anger', lu_output = FALSE)`)
 
   - `r get_lu_gloss_n_printed(mapping_containedfluid_token, '^cause of anger', lu_var = "MP", gloss_var = "MP_GLOSS")`
-  
-- increased intensity is increased fullness of the substance in the container (type=`r get_metaphor_mapping_n_lu(mapping_containedfluid_token_stats, 'increased fullness')`; token=`r get_metaphor_mapping_tokenfreq(mapping_containedfluid_token, 'increased fullness', lu_output = FALSE)`)
-
-  - `r get_lu_gloss_n_printed(mapping_containedfluid_token, 'increased fullness')`
 
 - intense anger is substance becomes hard (type=`r get_metaphor_mapping_n_lu(mapping_containedfluid_token_stats, 'hard$')`; token=`r get_metaphor_mapping_tokenfreq(mapping_containedfluid_token, 'hard$', lu_output = FALSE)`)
 
@@ -1026,7 +1045,7 @@ Key mapping(s): `r get_key_mappings(mapping_confinement_token)`
 
   - `r get_lu_gloss_n_printed(mapping_confinement_token, "sunken")`
   
-### [Anger is pressurised substance]{.smallcaps} {#pressurised-tokenbased}
+### [Anger is pressurised substance in a container]{.smallcaps} {#pressurised-tokenbased}
 
 ```{r mapping-pressurised-token, message = FALSE, include = FALSE}
 mapping_pressurised_token <- filter(metaphor_tokenbased_mapping, str_detect(CM_BROADER, "pressurised substance")) %>% 
@@ -1050,6 +1069,8 @@ Key mapping(s): `r get_key_mappings(mapping_pressurised_token)`
 - increased intensity is increased pressure of the substance to the container (type=`r get_metaphor_mapping_n_lu(mapping_pressurised_token_stats, "increased pressure")`; token=`r get_metaphor_mapping_tokenfreq(mapping_pressurised_token, "increased pressure", lu_output = FALSE)`)
 
   - `r get_lu_gloss_n_printed(mapping_pressurised_token, "increased pressure")`
+
+One interesting difference between the metaphor from the two datasets is that in the type-based analysis, the main meaning focus of the [pressurised substance in a container]{.smallcaps} metaphor is on the (caused) increased intensity of the pressure and substance. In contrast, in the token-based dataset, the main meaning focus of the metaphor is on the loss of control depicted as the explosion (and externalisation) of the contained and pressurised substance. It is due to the greater number of types and tokens for the mapping related to the explosion. Moreover, the attempt at control aspect is not manifested in the type-based attestation of this metaphor but in the token-based one (see the fourth mapping).
 
 
 ### [Intensity is quantity]{.smallcaps} {#quantity-tokenbased}
@@ -1522,6 +1543,9 @@ As in the type-based dataset ([Section \@ref(metonymy-category-typebased)](#meto
 
 ## Discourse context {#discourse-context}
 
+- the continuation of a given metaphor in a given sentence
+- or the potential for mixing metaphor
+
 ## Conceptual-cognitive context {#conceptual-context}
 
 ## Bodily context {#bodily-context}
@@ -1529,5 +1553,6 @@ As in the type-based dataset ([Section \@ref(metonymy-category-typebased)](#meto
 # Conclusions {#conclusions}
 
 - Summary and conclusions of the main findings of the study.
+- methodological approach lead to different nuance, such that one approach identifies different main meaning focus of the metaphor due to different productivity and existence of a given mapping (e.g., the [pressurised substance in a container]{.smallcaps} metaphor).
 
 # References {-}
