@@ -16,7 +16,13 @@ metaphor_typebased <- metaphor_typebased %>%
          MAP_1 = replace(MAP_1, str_detect(CM_BROADER, "pressurised") & LU == "penaik darah", "angry person's body_container"),
          LU_GLOSS = replace(LU_GLOSS, LU == "naik darah", "rising blood"),
          LU_GLOSS = replace(LU_GLOSS, LU == "naik spaneng", "rising tension/voltage"),
-         LU_GLOSS = replace(LU_GLOSS, LU == "pemakan bawang", "onion eater"),
+         LU_GLOSS = replace(LU_GLOSS, LU == "pemakan bawang", "someone who gets angered easily; lit. onion eater"),
+         LU_GLOSS = replace(LU_GLOSS, LU == "pembawang", "someone who gets angered easily; lit. someone having to do with onion"),
          MAP_2 = replace(MAP_2, str_detect(CM_BROADER, "heat$") & MAP_2 == "intensity-of-anger_degree-of-the-heat", "becoming-angry_being-heated-up"),
-         MAP_2 = replace(MAP_2, str_detect(CM_BROADER, "heat$") & LU %in% c("membawang", "makan bawang"), "becoming-angry_being-heated-up"),
-         MAP_1 = replace(MAP_1, str_detect(CM_BROADER, "verticality$"), "anger_verticality-scale"))
+         # MAP_2 = replace(MAP_2, str_detect(CM_BROADER, "heat$") & LU %in% c("membawang", "makan bawang"), "becoming-angry_being-heated-up"),
+         MAP_1 = replace(MAP_1, str_detect(CM_BROADER, "verticality$"), "anger_verticality-scale"),
+         CM_BROADER = replace(CM_BROADER, LU %in% c("pemakan bawang", "makan bawang", "membawang", "pembawang"), "(cause of) anger is annoyance"),
+         SFRAME = replace(SFRAME, LU %in% c("pemakan bawang", "makan bawang", "membawang", "pembawang"), "disturbance"),
+         MAP_1 = replace(MAP_1, LU %in% c("pemakan bawang", "makan bawang", "membawang", "pembawang"), "cause-of-anger_annoyance/disturbance"),
+         MAP_1 = replace(MAP_1, LU %in% c("pemakan bawang", "pembawang"), "angry-person_irritated-person"),
+         MAP_2 = replace(MAP_2, LU %in% c("pemakan bawang", "makan bawang", "membawang", "pembawang"), NA))
