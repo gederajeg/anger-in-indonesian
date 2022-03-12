@@ -1607,7 +1607,7 @@ The [heated fluid in a container]{.smallcaps} can also be motivated by the meton
   - [anger is heated fluid in a container]{.smallcaps}
   - [anger is heat]{.smallcaps}
 
-Caressing the chest represents a gesture that could be interpreted as an attempt to hold the pressing anger inside, similar to the action of biting/pressing the lip/teeth, as an indication of holding back pressure. Then, difficulty to breath could be related to the increased and raising pressure inside that pushes up the lungs.
+Caressing the chest represents a gesture that could be interpreted as an attempt to hold the pressing anger inside (hence, an attempt to show patience). Similarly, the biting/pressing of the lip/teeth could be viewed as an indication of holding back pressure and pain. Then, difficulty to breath could be related to the increased and raising internal pressure that pushes up the lungs.
 
 - [Visual interference for anger]{.smallcaps} motivates the [anger is darkness]{.smallcaps} metaphor.
 
@@ -1618,7 +1618,7 @@ For the other, social-based metonymies, Kövecses [-@kovecses_where_2015] sugges
 - [Strong/aggresive verbal behaviour for anger]{.smallcaps} and [Aggressive visual behaviour for anger]{.smallcaps}
 
   - [anger is fierce, captive animal]{.smallcaps}
-  - [anger is weapon] {.smallcaps}
+  - [anger is weapon]{.smallcaps}
   - [anger is (un)veiled object]{.smallcaps}
 
 - [Violent frustrated behaviour for anger]{.smallcaps}; [crying for anger]{.smallcaps}
@@ -1631,7 +1631,88 @@ The qualitative analyses in this section provides some motivation for fifteen of
 
 # Cultural model of [anger]{.smallcaps} {#cultural-model}
 
-- Schematic (prototypical) characterization of the cultural model of [anger]{.smallcaps}, as indicated by uncovered source domains in the respective language. Please follow similar structure as that depicted for the “cognitive model of emotion” in Kövecses (2015: 84-85).
+The metaphor-based cultural model of anger in Indonesian converges with the prototypical model of anger (and emotions in general) proposed in the cognitive linguistic literature [@holland_cognitive_1987, 210-214; @kovecses_where_2015, 84-85]. In addition, some aspects of emotions highlighted by metaphorical mappings, that is the metaphor's semantic foci, correspond to the semantic dimensions of emotion from psychological studies [@soriano_2013]. For instance, the **Intensity** aspect corresponds to the dimension of **Arousal** [@soriano_2013, 415-416], and **Negative/Positive** (or [**Un**]**desirability**) aspect corresponds to the dimension of **Valence**/**Pleasantness**/**Axiology**. The schematic prototypical cognitive model of anger in Indonesian is as follows, corresponding to the five-stage model of anger and emotions [@holland_cognitive_1987, 210-214; @kovecses_where_2015, 84-85]:
+
+stage 1: cause of anger (offending event)
+
+metaphorical mappings:
+
+- annoyance
+- disturbing/harming dormant animal
+- touching/harming a person
+- pulling the trigger
+- igniting fire
+- inviting a person
+- seed/source of an organism
+
+stage 2: anger exists
+
+- aspect: intensity (dynamics of the intensity, which tends to escalate)
+
+  - metaphorical mappings:
+
+    - fullness of, and increase pressure to, the substance
+    - high degree of fire, and level of heat in the fluid
+    - more quantity
+    - aggressive behaviour and the attack of the animal
+    - degree of harmful effect ([harm]{.smallcaps})
+    - amount of natural force and strength of effect
+    - quality of the insane behaviour
+
+- aspect: evaluation (axiology of the experience of anger, its danger and unacceptability in the reaction to others and the self)
+
+  - metaphorical mappings:
+
+    - bitter taste
+    - being in the dark
+    - intrinsic negative effect of the disease
+    - natural force
+    - affected/impeded motion and being confined
+
+- aspect: harm (harmful effects to the experiencer and others)
+
+  - metaphorical mappings
+
+    - danger of the adversary so that we need to evade it
+    - harmful effect
+    - aiming weapon at others
+    - insane behaviour
+    - harm of the attack by the aggressive animal 
+
+stage 3: attempt at control
+
+metaphorical mappings:
+
+- restraining captive animal
+- suppressing/impeding substance or fluid from going out
+- hiding the object
+- combating (and then winning over) the opponent, or exercise domination over the subjugator
+- avoiding and being away from the confinement/impediment
+- managing sane/calm behaviour
+
+stage 4: lacking and losing control
+
+metaphorical mappings:
+
+- being in an insane behaviour
+- reduced dimension of an object (the smaller the dimension, the less the limit of control)
+- being subjugated (i.e., as an inferior object of a subjugator)
+- losing/giving in to the adversary
+- unleashing the captive
+- explosion of the pressurised container
+
+stage 5: act of retribution
+
+Desire to act (to others); that is, a reaction [@kovecses_metaphor_2000]
+
+metaphorical mappings:
+
+- unveiling an object
+- releasing/channelling the fluid outside, or boiling over the heated fluid to overflow
+- aiming the weapon, and punishing others
+
+
+The connection between the metaphor and the stage of the models tends to be one to many. That is, a metaphor does not exclusively contribute to one stage, but possibly to different stages of the cognitive model. This is because the metaphorical mappings for a given metaphor can highlight different aspects, hence stages, in the model. For instance, the [fire]{.smallcaps} metaphor has the mapping indicating the cause of anger (as igniting the fire) (stage 1), the intensity of anger (high degree of heat) (stage 2), and intrinsically the potential danger of high degree of fire to the self and others (which could be enacted at stage 5). Similarly, metaphorical mappings within the [fierce, captive animal]{.smallcaps} metaphor consist of, among others, restraining the animal captive (an attempt at control; stage 3), unleashing the captive animal (loss of control; stage 4), which can manifest in different reaction to the self or others (stage 5), and the attack of the animal to the victim that has implication to the harm aspect of anger.
 
 # The role of context {#contexts}
 
