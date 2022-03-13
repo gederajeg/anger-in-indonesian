@@ -41,7 +41,7 @@ source("codes/MARAH-utility-R-functions.R")
 
 # Introduction {#intro}
 
-Indonesian (or *Bahasa Indonesia*) is the standardised and official variety of the Malay language used in the multilingual society of Indonesia; the other standard forms of Malay also serve as the national languages of Malaysia, Brunei, and Singapore [@tadmor_malay-indonesian_2009, 791]. Malay-Indonesian has the largest speakers in South-east Asia, with almost 280 million speakers combined in Indonesia, Malaysia, and Brunei [@tadmor_malay-indonesian_2009, 791; @adelaar_dialects_2017, 571]. Genetically, Malay-Indonesian belongs to the Austronesian language family, particularly to "the Malayic subgroup of Western Malayo-Polynesian" [@tadmor_malay-indonesian_2009, 791; @adelaar_dialects_2017, 571]. For centuries, Malay-Indonesian has been the "lingua franca" in the regions and developed the colloquial varieties that exhibit great differences among themselves and with the standard language in many aspects of linguistic structures, from phonology to pragmatics [@tadmor_malay-indonesian_2009, 793]. This paper investigates the conceptualisations of [anger]{.smallcaps} in the standard Indonesian based on databases from the *Indonesian Leipzig Corpora* (hereafter ILC) collection [@biemann_leipzig_2007; @goldhahn_building_2012; @quasthoff_indonesian_2013], the Indonesian thematic thesaurus, the Indonesian WordNet, an Indonesian monolingual dictionary, and a bilingual Indonesian-English dictionary ([Section \@ref(method)](#method)).
+Indonesian (or *Bahasa Indonesia*) is the standardised and official variety of the Malay language used in the multilingual society of Indonesia ([Glottocode: indo1316](https://glottolog.org/resource/languoid/id/indo1316)); the other standard forms of Malay also serve as the national languages of Malaysia, Brunei, and Singapore [@tadmor_malay-indonesian_2009, 791]. Malay-Indonesian has the largest speakers in South-east Asia, with almost 280 million speakers combined in Indonesia, Malaysia, and Brunei [@tadmor_malay-indonesian_2009, 791; @adelaar_dialects_2017, 571]. Genetically, Malay-Indonesian belongs to the Austronesian language family, particularly to "the Malayic subgroup of Western Malayo-Polynesian" [@tadmor_malay-indonesian_2009, 791; @adelaar_dialects_2017, 571]. For centuries, Malay-Indonesian has been the "lingua franca" in the regions and developed the colloquial varieties that exhibit great differences among themselves and with the standard language in many aspects of linguistic structures, from phonology to pragmatics [@tadmor_malay-indonesian_2009, 793]. This paper investigates the conceptualisations of [anger]{.smallcaps} in the standard Indonesian based on databases from the *Indonesian Leipzig Corpora* (hereafter ILC) collection [@biemann_leipzig_2007; @goldhahn_building_2012; @quasthoff_indonesian_2013], the Indonesian thematic thesaurus, the Indonesian WordNet, an Indonesian monolingual dictionary, and a bilingual Indonesian-English dictionary ([Section \@ref(method)](#method)).
 
 ## Previous studies on emotion concepts in Indonesian {#previous-study-emotion}
 
@@ -1631,88 +1631,99 @@ The qualitative analyses in this section provides some motivation for fifteen of
 
 # Cultural model of [anger]{.smallcaps} {#cultural-model}
 
-The metaphor-based cultural model of anger in Indonesian converges with the prototypical model of anger (and emotions in general) proposed in the cognitive linguistic literature [@holland_cognitive_1987, 210-214; @kovecses_where_2015, 84-85]. In addition, some aspects of emotions highlighted by metaphorical mappings, that is the metaphor's semantic foci, correspond to the semantic dimensions of emotion from psychological studies [@soriano_2013]. For instance, the **Intensity** aspect corresponds to the dimension of **Arousal** [@soriano_2013, 415-416], and **Negative/Positive** (or [**Un**]**desirability**) aspect corresponds to the dimension of **Valence**/**Pleasantness**/**Axiology**. The schematic prototypical cognitive model of anger in Indonesian is as follows, corresponding to the five-stage model of anger and emotions [@holland_cognitive_1987, 210-214; @kovecses_where_2015, 84-85]:
+The metaphor-based cultural model of anger in Indonesian converges with the prototypical cultural model of anger (and emotions in general) in the cognitive linguistic literature, proposing the five-stage model of anger and emotions [@holland_cognitive_1987, 210-214; @kovecses_where_2015, 84-85]. Some aspects of emotions highlighted by the metaphorical mappings [@kovecses_metaphor_2000, 40-46] in the model correspond to the semantic dimensions of emotion from psychological studies [see @soriano_2013 that discusses (di/con)vergence between metaphorical semantic foci of anger and dimensions of emotions in psychological literature]. For instance, the **Intensity** aspect [@kovecses_metaphor_2000, 41] corresponds to the dimension of **Arousal** [@soriano_2013, 415-416]. The **Negative/Positive** (or [**Un**]**desirability**) aspect [@kovecses_metaphor_2000, 44] corresponds to the dimension of **Valence**/**Pleasantness**/**Axiology** [@soriano_2013, 417]. The schematic prototypical cultural model of anger in Indonesian unfolds as follows:
 
-stage 1: cause of anger (offending event)
+Stage 1: cause of anger (offending event)
 
-metaphorical mappings:
+The **Causation** aspect is an addition to Kövecses's [-@kovecses_metaphor_2000] list of emotional aspect [see @soriano_2013, 416]. It is the reason why anger exists. Metaphorically, this aspect is predominantly construed as events (e.g., igniting fire, disturbing dormant animal, pulling the trigger), or a constant state of affairs (e.g., annoyance) [ @soriano_2013, 416]:
 
-- annoyance
-- disturbing/harming dormant animal
-- touching/harming a person
-- pulling the trigger
-- igniting fire
-- inviting a person
-- seed/source of an organism
+  - annoyance
+  - disturbing/harming dormant animal
+  - touching/harming a person
+  - pulling the trigger
+  - igniting fire
+  - inviting a person
+  - seed/source of an organism
 
-stage 2: anger exists
+Stage 2: anger exists
 
-- aspect: intensity (dynamics of the intensity, which tends to escalate)
+The existential stage of anger contains three aspects (**Intensity**, **Evaluation**, and **Harm**). They could be captured in two different ways by the metaphors: (i) separately by different mappings from a single metaphor (e.g., the [fierce, captive animal]{.smallcaps} metaphor can capture the Intensity and Harm aspects) [@soriano_2013, 415-418], or (ii) exclusively by one metaphor (e.g., the [darkness]{.smallcaps} metaphor only captures the negative Evaluation aspect). It is at this stage that anger exerts force to the experiencer (i) to become emotional, (ii) to experience the harmful effect of the force and exhibiting various physiological responses as shown by the metonymies, and eventually (iii) to attempt a retribution/reaction [@holland_cognitive_1987, 214; @kovecses_where_2015, 84-85] (see stage 5 below).
 
-  - metaphorical mappings:
+- aspect: Intensity
+
+    The prototypical model of emotion postulates that, at this stage, the intensity tends to escalate and reach the limit the self is able to control [@kovecses_where_2015, 85]. The following mappings capture the Intensity:
 
     - fullness of, and increase pressure to, the substance
     - high degree of fire, and level of heat in the fluid
     - more quantity
     - aggressive behaviour and the attack of the animal
-    - degree of harmful effect ([harm]{.smallcaps})
+    - degree of effect of physical harm
     - amount of natural force and strength of effect
-    - quality of the insane behaviour
+    - (quality of the) insane behaviour
 
-- aspect: evaluation (axiology of the experience of anger, its danger and unacceptability in the reaction to others and the self)
+- aspect: Evaluation 
 
-  - metaphorical mappings:
+    The Evaluative aspect of anger is prototypically negative [@soriano_2013, 416]. This includes the danger and unacceptability of the angry reaction and experience to others and the self. They are metaphorically construed as follows:
 
     - bitter taste
     - being in the dark
     - intrinsic negative effect of the disease
-    - natural force
+    - strong and destructive natural force as an intrinsically negative force
     - affected/impeded motion and being confined
 
-- aspect: harm (harmful effects to the experiencer and others)
+- aspect: Harm
 
-  - metaphorical mappings
+    The Harm aspect relates to the psychological harm to the self and potentially the others. It is construed as the effect of physiological harm/damage via the generic metaphor [emotional harm is physical damage]{.smallcaps} [@kovecses_metaphor_2000, 46]. This metaphor is inherited by more specific metaphorical source domains through the following mappings:
 
-    - danger of the adversary so that we need to evade it
-    - harmful effect
+    - danger of the adversary's attack
+    - harmful effect of physical harm, disease, and destructive natural process
     - aiming weapon at others
     - insane behaviour
-    - harm of the attack by the aggressive animal 
+    - harm of the attack by the aggressive animal
 
-stage 3: attempt at control
+Stage 3: attempt at control
 
-metaphorical mappings:
+Following the force-dynamic schema in emotion metaphors [@kovecses_metaphor_2000, 62-63], the rational self demonstrates a force tendency towards calmness/being unemotional. In doing so, the self attempts to resist and/or counterforce the forces from the emotion. The resistance could be regulating the felt intensity or the expression (losing control of) emotion [@soriano_2013, 417]. This stage is captured by these mappings:
 
-- restraining captive animal
-- suppressing/impeding substance or fluid from going out
-- hiding the object
-- combating (and then winning over) the opponent, or exercise domination over the subjugator
-- avoiding and being away from the confinement/impediment
-- managing sane/calm behaviour
+  - restraining captive animal
+  - suppressing/impeding substance or fluid from going out
+  - hiding the object
+  - combating the opponent
+  - avoiding confinement/impediment
+  - maintaining sane/calm behaviour
 
-stage 4: lacking and losing control
+Note that if all the above attempts were successful and then anger ceased before the self lost control, it would represent Lakoff and Kövecses's [-@holland_cognitive_1987, 215] non-prototypical anger scenarios: "Successful suppression", "Spontaneous cessation", and "Terminating event".
 
-metaphorical mappings:
+Stage 4: lacking and losing control
 
-- being in an insane behaviour
-- reduced dimension of an object (the smaller the dimension, the less the limit of control)
-- being subjugated (i.e., as an inferior object of a subjugator)
-- losing/giving in to the adversary
-- unleashing the captive
-- explosion of the pressurised container
+When the force of anger is (prototypically) too strong to control, the experiencer lacks and eventually loses control. This is captured by quite varied metaphorical mappings:
 
-stage 5: act of retribution
+  - insane behaviour
+  - reduced dimension of an object (shortage of emotional control/patience/calm)
+  - being subjugated as an inferior object
+  - losing/giving in to the adversary
+  - unleashing the fierce, captive animal
+  - unveiling the hidden object
+  - explosion of the pressurised container
+  - boiling over the heated fluid to overflow
+  - being ravaged by the destructive natural force
 
-Desire to act (to others); that is, a reaction [@kovecses_metaphor_2000]
+The aspects **Difficulty to cope** and **Passivity** are also represented in this stage since loss of control over forces implies difficulty in counter-forcing them, resulting in the self being passive to the overcoming force (e.g., being subjugated, losing, being ravaged).
 
-metaphorical mappings:
+Stage 5: act of retribution
 
-- unveiling an object
-- releasing/channelling the fluid outside, or boiling over the heated fluid to overflow
-- aiming the weapon, and punishing others
+This stage corresponds to the aspect of **Desire to act** (to others); that is, a reaction as "a result of the emotion itself" [@kovecses_metaphor_2000, 45; @soriano_2013, 417], rather than the desire to possess anger. Metaphorical patterns from the following mappings capture different construal of expressing and directing the anger either towards the wrongdoer (retribution) or other parties.
 
+  - releasing/channelling out the fluid at others
+  - aiming the weapon at others as targets, and punishing others with the weapon
 
-The connection between the metaphor and the stage of the models tends to be one to many. That is, a metaphor does not exclusively contribute to one stage, but possibly to different stages of the cognitive model. This is because the metaphorical mappings for a given metaphor can highlight different aspects, hence stages, in the model. For instance, the [fire]{.smallcaps} metaphor has the mapping indicating the cause of anger (as igniting the fire) (stage 1), the intensity of anger (high degree of heat) (stage 2), and intrinsically the potential danger of high degree of fire to the self and others (which could be enacted at stage 5). Similarly, metaphorical mappings within the [fierce, captive animal]{.smallcaps} metaphor consist of, among others, restraining the animal captive (an attempt at control; stage 3), unleashing the captive animal (loss of control; stage 4), which can manifest in different reaction to the self or others (stage 5), and the attack of the animal to the victim that has implication to the harm aspect of anger.
+Lakoff and Kövecses [-@holland_cognitive_1987, 214] propose that "redirected anger" (i.e., non-retributive to the wrongdoer) is a non-prototypical extension. Below are two illustrations of the redirected anger from the two metaphorical mappings above. 
+
+(@chanelling_out_model) `r marah %>% filter(str_detect(CM_BROADER, 'substance in a '), str_detect(NODE_SENTENCES, 'melampiaskan.+musala')) %>% pull(NODE_SENTENCES)` (`r marah %>% filter(str_detect(CM_BROADER, 'substance in a '), str_detect(NODE_SENTENCES, 'melampiaskan.+musala')) %>% pull(FILES)`: `r marah %>% filter(str_detect(CM_BROADER, 'substance in a '), str_detect(NODE_SENTENCES, 'melampiaskan.+musala')) %>% pull(SENT_ID) %>% as.character()`)
+
+(@retribution_model) `r marah %>% filter(str_detect(CM_BROADER, 'weapon'), str_detect(NODE_SENTENCES, 'sasaran.+Persiku')) %>% pull(NODE_SENTENCES)` (`r marah %>% filter(str_detect(CM_BROADER, 'weapon'), str_detect(NODE_SENTENCES, 'sasaran.+Persiku')) %>% pull(FILES)`: `r marah %>% filter(str_detect(CM_BROADER, 'weapon'), str_detect(NODE_SENTENCES, 'sasaran.+Persiku')) %>% pull(SENT_ID) %>% as.character()`)
+
+The connection between the metaphor and the stages of the model tends to be one to many, as demonstrated by Soriano [-@soriano_2013]. That is, a metaphor does not exclusively contribute to one stage, but possibly to different stages of the cognitive model. This is because the metaphorical mappings for a given metaphor can highlight different aspects, hence stages, in the model. For instance, the [fire]{.smallcaps} metaphor has the mapping indicating the cause of anger (as igniting the fire) (stage 1), the intensity of anger (high degree of heat) (stage 2), and intrinsically the potential danger of high degree of fire to the self and others (which could be enacted at stage 5). Similarly, metaphorical mappings within the [fierce, captive animal]{.smallcaps} metaphor consist of, among others, restraining the animal captive (an attempt at control; stage 3), unleashing the captive animal (loss of control; stage 4), which can manifest in different reaction to the self or others (stage 5), and the attack of the animal to the victim that has implication to the harm aspect of anger.
 
 # The role of context {#contexts}
 
