@@ -4,11 +4,6 @@ csl: "unified-style-sheet-for-linguistics.csl"
 bibliography: "anger-references.bib"
 link-citations: yes
 output: 
-  bookdown::word_document2:
-    df_print: kable
-    fig_caption: yes
-    fig_width: 6
-    reference_docx: "template.docx"
   html_notebook:
     code_folding: hide
     fig_caption: yes
@@ -16,6 +11,11 @@ output:
     number_sections: yes
     toc: yes
     toc_float: yes
+  bookdown::word_document2:
+    df_print: kable
+    fig_caption: yes
+    fig_width: 6
+    reference_docx: "template.docx"
 author: 'Gede Primahadi Wijaya Rajeg <a itemprop="sameAs" content="https://orcid.org/0000-0002-2047-8621" href="https://orcid.org/0000-0002-2047-8621" target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon"></a>'
 abstract: "This is the abstract"
 ---
@@ -1727,29 +1727,42 @@ The connection between the metaphor and the stages of the model tends to be one 
 
 # The role of context {#contexts}
 
-- Influence of the context (see Kövecses 2019b; attached) on the metaphors and cultural model. Please elaborate by focusing on the following four subsections:
-
-[@kovecses_metaphorcreativity_2019; @kovecses_metaphormindcontext_2019]
-
 ## Situational context {#situational-context}
 
-Empathy and concealment [@heider_cultural_2011, 11]
-Indonesian tends to emphasise non-individualistic (or group) affiliation [@heider_cultural_2011, 10; FIND ONE OTHE REFERENCE]. Therefore to maintain harmony, reconciliation and concealment should be the primary goal rather than hostile confrontation and aggressive expression due to anger.
+Kövecses [-@kovecses_metaphorcreativity_2019, 217-218; -@kovecses_metaphormindcontext_2019] proposes three common sub-types of the situational context that could motivate the use of metaphor, namely the physical environment, the social situation, and the cultural context.
 
-Kövecses discusses three 
-- this may include social and cultural situations:
+One of the salient features of Indonesia physical environment is its location in the "Pacific Ring of Fire" (PRoF) [@britannica_ring_2020; @masum_pacific_2019]. The PRoF refers to a geographical area with "high volcanic and seismic activities within the edges of the Pacific Ocean" [@masum_pacific_2019, 1], meaning that it is "a site for frequent earthquakes and powerful volcanic eruptions" [@masum_pacific_2019, 1]; these two natural forces can potentially be accompanied with tsunami warning or, worse, the tsunami itself [cf. @reid_history_2015]. There are more than 200 volcanoes running from the west through to the eastern parts of Indonesia [@masum_pacific_2019, 3]. Such salient landscape of Indonesia could be viewed as one possible motivation for the use of [natural force]{.smallcaps}, [fire]{.smallcaps}, and [heated fluid]{.smallcaps} metaphors for construing anger. This study and Rajeg [-@rajeg_metafora_2013, 110-111] found singletons of metaphorical and simile patterns that specify anger as (lava in a) volcano, a sub-case of [heated fluid]{.smallcaps} metaphor: _**gunung api** kemarahan_ '*volcano* of anger' ([Section \@ref(hotfluid-tokenbased)](#hotfluid-tokenbased)), _kemarahan seperti **lahar**_ 'anger be like *lava*', _**memuntahkan lahar** amarah_ '*puking the lava* of anger', and _amarah bagai **kepundan gunung**_ 'anger be like the *(lava) crater of mountain*' [@rajeg_metafora_2013, 110-111]. Moreover, such PRoF physical environment could be the motivation for the [natural force]{.smallcaps} metaphor, evoked predominantly by expressions from the [natural disaster]{.smallcaps} and [destructive natural process]{.smallcaps} frames ([Section \@ref(naturalforce-tokenbased)](#naturalforce-tokenbased)) [see also @fox_body_2018, 137, who found the construal of anger as a storm arising in the person in Rotenese of Eastern Indonesia]. Another evidence to link anger, its negativity, and the destructive natural force comes from a historical study by Reid [-@reid_history_2015]. Reid [-@reid_history_2015, 66] identified several uses of the phrase *gempa bumi* 'earthquakes lit. quake earth' and related expressions in the Malay Bible of the [*Malay Concordance Project*](https://mcp.anu.edu.au). These expressions are talked about as manifestations of the wrath of God, and omens (following venerable Islamic and pre-Islamic local beliefs); Reid [-@reid_history_2015, 66] further notes that description about earthquakes appear prominently in the chronicles of Java and Bali, suggesting the long-standing salience and awareness of such context of Indonesia physical environment. 
 
-  - See James J. Fox (2018) study on emotion in Rotenese of eastern Indonesia where he discusses social context of the linguistic usage of emotion metaphors (e.g., politeness, and social structure)
-  - cultural situation: advising and counseling; using metaphor and metonymy: do not show anger in your neck (2018: 136); also in Rotenese anger is linked to the storm inside the person; in social contexts, it is important to control physical anger; this may motivate the use of or the existence of [hidden object]{.smallcaps} metaphor, and any other metaphorical model for the attempt of control (2018: 137).
+From the socio-cultural aspect of the situational context, Indonesian tends to emphasise non-individualistic, group affiliation as well as social solidarity, which is a reflection of Indonesia's deeply rooted socio-cultural legacy called *gotong royong* 'lit. work together' [@simarmata_gotong_2020]. Such social and collective consideration gives rise to the importance of empathy and the concealment of emotion in social context [@heider_cultural_2011, 10-11; @fox_body_2018, 137]. To maintain social harmony, concealment of emotion and reconciliation should be the primary goal, rather than hostile confrontation and aggressive expression due to anger; this regulation of emotion is also related to politeness that can benefit social interaction [@prastuti_adaptation_2020]. This is consistent with Heider's study on Minangkabau and Javanese Indonesian speakers who "mask most anger, and the open expression of anger is strongly disapproved of and negatively sanctioned" [@heider_landscapes_1991, 80]. This context motivates metaphors highlighting the attempt at emotional control and expression, such as the [(un)veiled object]{.smallcaps} metaphor. In Rotenese of Eastern Indonesia, the [(un)veiled object]{.smallcaps} metaphor is part of "ritual admonitions" offering counsel on anger (and other emotions such as fear, shame, and doubt), where the addressee is told not to reveal anger in the neck [@fox_body_2018, 136]. In addition to the metaphor, social-communicative behaviour metonymies, especially those denoting the expressive behaviours of anger, could also be motivated by the socio-cultural aspect.
 
-- physical environment: Indonesia as one of the most active countries in the Pacific Ring of Fire (**gunung api** *kemarahan* -- volcanic aspect of the Ring of Fire; there are more than 200 volcanoes running through the west to the eastern parts of Indonesia []; Ring of fire also means common earthquake leading to tsunami disaster and/or volcanic eruption. This could be a physical environment situation that motivate the [natural force]{.smallcaps} metaphor, evoked predominantly by expressions from the [natural disaster]{.smallcaps} and [destructive natural process]{.smallcaps} frames.
 
 ## Discourse context {#discourse-context}
 
-- surrounding discourse: the continuation of a given metaphor in a given sentence
-- previous discourse on the same topic: or the potential for mixing metaphor in a sentence
+```{r surrounding-discourse-code}
+marah %>% filter(duplicated(SENT_ID), USE == "metaphor") %>% pull(SENT_ID) -> dup_sent_metaphor
+marah %>% filter(duplicated(SENT_ID)) %>% pull(SENT_ID) -> dup_sent_metaphor_metonymy
+mixed_metaphor_patterns <- marah %>% filter(SENT_ID %in% dup_sent_metaphor) %>% arrange(desc(SENT_ID), CM_BROADER) %>% select(SENT_ID, FILES, NODE_SENTENCES, MP, MP_GLOSS, CM_BROADER) %>% group_by(SENT_ID, FILES) %>% mutate(n_metaphor_per_sentence = n_distinct(CM_BROADER)) %>% ungroup() %>% group_by(SENT_ID, FILES) %>% mutate(n_pattern_in_sentence = n()) %>% ungroup()
+mixed_metaphor_metonymy_patterns <- marah %>% filter(SENT_ID %in% dup_sent_metaphor_metonymy) %>% arrange(desc(SENT_ID), CM_BROADER) %>% select(SENT_ID, FILES, NODE_SENTENCES, MP, MP_GLOSS, CM_BROADER)
+```
+
+
+One aspect of the discourse context to be focused on is the "surrounding discourse", that is, how the cotext/linguistic context of the previous discourse influence, or is related to, the production of metaphor in the following discourse [@kovecses_metaphorcreativity_2019, 218-219]. One potential example is the use of similar conceptual metaphors in multiple constructions (e.g., noun phrase and argument-structure constructions) that are combined into a single utterances (typically at the sentence level) [cf. @sullivan_frames_2013 for the interplay between grammatical constructions and metaphor].  
+
+(@discourse_ctx_fire) _Wajahnya yang riang menjadi **kemerah-merahan** karena **nyala** **api** kemarahan yang **membakar** dadanya_ (ind_mixed_2012_1M: 376378).
+
+Example (@discourse_ctx_fire) illustrates the combination of metonymic pattern (in the main clause) and two metaphorical patterns for [anger is fire]{.smallcaps} (in the causal subordinate clauses). The use of [fire]{.smallcaps} metaphor in the noun phrase construction _**nyala api** kemarahan_ '*flame of the fire of* anger' could influence the forgoing discourse expressed as relative clause construction _kemarahan yang **membakar** dadanya_ 'anger that *burns* the chest'. In the context of the sentence, the two metaphors could be viewed as emphasising the specific reason for the metaphorical cause of the metonymy [redness in the facial area for anger]{.smallcaps} used in the preceding, main clause. Let us see another sentential example now from the prominent metaphor [anger is substance in a container]{.smallcaps} ([Sections \@ref(contained-substance-tokenbased)](#contained-substance-tokenbased) and [\@ref(contained-substance-typebased)](#contained-substance-typebased))
+
+
+(@discourse_ctx_substance) _Jika amarah tersebut tak **tersalurkan** atau **ternetralisasi** dengan permintaan maaf atau jiwa besar mengikhlaskan, yang akan terjadi selanjutnya adalah amarah itu **mengendap** dan semakin **mengeras** dalam batinnya._ (ind_newscrawl_2016_1M: 343033)
+
+Sentence (@discourse_ctx_substance) contains more than one metaphorical pattern that indicate a sequential, cause-and-effect scenario all within the same [contained substance]{.smallcaps} metaphor. Such construal focus on the conserving effects of anger-substance if not being channelled out in the form of apology and big-heartedness. This shows how the use of a given metaphor in the preceding discourse indicating inability to channel out and neutralise anger, which is the cause, could influence the reasoning for the ensuing discourse indicating the effects of such cause using the same metaphor (i.e., becoming precipitated and hardened inside).
+
 
 ## Conceptual-cognitive context {#conceptual-context}
+
+Ideology: religious ideology (negative effect and danger aspects, e.g., social superior and adversary to fight)
+
+@faizah_how_2021 (for Islam) @minhas_spiritual_2017 (for global, multireligion perspective; spiritual medicine, a metaphor for negative effect of anger as a disease; also indicates the negative view of anger from the religious, spiritual perspective, reflected in the Balinese Hinduism concept of six enemies *Sad Ripu*)
 
 The [awakening]{.smallcaps} frame underlying this metaphor, and in combination with the [fierce animal]{.smallcaps} frame in [anger is fierce, captive animal]{.smallcaps}, is reflected in the common Indonesian proverb for [anger]:
 
