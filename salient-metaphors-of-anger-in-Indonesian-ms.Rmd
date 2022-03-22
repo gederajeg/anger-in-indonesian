@@ -4,6 +4,11 @@ csl: "unified-style-sheet-for-linguistics.csl"
 bibliography: "anger-references.bib"
 link-citations: yes
 output: 
+  bookdown::word_document2:
+    df_print: kable
+    fig_caption: yes
+    fig_width: 6
+    reference_docx: "template.docx"
   html_notebook:
     code_folding: hide
     fig_caption: yes
@@ -11,11 +16,6 @@ output:
     number_sections: yes
     toc: yes
     toc_float: yes
-  bookdown::word_document2:
-    df_print: kable
-    fig_caption: yes
-    fig_width: 6
-    reference_docx: "template.docx"
 author: 'Gede Primahadi Wijaya Rajeg <a itemprop="sameAs" content="https://orcid.org/0000-0002-2047-8621" href="https://orcid.org/0000-0002-2047-8621" target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon"></a>'
 abstract: "This is the abstract"
 ---
@@ -1775,6 +1775,23 @@ For the second point, Kövecses argues that the verb "defend" from the [war]{.sm
 One other type of conceptual-cognitive context to be discussed is ideology, particularly religious ideology and how it relates to certain metaphors for anger. Religious ideology and belief in Indonesia are very strong and have long been an integral part of Indonesian daily, socio-cultural life, since it is listed as the first principle in the nation's ideology *Pancasila* ('The Five Principles'), namely belief in the Supreme God. From the religious and spiritual perspective, anger is generally viewed negatively and dangerous [@bhide_anger_2007; @faizah_how_2021; @minhas_spiritual_2017]; this provides a plausible grounding for metaphors focusing on the negative valence and danger of anger (e.g., [adversary]{.smallcaps}, [fierce, captive animal]{.smallcaps}, [subjugator]{.smallcaps}, and [disease]{.smallcaps}). For instance, as a Balinese Hindu, in my elementary-school religion subject, I was taught that anger is one of the six enemies, the so-called *Sad Ripu* ('Six Enemies'), in human that needs to be defeated and managed. This is a clear and potential religious basis for the use of [adversary]{.smallcaps} and [subjugator]{.smallcaps} metaphors in construing anger. Moreover, the devastating effects of anger have been illustrated in various parts of the famous Hindu epic, the *Mahābhārata* [@bhide_anger_2007; see also @faizah_how_2021 for the view from Islam; and @minhas_spiritual_2017, from the global, multi-religion perspective]. Another example is the religious-ideological view of anger as disease is reflected in the notion of "Spiritual healing or medicine" [@minhas_spiritual_2017]. Such a healing can be used, among others, for "anger management" that can (literally) "prevent the impact of disease by reducing bad feeling or anger" [@minhas_spiritual_2017, 168].
 
 ## Bodily context {#bodily-context}
+
+```{r bodily-context}
+non_bp <- c("jiwa", "pikiran", "batin", "ekspresi", "raut", "akal", "kalbu", "mental", "tatapan", "diri")
+bp_meta_freq <- marah %>% 
+  filter(!BODY_PART %in% non_bp, !is.na(BODY_PART)) %>% 
+  count(BODY_PART, CM_BROADER, sort = TRUE)
+bp_freq <- bp_meta_freq %>% 
+  group_by(BODY_PART) %>% 
+  summarise(n = sum(n)) %>% 
+  arrange(desc(n)) %>% 
+  mutate(eng = c("liver", "eyes", "chest", "heart", "crown of the head", "face", 
+                 "head", "brain", "body", "mouth", "hand(s)", "body")) %>% 
+  select(BODY_PART, eng, n)
+```
+
+The bodily context to be discussed concerns with the locus of emotion, which is related to the cultural situation and pre-modern religious practices in Indonesian. This study found that *hati* 'liver' is the most frequent body-part term used as locus of emotion in a variety of metaphors^[The other body-part terms used in the metaphorical patterns are as follows (together with their token frequencies): `r bp_freq %>% filter(BODY_PART != "hati") %>% mutate(bp_eng_freq = paste("*", BODY_PART, "* '", eng, "' (", n, ")", sep = "")) %>% pull(bp_eng_freq) %>% paste0(., collapse = ", ")`.]. Siahaan [-@siahaan_did_2008] proposes that the ritual of liver divination and the ethno-religious belief of *hati* 'liver' as the locus for the living soul could be the underlying cultural motivation for the importance of *hati* in the conceptualisation of emotion and cognition in general for Indonesian. This shows the sociocultural situatedness of embodiment in metaphorical conceptualisations of anger.
+
 
 # Conclusions {#conclusions}
 
