@@ -59,3 +59,13 @@ marah <- marah %>%
                               "anger is (ab/pre)sence of an object"),
          CM_BROADER = replace(CM_BROADER, str_detect(CM_BROADER, "is physical harm"), "anger is physical contact/harm"),
          CM_BROADER = replace(CM_BROADER, CM_BROADER == "anger is sleeping entity", "anger is a sleeping organism"))
+
+# verticality scale
+marah <- marah %>% 
+  mutate(MAP2 = if_else(MAP2 == "intensity_verticality-scale", MAP3, MAP2),
+         MAP3 = if_else(str_detect(CM_BROADER, "verticality$"), MAP4, MAP3))
+
+# weapon
+marah <- marah %>% 
+  mutate(MAP1 = if_else(CM_BROADER == "anger is weapon" & MAP1 == "anger_weapon", MAP2, MAP1),
+         MAP2 = if_else(CM_BROADER == "anger is weapon", MAP3, MAP2))
