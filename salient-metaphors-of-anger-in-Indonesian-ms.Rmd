@@ -4,6 +4,11 @@ csl: "unified-style-sheet-for-linguistics.csl"
 bibliography: "anger-references.bib"
 link-citations: yes
 output: 
+  bookdown::word_document2:
+    df_print: kable
+    fig_caption: yes
+    fig_width: 6
+    reference_docx: "template.docx"
   html_notebook:
     code_folding: hide
     fig_caption: yes
@@ -11,11 +16,6 @@ output:
     number_sections: yes
     toc: yes
     toc_float: yes
-  bookdown::word_document2:
-    df_print: kable
-    fig_caption: yes
-    fig_width: 6
-    reference_docx: "template.docx"
 author: 'Gede Primahadi Wijaya Rajeg <a itemprop="sameAs" content="https://orcid.org/0000-0002-2047-8621" href="https://orcid.org/0000-0002-2047-8621" target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon"></a>'
 abstract: "This is the abstract"
 ---
@@ -47,9 +47,9 @@ This paper investigates the salient metaphoric and metonymic conceptualisations 
 
 Heider [-@heider_landscapes_1991] analysed emotion concepts in Minangkabau spoken in West Sumatera, and Indonesian spoken by the Minangkabau and the Javanese communities. The goals were to map the connection between emotion words and identify prototypical scenarios of the emotions related to the relevant behavioural correlates. A recent collection of papers in Fox [-@fox_expressions_2018] offers anthropological linguistic studies of emotions in the regional Austronesian languages of Indonesia.
 
-Shaver et al.'s [-@shaver_structure_2001] psychological study investigated the hierarchical and family-resemblance structures of emotion lexicons. They found that Indonesian and American English exhibit similarity in conceptualising [emotion]{.smallcaps} at (i) the superordinate level (i.e., positive and negative emotions) [@shaver_structure_2001, 215-216], and (ii) the basic-level categories. The Indonesian's terms for the basic-level categories refer to the same categories as in American English, namely *cinta* 'love', *senang* 'happiness', *marah* 'anger', *kawatir/takut* 'anxiety/fear', and *sedih* 'sadness' [@shaver_structure_2001, 218].
+Shaver et al.'s [-@shaver_structure_2001] psychological study investigated the hierarchical and family-resemblance structures of emotion lexicons. They found that Indonesian and American English exhibit similarity in conceptualising [emotion]{.smallcaps} at (i) the superordinate level (i.e., positive, and negative emotions) [@shaver_structure_2001, 215-216], and (ii) the basic-level categories. The Indonesian's terms for the basic-level categories refer to the same categories as in American English, namely *cinta* 'love', *senang* 'happiness', *marah* 'anger', *kawatir/takut* 'anxiety/fear', and *sedih* 'sadness' [@shaver_structure_2001, 218].
 
-Linguistic studies in Indonesian/Malay reveal the so-called "psycho-collocations" [@matisoff_hearts_1986], which are lexico-semantic figurative expressions for mental activities and personhood, and which component parts consist of body-part terms. Indonesian/Malay have extensive repertoires of psycho-collocations, especially with the word *hati* 'liver', suggesting the prominence of the liver as the seat of psychological realms in the Malay world [@siahaan_did_2008;  @goddard_contrastive_2008; @oey_psycho-collocations_1990; @sather_work_2018; @fox_towards_2018, 12]. Musgrave [-@musgrave_nonsubject_2001] and Mulyadi [-@mulyadi_verba_2012] investigated the syntactic and semantic properties of Indonesian emotion predicates. Mulyadi [-@mulyadi_verba_2012] in particular is a contrastive study of emotion verbs between Indonesian and the Asahan Malay variety spoken in Tanjungbalai (Asahan), North Sumatera, Indonesia.
+Linguistic studies in Indonesian/Malay reveal the so-called "psycho-collocations" [@matisoff_hearts_1986], which are lexico-semantic figurative expressions for mental activities and personhood, and which component parts consist of body-part terms. Indonesian/Malay have extensive repertoires of psycho-collocations, especially with the word *hati* 'liver', suggesting the prominence of the liver as the seat of psychological realms in the Malay world [@siahaan_did_2008;  @goddard_contrastive_2008; @oey_psycho-collocations_1990; @sather_work_2018; @fox_towards_2018, 12]. Musgrave [-@musgrave_nonsubject_2001] and Mulyadi [-@mulyadi_verba_2012] investigated the syntactic and semantic properties of Indonesian emotion predicates. Mulyadi [-@mulyadi_verba_2012] particularly is a contrastive study of emotion verbs between Indonesian and the Asahan Malay variety spoken in Tanjungbalai (Asahan), North Sumatera, Indonesia.
 
 Indonesian emotions have also been analysed using the *Conceptual Metaphor Theory* (CMT) [@siahaan_did_2008; @siahaan_why_2015; @rajeg_metafora_2013; @rajeg_metaphorical_2019]. Siahaan [-@siahaan_did_2008] examined the cultural conceptualisations of *hati* 'liver', proposing that (i) liver divination ritual and (ii) ethno-religious belief of *hati* as the locus for the living soul underlie the conceptualisations of *hati* as the seat of emotion and cognition [see also @goddard_contrastive_2008]. Siahaan's [-@siahaan_why_2015] follow-up study discovered that 'emotion' is the predominant figurative extension of Indonesian temperature terms. Next, Rajeg [-@rajeg_metafora_2013] analysed five Indonesian basic-level emotions. He applied *Configural Frequency Analysis* (CFA) [@gries_statistics_2009] to identify emotion-specific metaphors [@kovecses_metaphor_2000, 35] and examined how these metaphors semantically distinguish the emotions. Another study by Rajeg [-@rajeg_metaphorical_2019] investigated the distinctive metaphors for [happiness]{.smallcaps} near-synonyms, combining the *MetaNet* (MN) approach [@oana_computational_2017; @petruck_metanet_2016], *Metaphorical Pattern Analysis* (MPA) [@stefanowitsch_happiness_2004; @stefanowitsch_words_2006], and *Multiple Distinctive Collexeme Analysis* (MDCA) [@hilpert_distinctive_2006]; the study reveals that metaphors strongly distinguishing happiness and joy in English [@stefanowitsch_happiness_2004; @stefanowitsch_words_2006] are also those distinguishing the Indonesian equivalences of happiness (i.e., '*kebahagiaan*') and joy ('*kegembiraan*').
 
@@ -211,7 +211,7 @@ The most salient conceptualisation of anger in the lexical database is [fierce, 
 
   - `r paste(paste("*", mapping_animal_discuss %>% filter(str_detect(MAPPING, 'regulating')) %>% pull(LU), "* '", mapping_animal_discuss %>% filter(str_detect(MAPPING, 'regulating')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-The main meaning focus of this metaphor is on aggressiveness of the angered person as reflected in the mapping [aggressive angry behaviour is aggressive animal behaviour]{.smallcaps} because it is the most productive mapping indicated by the highest number of linguistic types (`r mapping_animal_discuss %>% slice_max(order_by = n_lu) %>% pull(n_lu) %>% unique()`). The [fierce, captive animal]{.smallcaps} is also salient in the corpus approach but the two sets differ in their central mapping and main meaning focus ([§\@ref(animal-tokenbased)](#animal-tokenbased)).
+The main meaning focus of this metaphor is on aggressiveness of the angered person as reflected in the mapping [aggressive angry behaviour is aggressive animal behaviour]{.smallcaps} because it is the most productive mapping indicated by the highest number of linguistic types (`r mapping_animal_discuss %>% slice_max(order_by = n_lu) %>% pull(n_lu) %>% unique()`). The [fierce, captive animal]{.smallcaps} is also salient in the corpus approach, but the two sets differ in their central mapping and main meaning focus ([§\@ref(animal-tokenbased)](#animal-tokenbased)).
 
 
 ### [Anger is fire]{.smallcaps} {#fire-typebased}
@@ -328,7 +328,7 @@ mapping_pressurisedfluid_stats <- mapping_pressurisedfluid %>% filter(status == 
 mapping_pressurisedfluid_discuss <- get_mappings(metaphor_typebased_mapping, 'pressurised substance in a container$') %>% left_join(mapping_pressurisedfluid %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_pressurisedfluid_stats)
 ```
 
-The [pressurised substance in a container]{.smallcaps} is part of the [substance/containment]{.smallcaps} family of metaphors and found to be statistically central for anger in Indonesian [@rajeg_metafora_2013, 211]. The metaphor is based on the lexical units (LUs) evoking two MN frames, the [pressure in a container]{.smallcaps} (see the fourth mapping from the top below) and the [(caused) upward motion]{.smallcaps} frames (the third and fifth mappings), and realises `r metaphor_typebased_salience %>% filter(str_detect(metaphor, "pressurised")) %>% pull(n_type)` types of metaphorical expressions and `r metaphor_typebased_salience %>% filter(str_detect(metaphor, "pressurised")) %>% pull(n_mapping)` mappings presented below.
+The [pressurised substance in a container]{.smallcaps} is part of the [substance/containment]{.smallcaps} family of metaphors and found to be statistically central for anger in Indonesian [@rajeg_metafora_2013, 211]. The metaphor is based on the lexical units (LUs) evoking two MN frames, the [pressure in a container]{.smallcaps} (see the fourth mapping from the top below) and the [(caused) upward motion]{.smallcaps} frames (the third and fifth mappings) and realises `r metaphor_typebased_salience %>% filter(str_detect(metaphor, "pressurised")) %>% pull(n_type)` types of metaphorical expressions and `r metaphor_typebased_salience %>% filter(str_detect(metaphor, "pressurised")) %>% pull(n_mapping)` mappings presented below.
 
 - `r mapping_pressurisedfluid %>% filter(status == "key") %>% pull(MAPPING) %>% unique() %>% .[1] %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ")`
 
@@ -548,7 +548,7 @@ This [object]{.smallcaps}-related metaphor captures the intensity of anger in te
 
   - *mencair* 'no longer being angry; lit. to melt'
   
-The metaphorical expressions evoke two frames related to the [firmness]{.smallcaps} frame. The first one is the [lax]{.smallcaps} frame (see the third mapping from the top above), which is in a scalar opposition to the [firm]{.smallcaps} frame. The second frame is the [liquid]{.smallcaps} (the last mapping), capturing the fact that a solid entity (e.g., an ice block) can be pliable like a liquid. All metaphorical expressions indicate the main focus of reduced intensity.
+The metaphorical expressions evoke two frames related to the [firmness]{.smallcaps} frame. The first one is the [lax]{.smallcaps} frame (see the third mapping from the top above), which is in a scalar opposition to the [firm]{.smallcaps} frame. The second frame is the [liquid]{.smallcaps} (the last mapping), capturing the fact that a solid entity (e.g., an ice block) can be pliable like a liquid. All metaphorical expressions indicate the focus of reduced intensity.
 
 ### [Anger is (un)veiled object]{.smallcaps} {#hidden-typebased}
 
@@ -571,7 +571,7 @@ This metaphor is realised by `r get_salience_stats(metaphor_typebased_salience, 
 
   - `r paste(paste("*", mapping_hidden_discuss %>% filter(str_detect(MAPPING, 'unveiling')) %>% pull(LU), "* '", mapping_hidden_discuss %>% filter(str_detect(MAPPING, 'unveiling')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-The [(un)veiled object]{.smallcaps} metaphor relates to the social expression and degree of control of the experiencer to keep hidden or expose the anger. The main focus of the metaphor, based on the predominant metaphorical expressions, is hiding the anger. The corpus study ([§\@ref(unveiled-tokenbased)](#unveiled-tokenbased)), however, reveals a different meaning focus of the metaphor.
+The [(un)veiled object]{.smallcaps} metaphor relates to the social expression and degree of control of the experiencer to keep hidden or expose the anger. The focus of the metaphor, based on the predominant metaphorical expressions, is hiding the anger. The corpus study ([§\@ref(unveiled-tokenbased)](#unveiled-tokenbased)), however, reveals a different meaning focus of the metaphor.
 
 ### [Anger is heat]{.smallcaps} {#heat-typebased}
 
@@ -652,7 +652,7 @@ Semantically, the metaphor highlights the negative assessment of anger [@stefano
 
 ## Metonymy {#typebased-metonymy-salience-results}
 
-There are `r sum(metonymy_typebased_salience$n_type)` types of metonymic expressions grouped under `r nrow(metonymy_typebased_salience)` (conceptual) metonymies for [anger]{.smallcaps}. These metonymies are rank-ordered in [Table \@ref(tab:metonymy-table-type-based)](#metonymy-table-type-based) by the number of their metonymic expressions.
+There are `r sum(metonymy_typebased_salience$n_type)` types of metonymic expressions grouped under `r nrow(metonymy_typebased_salience)` (conceptual) metonymies for [anger]{.smallcaps}. These metonymies are rank ordered in [Table \@ref(tab:metonymy-table-type-based)](#metonymy-table-type-based) by the number of their metonymic expressions.
 
 ```{r metonymy-category-typebased}
 physiological_response_regex <- "(body heat|internal pressure|redness|breathing|visual interference|body hair|teeth biting|foaming|caressing|clenching)"
@@ -679,7 +679,8 @@ metonymy_typebased_category_print <- tibble(`social-communicative behaviour:` = 
 
 ```{r metonymy-table-type-based}
 metonymy_typebased_salience %>% 
-  mutate(metonymy = paste("[", metonymy, "]{.smallcaps}", sep = "")) %>% 
+  mutate(metonymy = str_replace(metonymy, "frustated", "frustrated"),
+         metonymy = paste("[", metonymy, "]{.smallcaps}", sep = "")) %>% 
   rename(Metonymy = metonymy,
          `Types:` = n_type,
          `% of all types:` = n_perc_type) %>% 
@@ -697,7 +698,7 @@ The type-based analysis reveals that [`r str_replace(pull(slice_max(metonymy_typ
 
 These expressions are mostly verbs encoding the manner of speaking that metonymically points to the internal, emotional state of the speaker. When someone speaks in the manner conveyed by these expressions, the hearer could infer that the speaker is angry.
 
-### [Violent frustated behaviour for anger]{.smallcaps} {#violent-behaviour-typebased}
+### [Violent frustrated behaviour for anger]{.smallcaps} {#violent-behaviour-typebased}
 
 Linguistic expressions evoking certain harsh and violent actions/behaviours can be metonymically used to refer to anger. This is motivated experientially in that frustration often leads to anger, which then brings about some irrational, harsh, dangerous, or violent actions.
 
@@ -1382,7 +1383,7 @@ hidden_frame_stats <- happyr::get_frames("veiled object", df = marah, frame_var 
 ```
 
 
-This metaphor is attested in the two approaches and occupies the lower rank in the salience tables (rank `r get_metaphor_salience_rank(metaphor_salience, 'veiled')` in the lexical approach, and rank `r get_metaphor_salience_rank(metaphor_typebased_salience, 'veiled')` in the corpus one). [Anger]{.smallcaps} is construed as an object that the experiencer has control over in order to be displayed (i.e., expressed for others to perceive), or keep it hidden, hence perceptually inaccessible by others. These two inferences, which are re-cast as the mappings in the metaphor, are based on the [hiding]{.smallcaps} and [cause to see]{.smallcaps} frames.
+This metaphor is attested in the two approaches and occupies the lower rank in the salience tables (rank `r get_metaphor_salience_rank(metaphor_salience, 'veiled')` in the lexical approach, and rank `r get_metaphor_salience_rank(metaphor_typebased_salience, 'veiled')` in the corpus one). [Anger]{.smallcaps} is construed as an object that the experiencer has control over to be displayed (i.e., expressed for others to perceive), or keep it hidden, hence perceptually inaccessible by others. These two inferences, which are re-cast as the mappings in the metaphor, are based on the [hiding]{.smallcaps} and [cause to see]{.smallcaps} frames.
 
 `r paste(paste("- ", unlist(str_split(get_key_mappings(mapping_hidden_token), "; ")), "\n", sep = ""), collapse = "")`
 
@@ -1394,7 +1395,7 @@ This metaphor is attested in the two approaches and occupies the lower rank in t
 
   - `r get_lu_gloss_n_printed(mapping_hidden_token, "suppressing")`
 
-The main focus of this metaphor is on the externalisation or "unveiling" the anger. It is shown by the higher type and token frequencies of this mapping compared to the hiding of the object mapping. In the lexical approach ([§\@ref(hidden-typebased)](#hidden-typebased)), however, the metaphor focuses on the suppression of anger (i.e., maintaining control by "hiding" the object). Overall, the [(un)veiled object]{.smallcaps} metaphor highlights the control and expression of anger.
+The focus of this metaphor is on the externalisation or "unveiling" the anger. It is shown by the higher type and token frequencies of this mapping compared to the hiding of the object mapping. In the lexical approach ([§\@ref(hidden-typebased)](#hidden-typebased)), however, the metaphor focuses on the suppression of anger (i.e., maintaining control by "hiding" the object). Overall, the [(un)veiled object]{.smallcaps} metaphor highlights the control and expression of anger.
 
 
 ### [Anger is physical contact/harm]{.smallcaps} {#harm-tokenbased}
@@ -1419,9 +1420,9 @@ harm_frame_stats <- happyr::get_frames("harm$", df = marah, frame_var = "SFRAME"
 
   - `r get_lu_gloss_n_printed(mapping_harm_token, "experiencing")`
 
-In Kövecses's [-@kovecses_metaphor_2000] [force-dynamic]{.smallcaps} system, the metaphor highlight the part where the experience of anger leads to experiencer's responses (e.g., directing the harm at others). This aspect is also an important part of the [anger is natural force]{.smallcaps}, [anger is subjugator]{.smallcaps}, and [anger is weapon]{.smallcaps} metaphor.
+In Kövecses's [-@kovecses_metaphor_2000] [force-dynamic]{.smallcaps} system, the metaphor highlights the part where the experience of anger leads to experiencer's responses (e.g., directing the harm at others). This aspect is also an important part of the [anger is natural force]{.smallcaps}, [anger is subjugator]{.smallcaps}, and [anger is weapon]{.smallcaps} metaphor.
 
-The difference in the two approaches for this metaphor is in the main meaning focus. The predominant types in the lexical approach focuses on the cause of anger. The expressions referring to physical touching or harm are used in the context of harming the candidate experiencer (i.e., causing the candidate experiencer to be angry) ([§\@ref(harm-typebased)](#harm-typebased)). In the corpus approach, however, the physical harm expressions are used to show the harmful effect when experiencing anger and when targeting that effect to others.
+The difference in the two approaches for this metaphor is in the main meaning focus. The predominant types in the lexical approach focus on the cause of anger. The expressions referring to physical touching or harm are used in the context of harming the candidate experiencer (i.e., causing the candidate experiencer to be angry) ([§\@ref(harm-typebased)](#harm-typebased)). In the corpus approach, however, the physical harm expressions are used to show the harmful effect when experiencing anger and when targeting that effect to others.
 
 ### [Intensity is luminosity]{.smallcaps} {#luminousity-tokenbased}
 
@@ -1495,11 +1496,12 @@ social_type <- c(social_type, rep("", (length(physiology_type) - 1) - length(soc
 metonymy_tokenbased_category_print <- tibble(`social-communicative behaviour:` = social_type, `physiological response:` = physiology_type)
 ```
 
-The corpus analysis of the metonymy now includes the token frequencies for the metonymies, in addition to their type frequencies. These metonymies are rank-ordered in [Table \@ref(tab:metonymy-table-token-based)](#metonymy-table-token-based) by their token frequencies.
+The corpus analysis of the metonymy now includes the token frequencies for the metonymies, in addition to their type frequencies. These metonymies are rank ordered in [Table \@ref(tab:metonymy-table-token-based)](#metonymy-table-token-based) by their token frequencies.
 
 
 ```{r metonymy-table-token-based}
 metonymy_tokenbased_salience_print %>% 
+  mutate(Metonymy = str_replace(Metonymy, "frustated", "frustrated")) %>% 
   select(-Aggregate) %>% 
   knitr::kable(caption = "Conceptual metonymies for [anger]{.smallcaps} (Token-based, corpus approach)")
 ```
@@ -1548,7 +1550,7 @@ The [internal pressure]{.smallcaps} metonymy shares the same number of types bet
 
 The [body heat]{.smallcaps} metonymy is less productive in terms of its type in the corpus dataset (`r get_salience_stats(metonymy_tokenbased_salience, "n_type", "body heat", metaphor_data = FALSE)`) compared to the lexical one (`r get_salience_stats(metonymy_typebased_salience, "n_type", "body heat", metaphor_data = FALSE)`).
 
-### [Violent frustated behaviour for anger]{.smallcaps} {#frustation-tokenbased}
+### [Violent frustrated behaviour for anger]{.smallcaps} {#frustation-tokenbased}
 
 - `r get_lu_gloss_n_printed(metonymy_tokenbased, mapping_regex = "violent frustated", mapping_var = "METONYMY", metaphor_data = FALSE)`
 
@@ -1740,12 +1742,12 @@ One aspect of the discourse context is the "surrounding discourse", that is, how
 
 (@discourse_ctx_fire) _Wajahnya yang riang menjadi **kemerah-merahan** karena **nyala** **api** kemarahan yang **membakar** dadanya_ (ind_mixed_2012_1M: 376378).
 
-Example (@discourse_ctx_fire) illustrates the combination of metonymic pattern (in the main clause) and two metaphorical expressions for [anger is fire]{.smallcaps} (within the subordinate clause marked with *karena* 'because'). The use of [fire]{.smallcaps} metaphor in the noun phrase _**nyala api** kemarahan_ '*flame of the fire of* anger' could influence the forgoing discourse in the relative clause construction _kemarahan yang **membakar** dadanya_ 'anger that *burns* the chest'. In the context of the sentence, the two metaphorical expressions emphasise the specific reason for the metonymy [redness in the facial area for anger]{.smallcaps} used in the preceding, main clause. Let us see another example from [anger is substance in a container]{.smallcaps} ([Sections \@ref(contained-substance-tokenbased)](#contained-substance-tokenbased) and [\@ref(contained-substance-typebased)](#contained-substance-typebased))
+Example (@discourse_ctx_fire) illustrates the combination of metonymic pattern (in the main clause) and two metaphorical expressions for [anger is fire]{.smallcaps} (within the subordinate clause marked with *karena* 'because'). The use of [fire]{.smallcaps} metaphor in the noun phrase _**nyala api** kemarahan_ '*flame of the fire of* anger' could influence the forgoing discourse in the relative clause construction _kemarahan yang **membakar** dadanya_ 'anger that *burns* the chest'. In the context of the sentence, the two metaphorical expressions emphasise the specific reason for the metonymy [redness in the facial area for anger]{.smallcaps} used in the preceding, main clause. Let us see another example from [anger is substance in a container]{.smallcaps} ([§\@ref(contained-substance-tokenbased)](#contained-substance-tokenbased) and [\@ref(contained-substance-typebased)](#contained-substance-typebased))
 
 
 (@discourse_ctx_substance) _Jika amarah tersebut tak **tersalurkan** atau ternetralisasi dengan permintaan maaf atau jiwa besar mengikhlaskan, yang akan terjadi selanjutnya adalah amarah itu **mengendap** dan semakin **mengeras** dalam batinnya._ (ind_newscrawl_2016_1M: 343033)
 
-Sentence (@discourse_ctx_substance) contains more than one metaphorical expression that indicate a sequential, cause-and-effect scenario all within the same metaphorical frame, namely the [contained substance]{.smallcaps}. The sentence talks about the conserving effects of anger-substance if not being channelled out in the form of apology and big-heartedness. This shows how the use of a given metaphor in the preceding discourse indicating inability to channel out and neutralise anger, which is the cause, could influence the reasoning for the ensuing discourse indicating the effects of such cause using the same metaphor (i.e., becoming precipitated and hardened inside).
+Sentence (@discourse_ctx_substance) contains more than one metaphorical expression that indicate a sequential, cause-and-effect scenario all within the same metaphorical frame, namely the [contained substance]{.smallcaps}. The sentence talks about the conserving effects of anger-substance if not being channelled out in the form of apology and big-heartedness. This shows how the use of a given metaphor in the preceding discourse indicating inability to channel out and neutralise anger, which is the cause, could influence the reasoning for the ensuing discourse indicating the effects of such cause using the same metaphor (i.e., becoming solidified and hardened inside).
 
 ## Conceptual-cognitive context {#conceptual-context}
 
