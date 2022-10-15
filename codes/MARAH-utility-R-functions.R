@@ -74,7 +74,7 @@ get_lu_gloss_n_printed <- function(mapping_sourcedomain_token_df, mapping_regex,
       mutate(!!lu_var := gsub("([[:upper:]]+)", "[\\L\\1]{.smallcaps}", !!lu_var, perl = TRUE)) %>%
       mutate(!!gloss_var := gsub("([[:upper:]]+)", "[\\L\\1]{.smallcaps}", !!gloss_var, perl = TRUE)) %>%
       # mutate(lu_gloss_n = paste("*", str_replace_all(LU, "<\\/?w>", ""), "* '", LU_GLOSS, "' (", n, ")", sep = "")) %>% 
-      mutate(lu_gloss_n = paste("*", str_replace_all(!!lu_var, "<\\/?w>", "__"), "* '", !!gloss_var, "' (", n, ")", sep = "")) %>% 
+      mutate(lu_gloss_n = paste("*", str_replace_all(!!lu_var, "<\\/?w>", "__"), "* '", !!gloss_var, "' [", n, "]", sep = "")) %>% 
       arrange(desc(n)) %>% 
       pull(lu_gloss_n) %>% 
       paste(collapse = "; ") %>% 
@@ -88,7 +88,7 @@ get_lu_gloss_n_printed <- function(mapping_sourcedomain_token_df, mapping_regex,
       mutate(!!lu_var := str_replace_all(!!lu_var, "\\b(node)\\b", "[marah]{.smallcaps}")) %>%
       mutate(!!lu_var := gsub("([[:upper:]]+)", "[\\L\\1]{.smallcaps}", !!lu_var, perl = TRUE)) %>%
       mutate(!!gloss_var := gsub("([[:upper:]]+)", "[\\L\\1]{.smallcaps}", !!gloss_var, perl = TRUE)) %>%
-      mutate(lu_gloss_n = paste("*", str_replace_all(!!lu_var, "<\\/?w>", "__"), "* '", !!gloss_var, "' (", n, ")", sep = "")) %>% 
+      mutate(lu_gloss_n = paste("*", str_replace_all(!!lu_var, "<\\/?w>", "__"), "* '", !!gloss_var, "' [", n, "]", sep = "")) %>% 
       arrange(desc(n)) %>% 
       pull(lu_gloss_n) %>% 
       paste(collapse = "; ") %>% 
@@ -141,8 +141,9 @@ get_key_mappings <- function(mapping_sourcedomain_token_df, mapping_var = "MAPPI
   interim_mapping <- unique(pull(filter(mapping_sourcedomain_token_df, !!status_var == "key"), !!mapping_var))
   interim_mapping <- gsub("-", " ", interim_mapping, perl = TRUE)
   interim_mapping <- gsub("(_|\\sis\\s)", " <- ", interim_mapping, perl = TRUE)
+  interim_mapping <- stringr::str_replace_all(interim_mapping, "(.+)(\\s[<][-]\\s)(.+)", "\\3 &rarr; \\1")
   if (length(interim_mapping) > 1) {
-    return(paste(interim_mapping, collapse = "; "))
+    return(paste(interim_mapping, collapse = "___ "))
   } else {
     return(interim_mapping)
   }
