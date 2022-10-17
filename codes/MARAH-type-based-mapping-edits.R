@@ -25,4 +25,5 @@ metaphor_typebased <- metaphor_typebased %>%
          SFRAME = replace(SFRAME, LU %in% c("pemakan bawang", "makan bawang", "membawang", "pembawang"), "disturbance"),
          MAP_1 = replace(MAP_1, LU %in% c("pemakan bawang", "makan bawang", "membawang", "pembawang"), "cause-of-anger_annoyance/disturbance"),
          MAP_1 = replace(MAP_1, LU %in% c("pemakan bawang", "pembawang"), "angry-person_irritated-person"),
-         MAP_2 = replace(MAP_2, LU %in% c("pemakan bawang", "makan bawang", "membawang", "pembawang"), NA))
+         MAP_2 = replace(MAP_2, LU %in% c("pemakan bawang", "makan bawang", "membawang", "pembawang"), NA),
+         MAP_3 = replace(MAP_3, CM_BROADER == "anger is fire" & MAP_3 == "anger-level_fire-intensity", "the highest degree of anger intensity is the highest degree of fire"))
