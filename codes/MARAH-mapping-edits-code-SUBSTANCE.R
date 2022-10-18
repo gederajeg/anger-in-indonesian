@@ -41,6 +41,9 @@ marah <- marah %>%
          MAP1 = replace(MAP1, MP == "node <w>mengandung</w> STATE", "anger_substance"),
          MAP2 = replace(MAP2, MP == "node <w>mengandung</w> STATE", "intensity_mixed-substance"),
          
+         ## <w>mengendapkan</w> node (after the first review) 
+         MAP2 = replace(MAP2, MP == "<w>mengendapkan</w> node", "intense anger is the substance become hard"),
+         
          ## source frame of SUBMERGED ENTITY
          SFRAME = replace(SFRAME, SFRAME == "cause upward motion", "caused upward motion"),
          
