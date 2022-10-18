@@ -1,14 +1,9 @@
 ---
-title: "ANGER IN INDONESIAN"
+title: "ANGER IN INDONESIAN: Awakening a sleeping tiger"
 csl: "unified-style-sheet-for-linguistics.csl"
 bibliography: "anger-references.bib"
 link-citations: yes
 output: 
-  bookdown::word_document2:
-    df_print: kable
-    fig_caption: yes
-    fig_width: 6
-    reference_docx: "template.docx"
   html_notebook:
     code_folding: hide
     fig_caption: yes
@@ -16,8 +11,12 @@ output:
     number_sections: yes
     toc: yes
     toc_float: yes
+  bookdown::word_document2:
+    df_print: kable
+    fig_caption: yes
+    fig_width: 6
+    reference_docx: "template.docx"
 author: 'Gede Primahadi Wijaya Rajeg <a itemprop="sameAs" content="https://orcid.org/0000-0002-2047-8621" href="https://orcid.org/0000-0002-2047-8621" target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon"></a>'
-abstract: "This is the abstract"
 ---
 
 <style type="text/css">
@@ -47,7 +46,7 @@ This paper investigates the salient metaphoric and metonymic conceptualisations 
 
 Heider [-@heider_landscapes_1991] analysed emotion concepts in Minangkabau spoken in West Sumatera, and Indonesian spoken by the Minangkabau and the Javanese communities. The goals were to map the connection between emotion words and identify prototypical scenarios of the emotions related to the relevant behavioural correlates. A recent collection of papers in Fox [-@fox_expressions_2018] offers anthropological linguistic studies of emotions in the regional Austronesian languages of Indonesia.
 
-Shaver et al.'s [-@shaver_structure_2001] psychological study investigated the hierarchical and family-resemblance structures of emotion lexicons. They found that Indonesian and American English exhibit similarity in conceptualising [emotion]{.smallcaps} at (i) the superordinate level (i.e., positive, and negative emotions) [@shaver_structure_2001, 215-216], and (ii) the basic-level categories. The Indonesian's terms for the basic-level categories refer to the same categories as in American English, namely *cinta* 'love', *senang* 'happiness', *marah* 'anger', *kawatir/takut* 'anxiety/fear', and *sedih* 'sadness' [@shaver_structure_2001, 218].
+Shaver et al. [-@shaver_structure_2001] investigated the hierarchical and family-resemblance structures of emotion lexicons. They found that Indonesian and American English exhibit similarity in conceptualising [emotion]{.smallcaps} at (i) the superordinate level (i.e., positive, and negative emotions) [@shaver_structure_2001, 215-216], and (ii) the basic-level categories. The Indonesian's terms for the basic-level categories refer to the same categories as in American English, namely *cinta* 'love', *senang* 'happiness', *marah* 'anger', *kawatir/takut* 'anxiety/fear', and *sedih* 'sadness' [@shaver_structure_2001, 218].
 
 Linguistic studies in Indonesian/Malay reveal the so-called "psycho-collocations" [@matisoff_hearts_1986], which are lexico-semantic figurative expressions for mental activities and personhood, and which component parts consist of body-part terms. Indonesian/Malay have extensive repertoires of psycho-collocations, especially with the word *hati* 'liver', suggesting the prominence of the liver as the seat of psychological realms in the Malay world [@siahaan_did_2008;  @goddard_contrastive_2008; @oey_psycho-collocations_1990; @sather_work_2018; @fox_towards_2018, 12]. Musgrave [-@musgrave_nonsubject_2001] and Mulyadi [-@mulyadi_verba_2012] investigated the syntactic and semantic properties of Indonesian emotion predicates. Mulyadi [-@mulyadi_verba_2012] particularly is a contrastive study of emotion verbs between Indonesian and the Asahan Malay variety spoken in Tanjungbalai (Asahan), North Sumatera, Indonesia.
 
@@ -55,13 +54,11 @@ Indonesian emotions have also been analysed using the *Conceptual Metaphor Theor
 
 ## Previous studies on [anger]{.smallcaps} in Indonesian {#previous-study-anger}
   
-Several works have been conducted on Indonesian [anger]{.smallcaps}. Heider [-@heider_landscapes_1991, 57, Table 7] discovered that, in representing anger, figurative expressions (i.e., *palak* 'stifling; angry' and *panas hati* 'lit. hot liver; angry') received higher rating than the literal expression (i.e. *marah*). Heider [-@heider_landscapes_1991, 24-25] also proposed four [anger]{.smallcaps}-like clusters in Minangkabau Indonesian: (i) "anger" clusters (*naik darah* 'lit. rising blood; angry'), (ii) "anger/cruel" clusters (*bengis* 'cruel; harsness'), (iii) "anger/dislike" clusters (*gemas* 'irritated'), and (iv) "anger/trembling" clusters (*gemetar* 'trembling'). The elicited scenarios from the "anger/cruel" clusters revealed that the antecedents of anger "are hurtful acts by others, especially naughty children, and the outcomes are physical violence and verbal abuse" [@heider_landscapes_1991, 80, 116] (e.g., [§\@ref(verbal-behaviour-typebased)](#verbal-behaviour-typebased) and [§\@ref(violent-behaviour-typebased)](#violent-behaviour-typebased)). Heider [-@heider_landscapes_1991, 80] also noted that in the actual (than elicited) behaviour, Indonesians "mask most anger, and the open expression of anger is strongly disapproved of and negatively sanctioned".
+Several works have been conducted on Indonesian [anger]{.smallcaps}. Heider [-@heider_landscapes_1991, 57, Table 7] discovered that, in representing anger, figurative expressions (i.e., *palak* 'stifling; angry' and *panas hati* 'lit. hot liver; angry') received higher rating than the literal expression (i.e., *marah*). Heider [-@heider_landscapes_1991, 24-25] also proposed four [anger]{.smallcaps}-like clusters in Minangkabau Indonesian: (i) "anger" clusters (*naik darah* 'lit. rising blood; angry'), (ii) "anger/cruel" clusters (*bengis* 'cruel'), (iii) "anger/dislike" clusters (*gemas* 'irritated'), and (iv) "anger/trembling" clusters (*gemetar* 'trembling'). The elicited scenarios from the "anger/cruel" clusters revealed that the antecedents of anger "are hurtful acts by others, especially naughty children, and the outcomes are physical violence and verbal abuse" [@heider_landscapes_1991, 80, 116] (e.g., [§\@ref(verbal-behaviour-typebased)](#verbal-behaviour-typebased) and [§\@ref(violent-behaviour-typebased)](#violent-behaviour-typebased)). Heider [-@heider_landscapes_1991, 80] also noted that in the actual, spontaneous behaviour (rather than in the elicited behaviour), Indonesians "mask most anger, and the open expression of anger is strongly disapproved of and negatively sanctioned".
 
-Rajeg [-@rajeg_metafora_2013, 211-214] revealed that eight metaphors are significantly attracted to *amarah/kemarahan* 'anger'. They are [controlling emotion is controlling a moving object]{.smallcaps}, [emotion is pressurised substance]{.smallcaps}, [emotion is fluid in a container]{.smallcaps}, [emotion is heated fluid in a container]{.smallcaps}, [emotion is fire]{.smallcaps}, ([intensity of]{.smallcaps}) [emotion is temperature]{.smallcaps} ([hot/cold]{.smallcaps}), ([intensity of]{.smallcaps}) [emotion is verticality]{.smallcaps} ([high/low]{.smallcaps}), and [emotion is natural forces]{.smallcaps}. Six metaphors are statistically repelled: [emotion is a possessable object]{.smallcaps}, [causing emotion is object transfer]{.smallcaps}, [emotion is an accidental motion]{.smallcaps}, [emotion is a journey]{.smallcaps}, [becoming emotion is finding an object]{.smallcaps}, and [emotion is liquid]{.smallcaps}. The statistical attraction of Indonesian [anger]{.smallcaps} to the [heat]{.smallcaps}- and [substance]{.smallcaps}-related metaphors suggests the universality and centrality of these metaphors for [anger]{.smallcaps} as found in different languages [@kovecses_concept_2000], most notably English [@stefanowitsch_words_2006; @holland_cognitive_1987]. Rajeg's [-@rajeg_metafora_2013] quantitative study complements Yuditha's [-@yuditha_indonesian_2013] introspective assessment on the specific metaphors she proposed to be applicable to anger. Lastly, Rajeg [-@rajeg_metaphorical_2014] is a preliminary quantitative investigation on the distinctive metaphorical profiles of five [anger]{.smallcaps} synonyms; it demonstrates that, across the synonyms, Intensity is the prominent aspect highlighted by the metaphorical constructions.
-  
-## Aims {#aims}
+Rajeg [-@rajeg_metafora_2013, 211-214] revealed that eight metaphors are significantly attracted to *amarah/kemarahan* 'anger'. They are [controlling emotion is controlling a moving object]{.smallcaps}, [emotion is pressurised substance]{.smallcaps}, [emotion is fluid in a container]{.smallcaps}, [emotion is heated fluid in a container]{.smallcaps}, [emotion is fire]{.smallcaps}, ([intensity of]{.smallcaps}) [emotion is temperature]{.smallcaps} ([hot/cold]{.smallcaps}), ([intensity of]{.smallcaps}) [emotion is verticality]{.smallcaps} ([high/low]{.smallcaps}), and [emotion is natural forces]{.smallcaps}. Six metaphors are statistically repelled: [emotion is a possessable object]{.smallcaps}, [causing emotion is object transfer]{.smallcaps}, [emotion is an accidental motion]{.smallcaps}, [emotion is a journey]{.smallcaps}, [becoming emotion is finding an object]{.smallcaps}, and [emotion is liquid]{.smallcaps}. The statistical attraction of Indonesian [anger]{.smallcaps} to the [heat]{.smallcaps}- and [substance]{.smallcaps}-related metaphors suggests the universality and centrality of these metaphors for [anger]{.smallcaps} as found in different languages [@kovecses_concept_2000], most notably English [@stefanowitsch_words_2006; @holland_cognitive_1987]. Rajeg's [-@rajeg_metafora_2013] quantitative study complements Yuditha's [-@yuditha_indonesian_2013] introspective proposal on the specific metaphors of anger. Lastly, Rajeg's [-@rajeg_metaphorical_2014] preliminary quantitative investigation demonstrates that distinctive metaphorical constructions across five [anger]{.smallcaps} synonyms prominently highlight the Intensity of anger.
 
-This chapter presents new approaches in the study of Indonesian [anger]{.smallcaps} from the CMT and corpus linguistic perspective. It integrates the lexical [@kovecses_lexical_2019] ([§\@ref(typebased-analysis)](#typebased-analysis)) and corpus-based approaches [@stefanowitsch_corpus-based_2006; @stefanowitsch_gries_2006] ([§\@ref(tokenbased-analysis)](#tokenbased-analysis)) into the so-called *salience-based approach* [@kovecses_salience_2015] ([§\@ref(method)](#method)). The inclusion of metonymy ([§\@ref(typebased-metonymy-salience-results)](#typebased-metonymy-salience-results) and [\@ref(tokenbased-metonymy-salience-results)](#tokenbased-metonymy-salience-results)) and the contextual factors ([§\@ref(contexts)](#contexts)) fill the gap from previous works ([§\@ref(previous-study-anger)](#previous-study-anger)) focusing only on metaphor and ignore the role of contexts in the use of metaphors.
+This chapter presents new approaches in the study of Indonesian [anger]{.smallcaps} from the CMT and corpus linguistic perspectives. It integrates the lexical [@kovecses_lexical_2019] ([§\@ref(typebased-analysis)](#typebased-analysis)) and corpus-based approaches [@stefanowitsch_corpus-based_2006; @stefanowitsch_gries_2006] ([§\@ref(tokenbased-analysis)](#tokenbased-analysis)) into the so-called *salience-based approach* [@kovecses_salience_2015] ([§\@ref(method)](#method)). The inclusion of metonymy ([§\@ref(typebased-metonymy-salience-results)](#typebased-metonymy-salience-results) and [\@ref(tokenbased-metonymy-salience-results)](#tokenbased-metonymy-salience-results)) and the contextual factors ([§\@ref(contexts)](#contexts)) fill the gap from previous works, focusing only on metaphor and excluding contexts in the use of metaphors.
 
 # Methodology {#method}
 
@@ -119,7 +116,7 @@ root_pvals <- if (root_chisq$p.value < 0.05 & root_chisq$p.value > 0.01) " < 0.0
 ```
 
 
-The Indonesian terms corresponding to the English "anger" are *marah* 'angry; anger'^[The English translations come from Stevens and Schmidgall-Tellings [-@stevens_comprehensive_2004].], *amarah*^[*Amarah* is the informal variant of *marah* as indicated by the official *Kamus Besar Bahasa Indonesia* (KBBI) *The Big Dictionary of Indonesian* and defined under the entry for *marah*: https://kbbi.kemdikbud.go.id/entri/marah (accessed on October 26, 2021).] 'anger', and *kemarahan* 'fury; rage; anger', the noun derivative from the root *marah*. The choice is based on Shaver et al.'s [-@shaver_structure_2001, 217] finding that *marah* emerges as the prototypical label for [anger]{.smallcaps} category in Indonesian, as it is semantically broader and commonly used in everyday Indonesian. The commonality of *(a)marah* is evident from the frequency data in the **Indonesian Leipzig Corpora** (ILC) [@goldhahn_building_2012]. The combined token frequencies of *(a)marah* (`r prettyNum(pull(filter(root, lemma == "(a)marah"), n), big.mark = ",")` tokens) is the highest compared to the other terms identified by Shaver et al. [-@shaver_structure_2001, 218, Table 4], namely *geram* 'furious; angry' (`r prettyNum(pull(filter(root, lemma == "geram"), n), big.mark = ",")`) and *berang* 'furious; fury' (`r prettyNum(pull(filter(root, lemma == "berang"), n), big.mark = ",")`), as well as to the other near-synonyms of *marah*, namely *murka* 'wrath; anger; fury' (`r prettyNum(pull(filter(root, lemma == "murka"), n), big.mark = ",")`) and *gusar* 'angry; offended; annoyed' (`r prettyNum(pull(filter(root, lemma == "gusar"), n), big.mark = ",")`) (*X*^2^~goodness-of-fit~=`r format(round(root_chisq$statistic, 1))`; *df*=`r root_chisq$parameter`; *p*~two-tailed~`r root_pvals`). Moreover, the derivative *ke**marah**an* (`r prettyNum(pull(filter(ke_an, lemma == "kemarahan"), n), big.mark = ",")` tokens) is the most frequent compared to other derivatives based on the other roots, namely *ke**murka**an* (`r prettyNum(pull(filter(ke_an, lemma == "kemurkaan"), n), big.mark = ",")`), *ke**gusar**an* (`r prettyNum(pull(filter(ke_an, lemma == "kegusaran"), n), big.mark = ",")`), *ke**geram**an* (`r prettyNum(pull(filter(ke_an, lemma == "kegeraman"), n), big.mark = ",")`), and *ke**berang**an* (`r prettyNum(pull(filter(ke_an, lemma == "keberangan"), n), big.mark = ",")`) (*X*^2^~goodness-of-fit~=`r format(round(ke_an_chisq$statistic, 1))`; *df*=`r ke_an_chisq$parameter`; *p*~two-tailed~`r ke_an_pvals`).
+The Indonesian terms corresponding to the English *anger* are *marah* 'angry; anger'^[The English translations come from Stevens and Schmidgall-Tellings [-@stevens_comprehensive_2004].], *amarah*^[*Amarah* is the informal variant of *marah* as indicated by the official *Kamus Besar Bahasa Indonesia* (KBBI) *The Big Dictionary of Indonesian* and defined under the entry for *marah*: https://kbbi.kemdikbud.go.id/entri/marah (accessed on October 26, 2021).] 'anger', and *kemarahan* 'fury; rage; anger', the noun derivative from the root *marah*. The choice is based on Shaver et al.'s [-@shaver_structure_2001, 217] finding that *marah* emerges as the prototypical label for [anger]{.smallcaps} category in Indonesian, as it is semantically broader and commonly used in everyday Indonesian. The commonality of *(a)marah* is evident from the frequency data in the **Indonesian Leipzig Corpora** (ILC) [@goldhahn_building_2012]. The combined token frequencies of *(a)marah* (`r prettyNum(pull(filter(root, lemma == "(a)marah"), n), big.mark = ",")` tokens) is the highest compared to the other terms identified by Shaver et al. [-@shaver_structure_2001, 218, Table 4], namely *geram* 'furious; angry' (`r prettyNum(pull(filter(root, lemma == "geram"), n), big.mark = ",")`) and *berang* 'furious; fury' (`r prettyNum(pull(filter(root, lemma == "berang"), n), big.mark = ",")`), as well as to the other near-synonyms of *marah*, namely *murka* 'wrath; anger; fury' (`r prettyNum(pull(filter(root, lemma == "murka"), n), big.mark = ",")`) and *gusar* 'angry; offended; annoyed' (`r prettyNum(pull(filter(root, lemma == "gusar"), n), big.mark = ",")`) (*X*^2^~goodness-of-fit~=`r format(round(root_chisq$statistic, 1))`; *df*=`r root_chisq$parameter`; *p*~two-tailed~`r root_pvals`). Moreover, the derivative *ke**marah**an* (`r prettyNum(pull(filter(ke_an, lemma == "kemarahan"), n), big.mark = ",")` tokens) is the most frequent compared to other derivatives based on the other roots, namely *ke**murka**an* (`r prettyNum(pull(filter(ke_an, lemma == "kemurkaan"), n), big.mark = ",")`), *ke**gusar**an* (`r prettyNum(pull(filter(ke_an, lemma == "kegusaran"), n), big.mark = ",")`), *ke**geram**an* (`r prettyNum(pull(filter(ke_an, lemma == "kegeraman"), n), big.mark = ",")`), and *ke**berang**an* (`r prettyNum(pull(filter(ke_an, lemma == "keberangan"), n), big.mark = ",")`) (*X*^2^~goodness-of-fit~=`r format(round(ke_an_chisq$statistic, 1))`; *df*=`r ke_an_chisq$parameter`; *p*~two-tailed~`r ke_an_pvals`).
 
 The dataset for the type-based, lexical approach is culled from (i) the Indonesian WordNet (v1.0) [@bond_wordnet_2014]^[The Indonesian WordNet 1.0 is available at http://compling.hss.ntu.edu.sg/omw/cgi-bin/wn-gridx.cgi?usrname=&gridmode=wnbahasa (last accessed on 22 January 2022.)], (ii) the monolingual *Kamus Bahasa Indonesia* (the Indonesian Dictionary) (KBI) [@kamus_bi_2008], (iii) the official *Tesaurus Tematis Bahasa Indonesia* (the Indonesian Thematic Thesaurus) (http://tesaurus.kemdikbud.go.id/tematis/)^[The thesaurus is compiled and maintained by the Language Development and Cultivation Agency of the Ministy of Education and Culture of the Republic of Indonesia.], and (iv) a bilingual Indonesian-English dictionary [@stevens_comprehensive_2004]. The relevant linguistic expressions were gathered as follows. From the WordNet, KBI, and the thesaurus, the three Indonesian [anger]{.smallcaps} words (*marah*, *amarah*, *kemarahan*) were used as the search terms. This approach will retrieve expressions that contain (one of) the [anger]{.smallcaps} terms in their definition entries. These expressions were then checked for the evoked metaphorical/metonymical conceptualisations by looking at their meanings in the *Kamus Besar Bahasa Indonesia* (KBBI) (the Big Indonesian Dictionary)^[I used KBI instead of KBBI because KBBI only outputs the brief definition of the three [anger]{.smallcaps} words but not the metaphorical/metonymical expressions related to them, which can be found through the linked thematic thesaurus in the entry. In contrast, the available full PDF version of KBI allows me to do a concordance-like search throughout the PDF using the target terms, which may appear in the definition of an entry related to them. This is not possible in KBBI because the search field is only used for the headword, not the words contained in the definition of the headword. That way, we need to know *a priori* all expressions which definitions contain the [anger]{.smallcaps} words.] following the procedure of the *Metaphor Identification Procedure* (MIP) [@pragglejaz_mip_2007; @pragglejaz_mip_2010] (see below). To gather the data from the bilingual dictionary, the English terms "anger" and "angry" were searched for in the PDF version of the dictionary; this allows retrieval of the Indonesian expressions which English definitions contain the word "angry" or "anger".
 
@@ -135,15 +132,13 @@ leipzig_size_sources <- leipzig_size %>%
 ```
 
 
-The dataset for the token-based, corpus approach is taken from the corpus files in the ILC (total size = `r prettyNum(sum(leipzig_size$total_tokens), big.mark = ",")` word-tokens). It is chosen since, to the best of my knowledge, ILC is the only open access source to the largest collection of Indonesian texts^[The alternative is the Indonesian corpus in *Sketch Engine* (SE), which is also from online materials as in ILC. However, SE is a paid service to which the institution I work in does not have paid subscription.] and allows downloading the raw corpus files. ILC mainly consists of randomly chosen websites (`r pull(filter(leipzig_size_sources, sources == "web"), perc_sources)`% of the total size) and online news (`r pull(filter(leipzig_size_sources, sources == "news"), perc_sources)`%), followed by the Wikipedia dumps (`r pull(filter(leipzig_size_sources, sources == "wikipedia"), perc_sources)`%) and a mixture of other sources (`r pull(filter(leipzig_size_sources, sources == "mixed"), perc_sources)`%).
-
-As in MPA [@stefanowitsch_words_2006], one-thousand random concordance lines were retrieved for each *marah*, *amarah*, and *kemarahan* from the corpus, before manually discarding the irrelevant hits (i.e., duplicates, the predicative and attributive uses of the root *marah*, and the literal uses of the expressions). Next, syntactically relevant collocations of the target terms with the potential source-domain lexical units (LUs) were manually determined [@stefanowitsch_happiness_2004, 138; @sullivan_frames_2013, 3, 5], adopting the *MetaNet* (MN) approach that integrates MPA with Construction Grammar and Frame Semantics [@sullivan_frames_2013; @oana_computational_2017; see @rajeg_metaphorical_2019 for a recent application to Indonesian]. The MIP [@pragglejaz_mip_2007] was applied to determine whether the collocation of the target terms evoke metaphorical readings. It is determined whether the collocates' contextual meaning, when co-occurring with the [anger]{.smallcaps} terms, contrasts with their more basic meaning in other contexts, such that the "contextual meaning can be understood in comparison to the basic meaning" [@rajeg_metaphorical_2019, 64; @pragglejaz_mip_2007, 3; @sullivan_frames_2013, 36]. The KBBI was used to determine the basic meaning of the collocates with reference to MIP's features of basic meaning, namely "more concrete (what they evoke is easier to imagine, see, hear, feel, smell, and taste), related to bodily action, more precise (as opposed to vague), historically older, and are not necessarily the most frequent meanings" [@pragglejaz_mip_2007, 3]. An additional diagnostic to determine the basic meaning is a question proposed by Soriano [-@soriano_conceptualization_2005, 91]: "what exactly each expression 'was literally about'?". To illustrate, consider the following examples showing two different ways to convey the existence of *kemarahan* 'anger'.
+The dataset for the token-based, corpus approach is taken from the corpus files in the ILC (total size = `r prettyNum(sum(leipzig_size$total_tokens), big.mark = ",")` word-tokens). It is chosen since, to the best of my knowledge, ILC is the only open access source to the largest collection of Indonesian texts^[The alternative is the Indonesian corpus in *Sketch Engine* (SE), which is also from online materials as in ILC. However, SE is a paid service to which the institution I work in does not have paid subscription.] and allows downloading the raw corpus files. ILC mainly consists of randomly chosen websites (`r pull(filter(leipzig_size_sources, sources == "web"), perc_sources)`% of the total size) and online news (`r pull(filter(leipzig_size_sources, sources == "news"), perc_sources)`%), followed by the Wikipedia dumps (`r pull(filter(leipzig_size_sources, sources == "wikipedia"), perc_sources)`%) and a mixture of other sources (`r pull(filter(leipzig_size_sources, sources == "mixed"), perc_sources)`%). As in MPA [@stefanowitsch_words_2006], 1000 random concordance lines were retrieved for each *marah*, *amarah*, and *kemarahan* before manually discarding the irrelevant hits (i.e., duplicates, the predicative and attributive uses of the root *marah*, and the literal uses. Next, syntactically relevant collocations of the target terms with the potential source-domain lexical units (LUs) were manually determined [@stefanowitsch_happiness_2004, 138; @sullivan_frames_2013, 3, 5], adopting the *MetaNet* (MN) approach that integrates MPA with Construction Grammar and Frame Semantics [@sullivan_frames_2013; @oana_computational_2017; see @rajeg_metaphorical_2019 for a recent application to Indonesian]. The MIP was applied to determine whether the collocation of the target terms evoke metaphorical readings. It is determined whether the collocates' contextual meaning, when co-occurring with the [anger]{.smallcaps} terms, contrasts with their more basic meaning in other contexts, such that the "contextual meaning can be understood in comparison to the basic meaning" [@rajeg_metaphorical_2019, 64; @pragglejaz_mip_2007, 3; @sullivan_frames_2013, 36]. The KBBI was used to determine the basic meaning of the collocates with reference to MIP's features of basic meaning, namely "more concrete (what they evoke is easier to imagine, see, hear, feel, smell, and taste), related to bodily action, more precise (as opposed to vague), historically older, and are not necessarily the most frequent meanings" [@pragglejaz_mip_2007, 3]. An additional diagnostic to determine the basic meaning is a question proposed by Soriano [-@soriano_conceptualization_2005, 91]: "what exactly each expression 'was literally about'?". To illustrate, consider these two examples showing two different ways to convey the existence of *kemarahan* 'anger'.
 
 (@kemarahan_terjadi) *Kemarahan Presiden Jokowi __terjadi__ saat meninjau Pelabuhan Tanjung Priok (...)* (ind-id_web_2015_3M: 1310067)^[At the end of the numbered example, the source of the example is given in the format "(corpus file name: sentence id)" as in (ind-id_web_2015_3M: 1310067).]
 
 (@kemarahan_datang) *(...) kemarahan itu bisa saja __datang__ dalam waktu yang ditentukan (...)* (ind-id_web_2013_1M: 143884).
 
-Example (@kemarahan_terjadi) is considered literal given the verbal collocate *terjadi* 'happen' represents an abstract event as its basic meaning and, in this collocation with *kemarahan* (another abstract domain), *terjadi* is still understood in the abstract domain of [anger]{.smallcaps} [@croft_domain_2003, 192; @sullivan_frames_2013, 9; @rajeg_metaphorical_2019, 99]. In contrast, the collocation of *kemarahan* as the subject of the verb *datang* 'come' (@kemarahan_datang), having a basic meaning in the domain of physical translational motion, induces the metaphorical "domain mapping" [@croft_domain_2003, 192] and interpretation of the verb in the [anger]{.smallcaps} domain [cf. @sullivan_integrating_2016, 147; @dancygier_figurative_2014, 135]. Such metaphoric interpretation of *datang* emerges due to a mismatch between (i) the semantic type-constraint assigned to the semantic role of its subject (prototypically an animate entity), and (ii) the filler of that role, namely an abstract entity [anger]{.smallcaps} that is literally unable to perform a translational motion [cf. @stickles_formalizing_2016, 194; @sullivan_integrating_2016, 148; @brooke-rose_grammar_1958, 1]. The principles of metaphor-domain evocation in a grammatical construction have been described extensively by Sullivan [-@sullivan_frames_2013; -@sullivan_integrating_2016]. The unclear cases as to whether the tokens are metaphorical or literal were marked as "?" in the database and can be viewed in the supplementary materials: **https://osf.io/c3p4y/?view_only=50e70ee803fd41ec886547cf33848d49 (CITATION)**.
+Example (@kemarahan_terjadi) is considered literal given the verbal collocate *terjadi* 'happen' represents an abstract event as its basic meaning and, in this collocation with *kemarahan* (another abstract domain), *terjadi* is still understood in the abstract domain of [anger]{.smallcaps} [@croft_domain_2003, 192; @sullivan_frames_2013, 9; @rajeg_metaphorical_2019, 99]. In contrast, the collocation of *kemarahan* as the subject of the verb *datang* 'come' (@kemarahan_datang), having a basic meaning in the domain of physical translational motion, induces the metaphorical "domain mapping" [@croft_domain_2003, 192] and interpretation of the verb in the [anger]{.smallcaps} domain [cf. @sullivan_integrating_2016, 147; @dancygier_figurative_2014, 135]. Such metaphoric interpretation of *datang* emerges due to a mismatch between (i) the semantic type-constraint assigned to the semantic role of its subject (prototypically an animate entity), and (ii) the filler of that role, namely an abstract entity [anger]{.smallcaps} that is literally unable to perform a translational motion [cf. @stickles_formalizing_2016, 194; @sullivan_integrating_2016, 148; @brooke-rose_grammar_1958, 1]. The principles of metaphor-domain evocation in a grammatical construction have been described extensively by Sullivan [-@sullivan_frames_2013; -@sullivan_integrating_2016]. The unclear cases as to whether the tokens are metaphorical or literal were marked as "?" in the database, which is available from https://osf.io/c3p4y/?view_only=50e70ee803fd41ec886547cf33848d49.
 
 The identified metaphorical expressions were then grouped thematically under their metaphorical source domains, adopting the MN approach. MN formalises the central notions in CMT by (i) representing the metaphor-input domains as semantic frames, and (ii) viewing (conceptual) metaphor as unidirectional mappings from the source-domain frames to the target-domain frames (including the mappings between the frame roles) that are mediated via the grammatical constructions [@sullivan_frames_2013; @stickles_formalizing_2016; @croft_connecting_2009]. The closest English equivalence of the Indonesian source-domain LUs guides the choice for the source-domain frames in the English MN Wiki repository^[The *MetaNet* main page: https://metaphor.icsi.berkeley.edu/pub/en/index.php/MetaNet_Metaphor_Wiki. The *MetaNet* frame repository: https://metaphor.icsi.berkeley.edu/pub/en/index.php/Category:Frame] [see @lopez_distinguishing_2011 for a similar approach in Spanish]. The classification also considers the relevant categories from previous studies. The metaphorical mappings within a metaphor are postulated by making use of the available frame roles in each MN frame entry or proposed anew based on the semantics of the source-domain LUs. The metonymic source domains are determined via expressions referring to the physiological effects of emotion.
 
@@ -155,7 +150,7 @@ a. the number of metaphorical mappings in a metaphor
 
 The token frequency of a given metaphor is all occurrences of metaphorical expressions evoking the metaphor; the percentage of the total token for a metaphor is calculated from the summed tokens of all metaphors in the database. The same procedure is applied for the percentages of the number of metaphorical linguistic expressions and metaphorical mappings [@kovecses_salience_2015, 344-346].
 
-The metaphorical salience measure in the database for the lexical, type-based approach only considers the number of types of metaphorical linguistic expressions and the number of metaphorical mappings for a given metaphor. It is because the focus of such an approach is to gather the types (not tokens) of metaphorical expressions evoking a given metaphor and the metaphorical mappings within the metaphor.
+The metaphorical salience measure in the database for the lexical, type-based approach only considers the number of types of metaphorical linguistic expressions and the number of metaphorical mappings for a given metaphor. It is because the focus of such an approach is to gather the types (not tokens) of metaphorical expressions evoking a given metaphor and the respective metaphorical mappings.
 
 # Type-based salience analyses {#typebased-analysis}
 
@@ -175,12 +170,16 @@ source("codes/MARAH-token-based-analysis-code.R")
 There are `r nrow(metaphor_typebased_salience)` conceptual metaphors from the type-based, lexical dataset. [Table \@ref(tab:metaphor-table-type-based)](#metaphor-table-type-based) presents the source domains of the metaphors ranked order by their degree of salience values (see the `Aggregate` column).
 
 ```{r metaphor-table-type-based}
-knitr::kable(metaphor_typebased_salience_print, caption = "Source domains of [anger]{.smallcaps} (Type-based, lexical approach)", row.names = FALSE)
+metaphor_typebased_salience_print %>% 
+  mutate(`Metaphorical source domains` = str_replace(`Metaphorical source domains`, fixed("rough, solid entity"), "substance"), # replace solid entity with substance as per the suggestion from 1st review
+         `Metaphorical source domains` = str_replace(`Metaphorical source domains`, fixed("degree of control is object dimension"), "degree of controlling anger is size of patience as a container") # replace object dimension with size as per the suggestion from 1st review
+         ) %>%
+  knitr::kable(caption = "Source domains of [anger]{.smallcaps} (Type-based, lexical approach)", row.names = FALSE)
 ```
 
 [Table \@ref(tab:metaphor-table-type-based)](#metaphor-table-type-based) shows `r happyr::numbers2words(length(grep(" is ", metaphor_typebased_salience_print[[1]], perl = TRUE)))` metaphors in full, both with the source and target domains, because they are the more general metaphors.
 
-### [Anger is fierce, captive animal]{.smallcaps} {#animal-typebased}
+### [Anger is a fierce, captive animal]{.smallcaps} {#animal-typebased}
 
 ```{r mapping-animal, message = FALSE, include = FALSE}
 mapping_animal <- filter(metaphor_typebased_mapping, str_detect(CM_BROADER, "fierce")) %>% 
@@ -193,25 +192,23 @@ mapping_animal_discuss <- get_mappings(metaphor_typebased_mapping, 'fierce') %>%
 
 The most salient conceptualisation of anger in the lexical database is [fierce, captive animal]{.smallcaps}, manifesting `r get_salience_stats(metaphor_typebased_salience, "n_type", "fierce, captive")` metaphorical expressions and `r get_salience_stats(metaphor_typebased_salience, "n_mapping", "fierce, captive")` mappings as shown below^[Throughout this paper, the linguistic expressions of each mapping are given below the respective mapping. The mappings with their linguistic expressions are presented in the decreasing order of its number of linguistic type (i.e., the mapping's type frequency), below the foundational mapping(s) of the metaphor; this allows highlighting the central mapping and main meaning focus of the metaphor [@kovecses_metaphor_2010, 140]]. The first two mappings are the foundational mappings underlying each of the metaphorical expressions.
 
-- anger <- restrained/captive, fierce animal
-- experiencer <- entity who restrains/makes captive the animal
-- `r mapping_animal_discuss %>% slice_max(order_by = n_lu) %>% pull(MAPPING2) %>% unique() %>% str_replace_all("^(.+)( \\<\\- )(.+)$", "\\3\\2\\1")` (type=`r mapping_animal_discuss %>% slice_max(order_by = n_lu) %>% pull(n_lu) %>% unique()`)
+- restrained/captive, fierce animal &rarr; anger
+- entity who restrains/makes captive the animal &rarr; experiencer
+- `r mapping_animal_discuss %>% slice_max(order_by = n_lu) %>% pull(MAPPING2) %>% unique() %>% str_replace_all("^(.+)( \\<\\- )(.+)$", "\\1 &rarr; \\3")` (type=`r mapping_animal_discuss %>% slice_max(order_by = n_lu) %>% pull(n_lu) %>% unique()`)
 
   - `r paste(paste("*", mapping_animal_discuss %>% filter(str_detect(MAPPING, 'aggressive')) %>% pull(LU), "* '", mapping_animal_discuss %>% filter(str_detect(MAPPING, 'aggressive')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`. 
 
-- `r mapping_animal_discuss %>% filter(str_detect(MAPPING, 'deliberately')) %>% pull(MAPPING2) %>% unique() %>% str_replace_all("^(.+)( \\<\\- )(.+)$", "\\3\\2\\1")` (type=`r mapping_animal_discuss %>% filter(str_detect(MAPPING, 'deliberately')) %>% pull(n_lu) %>% unique()`)
+- `r mapping_animal_discuss %>% filter(str_detect(MAPPING, 'deliberately')) %>% pull(MAPPING2) %>% unique() %>% str_replace_all("^(.+)( \\<\\- )(.+)$", "\\1 &rarr; \\3")` (type=`r mapping_animal_discuss %>% filter(str_detect(MAPPING, 'deliberately')) %>% pull(n_lu) %>% unique()`)
 
   - `r paste(paste("*", mapping_animal_discuss %>% filter(str_detect(MAPPING, 'deliberately')) %>% pull(LU), "* '", mapping_animal_discuss %>% filter(str_detect(MAPPING, 'deliberately')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-- `r mapping_animal_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(MAPPING2) %>% unique()` (type=`r mapping_animal_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(n_lu) %>% unique()`)
+- `r mapping_animal_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(MAPPING2) %>% unique() %>% str_replace_all("(.+)\\s\\<\\-\\s(.+)", "\\2 &rarr; \\1")` (type=`r mapping_animal_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(n_lu) %>% unique()`)
 
   - `r paste(paste("*", mapping_animal_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(LU), "* '", mapping_animal_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-- `r mapping_animal_discuss %>% filter(str_detect(MAPPING, 'regulating')) %>% pull(MAPPING2) %>% unique()` (type=`r mapping_animal_discuss %>% filter(str_detect(MAPPING, 'regulating')) %>% pull(n_lu) %>% unique()`)
+- `r mapping_animal_discuss %>% filter(str_detect(MAPPING, 'regulating')) %>% pull(MAPPING2) %>% unique() %>% str_replace_all("(.+)\\s\\<\\-\\s(.+)", "\\2 &rarr; \\1")` (type=`r mapping_animal_discuss %>% filter(str_detect(MAPPING, 'regulating')) %>% pull(n_lu) %>% unique()`) (`r paste(paste("*", mapping_animal_discuss %>% filter(str_detect(MAPPING, 'regulating')) %>% pull(LU), "* '", mapping_animal_discuss %>% filter(str_detect(MAPPING, 'regulating')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`)
 
-  - `r paste(paste("*", mapping_animal_discuss %>% filter(str_detect(MAPPING, 'regulating')) %>% pull(LU), "* '", mapping_animal_discuss %>% filter(str_detect(MAPPING, 'regulating')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
-
-The main meaning focus of this metaphor is on aggressiveness of the angered person as reflected in the mapping [aggressive angry behaviour is aggressive animal behaviour]{.smallcaps} because it is the most productive mapping indicated by the highest number of linguistic types (`r mapping_animal_discuss %>% slice_max(order_by = n_lu) %>% pull(n_lu) %>% unique()`). The [fierce, captive animal]{.smallcaps} is also salient in the corpus approach, but the two sets differ in their central mapping and main meaning focus ([§\@ref(animal-tokenbased)](#animal-tokenbased)).
+The main meaning focus of this metaphor is on aggressiveness of the angered person. It is reflected in the mapping [aggressive angry behaviour is aggressive animal behaviour]{.smallcaps} because this mapping is the most productive indicated by the highest number of linguistic types (`r mapping_animal_discuss %>% slice_max(order_by = n_lu) %>% pull(n_lu) %>% unique()`). The [fierce, captive animal]{.smallcaps} is also salient in the corpus approach, but differ in its central mapping and main meaning focus ([§\@ref(animal-tokenbased)](#animal-tokenbased)).
 
 
 ### [Anger is fire]{.smallcaps} {#fire-typebased}
@@ -225,27 +222,21 @@ mapping_fire_discuss <- get_mappings(metaphor_typebased_mapping, 'fire$') %>% le
 
 The [anger is fire]{.smallcaps} metaphor is the second most salient in the type-based dataset (`r get_salience_stats(metaphor_typebased_salience, 'n_type', 'fire')` types and `r get_salience_stats(metaphor_typebased_salience, 'n_mapping', 'fire')` mappings). Rajeg [-@rajeg_metafora_2013] identified a statistically significant association between [fire]{.smallcaps} and anger in Indonesian.
 
-- anger <- fire
-- angry person <- burning object
-- `r mapping_fire_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING) %>% str_replace_all(" is ", " <- ")` (type=`r mapping_fire_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu) %>% unique()`)
+- fire &rarr; anger
+- burning object &rarr; angry person
+- `r mapping_fire_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING) %>% str_replace_all("(.+)\\sis\\s(.+)", "\\2 &rarr; \\1") %>% str_replace_all("the highest degree of", "intensity of") %>% str_replace(" intensity$", "")` (type=`r mapping_fire_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu) %>% unique()`)
 
   - `r paste(paste("*", mapping_fire_discuss %>% filter(str_detect(MAPPING, 'highest degree')) %>% pull(LU), "* '", mapping_fire_discuss %>% filter(str_detect(MAPPING, 'highest degree')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")` 
 
-- `r mapping_fire_discuss %>% filter(str_detect(MAPPING, 'ceasing')) %>% pull(MAPPING2) %>% unique()` (type=`r mapping_fire_discuss %>% filter(str_detect(MAPPING, 'ceasing')) %>% pull(n_lu) %>% unique()`)
+- `r mapping_fire_discuss %>% filter(str_detect(MAPPING, 'ceasing')) %>% pull(MAPPING2) %>% unique() %>% str_replace_all("(.+)\\s\\<\\-\\s(.+)", "\\2 &rarr; \\1")` (type=`r mapping_fire_discuss %>% filter(str_detect(MAPPING, 'ceasing')) %>% pull(n_lu) %>% unique()`)
 
   - `r paste(paste("*", mapping_fire_discuss %>% filter(str_detect(MAPPING, 'ceasing')) %>% pull(LU), "* '", mapping_fire_discuss %>% filter(str_detect(MAPPING, 'ceasing')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-- `r mapping_fire_discuss %>% filter(str_detect(MAPPING, 'anger\\-level')) %>% pull(MAPPING2) %>% unique()` (type=`r mapping_fire_discuss %>% filter(str_detect(MAPPING, 'anger\\-level')) %>% pull(n_lu) %>% unique()`)
-
-  - `r paste(paste("*", mapping_fire_discuss %>% filter(str_detect(MAPPING, 'anger[-]level')) %>% pull(LU), "* '", mapping_fire_discuss %>% filter(str_detect(MAPPING, 'anger[-]level')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
-
-- `r mapping_fire_discuss %>% filter(str_detect(MAPPING, 'causing')) %>% pull(MAPPING2) %>% unique()` (type=`r mapping_fire_discuss %>% filter(str_detect(MAPPING, 'causing')) %>% pull(n_lu) %>% unique()`)
-
-  - `r paste(paste("*", mapping_fire_discuss %>% filter(str_detect(MAPPING, 'causing anger')) %>% pull(LU), "* '", mapping_fire_discuss %>% filter(str_detect(MAPPING, 'causing anger')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+- `r mapping_fire_discuss %>% filter(str_detect(MAPPING, 'causing')) %>% pull(MAPPING2) %>% unique() %>% str_replace_all("(.+)\\s\\<\\-\\s(.+)", "\\2 &rarr; \\1")` (type=`r mapping_fire_discuss %>% filter(str_detect(MAPPING, 'causing')) %>% pull(n_lu) %>% unique()`) (`r paste(paste("*", mapping_fire_discuss %>% filter(str_detect(MAPPING, 'causing anger')) %>% pull(LU), "* '", mapping_fire_discuss %>% filter(str_detect(MAPPING, 'causing anger')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`)
 
 Based on the number of the linguistic expressions, the meaning focus of the metaphor is on the increased intensity of anger, which is the same in the token-based dataset ([§\@ref(fire-tokenbased)](#fire-tokenbased)).
 
-### [Anger is physical contact/harm]{.smallcaps} {#harm-typebased}
+### [Cause of anger is physical contact/harm]{.smallcaps} {#harm-typebased}
 
 ```{r mapping-harm, message = FALSE, include = FALSE}
 mapping_harm <- filter(metaphor_typebased_mapping, str_detect(CM_BROADER, "harm$")) %>% 
@@ -256,12 +247,12 @@ mapping_harm_discuss <- get_mappings(metaphor_typebased_mapping, 'harm$') %>% le
 
 This metaphor is a sub-case of the [emotional effect is physical contact]{.smallcaps} metaphor [see @lakoff_metaphors_1980, 50] and is the third most salient metaphor for anger with `r get_salience_stats(metaphor_typebased_salience, 'n_type', 'physical contact')` types and `r get_salience_stats(metaphor_typebased_salience, 'n_mapping', 'physical contact')` mappings.
 
-- person('s body) <- harmed/contacted entity
-- `r mapping_harm_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING) %>% str_replace_all(" is ", " <- ")` (type=`r mapping_harm_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`)
+- harmed/entity in contact &rarr; person('s body)
+- `r mapping_harm_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING) %>% str_replace_all("(.+) is (.+)", "\\2 &rarr; \\1")` (type=`r mapping_harm_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`)
 
   - `r paste(paste("*", mapping_harm_discuss %>% filter(str_detect(MAPPING, 'causing anger')) %>% pull(LU), "* '", mapping_harm_discuss %>% filter(str_detect(MAPPING, 'causing anger')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-- `r mapping_harm_stats %>% slice_min(order_by = n_lu) %>% pull(MAPPING) %>% gsub(x = ., pattern = "-", replacement = " ") %>% gsub(x = ., pattern = "_", replacement = " <- ")` (type=`r mapping_harm_stats %>% slice_min(order_by = n_lu) %>% pull(n_lu)`)
+- `r mapping_harm_stats %>% slice_min(order_by = n_lu) %>% pull(MAPPING) %>% gsub(x = ., pattern = "-", replacement = " ") %>% str_replace_all("(.+)_(.+)", "\\2 &rarr; \\1")` (type=`r mapping_harm_stats %>% slice_min(order_by = n_lu) %>% pull(n_lu)`)
 
   - `r paste(paste("*", mapping_harm_discuss %>% filter(str_detect(MAPPING, 'effect.of.touch')) %>% pull(LU), "* '", mapping_harm_discuss %>% filter(str_detect(MAPPING, 'effect.of.touch')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
@@ -278,19 +269,17 @@ mapping_disease_discuss <- get_mappings(metaphor_typebased_mapping, 'disease$') 
 
 The [anger is disease]{.smallcaps} metaphor is realised by `r get_salience_stats(metaphor_typebased_salience, "n_type", "disease")` types and `r get_salience_stats(metaphor_typebased_salience, "n_mapping", "disease")` different mappings. The productivity of the mappings suggests that the metaphor focuses on the undesirability and effect of anger as a disease.
 
-- angry person <- patient
-- anger <- disease (*gondok* 'goitre')
-- `r mapping_disease_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING) %>% gsub(x = ., pattern = "-", replacement = " ") %>% gsub(x = ., pattern = "_", replacement = " <- ")` (type=`r mapping_disease_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`)
+- patient &rarr; angry person
+- disease &rarr; anger (*gondok* 'goitre')
+- `r mapping_disease_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING) %>% gsub(x = ., pattern = "-", replacement = " ") %>% gsub(x = ., pattern = "(.+)_(.+)", replacement = "\\2 &rarr; \\1")` (type=`r mapping_disease_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`)
 
   - `r paste(paste("*", mapping_disease_discuss %>% filter(str_detect(MAPPING, 'undesirability')) %>% pull(LU), "* '", mapping_disease_discuss %>% filter(str_detect(MAPPING, 'undesirability')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-- `r mapping_disease_discuss %>% filter(str_detect(MAPPING, 'effect')) %>% pull(MAPPING2) %>% unique()` (type=`r mapping_disease_discuss %>% filter(str_detect(MAPPING, 'effect')) %>% pull(n_lu) %>% unique()`)
+- `r mapping_disease_discuss %>% filter(str_detect(MAPPING, 'effect')) %>% pull(MAPPING2) %>% unique() %>% str_replace_all("(.+) \\<\\- (.+)", "\\2 &rarr; \\1")` (type=`r mapping_disease_discuss %>% filter(str_detect(MAPPING, 'effect')) %>% pull(n_lu) %>% unique()`)
 
   - `r paste(paste("*", mapping_disease_discuss %>% filter(str_detect(MAPPING, 'effect')) %>% pull(LU), "* '", mapping_disease_discuss %>% filter(str_detect(MAPPING, 'effect')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-- `r mapping_disease_discuss %>% filter(str_detect(MAPPING, 'calm')) %>% pull(MAPPING2) %>% unique()` (type=`r mapping_disease_discuss %>% filter(str_detect(MAPPING, 'calm')) %>% pull(n_lu) %>% unique()`)
-
-  - `r paste(paste("*", mapping_disease_discuss %>% filter(str_detect(MAPPING, 'calm')) %>% pull(LU), "* '", mapping_disease_discuss %>% filter(str_detect(MAPPING, 'calm')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+- `r mapping_disease_discuss %>% filter(str_detect(MAPPING, 'calm')) %>% pull(MAPPING2) %>% unique() %>% str_replace_all("(.+) \\<\\- (.+)", "\\2 &rarr; \\1")` (type=`r mapping_disease_discuss %>% filter(str_detect(MAPPING, 'calm')) %>% pull(n_lu) %>% unique()`) (`r paste(paste("*", mapping_disease_discuss %>% filter(str_detect(MAPPING, 'calm')) %>% pull(LU), "* '", mapping_disease_discuss %>% filter(str_detect(MAPPING, 'calm')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ") %>% str_replace(fixed("; to treat s.o."), "")`)
 
 In the token-based dataset, the [disease]{.smallcaps} metaphor does not make into the top-20 most salient metaphors (rank `r get_metaphor_salience_rank(metaphor_salience, 'disease')`; token=`r get_salience_stats(metaphor_salience, "n_token", "disease")`; type=`r get_salience_stats(metaphor_salience, "n_type", "disease")`; mapping=`r get_salience_stats(metaphor_salience, "n_mapping", "disease")`). This indicates that the two different methods can complement one another to highlight the salient metaphor of a target domain.
 
@@ -303,23 +292,23 @@ mapping_insanity_stats <- mapping_insanity %>% filter(status == 'no') %>% group_
 mapping_insanity_discuss <- get_mappings(metaphor_typebased_mapping, 'insanity$') %>% left_join(mapping_insanity %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_insanity_stats)
 ```
 
-Kövecses [-@kovecses_metaphors_1986, 20-22] proposes that the [insanity]{.smallcaps} metaphor is one of the principal metaphors for anger [see also @holland_cognitive_1987, 204-205]. It appears to be the case for Indonesian in the type-based analysis since it ranks in the top-5 list. All metaphorical expressions (type=`r get_salience_stats(metaphor_typebased_salience, "n_type", "insanity")`) evoke the following mappings.
+Kövecses [-@kovecses_metaphors_1986, 20-22] proposes that the [insanity]{.smallcaps} metaphor is one of the principal metaphors for anger [see also @holland_cognitive_1987, 204-205]. It appears to be the case for Indonesian in the type-based analysis since it ranks in the top-5 list. All expressions (type=`r get_salience_stats(metaphor_typebased_salience, "n_type", "insanity")`) evoke the following mappings.
 
-- `r mapping_insanity %>% filter(status == "key") %>% pull(MAPPING) %>% unique() %>% .[1] %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ")`
+- `r mapping_insanity %>% filter(status == "key") %>% pull(MAPPING) %>% unique() %>% .[1] %>% str_replace_all("-", " ") %>% str_replace_all("(.+)_(.+)", "\\2 &rarr; \\1")`
 
-- `r mapping_insanity %>% filter(status == "key") %>% pull(MAPPING) %>% unique() %>% .[2] %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ")`
+- `r mapping_insanity %>% filter(status == "key") %>% pull(MAPPING) %>% unique() %>% .[2] %>% str_replace_all("-", " ") %>% str_replace_all("(.+)_(.+)", "\\2 &rarr; \\1")`
 
-- `r mapping_insanity_discuss %>% filter(str_detect(MAPPING, 'becoming')) %>% pull(MAPPING2) %>% unique()` (type=`r mapping_insanity_discuss %>% filter(str_detect(MAPPING, 'becoming')) %>% pull(n_lu) %>% unique()`)
+- `r mapping_insanity_discuss %>% filter(str_detect(MAPPING, 'becoming')) %>% pull(MAPPING2) %>% unique() %>% str_replace_all("(.+) \\<\\- (.+)", "\\2 &rarr; \\1")` (type=`r mapping_insanity_discuss %>% filter(str_detect(MAPPING, 'becoming')) %>% pull(n_lu) %>% unique()`)
 
   - `r paste(paste("*", mapping_insanity_discuss %>% filter(str_detect(MAPPING, 'becoming')) %>% pull(LU), "* '", mapping_insanity_discuss %>% filter(str_detect(MAPPING, 'becoming')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
   
-- `r mapping_insanity_discuss %>% filter(str_detect(MAPPING, 'uncontrolled')) %>% pull(MAPPING2) %>% unique()` (type=`r mapping_insanity_discuss %>% filter(str_detect(MAPPING, 'uncontrolled')) %>% pull(n_lu) %>% unique()`)
+- `r mapping_insanity_discuss %>% filter(str_detect(MAPPING, 'uncontrolled')) %>% pull(MAPPING2) %>% unique() %>% str_replace_all("(.+) \\<\\- (.+)", "\\2 &rarr; \\1")` (type=`r mapping_insanity_discuss %>% filter(str_detect(MAPPING, 'uncontrolled')) %>% pull(n_lu) %>% unique()`)
 
   - `r paste(paste("*", mapping_insanity_discuss %>% filter(str_detect(MAPPING, 'uncontrolled')) %>% pull(LU), "* '", mapping_insanity_discuss %>% filter(str_detect(MAPPING, 'uncontrolled')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
 The metaphor focuses on the control aspect. Particularly, the experiencer has become "completely incapacitated cognitively as well as in terms of behavior" [@kovecses_metaphor_2000, 74] and exhibits insane behaviours (the third and fourth mappings from the top). This implies that anger is an intense emotion forcing the experiencer to lose all controls. The [insanity]{.smallcaps} metaphor is also found in the token-based dataset but much less prominent (rank `r get_metaphor_salience_rank(metaphor_salience, "insanity")`) and has a lower number of types (`r get_salience_stats(metaphor_salience, "n_type", "insanity")`), despite the same number of mappings. Rajeg [-@rajeg_metafora_2013, 111] also found only one token for the [insanity]{.smallcaps} metaphor (*[exp]{.smallcaps} __mabuk karena__ amarah* '[exp]{.smallcaps} be _drunk with_ anger').
 
-### [Anger is pressurised substance in a container]{.smallcaps} {#pressurised-typebased}
+### [Anger is a pressurised substance in a container]{.smallcaps} {#pressurised-typebased}
 
 ```{r mapping-pressurised-substance, message = FALSE, include = FALSE}
 mapping_pressurisedfluid <- filter(metaphor_typebased_mapping, str_detect(CM_BROADER, "pressurised substance in a container$")) %>% 
@@ -330,23 +319,19 @@ mapping_pressurisedfluid_discuss <- get_mappings(metaphor_typebased_mapping, 'pr
 
 The [pressurised substance in a container]{.smallcaps} is part of the [substance/containment]{.smallcaps} family of metaphors and found to be statistically central for anger in Indonesian [@rajeg_metafora_2013, 211]. The metaphor is based on the lexical units (LUs) evoking two MN frames, the [pressure in a container]{.smallcaps} (see the fourth mapping from the top below) and the [(caused) upward motion]{.smallcaps} frames (the third and fifth mappings) and realises `r metaphor_typebased_salience %>% filter(str_detect(metaphor, "pressurised")) %>% pull(n_type)` types of metaphorical expressions and `r metaphor_typebased_salience %>% filter(str_detect(metaphor, "pressurised")) %>% pull(n_mapping)` mappings presented below.
 
-- `r mapping_pressurisedfluid %>% filter(status == "key") %>% pull(MAPPING) %>% unique() %>% .[1] %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ")`
+- `r mapping_pressurisedfluid %>% filter(status == "key") %>% pull(MAPPING) %>% unique() %>% .[1] %>% str_replace_all("-", " ") %>% str_replace_all("(.+)_(.+)", "\\2 &rarr; \\1")`
 
-- `r mapping_pressurisedfluid %>% filter(status == "key") %>% pull(MAPPING) %>% unique() %>% .[2] %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ")`
+- `r mapping_pressurisedfluid %>% filter(status == "key") %>% pull(MAPPING) %>% unique() %>% .[2] %>% str_replace_all("-", " ") %>% str_replace_all("(.+)_(.+)", "\\2 &rarr; \\1")`
 
-- `r mapping_pressurisedfluid_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING) %>% str_replace_all(" is ", " <- ")` (type=`r mapping_pressurisedfluid_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`)
+- `r mapping_pressurisedfluid_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING) %>% str_replace_all("(.+) is (.+)", "\\2 &rarr; \\1")` (type=`r mapping_pressurisedfluid_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`)
 
   - `r paste(paste("*", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'caused to')) %>% pull(LU), "* '", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'caused to')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-- `r mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(MAPPING2) %>% unique()` (type=`r mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(n_lu) %>% unique()`)
+- `r mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(MAPPING2) %>% unique() %>% str_replace_all("(.+) \\<\\- (.+)", "\\2 &rarr; \\1")` (type=`r mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(n_lu) %>% unique()`) (`r paste(paste("*", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(LU), "* '", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`)
 
-  - `r paste(paste("*", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(LU), "* '", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+- `r mapping_pressurisedfluid_stats %>% filter(str_detect(MAPPING, "causing increased")) %>% pull(MAPPING) %>% str_replace_all("(.+) is (.+)", "\\2 &rarr; \\1")` (type=`r mapping_pressurisedfluid_stats %>% filter(str_detect(MAPPING, "causing increased")) %>% pull(n_lu)`) (`r paste(paste("*", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'causing increased')) %>% pull(LU), "* '", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'causing increased')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`)
 
-- `r mapping_pressurisedfluid_stats %>% filter(str_detect(MAPPING, "causing increased")) %>% pull(MAPPING) %>% str_replace_all(" is ", " <- ")` (type=`r mapping_pressurisedfluid_stats %>% filter(str_detect(MAPPING, "causing increased")) %>% pull(n_lu)`)
-
-  - `r paste(paste("*", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'causing increased')) %>% pull(LU), "* '", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'causing increased')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
-
-The predominant metaphorical expressions show that anger is conceptualised as the blood-substance, being increased/raised due to high pressure as captured in the third and fifth mappings. These mappings reveal the main meaning focus of (caused) increased intensity of the experienced anger and is related to the generic metaphor [intensity is verticality]{.smallcaps} ([§\@ref(verticality-typebased)](#verticality-typebased)). The inability to control such an increase makes the person explode (the fourth mapping). In the corpus dataset ([§\@ref(pressurised-tokenbased)](#pressurised-tokenbased)), it is also ranked in the top-10 list.
+The predominant metaphorical expressions show that anger is conceptualised as the blood-substance, being increased/raised due to high pressure as captured in the third and fifth mappings. These mappings reveal the main meaning focus of (caused) increased intensity of the experienced anger and is related to the generic metaphor [intensity is verticality/height]{.smallcaps} ([§\@ref(verticality-typebased)](#verticality-typebased)). The inability to control such an increase makes the person explode (the fourth mapping). In the corpus dataset ([§\@ref(pressurised-tokenbased)](#pressurised-tokenbased)), it is also ranked in the top 10.
 
 ### [(Cause of) anger is annoyance]{.smallcaps} {#annoyance-typebased}
 
@@ -359,19 +344,18 @@ mapping_annoyance_discuss <- get_mappings(metaphor_typebased_mapping, 'annoyance
 
 The metaphor predominantly captures the cause of anger based on metaphorical expressions referring to various physical and psychological disturbance manifested in `r get_salience_stats(metaphor_typebased_salience, 'n_mapping', 'annoyance')` mappings below. This metaphor is only identified in the lexical dataset.
 
-- `r mapping_annoyance_stats %>% filter(str_detect(MAPPING, "cause.of.anger.annoyance")) %>% pull(MAPPING) %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ")` (type=`r mapping_annoyance_stats %>% filter(str_detect(MAPPING, "cause.of.anger.annoyance")) %>% pull(n_lu)`)
+- `r mapping_annoyance_stats %>% filter(str_detect(MAPPING, "cause.of.anger.annoyance")) %>% pull(MAPPING) %>% str_replace_all("-", " ") %>% str_replace_all("(.+)_(.+)", "\\2 &rarr; \\1")` (type=`r mapping_annoyance_stats %>% filter(str_detect(MAPPING, "cause.of.anger.annoyance")) %>% pull(n_lu)`)
 
   - `r paste(paste("*", mapping_annoyance_discuss %>% filter(str_detect(MAPPING, 'cause.of')) %>% pull(LU), "* '", mapping_annoyance_discuss %>% filter(str_detect(MAPPING, 'cause.of')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
 
-- `r mapping_annoyance_stats %>% filter(str_detect(MAPPING, "irritated.person")) %>% pull(MAPPING) %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ")` (type=`r mapping_annoyance_stats %>% filter(str_detect(MAPPING, "irritated.person")) %>% pull(n_lu)`)
+- `r mapping_annoyance_stats %>% filter(str_detect(MAPPING, "irritated.person")) %>% pull(MAPPING) %>% str_replace_all("-", " ") %>% str_replace_all("(.+)_(.+)", "\\2 &rarr; \\1")` (type=`r mapping_annoyance_stats %>% filter(str_detect(MAPPING, "irritated.person")) %>% pull(n_lu)`)
 
   - `r paste(paste("*", mapping_annoyance_discuss %>% filter(str_detect(MAPPING, 'irritated.person')) %>% pull(LU), "* '", mapping_annoyance_discuss %>% filter(str_detect(MAPPING, 'irritated.person')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-- `r mapping_annoyance_stats %>%  filter(str_detect(MAPPING, "person.causing.anger")) %>% pull(MAPPING)  %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ")` (type=`r mapping_annoyance_stats %>% filter(str_detect(MAPPING, "person.causing.anger")) %>% pull(n_lu)`)
+- `r mapping_annoyance_stats %>%  filter(str_detect(MAPPING, "person.causing.anger")) %>% pull(MAPPING)  %>% str_replace_all("-", " ") %>% str_replace_all("(.+)_(.+)", "\\2 &rarr; \\1")` (type=`r mapping_annoyance_stats %>% filter(str_detect(MAPPING, "person.causing.anger")) %>% pull(n_lu)`) (`r paste(paste("*", mapping_annoyance_discuss %>% filter(str_detect(MAPPING, 'person.causing')) %>% pull(LU), "* '", mapping_annoyance_discuss %>% filter(str_detect(MAPPING, 'person.causing')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`)
 
-  - `r paste(paste("*", mapping_annoyance_discuss %>% filter(str_detect(MAPPING, 'person.causing')) %>% pull(LU), "* '", mapping_annoyance_discuss %>% filter(str_detect(MAPPING, 'person.causing')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
-  
+
 Several types refer to generic annoyances/disturbances (e.g., *pengacauan* 'disturbance', *gangguan* 'hindrance', *pengacau* 'agitator'); they can refer to physical or psychological annoyances and are underspecified for the degree of affectedness. The effect of *salah penerimaan* 'wrong reception' could be considered as a psychological annoyance. There are specific verbal and nominal patterns based on the noun root *bawang* 'shallot; onion'. The motivation behind the choice of *bawang* could be the irritation of the eyes (leading to the production of tears) that it causes when someone chops it. The physical irritation caused by interacting with shallot/onion is mapped onto the cause of anger.
 
 ### [Anger is bitterness]{.smallcaps} {#bitterness-typebased}
@@ -385,17 +369,16 @@ mapping_bitterness_discuss <- get_mappings(metaphor_typebased_mapping, 'bitterne
 
 This metaphor is manifested into `r metaphor_typebased_salience %>% filter(str_detect(metaphor, "bitterness")) %>% pull(n_type)` metaphorical expressions reflecting `r metaphor_typebased_salience %>% filter(str_detect(metaphor, "bitterness")) %>% pull(n_mapping)` metaphorical mappings. The metaphor is based on LUs evoking the MN [taste]{.smallcaps} frame.
 
-- `r mapping_bitterness %>% filter(status == "key") %>% pull(MAPPING) %>% unique() %>% .[1] %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ")`
+- `r mapping_bitterness %>% filter(status == "key") %>% pull(MAPPING) %>% unique() %>% .[1] %>% str_replace_all("-", " ") %>% str_replace_all("(.+)_(.+)", "\\2 &rarr; \\1")`
 
-- `r mapping_bitterness %>% filter(status == "key") %>% pull(MAPPING) %>% unique() %>% .[2] %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ") %>% str_replace_all("^(.+)( \\<\\- )(.+)$", "\\3\\2\\1")`
+- `r mapping_bitterness %>% filter(status == "key") %>% pull(MAPPING) %>% unique() %>% .[2] %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ") %>% str_replace_all("^(.+)( \\<\\- )(.+)$", "\\1 &rarr; \\3")`
 
-- `r mapping_bitterness_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING)  %>% str_replace_all("-", " ") %>% str_replace_all("([^_]+)_([^_]+)", "\\2 <- \\1")` (type=`r mapping_bitterness_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`)
+- `r mapping_bitterness_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING)  %>% str_replace_all("-", " ") %>% str_replace_all("([^_]+)_([^_]+)", "\\1 &rarr; \\2")` (type=`r mapping_bitterness_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`)
 
   - `r paste(paste("*", mapping_bitterness_discuss %>% filter(str_detect(MAPPING, 'undesirability')) %>% pull(LU), "* '", mapping_bitterness_discuss %>% filter(str_detect(MAPPING, 'undesirability')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-- `r mapping_bitterness_stats %>% slice_min(order_by = n_lu) %>% pull(MAPPING)  %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ")` (type=`r mapping_bitterness_stats %>% slice_min(order_by = n_lu) %>% pull(n_lu)`)
+- `r mapping_bitterness_stats %>% slice_min(order_by = n_lu) %>% pull(MAPPING)  %>% str_replace_all("-", " ") %>% str_replace_all("(.+)_(.+)", "\\2 &rarr; \\1")` (type=`r mapping_bitterness_stats %>% slice_min(order_by = n_lu) %>% pull(n_lu)`) (`r paste(paste("*", mapping_bitterness_discuss %>% filter(str_detect(MAPPING, 'reduced')) %>% pull(LU), "* '", mapping_bitterness_discuss %>% filter(str_detect(MAPPING, 'reduced')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`)
 
-  - `r paste(paste("*", mapping_bitterness_discuss %>% filter(str_detect(MAPPING, 'reduced')) %>% pull(LU), "* '", mapping_bitterness_discuss %>% filter(str_detect(MAPPING, 'reduced')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
 The third mapping has the predominant linguistic expressions. This indicates that the [bitterness]{.smallcaps} metaphor highlights undesirability of anger, reflecting the negative evaluation of it. The final mapping suggests that the bitterness could be reduced (i.e., turned into a plainer taste), which is mapped onto reducing the undesirability (and perhaps the intensity) of anger. In the corpus dataset, the metaphor is also attested but not salient as it sits in rank `r get_metaphor_salience_rank(metaphor_salience, 'bitternes')` out of the total `r nrow(metaphor_salience)` metaphors found ([Table \@ref(tab:metaphor-table-token-based)](#metaphor-table-token-based)). Rajeg's [-@rajeg_metafora_2013] work also did not identify this metaphor for anger in his literary corpus.
 
@@ -409,23 +392,21 @@ mapping_hotfluid_stats <- mapping_hotfluid %>% filter(status == 'no') %>% group_
 mapping_hotfluid_discuss <- get_mappings(metaphor_typebased_mapping, 'heated') %>% left_join(mapping_hotfluid %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_hotfluid_stats)
 ```
 
-This is a heated variant of the [contained substance]{.smallcaps} metaphor ([§\@ref(contained-substance-typebased)](#contained-substance-typebased)), incorporating the semantics of the [heated fluid]{.smallcaps} frame. The [heated fluid in a container]{.smallcaps} is one of the attracted metaphors for anger in Indonesian [@rajeg_metafora_2013]. In the lexical database, this metaphor is not too salient, represented only by `r get_salience_stats(metaphor_typebased_salience, 'n_type', 'heated fluid')` types of metaphorical expressions, and `r get_salience_stats(metaphor_typebased_salience, 'n_mapping', 'heated fluid')` mappings, two of which are the foundational mappings.
+This is a heated variant of the [contained substance]{.smallcaps} metaphor ([§\@ref(contained-substance-typebased)](#contained-substance-typebased)), incorporating the semantics of the MN [heated fluid]{.smallcaps} frame. The [heated fluid in a container]{.smallcaps} is one of the distinctive metaphors for anger in Indonesian [@rajeg_metafora_2013]. In the lexical database, this metaphor is not too salient, represented only by `r get_salience_stats(metaphor_typebased_salience, 'n_type', 'heated fluid')` types of metaphorical expressions, and `r get_salience_stats(metaphor_typebased_salience, 'n_mapping', 'heated fluid')` mappings, two of which are the foundational mappings.
 
-- anger <- heated fluid
+- heated fluid &rarr; anger
 
-- angry person <- the container
+- the container & rarr; angry person
 
-- `r mapping_hotfluid_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING)  %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ")` (type=`r mapping_hotfluid_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`)
+- `r mapping_hotfluid_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING)  %>% str_replace_all("-", " ") %>% str_replace_all("(.+)_(.+)", "\\2 &rarr; \\1")` (type=`r mapping_hotfluid_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`)
 
   - `r paste(paste("*", mapping_hotfluid_discuss %>% filter(str_detect(MAPPING, 'heat\\-level')) %>% pull(LU), "* '", mapping_hotfluid_discuss %>% filter(str_detect(MAPPING, 'heat\\-level')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-- `r mapping_hotfluid_stats %>% slice_min(order_by = n_lu) %>% pull(MAPPING)  %>% str_replace_all(" is ", " <- ")` (type=`r mapping_hotfluid_stats %>% slice_min(order_by = n_lu) %>% pull(n_lu)`)
-
-  - `r paste(paste("*", mapping_hotfluid_discuss %>% filter(str_detect(MAPPING, 'being caused to')) %>% pull(LU), "* '", mapping_hotfluid_discuss %>% filter(str_detect(MAPPING, 'being caused to')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+- `r mapping_hotfluid_stats %>% slice_min(order_by = n_lu) %>% pull(MAPPING)  %>% str_replace_all("(.+) is (.+)", "\\2 &rarr; \\1")` (type=`r mapping_hotfluid_stats %>% slice_min(order_by = n_lu) %>% pull(n_lu)`) (`r paste(paste("*", mapping_hotfluid_discuss %>% filter(str_detect(MAPPING, 'being caused to')) %>% pull(LU), "* '", mapping_hotfluid_discuss %>% filter(str_detect(MAPPING, 'being caused to')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`)
   
-The predominant number of the metaphorical expressions reveal that the metaphor highlights the high degree of intensity. This is conceptualised as boiling substance. The final mapping also pertains to intensity, particularly the increasing degree of heat on the substance.
+The predominant number of the metaphorical expressions reveal that the metaphor highlights the high degree of intensity. This is conceptualised as boiling substance. The final mapping also pertains to intensity, particularly the increasing degree of heat of the substance.
 
-### [Intensity is verticality]{.smallcaps} {#verticality-typebased}
+### [Intensity is verticality/height]{.smallcaps} {#verticality-typebased}
 
 ```{r mapping-verticality, message = FALSE, include = FALSE}
 mapping_verticality <- filter(metaphor_typebased_mapping, str_detect(CM_BROADER, "verticality$")) %>% 
@@ -434,22 +415,20 @@ mapping_verticality_stats <- mapping_verticality %>% filter(status == 'no') %>% 
 mapping_verticality_discuss <- get_mappings(metaphor_typebased_mapping, 'verticality$') %>% left_join(mapping_verticality %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_verticality_stats)
 ```
 
-This is a generic, orientational metaphor based on the [(caused) upward motion]{.smallcaps} and the [verticality scale]{.smallcaps} frames. Rajeg [-@rajeg_metafora_2013, 212] identified the statistical association of this metaphor with anger. The metaphor is realised in `r pull(filter(metaphor_typebased_salience, metaphor == "intensity of anger is verticality"), n_type)` expressions evoking `r pull(filter(metaphor_typebased_salience, metaphor == "intensity of anger is verticality"), n_mapping)` mappings. 
+This is a generic, orientational metaphor based on the [(caused) upward motion]{.smallcaps} and the [verticality scale]{.smallcaps} frames. Rajeg [-@rajeg_metafora_2013, 212] identified the significant statistical association of this metaphor with anger. The metaphor is realised in `r pull(filter(metaphor_typebased_salience, metaphor == "intensity of anger is verticality"), n_type)` expressions evoking `r pull(filter(metaphor_typebased_salience, metaphor == "intensity of anger is verticality"), n_mapping)` mappings. 
 
 
-- intensity of `r mapping_verticality %>% filter(status == 'key') %>% select(MAPPING) %>% distinct() %>% pull(MAPPING) %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ") %>% paste(collapse = "; ")`
+- `r mapping_verticality %>% filter(status == 'key') %>% select(MAPPING) %>% distinct() %>% pull(MAPPING) %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ") %>% paste(collapse = "; ") %>% str_replace_all("(.+) \\<\\- (.+)", "\\2 &rarr; intensity of \\1")`
 
-- `r mapping_verticality_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING) %>% str_replace_all(" is ", " <- ")` (type=`r mapping_verticality_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`)
+- `r mapping_verticality_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING) %>% str_replace_all("(.+) is (.+)", "\\2 &rarr; \\1")` (type=`r mapping_verticality_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`)
 
   - `r paste(paste("*", mapping_verticality_discuss %>% filter(str_detect(MAPPING, 'upward motion')) %>% pull(LU), "* '", mapping_verticality_discuss %>% filter(str_detect(MAPPING, 'upward motion')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-- `r mapping_verticality_stats %>% filter(str_detect(MAPPING, "less intensity")) %>% pull(MAPPING) %>% str_replace_all(" is ", " <- ")` (type=`r mapping_verticality_stats %>% filter(str_detect(MAPPING, "less intensity")) %>% pull(n_lu)`)
-
-  - `r paste(paste("*", mapping_verticality_discuss %>% filter(str_detect(MAPPING, "less intensity")) %>% pull(LU), "* '", mapping_verticality_discuss %>% filter(str_detect(MAPPING, "less intensity")) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+- `r mapping_verticality_stats %>% filter(str_detect(MAPPING, "less intensity")) %>% pull(MAPPING) %>% str_replace_all("(.+) is (.+)", "\\2 &rarr; \\1")` (type=`r mapping_verticality_stats %>% filter(str_detect(MAPPING, "less intensity")) %>% pull(n_lu)`) (`r paste(paste("*", mapping_verticality_discuss %>% filter(str_detect(MAPPING, "less intensity")) %>% pull(LU), "* '", mapping_verticality_discuss %>% filter(str_detect(MAPPING, "less intensity")) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`)
 
 The main meaning focus is on the increasing intensity of anger (without necessarily reaching the highest end of the scale). This is evident from the most productive mapping evoking the [(caused) upward motion]{.smallcaps} frame. The least frequent mapping indicates a short-lived, low-intensity anger since the linguistic expression refers to anger not reaching the end point of the scale (*marah __tiada sampai__* 'short-lived anger; lit. anger not reaching end point of a scale').
 
-### [Anger is contained substance]{.smallcaps} {#contained-substance-typebased}
+### [Anger is a contained substance]{.smallcaps} {#contained-substance-typebased}
 
 This is a short-hand label for the [emotion is substance in a container]{.smallcaps} metaphor. The metaphor is realised in `r pull(filter(metaphor_typebased_salience, metaphor == "anger is substance in a container"), n_type)` metaphorical expressions evoking `r pull(filter(metaphor_typebased_salience, metaphor == "anger is substance in a container"), n_mapping)` mappings. It is also found to be statistically associated with anger in Indonesian [@rajeg_metafora_2013, 211-212].
 
@@ -462,23 +441,21 @@ mapping_containedfluid_stats <- mapping_containedfluid %>% filter(status == 'no'
 mapping_containedfluid_discuss <- get_mappings(metaphor_typebased_mapping, 'is substance in a container$') %>% left_join(mapping_containedfluid %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_containedfluid_stats)
 ```
 
-- `r mapping_containedfluid %>% filter(status == 'key') %>% select(MAPPING) %>% distinct() %>% pull(MAPPING) %>% .[2] %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ")`
+- `r mapping_containedfluid %>% filter(status == 'key') %>% select(MAPPING) %>% distinct() %>% pull(MAPPING) %>% .[2] %>% str_replace_all("-", " ") %>% str_replace_all("(.+)_(.+)", "\\2 &rarr; \\1")`
 
-- `r mapping_containedfluid %>% filter(status == 'key') %>% select(MAPPING) %>% distinct() %>% pull(MAPPING) %>% .[3] %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ")`
+- `r mapping_containedfluid %>% filter(status == 'key') %>% select(MAPPING) %>% distinct() %>% pull(MAPPING) %>% .[3] %>% str_replace_all("-", " ") %>% str_replace_all("(.+)_(.+)", "\\2 &rarr; \\1")`
 
-- `r mapping_containedfluid_stats %>% filter(str_detect(MAPPING, "located.entity")) %>% pull(MAPPING) %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ")` (type=`r mapping_containedfluid_stats %>% filter(str_detect(MAPPING, "located.entity")) %>% pull(n_lu)`)
+- `r mapping_containedfluid_stats %>% filter(str_detect(MAPPING, "located.entity")) %>% pull(MAPPING) %>% str_replace_all("-", " ") %>% str_replace_all("(.+)_(.+)", "\\2 &rarr; \\1")` (type=`r mapping_containedfluid_stats %>% filter(str_detect(MAPPING, "located.entity")) %>% pull(n_lu)`) (- `r paste(paste("*", mapping_containedfluid_discuss %>% filter(str_detect(MAPPING, "located.entity")) %>% pull(LU), "* '", mapping_containedfluid_discuss %>% filter(str_detect(MAPPING, "located.entity")) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`)
 
-  - `r paste(paste("*", mapping_containedfluid_discuss %>% filter(str_detect(MAPPING, "located.entity")) %>% pull(LU), "* '", mapping_containedfluid_discuss %>% filter(str_detect(MAPPING, "located.entity")) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
-
-- `r mapping_containedfluid_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING) %>% str_replace_all(" is ", " <- ")` (type=`r mapping_containedfluid_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`)
+- `r mapping_containedfluid_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING) %>% str_replace_all("(.+) is (.+)", "\\2 &rarr; \\1")` (type=`r mapping_containedfluid_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`)
 
   - `r paste(paste("*", mapping_containedfluid_discuss %>% filter(str_detect(MAPPING, 'channel+ing')) %>% pull(LU), "* '", mapping_containedfluid_discuss %>% filter(str_detect(MAPPING, 'channel+ing')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-The last mapping is the most productive and indicates the main meaning focus of the metaphor, namely externalisation/expression of anger construed as releasing the substance, based on the LUs evoking the [release liquid]{.smallcaps} frame. ([§\@ref(contained-substance-typebased)](#contained-substance-tokenbased)). This focus implies the inability to keep the anger inside.
+The last mapping is the most productive. It indicates the main meaning focus of the metaphor, namely externalisation/expression of anger construed as releasing the substance, based on the LUs evoking the [release liquid]{.smallcaps} frame. ([§\@ref(contained-substance-typebased)](#contained-substance-tokenbased)). This focus implies the inability to keep the anger inside.
 
-The metaphor is part of the [substance/containment]{.smallcaps} source frames family postulated in the database. The other source frames are [heated fluid in a container]{.smallcaps} ([§\@ref(hotfluid-typebased)](#hotfluid-typebased)) and [pressurised substance in a container]{.smallcaps} ([§\@ref(pressurised-typebased)](#pressurised-typebased)). The difference between the [contained substance]{.smallcaps} metaphor and the [heated fluid]{.smallcaps} or the [pressurised substance]{.smallcaps} variants is that the former lacks the heated and pressurised semantics of the frames. The intensity in the [contained substance]{.smallcaps} metaphor is construed via the quantity of the substance, and the expression of anger is construed via the externalisation of the substance.
+The metaphor is part of the [substance/containment]{.smallcaps} source frames family postulated in the database. The other source frames are [heated fluid in a container]{.smallcaps} ([§\@ref(hotfluid-typebased)](#hotfluid-typebased)) and [pressurised substance in a container]{.smallcaps} ([§\@ref(pressurised-typebased)](#pressurised-typebased)). The difference between the [contained substance]{.smallcaps} metaphor and the [heated fluid]{.smallcaps} or the [pressurised substance]{.smallcaps} variants is that the former lacks the heated and pressurised semantics of the frames. The intensity in the [contained substance]{.smallcaps} metaphor is construed via the quantity of the substance, and the expression of anger is captured via the externalisation of the substance.
 
-### [Degree of control is object dimension]{.smallcaps}
+### [Degree of controling anger is the size of patience as a container]{.smallcaps}
 
 ```{r mapping-dimension, message = FALSE, include = FALSE}
 mapping_dimension <- filter(metaphor_typebased_mapping, str_detect(CM_BROADER, "dimension$")) %>% 
@@ -487,17 +464,17 @@ mapping_dimension_stats <- mapping_dimension %>% filter(status == 'no') %>% grou
 mapping_dimension_discuss <- get_mappings(metaphor_typebased_mapping, 'dimension$') %>% left_join(mapping_dimension %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_dimension_stats)
 ```
 
-The [object dimension]{.smallcaps} metaphor is based on LUs referring to the [size]{.smallcaps} frame. It represents a generic though different nuance to capture emotional control from the previous metaphors focusing on the same aspect. There are `r get_salience_stats(metaphor_typebased_salience, 'n_type', 'dimension')` metaphorical expressions and `r get_salience_stats(metaphor_typebased_salience, 'n_mapping', 'dimension')` mappings for the metaphor as shown below. 
+This [size-]{.smallcaps}/[dimension-]{.smallcaps}related metaphor is based on LUs referring to the [size]{.smallcaps} frame. It represents a generic though different nuance to capture emotional control from the previous metaphors focusing on the same aspect. There are `r get_salience_stats(metaphor_typebased_salience, 'n_type', 'dimension')` metaphorical expressions and `r get_salience_stats(metaphor_typebased_salience, 'n_mapping', 'dimension')` mappings for the metaphor as shown below. 
 
-- anger <- physical entity
+- physical entity &rarr; anger
 
-- `r mapping_dimension_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING) %>% str_replace_all(" is ", " <- ")` (type=`r mapping_dimension_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`)
+- `r mapping_dimension_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING) %>% str_replace_all("(.+) is (.+)", "\\2 &rarr; \\1")` (type=`r mapping_dimension_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`)
 
   - `r paste(paste("*", mapping_dimension_discuss %>% filter(str_detect(MAPPING, 'narrow')) %>% pull(LU), "* '", mapping_dimension_discuss %>% filter(str_detect(MAPPING, 'narrow')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
   
-The metaphorical expressions reveal the main meaning focus of inability to control anger. The size/dimension of the object could be viewed as the level of patience/calmness. The inferential aspect mapped from the source frame is that when this patience metaphorically shrinks, the person is no longer calm (i.e., unable to control the emotion) but becoming emotional (i.e., angry). This is a different inference in the use of the [size]{.smallcaps} frame in construing the intensity level of anger, which is only found in the corpus data ([§\@ref(quantity-tokenbased)](#quantity-tokenbased)).  
+The metaphorical expressions reveal the main meaning focus of inability to control anger. The size/dimension of the container-object could be viewed as the level of patience/calmness. The inferential aspect mapped from the source frame is that when this patience metaphorically shrinks, the person is no longer calm (i.e., unable to control the emotion) but becoming emotional (i.e., angry). This is a different inference in the use of the [size]{.smallcaps} frame in construing the intensity level of anger, which is only found in the corpus data ([§\@ref(quantity-tokenbased)](#quantity-tokenbased)).  
 
-### [Anger is natural force]{.smallcaps} {#natural-force-typebased}
+### [Anger is a natural force]{.smallcaps} {#natural-force-typebased}
 
 ```{r mapping-naturalforce, message = FALSE, include = FALSE}
 mapping_naturalforce <- filter(metaphor_typebased_mapping, str_detect(CM_BROADER, "natural force$")) %>% 
@@ -506,25 +483,23 @@ mapping_naturalforce_stats <- mapping_naturalforce %>% filter(status == 'no') %>
 mapping_naturalforce_discuss <- get_mappings(metaphor_typebased_mapping, 'natural force$') %>% left_join(mapping_naturalforce %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_naturalforce_stats)
 ```
 
-This metaphor is based on metaphorical expressions referring to the [natural disaster]{.smallcaps} frame, a sub-case of the [harm]{.smallcaps} frame family in the MN frame repository. The metaphor is attested in Rajeg [-@rajeg_metafora_2013, 113] and found to be strongly associated with anger [@rajeg_metafora_2013, 213]. The lexical dataset reveals only `r get_salience_stats(metaphor_typebased_salience, 'n_type', 'natural force')` types of expressions evoking `r get_salience_stats(metaphor_typebased_salience, 'n_mapping', 'natural force')` mappings.
+This metaphor is based on metaphorical expressions referring to the [natural disaster]{.smallcaps} frame, a sub-case of the [harm]{.smallcaps} frame family in the MN frame repository. The metaphor is found to be strongly associated with anger [@rajeg_metafora_2013, 213]. The lexical dataset reveals only `r get_salience_stats(metaphor_typebased_salience, 'n_type', 'natural force')` types of expressions evoking `r get_salience_stats(metaphor_typebased_salience, 'n_mapping', 'natural force')` mappings.
 
-- anger <- natural disaster
+- natural disaster &rarr; anger
 
-- intensity of anger <- intensity of the natural force (type=1)
+- intensity of the natural force &rarr; intensity of anger (type=1) (*angin-anginan* 'windy; capricious; unpredictable')
 
-  - *angin-anginan* 'windy; capricious; unpredictable'
-
-- `r mapping_naturalforce_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING) %>% str_replace_all(" is ", " <- ")` (type=`r mapping_naturalforce_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`)
+- `r mapping_naturalforce_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING) %>% str_replace_all("(.+) is (.+)", "\\2 &rarr; \\1 ")` (type=`r mapping_naturalforce_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`)
 
   - `r paste(paste("*", mapping_naturalforce_discuss %>% filter(str_detect(MAPPING, 'to cease')) %>% pull(LU), "* '", mapping_naturalforce_discuss %>% filter(str_detect(MAPPING, 'to cease')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-- `r mapping_naturalforce_discuss %>% filter(str_detect(MAPPING, 'ceasing')) %>% pull(MAPPING2) %>% unique()` (type=`r mapping_naturalforce_discuss %>% filter(str_detect(MAPPING, 'ceasing')) %>% pull(n_lu) %>% unique()`)
+- `r mapping_naturalforce_discuss %>% filter(str_detect(MAPPING, 'ceasing')) %>% pull(MAPPING2) %>% unique() %>% str_replace_all("(.+) \\<\\- (.+)", "\\2 &rarr; \\1")` (type=`r mapping_naturalforce_discuss %>% filter(str_detect(MAPPING, 'ceasing')) %>% pull(n_lu) %>% unique()`)
 
   - `r paste(paste("*", mapping_naturalforce_discuss %>% filter(str_detect(MAPPING, 'ceasing')) %>% pull(LU), "* '", mapping_naturalforce_discuss %>% filter(str_detect(MAPPING, 'ceasing')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
 The metaphorical expressions particularly highlight the ceasing intensity of the forces, suggesting the main meaning focus on the intensity of anger. The similar theme is found in the corpus study ([§\@ref(naturalforce-tokenbased)](#naturalforce-tokenbased)). 
 
-### [Anger is solid entity]{.smallcaps} {#solid-typebased}
+### [Anger is a substance]{.smallcaps} {#solid-typebased}
 
 ```{r mapping-solid, message = FALSE, include = FALSE}
 mapping_solid <- filter(metaphor_typebased_mapping, str_detect(CM_BROADER, "rough, solid entity$")) %>% 
@@ -533,24 +508,20 @@ mapping_solid_stats <- mapping_solid %>% filter(status == 'no') %>% group_by(MAP
 mapping_solid_discuss <- get_mappings(metaphor_typebased_mapping, 'rough, solid entity$') %>% left_join(mapping_solid %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_solid_stats)
 ```
 
-This [object]{.smallcaps}-related metaphor captures the intensity of anger in terms of object's firmness/solidity. The metaphor is realised by `r get_salience_stats(metaphor_typebased_salience, 'n_type', 'solid')` metaphorical expressions and consists of `r get_salience_stats(metaphor_typebased_salience, 'n_mapping', 'solid')` mappings. 
+This [object]{.smallcaps}-related metaphor captures the intensity of anger in terms of object's (or substance's) firmness/solidity. The metaphor is realised by `r get_salience_stats(metaphor_typebased_salience, 'n_type', 'solid')` metaphorical expressions and consists of `r get_salience_stats(metaphor_typebased_salience, 'n_mapping', 'solid')` mappings. 
 
 
-- `r mapping_solid %>% filter(status == "key") %>% pull(MAPPING) %>% unique() %>% .[1] %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ")`
+- `r mapping_solid %>% filter(status == "key") %>% pull(MAPPING) %>% unique() %>% .[1] %>% str_replace_all("-", " ") %>% str_replace_all("(.+)_(.+)", "\\2 &rarr; \\1")`
 
-- `r mapping_solid %>% filter(status == "key") %>% pull(MAPPING) %>% unique() %>% .[2] %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ")`
+- `r mapping_solid %>% filter(status == "key") %>% pull(MAPPING) %>% unique() %>% .[2] %>% str_replace_all("-", " ") %>% str_replace_all("(.+)_(.+)", "\\2 &rarr; \\1")`
 
-- `r mapping_solid_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING)  %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ")` (type=`r mapping_solid_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`)
+- `r mapping_solid_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING)  %>% str_replace_all("-", " ") %>% str_replace_all("(.+)_(.+)", "\\2 &rarr; \\1")` (type=`r mapping_solid_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`) (`r paste(paste("*", mapping_solid_discuss %>% filter(str_detect(MAPPING, 'calmness')) %>% pull(LU), "* '", mapping_solid_discuss %>% filter(str_detect(MAPPING, 'calmness')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`)
 
-  - `r paste(paste("*", mapping_solid_discuss %>% filter(str_detect(MAPPING, 'calmness')) %>% pull(LU), "* '", mapping_solid_discuss %>% filter(str_detect(MAPPING, 'calmness')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
-
-- the reduction of anger <- melting ice (type=1) 
-
-  - *mencair* 'no longer being angry; lit. to melt'
+- melting ice &rarr; the reduction of anger (type=1) (*mencair* 'no longer being angry; lit. to melt')
   
-The metaphorical expressions evoke two frames related to the [firmness]{.smallcaps} frame. The first one is the [lax]{.smallcaps} frame (see the third mapping from the top above), which is in a scalar opposition to the [firm]{.smallcaps} frame. The second frame is the [liquid]{.smallcaps} (the last mapping), capturing the fact that a solid entity (e.g., an ice block) can be pliable like a liquid. All metaphorical expressions indicate the focus of reduced intensity.
+The metaphorical expressions evoke two frames related to the [firmness]{.smallcaps} frame. The first one is the [lax]{.smallcaps} frame (see the third mapping from the top above), which is in a scalar opposition to the [firm]{.smallcaps} frame. The second frame is the [liquid]{.smallcaps} (the last mapping), capturing the fact that a solid entity (e.g., an ice block) can be pliable like a liquid. All metaphorical expressions focus on reduced intensity.
 
-### [Anger is (un)veiled object]{.smallcaps} {#hidden-typebased}
+### [Anger is an (un)veiled object]{.smallcaps} {#hidden-typebased}
 
 ```{r mapping-hidden, message = FALSE, include = FALSE}
 mapping_hidden <- filter(metaphor_typebased_mapping, str_detect(CM_BROADER, "veiled object$")) %>% 
@@ -559,19 +530,17 @@ mapping_hidden_stats <- mapping_hidden %>% filter(status == 'no') %>% group_by(M
 mapping_hidden_discuss <- get_mappings(metaphor_typebased_mapping, 'veiled object$') %>% left_join(mapping_hidden %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_hidden_stats)
 ```
 
-This metaphor is realised by `r get_salience_stats(metaphor_typebased_salience, "n_type", "veiled")` types of expressions from the [hiding]{.smallcaps} (the second mapping from the top below) and [caused upward motion]{.smallcaps} (the third mapping) frames, manifesting `r get_salience_stats(metaphor_typebased_salience, "n_mapping", "veiled")` mappings.
+This metaphor is realised by `r get_salience_stats(metaphor_typebased_salience, "n_type", "veiled")` types of expressions, manifesting `r get_salience_stats(metaphor_typebased_salience, "n_mapping", "veiled")` mappings. They evoke the [hiding]{.smallcaps} frame (the second mapping from the top below) and [caused upward motion]{.smallcaps} frame (the third mapping).
 
-- `r mapping_hidden %>% filter(status == "key") %>% pull(MAPPING) %>% unique() %>% str_replace_all("[-]", " ") %>% str_replace_all("_", " <- ")`. 
+- `r mapping_hidden %>% filter(status == "key") %>% pull(MAPPING) %>% unique() %>% str_replace_all("[-]", " ") %>% str_replace_all("(.+)_(.+)", "\\2 &rarr; \\1")`. 
 
-- `r mapping_hidden_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING) %>% str_replace_all(" is ", " <- ")` (type=`r mapping_hidden_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`)
+- `r mapping_hidden_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING) %>% str_replace_all("(.+) is (.+)", "\\2 &rarr; \\1")` (type=`r mapping_hidden_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`)
 
   - `r paste(paste("*", mapping_hidden_discuss %>% filter(str_detect(MAPPING, 'hiding')) %>% pull(LU), "* '", mapping_hidden_discuss %>% filter(str_detect(MAPPING, 'hiding')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-- `r mapping_hidden_stats %>% slice_min(order_by = n_lu) %>% pull(MAPPING) %>% str_replace_all(" is ", " <- ")` (type=`r mapping_hidden_stats %>% slice_min(order_by = n_lu) %>% pull(n_lu)`)
+- `r mapping_hidden_stats %>% slice_min(order_by = n_lu) %>% pull(MAPPING) %>% str_replace_all("(.+) is (.+)", "\\2 &rarr; \\1")` (type=`r mapping_hidden_stats %>% slice_min(order_by = n_lu) %>% pull(n_lu)`) (`r paste(paste("*", mapping_hidden_discuss %>% filter(str_detect(MAPPING, 'unveiling')) %>% pull(LU), "* '", mapping_hidden_discuss %>% filter(str_detect(MAPPING, 'unveiling')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`)
 
-  - `r paste(paste("*", mapping_hidden_discuss %>% filter(str_detect(MAPPING, 'unveiling')) %>% pull(LU), "* '", mapping_hidden_discuss %>% filter(str_detect(MAPPING, 'unveiling')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
-
-The [(un)veiled object]{.smallcaps} metaphor relates to the social expression and degree of control of the experiencer to keep hidden or expose the anger. The focus of the metaphor, based on the predominant metaphorical expressions, is hiding the anger. The corpus study ([§\@ref(unveiled-tokenbased)](#unveiled-tokenbased)), however, reveals a different meaning focus of the metaphor.
+The [(un)veiled object]{.smallcaps} metaphor relates to the social expression and degree of control of the experiencer to hide or expose the anger. The focus of the metaphor, based on the predominant metaphorical expressions, is hiding the anger. The corpus study ([§\@ref(unveiled-tokenbased)](#unveiled-tokenbased)), however, reveals a different meaning focus of the metaphor.
 
 ### [Anger is heat]{.smallcaps} {#heat-typebased}
 
@@ -584,19 +553,15 @@ mapping_heat_discuss <- get_mappings(metaphor_typebased_mapping, 'heat$') %>% le
 
 [Heat]{.smallcaps} is considered to be a central, embodied source frame for anger in previous works [e.g., @kovecses_metaphors_1986; @holland_cognitive_1987; but cf. @delbecque_anger_2005 for the cultural perspective based on diachronic evidence in the history of the English language]. It is proposed as the basis for two specific metaphors, namely [anger is fire]{.smallcaps} ([§\@ref(fire-typebased)](#fire-typebased) and [\@ref(fire-tokenbased)](#fire-tokenbased)) and [anger is heated fluid in a container]{.smallcaps} ([§\@ref(hotfluid-typebased)](#hotfluid-typebased) and [\@ref(hotfluid-tokenbased)](#hotfluid-tokenbased)). This study found that the generic [heat]{.smallcaps} metaphor is not salient, being realised only by `r get_salience_stats(metaphor_typebased_salience, 'n_type', 'heat$')` metaphorical expressions manifesting `r get_salience_stats(metaphor_typebased_salience, 'n_mapping', 'heat$')` mappings as follows:
 
-- anger <- heat
+- heat &rarr; anger
 
-- `r mapping_heat_stats %>% filter(str_detect(MAPPING, "heated\\-entity$")) %>% pull(MAPPING) %>% str_replace_all("-", " ") %>% str_replace_all("_", " <- ")` (type=`r mapping_heat_stats %>% filter(str_detect(MAPPING, "heated\\-entity$")) %>% pull(n_lu)`)
+- `r mapping_heat_stats %>% filter(str_detect(MAPPING, "heated\\-entity$")) %>% pull(MAPPING) %>% str_replace_all("-", " ") %>% str_replace_all("(.+)_(.+)", "\\2 &rarr; \\1")` (type=`r mapping_heat_stats %>% filter(str_detect(MAPPING, "heated\\-entity$")) %>% pull(n_lu)`) (`r paste(paste("*", mapping_heat_discuss %>% filter(str_detect(MAPPING, 'heated\\-entity')) %>% pull(LU), "* '", mapping_heat_discuss %>% filter(str_detect(MAPPING, 'heated\\-entity')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`)
 
-  - `r paste(paste("*", mapping_heat_discuss %>% filter(str_detect(MAPPING, 'heated\\-entity')) %>% pull(LU), "* '", mapping_heat_discuss %>% filter(str_detect(MAPPING, 'heated\\-entity')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
-
-- `r mapping_heat_discuss %>% filter(str_detect(MAPPING, 'becoming')) %>% pull(MAPPING2) %>% unique()` (type=`r mapping_heat_discuss %>% filter(str_detect(MAPPING, 'becoming')) %>% pull(n_lu) %>% unique()`)
-
-  - `r paste(paste("*", mapping_heat_discuss %>% filter(str_detect(MAPPING, 'becoming')) %>% pull(LU), "* '", mapping_heat_discuss %>% filter(str_detect(MAPPING, 'becoming')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+- `r mapping_heat_discuss %>% filter(str_detect(MAPPING, 'becoming')) %>% pull(MAPPING2) %>% unique() %>% str_replace_all("(.+) \\<\\- (.+)", "\\2 &rarr; \\1")` (type=`r mapping_heat_discuss %>% filter(str_detect(MAPPING, 'becoming')) %>% pull(n_lu) %>% unique()`) (`r paste(paste("*", mapping_heat_discuss %>% filter(str_detect(MAPPING, 'becoming')) %>% pull(LU), "* '", mapping_heat_discuss %>% filter(str_detect(MAPPING, 'becoming')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`)
 
 The difference between the [heat]{.smallcaps} metaphor in the lexical approach, and the [temperature]{.smallcaps} metaphor in the corpus approach is as follows. The former focuses on the characteristic of easily angered person as always hot, reflected by the linguistic expressions that do not encode any reduction of the heat. Meanwhile, the latter highlights the dynamics of the intensity when angry, which can be reduced (i.e., cooled off) or reaching highest temperature; this is supported by the linguistic expression referring to coolness. In the MN frame repository, [heat]{.smallcaps} is a different frame and considered as a perspective of the [temperature]{.smallcaps} frame, which covers the range of temperature scale (from hot to cold). The [heat]{.smallcaps} frame itself is also linked to the [cold]{.smallcaps} frame via "in scalar opposition to" relation.
 
-### [Anger is sleeping organism]{.smallcaps} {#awakening-typebased}
+### [Anger is a sleeping organism]{.smallcaps} {#awakening-typebased}
 
 ```{r mapping-sleeping, message = FALSE, include = FALSE}
 mapping_sleeping <- filter(metaphor_typebased_mapping, str_detect(CM_BROADER, "sleeping organism$")) %>% 
@@ -607,11 +572,11 @@ mapping_sleeping_discuss <- get_mappings(metaphor_typebased_mapping, 'sleeping$'
 
 This metaphor is based on the [awakening]{.smallcaps} frame in which anger is mapped onto the inactive/calm sleeping organism role in the frame [cf. @stefanowitsch_words_2006, 76-77]. There are only `r get_salience_stats(metaphor_typebased_salience, "n_type", "sleeping")` metaphorical expressions evoking the following `r get_salience_stats(metaphor_typebased_salience, "n_mapping", "sleeping")` mappings: 
 
-- anger <- sleeping organism
-- causing anger <- awakening/fishing out the organism (*__membangkitkan__ marah* 'to _arouse_ one's anger')
-- anger near the limit <- awaken entity (*__bangkit__ amarah* 'anger *rose*')
+- sleeping organism &rarr; anger
+- awakening/fishing out the organism &rarr; causing anger (*__membangkitkan__ marah* 'to _arouse_ one's anger')
+- awaken entity &rarr; anger near the limit (*__bangkit__ amarah* 'anger *rose*')
 
-The metaphorical expressions suggest the causation and onset of anger. From one perspective, the [sleeping organism]{.smallcaps} metaphor could be viewed as a pre-cursor of the [fierce, captive animal]{.smallcaps} metaphor where the awakened organism/animal has been in a fierce and aggressive behaviour (e.g., due to being awakened/disturbed). 
+The metaphorical expressions suggest the causation and onset of anger. From one perspective, the [sleeping organism]{.smallcaps} metaphor could be viewed as a pre-cursor, or a part, of the [fierce, captive animal]{.smallcaps} metaphor where the awakened organism/animal has been in a fierce and aggressive behaviour (e.g., due to being awakened/disturbed). 
 
 The [awakening]{.smallcaps} frame, and in combination with the [fierce animal]{.smallcaps} frame in [anger is fierce, captive animal]{.smallcaps}, is also reflected in the common Indonesian proverb for anger *__membangunkan__ macan tidur* 'to *awaken* a sleeping tiger'. The verb *membangunkan* 'to awaken; to wake s.b. up' and *tidur* '(a)sleep' evoke the [awakening]{.smallcaps} frame, meanwhile *macan* 'tiger' evokes the [fierce animal]{.smallcaps} frame. The proverb highlights the danger of invoking anger out of a calm state.
 
@@ -623,9 +588,9 @@ This is not a prominent metaphor in the lexical approach as it is realised by on
 
 This example means that the person should stay calm by not taking the anger object into his/her possession, implying a negative valence of possessing an anger-object. The mappings inferred from (@typebased_gain-possession) are as follows:
 
-- anger <- possessable object
-- experiencer <- (candidate) possessor
-- becoming angry <- taking/gaining the possessable object
+- possessable object &rarr; anger
+- (candidate) possessor &rarr; experiencer
+- taking/gaining the possessable object &rarr; becoming angry
 
 The low salience of the [possession]{.smallcaps} metaphor family is not surprising given that Rajeg [-@rajeg_metafora_2013, 213-214] found the metaphor's statistically significant dissociation with anger ([§\@ref(intro)](#intro)).
 
@@ -642,17 +607,15 @@ mapping_darkness_discuss <- get_mappings(metaphor_typebased_mapping, 'darkness$'
 
 This metaphor is based on LUs from the [darkness]{.smallcaps} frame and is evoked by `r get_salience_stats(metaphor_typebased_salience, 'n_type', 'darkness')` types manifesting `r get_salience_stats(metaphor_typebased_salience, 'n_mapping', 'darkness')` mappings as follows:
 
-- anger <- darkness
+- darkness &rarr; anger
 
-- angry person <- person('s body) being in darkness (type=`r unique(pull(filter(mapping_darkness_discuss, str_detect(MAPPING2, "person being in the dark state")), n_lu))`)
-
-  - `r paste(paste("*", mapping_darkness_discuss %>% filter(str_detect(MAPPING, 'dark.state')) %>% pull(LU), "* '", mapping_darkness_discuss %>% filter(str_detect(MAPPING, 'dark.state')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+- person('s body) being in darkness &rarr; angry person (type=`r unique(pull(filter(mapping_darkness_discuss, str_detect(MAPPING2, "person being in the dark state")), n_lu))`) (`r paste(paste("*", mapping_darkness_discuss %>% filter(str_detect(MAPPING, 'dark.state')) %>% pull(LU), "* '", mapping_darkness_discuss %>% filter(str_detect(MAPPING, 'dark.state')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`)
 
 Semantically, the metaphor highlights the negative assessment of anger [@stefanowitsch_words_2006, 77]. One prototypical example of the negative effect of a person being in the dark is inability to see (and by extension, to think) clearly (or rationally) (cf. [§\@ref(visual-interference-typebased)](#visual-interference-typebased)).
 
-## Metonymy {#typebased-metonymy-salience-results}
+## Type-based salience: Metonymy {#typebased-metonymy-salience-results}
 
-There are `r sum(metonymy_typebased_salience$n_type)` types of metonymic expressions grouped under `r nrow(metonymy_typebased_salience)` (conceptual) metonymies for [anger]{.smallcaps}. These metonymies are rank ordered in [Table \@ref(tab:metonymy-table-type-based)](#metonymy-table-type-based) by the number of their metonymic expressions.
+There are `r sum(metonymy_typebased_salience$n_type)` types of metonymic expressions for [anger]{.smallcaps} grouped under `r nrow(metonymy_typebased_salience)` (conceptual) metonymies. These metonymies are rank ordered in [Table \@ref(tab:metonymy-table-type-based)](#metonymy-table-type-based) by the number of their metonymic expressions.
 
 ```{r metonymy-category-typebased}
 physiological_response_regex <- "(body heat|internal pressure|redness|breathing|visual interference|body hair|teeth biting|foaming|caressing|clenching)"
@@ -680,7 +643,8 @@ metonymy_typebased_category_print <- tibble(`social-communicative behaviour:` = 
 ```{r metonymy-table-type-based}
 metonymy_typebased_salience %>% 
   mutate(metonymy = str_replace(metonymy, "frustated", "frustrated"),
-         metonymy = paste("[", metonymy, "]{.smallcaps}", sep = "")) %>% 
+         metonymy = paste("[", metonymy, "]{.smallcaps}", sep = ""),
+         metonymy = str_replace_all(metonymy, fixed("visual interference"), "inability to see")) %>% 
   rename(Metonymy = metonymy,
          `Types:` = n_type,
          `% of all types:` = n_perc_type) %>% 
@@ -688,7 +652,7 @@ metonymy_typebased_salience %>%
 ```
 
 
-The salience of each metonymy can only be measured in terms of the number of the metonymic types/expressions, given the metonymies only involve a single mapping. The mapping is reflected in the naming of the metonymy in the form of [metonymic source domain for metonymic target]{.smallcaps} (or [x for y]{.smallcaps} for short).
+The salience of each metonymy can only be measured in terms of the number of the metonymic expressions, given the metonymies only involve a single mapping. The mapping is reflected in the naming of the metonymy in the form of [metonymic source domain for metonymic target]{.smallcaps} (or [x for y]{.smallcaps} for short).
 
 ### [Strong/aggressive verbal behaviour for anger]{.smallcaps} {#verbal-behaviour-typebased}
 
@@ -745,7 +709,7 @@ Another physiological effect of anger is physiological change in the facial area
 
 As we can see, a different body part around the face can be involved, such as the ear (*telinga*).
 
-### [Visual interference for anger]{.smallcaps} {#visual-interference-typebased}
+### [Inability to see for anger]{.smallcaps} {#visual-interference-typebased}
 
 This metonymy appears to be the experiential grounding of the [darkness]{.smallcaps} metaphor ([§\@ref(darkness-typebased)](#darkness-typebased)). All metonymic expressions capture the visual-perception interference as if the eyes are (seeing) dark; hence, inability to see and, by way of semantic extension, think rationally.
 
@@ -775,17 +739,17 @@ This metonymy can be interpreted as highlighting control or an expression of ang
 
 - `r paste(paste("*", pull(filter(metonymy_typebased, str_detect(CM_BROADER, "clenching")), LU), "* '", pull(filter(metonymy_typebased, str_detect(CM_BROADER, "clenching")), LU_GLOSS), "'", sep = ""), collapse = "; ")`
 
-### Types of the metonymies (type-based dataset) {#metonymy-category-typebased}
+## Types of the metonymies (type-based dataset) {#metonymy-category-typebased}
 
 The metonymies in [Table \@ref(tab:metonymy-table-type-based)](#metonymy-table-type-based) can be categorised into two broader categories: (i) social-communicative behaviours of anger and (ii) the associated physiological responses ([Table \@ref(tab:metonymy-category-table-typebased)](#metonymy-category-table-typebased)).
 
 ```{r metonymy-category-table-typebased}
 metonymy_typebased_category_binomtest <- binom.test(sum(filter(metonymy_typebased_salience_category, category != "physiological response")$n_type), sum(sum(filter(metonymy_typebased_salience_category, category != "physiological response")$n_type), sum(filter(metonymy_typebased_salience_category, category == "physiological response")$n_type)))
 
-metonymy_typebased_category_print %>% knitr::kable(caption = "Two types of metonymies of [anger]{.smallcaps} (type-based dataset)")
+metonymy_typebased_category_print %>% mutate(`physiological response:` = str_replace_all(`physiological response:`, fixed("visual interference"), "inability to see")) %>%  knitr::kable(caption = "Two types of metonymies of [anger]{.smallcaps} (type-based dataset)")
 ```
 
-[Table \@ref(tab:metonymy-category-table-typebased)](#metonymy-category-table-typebased) demonstrates that metonymies referring to the physiological responses are greater in number than those for the social-communicative behaviour. However, the total number of metonymic linguistic expressions/types are significantly higher for the social-communicative category (type=`r sum(filter(metonymy_typebased_salience_category, category != "physiological response")$n_type)`) than the physiological category (type=`r sum(filter(metonymy_typebased_salience_category, category == "physiological response")$n_type)`) (*p*~Binomial~ ~two~~-~~tailed~`r pval_print(metonymy_typebased_category_binomtest$p.value)`).
+[Table \@ref(tab:metonymy-category-table-typebased)](#metonymy-category-table-typebased) demonstrates that metonymies referring to the physiological responses are greater in number than those for the social-communicative behaviour. However, the total number of metonymic linguistic expressions are significantly higher for the social-communicative category (type=`r sum(filter(metonymy_typebased_salience_category, category != "physiological response")$n_type)`) than the physiological category (type=`r sum(filter(metonymy_typebased_salience_category, category == "physiological response")$n_type)`) (*p*~Binomial~ ~two~~-~~tailed~`r pval_print(metonymy_typebased_category_binomtest$p.value)`).
 
 # Token-based salience analyses {#tokenbased-analysis}
 
@@ -814,7 +778,7 @@ The token-based, corpus study reveals `r nrow(marah)` tokens of metaphorical exp
 
 ## Metaphor {#tokenbased-metaphor-salience-results}
 
-[Table \@ref(tab:metaphor-table-token-based)](#metaphor-table-token-based) present all metaphor types identified from corpus-based analysis. From the total `r length(metaphor_typebased_salience$metaphor)` metaphors identified in the type-based, lexical approach ([Table \@ref(tab:metaphor-table-type-based)](#metaphor-table-type-based)), `r round((length(metaphor_in_all_database)/length(metaphor_typebased_salience$metaphor)) * 100, digits = 1)`% (i.e., `r length(metaphor_in_all_database)` metaphors) are also attested in the corpus approach ([Table \@ref(tab:metaphor-table-token-based)](#metaphor-table-token-based)). The metaphors identified only in the lexical approach (ordered decreasingly by their salience) are `r paste(paste(paste("[", metaphor_in_lexical_only, "]{.smallcaps} (", metaphor_in_lexical_only_aggregate, "%; rank=", metaphor_in_lexical_only_ranking, ")", sep = "")[1:length(metaphor_in_lexical_only)-1], collapse = ", "), ", and ", paste("[", metaphor_in_lexical_only, "]{.smallcaps} (", metaphor_in_lexical_only_aggregate, "%; rank=", metaphor_in_lexical_only_ranking, ")", sep = "")[length(metaphor_in_lexical_only)], sep = "")`. The remaining `r round((length(metaphor_in_corpus_only)/nrow(metaphor_salience)) * 100, digits = 1)`% (`r length(metaphor_in_corpus_only)` types) of the token-based metaphors are absent from the lexical dataset. The corpus-based approach can thus complement the lexical approach by offering a higher likelihood to identify more metaphors.
+[Table \@ref(tab:metaphor-table-token-based)](#metaphor-table-token-based) present all metaphor types identified from corpus-based analysis. From the total `r length(metaphor_typebased_salience$metaphor)` metaphors identified in the type-based, lexical approach ([Table \@ref(tab:metaphor-table-type-based)](#metaphor-table-type-based)), `r round((length(metaphor_in_all_database)/length(metaphor_typebased_salience$metaphor)) * 100, digits = 1)`% (i.e., `r length(metaphor_in_all_database)` metaphors) are also attested in the corpus approach ([Table \@ref(tab:metaphor-table-token-based)](#metaphor-table-token-based)). The metaphors identified only in the lexical approach (ordered decreasingly by their salience) are `r paste(paste(paste("[", metaphor_in_lexical_only, "]{.smallcaps} (", metaphor_in_lexical_only_aggregate, "%; rank=", metaphor_in_lexical_only_ranking, ")", sep = "")[1:length(metaphor_in_lexical_only)-1], collapse = ", "), ", and ", paste("[", metaphor_in_lexical_only, "]{.smallcaps} (", metaphor_in_lexical_only_aggregate, "%; rank=", metaphor_in_lexical_only_ranking, ")", sep = "")[length(metaphor_in_lexical_only)], sep = "") %>% str_replace_all(fixed("rough, solid entity"), "a substance") %>% str_replace_all(fixed("degree of control for anger is object dimension"), "degree of controlling anger is the size of patience as a container")`. The remaining `r round((length(metaphor_in_corpus_only)/nrow(metaphor_salience)) * 100, digits = 1)`% (`r length(metaphor_in_corpus_only)` types) of the token-based metaphors are absent from the lexical dataset. The corpus-based approach can thus complement the lexical approach by offering a higher likelihood to identify more metaphors.
 
 
 ```{r metaphor-table-token-based}
@@ -826,10 +790,10 @@ The token-based, corpus study reveals `r nrow(marah)` tokens of metaphorical exp
 knitr::kable(mutate(metaphor_salience_print, `Metaphorical source domains` = str_replace_all(`Metaphorical source domains`, "luminousity", "luminosity")), caption = "Source domains of [anger]{.smallcaps} (Token-based, corpus approach)", row.names = FALSE)
 ```
 
-The top-20 metaphors in [Table \@ref(tab:metaphor-table-token-based)](#metaphor-table-token-based) will be discussed to match the similar number of metaphors found in the lexical approach ([Table \@ref(tab:metaphor-table-type-based)](#metaphor-table-type-based)). Just over half (i.e., `r round(length(metaphor_in_all_database_top20)/20 * 100)`%; N=`r length(metaphor_in_all_database_top20)`) of the metaphors in the top-20 list are shared between the two approaches. The metaphorical mappings for each metaphor will be presented in the decreasing order of their type frequencies (i.e., the number of linguistic expressions) to ease the identification of the "main meaning focus" of the metaphor via "the metaphorical linguistic expressions that **dominate** a metaphor" [@kovecses_metaphor_2010, 140, boldface is mine].
+The top-20 metaphors in [Table \@ref(tab:metaphor-table-token-based)](#metaphor-table-token-based) will be discussed to roughly match the similar number of metaphors found in the lexical approach ([Table \@ref(tab:metaphor-table-type-based)](#metaphor-table-type-based)). Just over half (i.e., `r round(length(metaphor_in_all_database_top20)/20 * 100)`%; N=`r length(metaphor_in_all_database_top20)`) of the metaphors in the top-20 list are shared between the two approaches. The metaphorical mappings for each metaphor will be presented in the decreasing order of their type frequencies (i.e., the number of linguistic expressions) to ease the identification of the "main meaning focus" of the metaphor via "the metaphorical linguistic expressions that _dominate_ a metaphor" [@kovecses_metaphor_2010, 140, italics is mine].
 
 
-### [Anger is contained substance]{.smallcaps} {#contained-substance-tokenbased}
+### [Anger is a contained substance]{.smallcaps} {#contained-substance-tokenbased}
 
 ```{r mapping-containedfluid-token, message = FALSE, include = FALSE}
 mapping_containedfluid_token <- filter(metaphor_tokenbased_mapping, str_detect(CM_BROADER, "is substance in a container$")) %>% 
@@ -873,7 +837,7 @@ This metaphor is shared between the corpus and lexical approaches ([§\@ref(cont
 
 It is obvious that the corpus dataset has much greater number of linguistic types and mappings compared to the lexical dataset. Despite this difference, the metaphor in both datasets equally focuses on the externalisation/expression of anger since the metaphorical expressions of the mapping for this aspect is the most productive.
 
-### [Anger is fierce, captive animal]{.smallcaps} {#animal-tokenbased}
+### [Anger is a fierce, captive animal]{.smallcaps} {#animal-tokenbased}
 
 ```{r mapping-animal-token, message = FALSE, include = FALSE}
 mapping_animal_token <- filter(metaphor_tokenbased_mapping, str_detect(CM_BROADER, "animal$")) %>% 
@@ -884,7 +848,7 @@ mapping_animal_token_discuss <- get_mappings(metaphor_tokenbased_mapping, 'anima
 ```
 
 
-This metaphor is consistently in the top-two salient metaphors across the two approaches but differs in its main meaning focus. In the lexical dataset ([§\@ref(animal-typebased)](#animal-typebased)), the predominant expressions highlight the aggressive behaviour of the animal (type=`r get_metaphor_mapping_n_lu(mapping_animal_stats, 'aggressive')`). In the corpus dataset, the expressions predominantly evoke mapping for restraining the animal (type=`r get_metaphor_mapping_n_lu(mapping_animal_token_stats, 'restraining')`; token=`r get_metaphor_mapping_tokenfreq(mapping_animal_token, 'restraining')`); this mapping is the least prominent in the lexical dataset (type=`r get_metaphor_mapping_n_lu(mapping_animal_stats, 'restraining')`).
+This metaphor is in the top-two salient metaphors across the two approaches but differs in its main meaning focus. In the lexical dataset ([§\@ref(animal-typebased)](#animal-typebased)), the predominant expressions highlight the aggressive behaviour of the animal (type=`r get_metaphor_mapping_n_lu(mapping_animal_stats, 'aggressive')`). In the corpus dataset, the expressions predominantly evoke mapping for restraining the animal (type=`r get_metaphor_mapping_n_lu(mapping_animal_token_stats, 'restraining')`; token=`r get_metaphor_mapping_tokenfreq(mapping_animal_token, 'restraining')`); this mapping is the least prominent in the lexical dataset (type=`r get_metaphor_mapping_n_lu(mapping_animal_stats, 'restraining')`).
 
 - restrained, fierce animal &rarr; anger
 
@@ -921,9 +885,7 @@ mapping_fire_token_discuss <- get_mappings(metaphor_tokenbased_mapping, 'fire$')
 
 Similar to the [fierce, captive animal]{.smallcaps} metaphor, the [anger is fire]{.smallcaps} metaphor is prominent in Indonesian in the lexical ([Table \@ref(tab:metaphor-table-type-based)](#metaphor-table-type-based)) and corpus-based datasets ([Table \@ref(tab:metaphor-table-token-based)](#metaphor-table-token-based)).
 
-- fire &rarr; anger (type=`r get_metaphor_mapping_n_lu(mapping_fire_token_stats, 'anger is fire$')`; token=`r get_metaphor_mapping_tokenfreq(mapping_fire_token, 'anger is fire$', lu_output = FALSE)`)
-
-  - `r get_lu_gloss_n_printed(mapping_fire_token, 'anger is fire$')`
+- fire &rarr; anger (type=`r get_metaphor_mapping_n_lu(mapping_fire_token_stats, 'anger is fire$')`; token=`r get_metaphor_mapping_tokenfreq(mapping_fire_token, 'anger is fire$', lu_output = FALSE)`) (`r get_lu_gloss_n_printed(mapping_fire_token, 'anger is fire$')`)
 
 - burning/burnt object &rarr; angry person
 
@@ -956,7 +918,7 @@ mapping_weapon_token_stats <- get_metaphor_mapping_stat_typefreq(mapping_weapon_
 mapping_weapon_token_discuss <- get_mappings(metaphor_tokenbased_mapping, 'weapon$') %>% left_join(mapping_weapon_token %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_weapon_token_stats)
 ```
 
-The [weapon]{.smallcaps} metaphor is only identified in the corpus approach. The main meaning focus is directing/targeting anger to the wrongdoer or other people. In terms of the token frequency of the mapping, the causation mapping is the most predominant. Despite the highest token of the causation mapping, its linguistic manifestation is less varied compared to the targeting anger mapping, having diverse types despite its lower token.
+The [weapon]{.smallcaps} metaphor is only identified in the corpus approach. The main meaning focus is directing/targeting anger to the wrongdoer or other people. In terms of the token frequency of the mapping, the causation mapping is the most predominant. Despite the highest token of the causation mapping, its linguistic manifestation is less varied compared to the targeting anger mapping, having diverse types despite its lower token frequency.
 
 - the wrongdoer or other people &rarr; target of expression of anger (type=`r get_metaphor_mapping_n_lu(mapping_weapon_token_stats, "target of expression of anger")`; token=`r get_metaphor_mapping_tokenfreq(mapping_weapon_token, "target of expression of anger", lu_output = FALSE)`)
 
@@ -980,7 +942,7 @@ The [weapon]{.smallcaps} metaphor is only identified in the corpus approach. The
 
 The last mapping refers to a non-prototypical model of anger, namely "constructive use" of anger [@holland_cognitive_1987, 215].
 
-### [Anger is adversary/opponent]{.smallcaps} {#adversary-tokenbased}
+### [Anger is an adversary/opponent]{.smallcaps} {#adversary-tokenbased}
 
 ```{r mapping-adversary-token, message = FALSE, include = FALSE}
 mapping_adversary_token <- filter(metaphor_tokenbased_mapping, str_detect(CM_BROADER, "adversary$")) %>% 
@@ -1017,9 +979,9 @@ The [adversary/opponent]{.smallcaps} metaphor is absent in the lexical dataset. 
 
   - `r get_lu_gloss_n_printed(mapping_adversary_token, "^potential")`
   
-The main meaning foci of the metaphor are the mappings [managing anger is winning over the opponent]{.smallcaps} and [experiencing anger is giving in/losing to anger]{.smallcaps}. Both share the same number of types though the former is lexically more varied given its token frequency than the latter. That is, `r get_metaphor_mapping_ttr(mapping_adversary_token_stats, 'winning')`% of the `r get_metaphor_mapping_tokenfreq(mapping_adversary_token, 'winning')` tokens for [managing anger is winning over the opponent]{.smallcaps} are expressed by different types (`r get_metaphor_mapping_n_lu(mapping_adversary_token_stats, 'winning')` types). Meanwhile, only `r get_metaphor_mapping_ttr(mapping_adversary_token_stats, 'losing')`% of the `r get_metaphor_mapping_tokenfreq(mapping_adversary_token, 'losing')` tokens for [experiencing anger is giving in/losing to anger]{.smallcaps} are expressed by different types (`r get_metaphor_mapping_n_lu(mapping_adversary_token_stats, 'losing')`).
+The main meaning foci of the metaphor are the mappings [managing anger is winning over the opponent]{.smallcaps} and [experiencing anger is giving in/losing to anger]{.smallcaps}. Both share the same number of types though the former is lexically more varied given its token frequency than the latter. That is, `r get_metaphor_mapping_ttr(mapping_adversary_token_stats, 'winning')`% of the `r get_metaphor_mapping_tokenfreq(mapping_adversary_token, 'winning')` tokens for [managing anger is winning over the opponent]{.smallcaps} are expressed by different types [`r get_metaphor_mapping_n_lu(mapping_adversary_token_stats, 'winning')`]. Meanwhile, only `r get_metaphor_mapping_ttr(mapping_adversary_token_stats, 'losing')`% of the `r get_metaphor_mapping_tokenfreq(mapping_adversary_token, 'losing')` tokens for [experiencing anger is giving in/losing to anger]{.smallcaps} are expressed by different types [`r get_metaphor_mapping_n_lu(mapping_adversary_token_stats, 'losing')`].
 
-### [Intensity is verticality]{.smallcaps} {#verticality-tokenbased}
+### [Intensity is verticality/height]{.smallcaps} {#verticality-tokenbased}
 
 ```{r mapping-verticality-token, message = FALSE, include = FALSE}
 mapping_verticality_token <- filter(metaphor_tokenbased_mapping, str_detect(CM_BROADER, "verticality$")) %>% 
@@ -1029,9 +991,9 @@ mapping_verticality_token_discuss <- get_mappings(metaphor_tokenbased_mapping, '
 verticality_frame_stats <- happyr::get_frames("verticality$", df = marah, frame_var = "SFRAME", metaphor_var = "CM_BROADER", lexunit_var = "MP")
 ```
 
-The [intensity is verticality]{.smallcaps} is shared between the lexical (rank=`r get_metaphor_salience_rank(metaphor_typebased_salience, 'verticality$')`) and corpus approaches (rank=`r get_metaphor_salience_rank(metaphor_salience, 'verticality$')`) in the top-10 ranking. This metaphor is based on LUs referring to several MN frame families, namely [(caused) upward/downward motion]{.smallcaps}, [scale]{.smallcaps}, incorporated as a frame role in [verticality]{.smallcaps} frame, and [being at a high location]{.smallcaps}. The predominant frame in the metaphor is the [(caused) upward motion]{.smallcaps} frame (type=`r sum(filter(verticality_frame_stats, str_detect(frames, 'upward'))$type)`; token=`r sum(filter(verticality_frame_stats, str_detect(frames, 'upward'))$n)`). The [verticality]{.smallcaps} metaphor has `r get_salience_stats(metaphor_salience, "n_type", "verticality$")` types of metaphorical expression evoking `r get_salience_stats(metaphor_salience, "n_mapping", "verticality$")` mappings. Together, all these frames and their LUs highlight the dynamics of the intensity as movement or position of the [anger]{.smallcaps}-entity along the vertical scale.
+The [intensity is verticality/height]{.smallcaps} is shared between the lexical (rank=`r get_metaphor_salience_rank(metaphor_typebased_salience, 'verticality$')`) and corpus approaches (rank=`r get_metaphor_salience_rank(metaphor_salience, 'verticality$')`) in the top-10 ranking. This metaphor is based on LUs referring to several MN frame families, namely [being at a high location]{.smallcaps}, [(caused) upward/downward motion]{.smallcaps}, and [scale]{.smallcaps}, which is incorporated as a frame role in the [verticality]{.smallcaps} frame. The predominant frame in the metaphor is the [(caused) upward motion]{.smallcaps} frame (type=`r sum(filter(verticality_frame_stats, str_detect(frames, 'upward'))$type)`; token=`r sum(filter(verticality_frame_stats, str_detect(frames, 'upward'))$n)`). The [verticality]{.smallcaps} metaphor has `r get_salience_stats(metaphor_salience, "n_type", "verticality$")` types of metaphorical expression evoking `r get_salience_stats(metaphor_salience, "n_mapping", "verticality$")` mappings. Together, all these frames and their LUs highlight the dynamics of the intensity as movement or position of the [anger]{.smallcaps}-entity along the vertical scale.
 
-- vertical-entity &rarr; anger
+- vertical entity &rarr; anger
 
 - entity being at/going up to/reaching the highest end of the scale &rarr; highest intensity (type=`r get_metaphor_mapping_n_lu(mapping_verticality_token_stats, "^highest")`; token=`r get_metaphor_mapping_tokenfreq(mapping_verticality_token, "^highest", lu_output = FALSE)`)
 
@@ -1045,13 +1007,9 @@ The [intensity is verticality]{.smallcaps} is shared between the lexical (rank=`
 
   - `r get_lu_gloss_n_printed(mapping_verticality_token, "reduced")`
 
-- verticality scale &rarr; intensity of anger (type=`r get_metaphor_mapping_n_lu(mapping_verticality_token_stats, "is verticality scale$")`; token=`r get_metaphor_mapping_tokenfreq(mapping_verticality_token, "is verticality scale$", lu_output = FALSE)`)
+- verticality scale &rarr; intensity of anger (type=`r get_metaphor_mapping_n_lu(mapping_verticality_token_stats, "is verticality scale$")`; token=`r get_metaphor_mapping_tokenfreq(mapping_verticality_token, "is verticality scale$", lu_output = FALSE)`) (`r get_lu_gloss_n_printed(mapping_verticality_token, "is verticality scale$")`)
 
-  - `r get_lu_gloss_n_printed(mapping_verticality_token, "is verticality scale$")`
-
-- balancing the scale &rarr; maintaining anger (type=`r get_metaphor_mapping_n_lu(mapping_verticality_token_stats, "balancing")`; token=`r get_metaphor_mapping_tokenfreq(mapping_verticality_token, "balancing", lu_output = FALSE)`)
-
-  - `r get_lu_gloss_n_printed(mapping_verticality_token, "balancing")`
+- balancing the scale &rarr; maintaining anger (type=`r get_metaphor_mapping_n_lu(mapping_verticality_token_stats, "balancing")`; token=`r get_metaphor_mapping_tokenfreq(mapping_verticality_token, "balancing", lu_output = FALSE)`) (`r get_lu_gloss_n_printed(mapping_verticality_token, "balancing")`)
 
 The two predominant mappings refer to (i) an entity reaching/being at the peak of the scale and (ii) the lifted position of the entity along the scale, without implying whether such upward motion of the anger-entity would reach the peak.
 
@@ -1075,7 +1033,7 @@ This metaphor is only attested in the corpus dataset, realising `r get_salience_
 
   - `r get_lu_gloss_n_printed(mapping_confinement_token, "being confined$")`
 
-- being/moving away from a confining/empeding location &rarr; controlling self not to be angry (type=`r get_metaphor_mapping_n_lu(mapping_confinement_token_stats, "moving away")`; token=`r get_metaphor_mapping_tokenfreq(mapping_confinement_token, "moving away", lu_output = FALSE)`)
+- being/moving away from a confining/impeding location &rarr; controlling self not to be angry (type=`r get_metaphor_mapping_n_lu(mapping_confinement_token_stats, "moving away")`; token=`r get_metaphor_mapping_tokenfreq(mapping_confinement_token, "moving away", lu_output = FALSE)`)
 
   - `r get_lu_gloss_n_printed(mapping_confinement_token, "moving away")`
 
@@ -1093,7 +1051,7 @@ This metaphor is only attested in the corpus dataset, realising `r get_salience_
   
 The LUs of the metaphor evoke a variety of frames. Some of them are within the [motion impediment]{.smallcaps} frame family, namely [confinement]{.smallcaps} and [barrier]{.smallcaps} (sub-cases of the [motion-affecting properties of the landscape]{.smallcaps} frame), and [restraints]{.smallcaps} (a sub-case of the [motion-affecting objects]{.smallcaps} frame). Another frame is [hiding]{.smallcaps}, especially the LUs referring to enclosing/encompassing the experiencer (that is generically related to the [containment/bounded-region]{.smallcaps} frame). Several other tokens of LUs evoke the [motion with respect to an undesirable entity]{.smallcaps} frame. Semantically, the metaphor highlights the undesirability and difficulty being in the state of anger.
 
-### [Anger is pressurised substance in a container]{.smallcaps} {#pressurised-tokenbased}
+### [Anger is a pressurised substance in a container]{.smallcaps} {#pressurised-tokenbased}
 
 ```{r mapping-pressurised-token, message = FALSE, include = FALSE}
 mapping_pressurised_token <- filter(metaphor_tokenbased_mapping, str_detect(CM_BROADER, "pressurised substance")) %>% 
@@ -1121,7 +1079,7 @@ This is another metaphor attested from the two methods (rank `r get_metaphor_sal
 
   - `r get_lu_gloss_n_printed(mapping_pressurised_token, "increased pressure")`
 
-One interesting difference between the [pressurised substance in a container]{.smallcaps} metaphor from the two datasets is that in the lexical approach, the main meaning focus is on the (caused) increased intensity of the pressure and substance. In contrast, the corpus dataset focuses on the loss of control, which is conceptualised as the explosion of the pressurised substance (see the greatest number of types and tokens for the explosion mapping). Moreover, the attempt at control aspect is not attested in the lexical approach but only in the corpus approach (the fourth mapping).
+One interesting difference between the [pressurised substance in a container]{.smallcaps} metaphor from the two datasets is that in the lexical approach, the main meaning focus is on the (caused) increased pressure and substance. In contrast, the corpus dataset focuses on the loss of control, which is conceptualised as the explosion of the pressurised substance (see the greatest number of types and tokens for the explosion mapping). Moreover, the attempt at control aspect is not attested in the lexical approach but only in the corpus approach (the fourth mapping).
 
 ### [Anger is possession]{.smallcaps} {#possession-tokenbased}
 
@@ -1134,7 +1092,7 @@ possession_frame_stats <- happyr::get_frames("possession", df = marah, frame_var
 possession_framefamily_stats <- possession_frame_stats %>% group_by(frame_category) %>% summarise(n = sum(n), type = sum(type), .groups = "drop") %>% mutate(perc_n = round(n/sum(n) * 100), perc_type = round(type/sum(type) * 100))
 ```
 
-This metaphor is a sub-case of the generic [object event-structure]{.smallcaps} metaphor, namely [attributes are possessions]{.smallcaps} [@lakoff_philosophy_1999, 195-196, 198]. It realises `r get_salience_stats(metaphor_salience, 'n_type', 'possession')` types (`r get_salience_stats(metaphor_salience, 'n_token', 'possession')` tokens) manifesting `r get_salience_stats(metaphor_salience, 'n_mapping', 'possession')` mappings. The key mappings in the metaphor are (i) anger is the possession and (ii) angry person (or non-self entity, such as utterances, events, or even God) is the possessor or carrier of the object. The entailed mappings from these two are as follows:
+This metaphor is a sub-case of the generic [object event-structure]{.smallcaps} metaphor, namely [attributed states are possessed objects]{.smallcaps} [@lakoff_philosophy_1999, 195-196, 198]. It realises `r get_salience_stats(metaphor_salience, 'n_type', 'possession')` types (`r get_salience_stats(metaphor_salience, 'n_token', 'possession')` tokens) manifesting `r get_salience_stats(metaphor_salience, 'n_mapping', 'possession')` mappings. The key mappings in the metaphor are (i) anger is the possession and (ii) angry person (or non-self entity, such as utterances, events, or even God) is the possessor or carrier of the object. The entailed mappings from these two are as follows:
 
 - having/keeping/carrying possession &rarr; feeling/experiencing anger (type=`r get_metaphor_mapping_n_lu(mapping_possession_token_stats, "keeping")`; token=`r get_metaphor_mapping_tokenfreq(mapping_possession_token, "keeping", lu_output = FALSE)`)
 
@@ -1190,9 +1148,7 @@ This metaphor is based on the [quantity]{.smallcaps} frame and only attested in 
 
   - `r get_lu_gloss_n_printed(mapping_quantity_token, "adding")`
 
-- amount of entity &rarr; intensity of anger (type=`r get_metaphor_mapping_n_lu(mapping_quantity_token_stats, "entity.amount")`; token=`r get_metaphor_mapping_tokenfreq(mapping_quantity_token, "entity.amount", lu_output = FALSE)`)
-
-  - `r get_lu_gloss_n_printed(mapping_quantity_token, "entity.amount")`
+- amount of entity &rarr; intensity of anger (type=`r get_metaphor_mapping_n_lu(mapping_quantity_token_stats, "entity.amount")`; token=`r get_metaphor_mapping_tokenfreq(mapping_quantity_token, "entity.amount", lu_output = FALSE)`) (`r get_lu_gloss_n_printed(mapping_quantity_token, "entity.amount")`)
 
 There are two perspectives in this metaphor, the increased or the lessening amount of the entity. The former highlights the intensification of anger while the latter is for the reduced intensity. There are more types and tokens that reflect the intensification of anger (type=`r pull(filter(mapping_quantity_more_or_less, aspects=='more'), n_lu)`; token=`r pull(filter(mapping_quantity_more_or_less, aspects=='more'), n_token)`; see the first and the fourth mappings) than those for the reduced intensity (type=`r pull(filter(mapping_quantity_more_or_less, aspects=='less'), n_lu)`; token=`r pull(filter(mapping_quantity_more_or_less, aspects=='less'), n_token)`; the second and the third mappings).
 
@@ -1218,13 +1174,11 @@ This central metaphor is shared between the two approaches (rank=`r get_metaphor
 
   - `r get_lu_gloss_n_printed(mapping_hotfluid_token, "boiling over the fluid to overflow")`
 
-- evaporating liquid &rarr; reduced intensity of anger (type=`r get_metaphor_mapping_n_lu(mapping_hotfluid_token_stats, "evaporating")`; token=`r get_metaphor_mapping_tokenfreq(mapping_hotfluid_token, "evaporating", lu_output = FALSE)`)
-
-  - `r get_lu_gloss_n_printed(mapping_hotfluid_token, "evaporating")`
+- evaporating liquid &rarr; reduced intensity of anger (type=`r get_metaphor_mapping_n_lu(mapping_hotfluid_token_stats, "evaporating")`; token=`r get_metaphor_mapping_tokenfreq(mapping_hotfluid_token, "evaporating", lu_output = FALSE)`) (`r get_lu_gloss_n_printed(mapping_hotfluid_token, "evaporating")`)
 
 In both datasets, the [heated fluid]{.smallcaps} metaphor focuses on a heightened intensity of anger. One minor difference is, in the corpus dataset only, there is an attestation of a mapping for the ceasing of anger; this is conceptualised as an evaporating fluid (the last mapping above).
 
-### [Anger is submerged entity]{.smallcaps} {#submerged-tokenbased}
+### [Anger is a submerged entity]{.smallcaps} {#submerged-tokenbased}
 
 ```{r mapping-submerged-token, message = FALSE, include = FALSE}
 mapping_submerged_token <- filter(metaphor_tokenbased_mapping, str_detect(CM_BROADER, "submerged")) %>% 
@@ -1234,7 +1188,7 @@ mapping_submerged_token_discuss <- get_mappings(metaphor_tokenbased_mapping, 'su
 submerged_frame_stats <- happyr::get_frames("submerged", df = marah, frame_var = "SFRAME", metaphor_var = "CM_BROADER", lexunit_var = "MP")
 ```
 
-This [motion]{.smallcaps}-based metaphor captures the way anger exist and it is not attested in the lexical approach. The metaphor differs slightly from the [(un)veiled object]{.smallcaps} metaphor ([§\@ref(unveiled-tokenbased)](#unveiled-tokenbased)) where anger already exists and that highlights the issue of whether the experiencer is keen to unveil the anger to others or not [cf. @rajeg_metaphorical_2019, 158]. The key mapping is `r get_key_mappings(mapping_submerged_token)`. From this mapping, two entailed mappings are postulated based on the semantics of the source frame LUs.
+On a more general level, the metaphor could be viewed as a sub-case of the generic metaphor [existence is being here]{.smallcaps}, which has a universal perceptual basis (i.e., we know that something exists when it is physically presence and can be seen). The [submerged entity]{.smallcaps} metaphor captures the way anger exist and it is not attested in the lexical approach. The key mapping is `r get_key_mappings(mapping_submerged_token)`. From this mapping, two entailed mappings are postulated based on the semantics of the source frame LUs.
 
 - the presence/emergence/protruding of the entity &rarr; experiencing anger (type=`r get_metaphor_mapping_n_lu(mapping_submerged_token_stats, "protruding")`; token=`r get_metaphor_mapping_tokenfreq(mapping_submerged_token, "protruding", lu_output = FALSE)`)
 
@@ -1244,9 +1198,9 @@ This [motion]{.smallcaps}-based metaphor captures the way anger exist and it is 
 
   - `r get_lu_gloss_n_printed(mapping_submerged_token, "to emerge")`
 
-Compared to the other metaphors discussed so far, [anger is submerged entity]{.smallcaps} is rather conventionalised in its linguistic realisation. It is manifested by small number of types (`r get_salience_stats(metaphor_salience, 'n_type', 'submerged')`) making up the high token of the metaphor (`r get_salience_stats(metaphor_salience, 'n_token', 'submerged')`); that is, only `r get_meta_freq_profiles('submerged', type_per_token_lu, df = ttr_metaphor_tokenbased, metaphor_var = "cm_broader")[[2]]`% of the metaphor's token are of different types that are repeated many times.
+The metaphor differs slightly from the [(un)veiled object]{.smallcaps} metaphor ([§\@ref(unveiled-tokenbased)](#unveiled-tokenbased)) whereby anger already exists and highlights the issue of whether the experiencer is keen to unveil the anger to others or not [cf. @rajeg_metaphorical_2019, 158]. Compared to the other metaphors discussed so far, [anger is submerged entity]{.smallcaps} is rather conventionalised in its linguistic realisation. It is manifested by small number of types [`r get_salience_stats(metaphor_salience, 'n_type', 'submerged')`] making up the high token of the metaphor [`r get_salience_stats(metaphor_salience, 'n_token', 'submerged')`]; that is, only `r get_meta_freq_profiles('submerged', type_per_token_lu, df = ttr_metaphor_tokenbased, metaphor_var = "cm_broader")[[2]]`% of the metaphor's token are of different types that are repeated many times.
 
-### [Anger is sleeping organism]{.smallcaps} {#sleeping-tokenbased}
+### [Anger is a sleeping organism]{.smallcaps} {#sleeping-tokenbased}
 
 ```{r mapping-sleeping-token, message = FALSE, include = FALSE}
 mapping_sleeping_token <- filter(metaphor_tokenbased_mapping, str_detect(CM_BROADER, "sleeping")) %>% 
@@ -1256,7 +1210,7 @@ mapping_sleeping_token_discuss <- get_mappings(metaphor_tokenbased_mapping, 'sle
 sleeping_frame_stats <- happyr::get_frames("sleeping", df = marah, frame_var = "SFRAME", metaphor_var = "CM_BROADER", lexunit_var = "MP")
 ```
 
-The [sleeping organism]{.smallcaps} metaphor is also attested in the lexical approach though at the lower rank (i.e. `r get_metaphor_salience_rank(metaphor_typebased_salience, "sleeping")`) ([§\@ref(awakening-typebased)](#awakening-typebased)). It is based on the [awakening]{.smallcaps} and the [caused upward motion]{.smallcaps} frames. The utilised aspect of the source frame is causing inactive/calm organism to become awake/active/alert/aroused. The manner of the awakening/alerting can be fishing for the organism via bait. In the target frame, this is mapped onto the cause of anger. This metaphor could be a pre-condition for the danger and fierceness of the organism that need to be restrained as in the [fierce, captive animal]{.smallcaps} metaphor ([§\@ref(animal-tokenbased)](#animal-tokenbased)). 
+The [sleeping organism]{.smallcaps} metaphor is also attested in the lexical approach though at the lower rank (i.e., `r get_metaphor_salience_rank(metaphor_typebased_salience, "sleeping")`) ([§\@ref(awakening-typebased)](#awakening-typebased)). It is based on the [awakening]{.smallcaps} and the [caused upward motion]{.smallcaps} frames. The utilised aspect of the source frame is causing inactive/calm organism to become awake/active/alert/aroused. The manner of the awakening/alerting can be fishing for the organism via bait. In the target frame, this is mapped onto the cause of anger. This metaphor could be a pre-condition for the danger and fierceness of the organism that need to be restrained as in the [fierce, captive animal]{.smallcaps} metaphor ([§\@ref(animal-tokenbased)](#animal-tokenbased)). 
 
 `r paste(paste("- ", unlist(str_split(get_key_mappings(mapping_sleeping_token), "____ ")), "\n", sep = ""), collapse = "")`
 
@@ -1270,7 +1224,7 @@ The [sleeping organism]{.smallcaps} metaphor is also attested in the lexical app
 
 Like the [submerged entity]{.smallcaps}, the [sleeping organism]{.smallcaps} highlights the way anger is brought about. The conventionalised lexical unit of this metaphor is based on the root *pancing* 'lure a fish using a bite; to fish for sth.' and *bangkit* 'wake/get up'.
 
-### [Anger is natural force]{.smallcaps} {#naturalforce-tokenbased}
+### [Anger is a natural force]{.smallcaps} {#naturalforce-tokenbased}
 
 ```{r mapping-naturalforce-token, message = FALSE, include = FALSE}
 mapping_naturalforce_token <- filter(metaphor_tokenbased_mapping, str_detect(CM_BROADER, "natural force")) %>% 
@@ -1302,7 +1256,7 @@ The metaphor occupies nearly similar rank in the two datasets (i.e., `r get_meta
   
 The [natural force]{.smallcaps} metaphor focuses on the intense effect of the natural force, as evident by the productivity of this mapping. This is a more specific way of construing the harmful effect of anger than the other [harm]{.smallcaps}-related metaphor based on different frames within the same family ([§\@ref(harm-tokenbased)](#harm-tokenbased)).
 
-### [Anger is subjugator]{.smallcaps} {#subjugator-tokenbased}
+### [Anger is a subjugator]{.smallcaps} {#subjugator-tokenbased}
 
 ```{r mapping-subjugator-token, message = FALSE, include = FALSE}
 mapping_subjugator_token <- filter(metaphor_tokenbased_mapping, str_detect(CM_BROADER, "subjugator")) %>% 
@@ -1330,7 +1284,7 @@ The [subjugator]{.smallcaps} metaphor is only attested in the corpus data and ba
 
 The metaphor focuses on the emotional effect of anger (e.g., being irrational). It is construed via the degree of control and power that the authority has over the subjugated. This aspect is manifested as the metaphor's predominant mapping. There is only a small number of types that evoke the self's attempt to manage anger (i.e., exercise/compromising control).
 
-### [Anger is biological entity]{.smallcaps} {#biologicalentity-tokenbased}
+### [Anger is a biological entity]{.smallcaps} {#biologicalentity-tokenbased}
 
 ```{r mapping-biological-token, message = FALSE, include = FALSE}
 mapping_biological_token <- filter(metaphor_tokenbased_mapping, str_detect(CM_BROADER, "biological entity")) %>% 
@@ -1341,13 +1295,13 @@ biological_frame_stats <- happyr::get_frames("biological entity", df = marah, fr
 ```
 
 
-The [biological entity]{.smallcaps} metaphor has relatively low tokens (`r get_salience_stats(metaphor_salience, "n_token", "biological")`) and sits towards the bottom of the top-20 metaphor (rank `r get_metaphor_salience_rank(metaphor_salience, 'biological')`). However, it is expressed by relatively varied metaphorical expressions (`r get_salience_stats(metaphor_salience, "n_type", "biological")` types out of `r get_salience_stats(metaphor_salience, "n_token", "biological")` tokens) and elaborate mappings (`r get_salience_stats(metaphor_salience, "n_mapping", "biological")`) as presented below. 
+The [biological entity]{.smallcaps} metaphor has relatively low tokens [`r get_salience_stats(metaphor_salience, "n_token", "biological")`] and sits towards the bottom of the top-20 metaphor (rank `r get_metaphor_salience_rank(metaphor_salience, 'biological')`). However, it is expressed by relatively varied metaphorical expressions (`r get_salience_stats(metaphor_salience, "n_type", "biological")` types out of `r get_salience_stats(metaphor_salience, "n_token", "biological")` tokens) and elaborate mappings [`r get_salience_stats(metaphor_salience, "n_mapping", "biological")`] as presented below. 
 
-- the root/base/seed of an organism from which sth. grows &rarr; anger leading to other effects (type=`r get_metaphor_mapping_n_lu(mapping_biological_token_stats, "root\\/base\\/seed")`; token=`r get_metaphor_mapping_tokenfreq(mapping_biological_token, "root\\/base\\/seed", lu_output = FALSE)`)
+- the root/base/seed of an organism &rarr; anger as cause (type=`r get_metaphor_mapping_n_lu(mapping_biological_token_stats, "root\\/base\\/seed")`; token=`r get_metaphor_mapping_tokenfreq(mapping_biological_token, "root\\/base\\/seed", lu_output = FALSE)`)
 
   - `r get_lu_gloss_n_printed(mapping_biological_token, "root\\/base\\/seed")`
   
-- fruits/yields of a plant &rarr; anger as a consequence of an event (type=`r get_metaphor_mapping_n_lu(mapping_biological_token_stats, "fruits\\/yields")`; token=`r get_metaphor_mapping_tokenfreq(mapping_biological_token, "fruits\\/yields", lu_output = FALSE)`)
+- fruits/yields of a plant &rarr; anger as effect (type=`r get_metaphor_mapping_n_lu(mapping_biological_token_stats, "fruits\\/yields")`; token=`r get_metaphor_mapping_tokenfreq(mapping_biological_token, "fruits\\/yields", lu_output = FALSE)`)
 
   - `r get_lu_gloss_n_printed(mapping_biological_token, "fruits\\/yields")`
 
@@ -1367,10 +1321,10 @@ The [biological entity]{.smallcaps} metaphor has relatively low tokens (`r get_s
 
   - `r get_lu_gloss_n_printed(mapping_biological_token, "fertilising")`
 
-No single mapping could be considered predominant. The metaphorical expressions utilise different components from the [organism]{.smallcaps} frame family (e.g., the [plant life cycle]{.smallcaps} and [animate entity]{.smallcaps} frames) to highlight different aspects of anger. Anger can be considered as a consequence of an event, or as a cause leading to another effect. The metaphor also includes expressions referring to the cause, existence, and effect of anger.
+No single mapping could be considered predominant. The metaphorical expressions utilise different components of the [organism]{.smallcaps} frame family (e.g., the [plant life cycle]{.smallcaps} and [animate entity]{.smallcaps} frames) to highlight different aspects of anger. Anger can be considered as an effect, or as a cause leading to another effect. The metaphor also includes expressions referring to the cause, existence, and effect of anger.
 
 
-### [Anger is (un)veiled object]{.smallcaps} {#unveiled-tokenbased}
+### [Anger is an (un)veiled object]{.smallcaps} {#unveiled-tokenbased}
 
 ```{r mapping-hidden-token, message = FALSE, include = FALSE}
 mapping_hidden_token <- filter(metaphor_tokenbased_mapping, str_detect(CM_BROADER, "veiled object")) %>% 
@@ -1442,7 +1396,7 @@ Amongst the metaphors in the bottom five of the corpus-based salience table ([Ta
 
 The metaphor is based on LUs evoking the [darkness]{.smallcaps} frame, a perspective of the [luminosity]{.smallcaps} frame that characterises the amount of light from a light source. These frames are utilised in highlighting the ceasing intensity of anger. [Intensity is luminosity]{.smallcaps} is related to the [anger is fire]{.smallcaps} ([§\@ref(fire-tokenbased)](#fire-tokenbased)) but captures anger's intensity not via the degree of heat, but the amount of light.
 
-### [Anger is person]{.smallcaps} {#person-tokenbased}
+### [Anger is a person]{.smallcaps} {#person-tokenbased}
 
 ```{r mapping-person-token, message = FALSE, include = FALSE}
 mapping_person_token <- filter(metaphor_tokenbased_mapping, str_detect(CM_BROADER, "person$")) %>% 
@@ -1470,7 +1424,7 @@ This metaphor could be viewed as a soft personification of anger and is not atte
 
 Unlike the other personifying metaphors (e.g., [adversary]{.smallcaps} or [subjugator]{.smallcaps}), [anger is person]{.smallcaps} captures the causation and diminishing of anger, rather than the intensity and effect of it. The metaphorical expressions refer to actions and objectives that animate as well as sentient/cognising entities such as a person typically do. These includes welcoming, inviting, dismissing, and befriending or playing with someone. In a way, such actions represent anger as a superficially safe emotion to be with.
 
-## Metonymy {#tokenbased-metonymy-salience-results}
+## Token-based salience: Metonymy {#tokenbased-metonymy-salience-results}
 
 ```{r metonymy-category-tokenbased}
 physiological_response_regex <- "(body heat|internal pressure|redness|breathing|visual interference|body hair|teeth biting|foaming)"
@@ -1499,7 +1453,9 @@ The corpus analysis of the metonymy now includes the token frequencies for the m
 
 ```{r metonymy-table-token-based}
 metonymy_tokenbased_salience_print %>% 
-  mutate(Metonymy = str_replace(Metonymy, "frustated", "frustrated")) %>% 
+  mutate(Metonymy = str_replace(Metonymy, "frustated", "frustrated"),
+         Metonymy = str_replace(Metonymy, fixed("speechless"), "inability to speak"),
+         Metonymy = str_replace(Metonymy, fixed("visual interference"), "inability to see")) %>% 
   select(-Aggregate) %>% 
   knitr::kable(caption = "Conceptual metonymies for [anger]{.smallcaps} (Token-based, corpus approach)")
 ```
@@ -1512,7 +1468,7 @@ metonymy_typebased_only <- setdiff(metonymy_typebased_salience$metonymy, metonym
 metonymy_tokenbased_typebased_ALL <- unique(metonymy_tokenbased_salience$METONYMY, metonymy_typebased_salience$metonymy)
 ```
 
-From the two datasets, there are total `r length(unique(metonymy_tokenbased_salience$METONYMY, metonymy_typebased_salience$metonymy))` unique metonymies, and most of them (i.e., `r length(intersect(metonymy_tokenbased_salience$METONYMY, metonymy_typebased_salience$metonymy))` metonymies [`r round(length(intersect(metonymy_tokenbased_salience$METONYMY, metonymy_typebased_salience$metonymy))/length(unique(metonymy_tokenbased_salience$METONYMY, metonymy_typebased_salience$metonymy)) * 100, digits = 1)`%]) are shared. This suggests a rather consistent metonymic construal for anger, especially the [strong/aggressive verbal behaviour for anger]{.smallcaps} that tops the metonymy tables in the two approaches. This prominent metonymy could corroborate Heider's [-@heider_landscapes_1991, 80, 116] finding that verbal abuse is one kind of outcome/reaction of anger (in addition to physical violence). The metonymies attested only in the lexical approach are `r paste(paste(paste("[", metonymy_typebased_only, "]{.smallcaps}", sep = "")[1:length(metonymy_typebased_only)-1], collapse = ", "), ", and ", paste("[", metonymy_typebased_only, "]{.smallcaps}", sep = "")[length(metonymy_typebased_only)], sep = "")`. Meanwhile, those identified only in the corpus approach are `r paste(paste(paste("[", metonymy_tokenbased_only, "]{.smallcaps}", sep = "")[1:length(metonymy_tokenbased_only)-1], collapse = ", "), ", and ", paste("[", metonymy_tokenbased_only, "]{.smallcaps}", sep = "")[length(metonymy_tokenbased_only)], sep = "")`. 
+From the two datasets, there are total `r length(unique(metonymy_tokenbased_salience$METONYMY, metonymy_typebased_salience$metonymy))` unique metonymies, and most of them (i.e., `r length(intersect(metonymy_tokenbased_salience$METONYMY, metonymy_typebased_salience$metonymy))` metonymies [`r round(length(intersect(metonymy_tokenbased_salience$METONYMY, metonymy_typebased_salience$metonymy))/length(unique(metonymy_tokenbased_salience$METONYMY, metonymy_typebased_salience$metonymy)) * 100, digits = 1)`%]) are shared. This suggests a rather consistent metonymic construal for anger, especially the [strong/aggressive verbal behaviour for anger]{.smallcaps} that tops the metonymy tables in the two approaches. This prominent metonymy corroborates Heider's [-@heider_landscapes_1991, 80, 116] finding that verbal abuse is one kind of reaction of anger (in addition to physical violence). The metonymies attested only in the lexical approach are `r paste(paste(paste("[", metonymy_typebased_only, "]{.smallcaps}", sep = "")[1:length(metonymy_typebased_only)-1], collapse = ", "), ", and ", paste("[", metonymy_typebased_only, "]{.smallcaps}", sep = "")[length(metonymy_typebased_only)], sep = "")`. Meanwhile, those identified only in the corpus are `r paste(paste(paste("[", metonymy_tokenbased_only, "]{.smallcaps}", sep = "")[1:length(metonymy_tokenbased_only)-1], collapse = ", "), ", and ", paste("[", metonymy_tokenbased_only, "]{.smallcaps}", sep = "")[length(metonymy_tokenbased_only)], sep = "") %>% str_replace(fixed("speechless"), "inability to speak")`. 
 
 ### [Strong/aggressive verbal behaviour for anger]{.smallcaps} {#verbal-tokenbased}
 
@@ -1524,7 +1480,7 @@ This metonymy is the most salient in both approaches, having `r get_salience_sta
 
 - `r get_lu_gloss_n_printed(metonymy_tokenbased, mapping_regex = 'visual behaviour', mapping_var = "METONYMY", metaphor_data = FALSE)`
 
-This is another metonymy that is also salient in the two approaches, ranked in the top-3 metonymies. However, the corpus dataset reveals significantly greater number of types (`r get_salience_stats(metonymy_tokenbased_salience, "n_type", "aggressive visual behaviour", metaphor_data = FALSE)`) compared to the lexical dataset (`r get_salience_stats(metonymy_typebased_salience, "n_type", "aggressive visual behaviour", metaphor_data = FALSE)`) (*p*~Binomial~ ~two~~-~~tailed~`r pval_print(binom.test(c(get_salience_stats(metonymy_typebased_salience, "n_type", "aggressive visual behaviour", metaphor_data = FALSE), get_salience_stats(metonymy_tokenbased_salience, "n_type", "aggressive visual behaviour", metaphor_data = FALSE)))$p.value)`). From the list of metonymic expressions above, one expression does not contain the target term [marah]{.smallcaps} but the context of the concordance (see @pandangan_liar) clearly indicates that such expression has to do with anger.
+This is another metonymy that is also salient in the two approaches, ranked in the top 3. However, the corpus dataset reveals significantly greater number of types [`r get_salience_stats(metonymy_tokenbased_salience, "n_type", "aggressive visual behaviour", metaphor_data = FALSE)`] compared to the lexical dataset [`r get_salience_stats(metonymy_typebased_salience, "n_type", "aggressive visual behaviour", metaphor_data = FALSE)`] (*p*~Binomial~ ~two~~-~~tailed~`r pval_print(binom.test(c(get_salience_stats(metonymy_typebased_salience, "n_type", "aggressive visual behaviour", metaphor_data = FALSE), get_salience_stats(metonymy_tokenbased_salience, "n_type", "aggressive visual behaviour", metaphor_data = FALSE)))$p.value)`). From the metonymic expressions above, one does not contain the target term [marah]{.smallcaps} but the context of the sentential context (see @pandangan_liar) clearly indicates that such expression has to do with anger.
 
 (@pandangan_liar) *__Pandangan matanya liar__ dan memancarkan amarah yang meluap.* (ind_mixed_2012_1M: 575480)
 
@@ -1534,7 +1490,7 @@ In this example, the eyes both spurt out boiled over anger and show wild gaze.
 
 - `r get_lu_gloss_n_printed(metonymy_tokenbased, mapping_regex = 'redness', mapping_var = "METONYMY", metaphor_data = FALSE)`
 
-This metonymy has greater number of types (and thus ranked higher) in the corpus dataset (`r get_salience_stats(metonymy_tokenbased_salience, "n_type", "redness", metaphor_data = FALSE)`; rank=`r get_metaphor_salience_rank(metonymy_tokenbased_salience, "redness", FALSE)`) than in the lexical one (`r get_salience_stats(metonymy_typebased_salience, "n_type", "redness", metaphor_data = FALSE)`; rank=`r get_metaphor_salience_rank(metonymy_typebased_salience, "redness", FALSE)`) (*p*~Binomial~ ~two~~-~~tailed~`r pval_print(binom.test(c(get_salience_stats(metonymy_typebased_salience, "n_type", "redness", metaphor_data = FALSE), get_salience_stats(metonymy_tokenbased_salience, "n_type", "redness", metaphor_data = FALSE)))$p.value)`). The metonymic expressions indicate that anger causes such physiological effects of redness in the facial area of the experiencer.
+This metonymy has greater number of types (and thus ranked higher) in the corpus dataset (`r get_salience_stats(metonymy_tokenbased_salience, "n_type", "redness", metaphor_data = FALSE)` types; rank=`r get_metaphor_salience_rank(metonymy_tokenbased_salience, "redness", FALSE)`) than in the lexical one (`r get_salience_stats(metonymy_typebased_salience, "n_type", "redness", metaphor_data = FALSE)` types; rank=`r get_metaphor_salience_rank(metonymy_typebased_salience, "redness", FALSE)`) (*p*~Binomial~ ~two~~-~~tailed~`r pval_print(binom.test(c(get_salience_stats(metonymy_typebased_salience, "n_type", "redness", metaphor_data = FALSE), get_salience_stats(metonymy_tokenbased_salience, "n_type", "redness", metaphor_data = FALSE)))$p.value)`). The metonymic expressions indicate that anger causes such physiological effects of redness in the facial area of the experiencer.
 
 ### [Internal pressure for anger]{.smallcaps} {#internal-pressure-tokenbased}
 
@@ -1546,7 +1502,7 @@ The [internal pressure]{.smallcaps} metonymy shares the same number of types bet
 
 - `r get_lu_gloss_n_printed(metonymy_tokenbased, mapping_regex = "body heat", mapping_var = "METONYMY", metaphor_data = FALSE)`
 
-The [body heat]{.smallcaps} metonymy is less productive in terms of its type in the corpus dataset (`r get_salience_stats(metonymy_tokenbased_salience, "n_type", "body heat", metaphor_data = FALSE)`) compared to the lexical one (`r get_salience_stats(metonymy_typebased_salience, "n_type", "body heat", metaphor_data = FALSE)`).
+The [body heat]{.smallcaps} metonymy is less productive in terms of its type in the corpus dataset (`r get_salience_stats(metonymy_tokenbased_salience, "n_type", "body heat", metaphor_data = FALSE)` types) compared to the lexical one (`r get_salience_stats(metonymy_typebased_salience, "n_type", "body heat", metaphor_data = FALSE)` types).
 
 ### [Violent frustrated behaviour for anger]{.smallcaps} {#frustation-tokenbased}
 
@@ -1556,9 +1512,9 @@ This metonymy appears to be less prominent in the corpus dataset than in the lex
 
 ### Other singleton metonymies
 
-There are `r nrow(filter(metonymy_tokenbased_salience, n_type < 2))` metonymies that only have a single type; they are (i) [`r filter(metonymy_tokenbased_salience, n_type < 2)[[1]][1]`]{.smallcaps} (`r get_lu_gloss_n_printed(metonymy_tokenbased, mapping_regex = "crying", mapping_var = "METONYMY", metaphor_data = FALSE)`), (ii) [`r filter(metonymy_tokenbased_salience, n_type < 2)[[1]][2]`]{.smallcaps} (`r get_lu_gloss_n_printed(metonymy_tokenbased, mapping_regex = "foaming", mapping_var = "METONYMY", metaphor_data = FALSE)`), (iii) [`r filter(metonymy_tokenbased_salience, n_type < 2)[[1]][3]`]{.smallcaps} (`r get_lu_gloss_n_printed(metonymy_tokenbased, mapping_regex = "teeth biting", mapping_var = "METONYMY", metaphor_data = FALSE)`), (iv) [`r filter(metonymy_tokenbased_salience, n_type < 2)[[1]][4]`]{.smallcaps} (`r get_lu_gloss_n_printed(metonymy_tokenbased, mapping_regex = "speechless", mapping_var = "METONYMY", metaphor_data = FALSE)`), and (v) [`r filter(metonymy_tokenbased_salience, n_type < 2)[[1]][5]`]{.smallcaps} (`r get_lu_gloss_n_printed(metonymy_tokenbased, mapping_regex = "visual interference", mapping_var = "METONYMY", metaphor_data = FALSE)`). Two metonymies have greater number of types in the lexical dataset, namely [visual interference for anger]{.smallcaps} (`r get_salience_stats(metonymy_typebased_salience, "n_type", "visual interference", metaphor_data = FALSE)`) and [lip/teeth biting/pressing for anger]{.smallcaps} (`r get_salience_stats(metonymy_typebased_salience, "n_type", "teeth biting", metaphor_data = FALSE)`).
+There are `r nrow(filter(metonymy_tokenbased_salience, n_type < 2))` metonymies that only have a single type; they are (i) [`r filter(metonymy_tokenbased_salience, n_type < 2)[[1]][1]`]{.smallcaps} (`r str_replace(get_lu_gloss_n_printed(metonymy_tokenbased, mapping_regex = "crying", mapping_var = "METONYMY", metaphor_data = FALSE), "\\s\\[[0-9]\\]$", "")`), (ii) [`r filter(metonymy_tokenbased_salience, n_type < 2)[[1]][2]`]{.smallcaps} (`r str_replace(get_lu_gloss_n_printed(metonymy_tokenbased, mapping_regex = "foaming", mapping_var = "METONYMY", metaphor_data = FALSE), "\\s\\[[0-9]\\]$", "")`), (iii) [`r filter(metonymy_tokenbased_salience, n_type < 2)[[1]][3]`]{.smallcaps} (`r str_replace(get_lu_gloss_n_printed(metonymy_tokenbased, mapping_regex = "teeth biting", mapping_var = "METONYMY", metaphor_data = FALSE), "\\s\\[[0-9]\\]$", "")`), (iv) [`r str_replace(filter(metonymy_tokenbased_salience, n_type < 2)[[1]][4], fixed("speechless"), "inability to speak")`]{.smallcaps} (`r str_replace(get_lu_gloss_n_printed(metonymy_tokenbased, mapping_regex = "speechless", mapping_var = "METONYMY", metaphor_data = FALSE), "\\s\\[[0-9]\\]$", "")`), and (v) [`r str_replace(filter(metonymy_tokenbased_salience, n_type < 2)[[1]][5], fixed("visual interference"), "inability to see")`]{.smallcaps} (`r str_replace(get_lu_gloss_n_printed(metonymy_tokenbased, mapping_regex = "visual interference", mapping_var = "METONYMY", metaphor_data = FALSE), "\\s\\[[0-9]\\]$", "")`). Two metonymies have greater number of types in the lexical dataset, namely [inability to see for anger]{.smallcaps} [`r get_salience_stats(metonymy_typebased_salience, "n_type", "visual interference", metaphor_data = FALSE)`] and [lip/teeth biting/pressing for anger]{.smallcaps} [`r get_salience_stats(metonymy_typebased_salience, "n_type", "teeth biting", metaphor_data = FALSE)`].
 
-### Types of the metonymies (token-based dataset) {#metonymy-category-tokenbased}
+## Types of the metonymies (token-based dataset) {#metonymy-category-tokenbased}
 
 From `r nrow(metonymy_tokenbased_salience_category)` metonymies, `r nrow(filter(metonymy_tokenbased_salience_category, category == "physiological response"))` metonymies represent physiological responses (type=`r sum(filter(metonymy_tokenbased_salience_category, category == "physiological response")$n_type)`; token=`r sum(filter(metonymy_tokenbased_salience_category, category == "physiological response")$n_token)`), and `r nrow(filter(metonymy_tokenbased_salience_category, category != "physiological response"))` are of the social-communicative behaviour types (type=`r sum(filter(metonymy_tokenbased_salience_category, category != "physiological response")$n_type)`; token=`r sum(filter(metonymy_tokenbased_salience_category, category != "physiological response")$n_token)`).
 
@@ -1567,7 +1523,10 @@ metonymy_tokenbased_category_binomtest_type <- binom.test(sum(filter(metonymy_to
 
 metonymy_tokenbased_category_binomtest_token <- binom.test(sum(filter(metonymy_tokenbased_salience_category, category != "physiological response")$n_token), sum(sum(filter(metonymy_tokenbased_salience_category, category != "physiological response")$n_token), sum(filter(metonymy_tokenbased_salience_category, category == "physiological response")$n_token)))
 
-metonymy_tokenbased_category_print %>% knitr::kable(caption = "Two types of metonymies of [anger]{.smallcaps} (token-based dataset)")
+metonymy_tokenbased_category_print %>% 
+  mutate(`social-communicative behaviour:` = str_replace_all(`social-communicative behaviour:`, fixed("speechless"), "inability to speak"),
+         `physiological response:` = str_replace_all(`physiological response:`, fixed("visual interference"), "inability to see")) %>% 
+  knitr::kable(caption = "Two types of metonymies of [anger]{.smallcaps} (token-based dataset)")
 ```
 
 As in the lexical dataset ([§\@ref(metonymy-category-typebased)](#metonymy-category-typebased)), the number of metonymies in the physiological response category are greater than the ones in the social-communicative behaviour. However, the social-communicative behaviour category in total still exhibits significantly greater number of types (*p*~Binomial~ ~two~~-~~tailed~`r pval_print(metonymy_tokenbased_category_binomtest_type$p.value)`) and tokens (*p*~Binomial~ ~two~~-~~tailed~`r pval_print(metonymy_tokenbased_category_binomtest_token$p.value)`) than the physiological response category. Therefore, the lexical and corpus-based approaches converge along these distributional aspects of the metonymies.
@@ -1599,9 +1558,7 @@ The [heated fluid in a container]{.smallcaps} may also be motivated by the [inte
 
 Caressing the chest represents a gesture that could be interpreted as an attempt to hold the pressing anger inside (hence, an attempt to show patience). The biting/pressing of the lip/teeth could also indicate holding back pressure and pain. Difficulty to breath could be related to raising internal pressure pushing up the lungs.
 
-- [Visual interference for anger]{.smallcaps} motivates the [anger is darkness]{.smallcaps} metaphor.
-
-- [Standing body hair for anger]{.smallcaps} motivates the [(cause of) anger is annoyance]{.smallcaps}. Having a hair inside the body organ may represent potential disturbance to the person.
+- [Inability to see for anger]{.smallcaps} motivates the [anger is darkness]{.smallcaps} metaphor.
 
 The social-based metonymies represent what Kövecses [-@kovecses_where_2015] suggests as non-embodied contexts and could motivate these metaphors:
 
@@ -1617,7 +1574,7 @@ The social-based metonymies represent what Kövecses [-@kovecses_where_2015] sug
   - [anger is adversary/opponent]{.smallcaps}
   - [anger is subjugator]{.smallcaps}
 
-The qualitative analyses above offer some motivation for fifteen of the metaphors in the top-20 tables of the two approaches. These metaphors are based on characteristics that are metonymically associated with anger.
+The qualitative analyses above offer some motivation for several metaphors in the top-20 tables of the two approaches. These metaphors are based on characteristics that are metonymically associated with anger.
 
 # Cultural model of [anger]{.smallcaps} {#cultural-model}
 
@@ -1627,21 +1584,21 @@ Stage 1: cause of anger (offending event)
 
 The **Causation** aspect is an addition to Kövecses's [-@kovecses_metaphor_2000] list of aspects [see @soriano_2013, 416]. It provides the reason why anger exists. This aspect is predominantly construed as metaphorical events (see the list below, such as igniting fire, disturbing dormant animal, pulling the trigger), or a constant state of affairs (e.g., annoyance) [ @soriano_2013, 416; see also @heider_landscapes_1991, 81, finding that the cause of anger can be indicated by the "annoyance" cluster that he proposes]:
 
-  - annoyance
-  - disturbing/harming dormant animal
-  - touching/harming a person
-  - pulling the trigger
-  - igniting fire
-  - inviting a person
-  - seed/source of an organism
+    - annoyance
+    - disturbing/harming dormant animal
+    - touching/harming a person
+    - pulling the trigger
+    - igniting fire
+    - inviting a person
+    - seed/source of an organism
 
 Stage 2: anger exists
 
-The existential stage of anger contains three aspects: **Intensity**, **Evaluation**, and **Harm**. They could be metaphorically captured in two different ways: (i) separately by different mappings from a single metaphor (e.g., the [fierce, captive animal]{.smallcaps} metaphor can capture the Intensity and Harm aspects) [@soriano_2013, 415-418], or (ii) exclusively by one metaphor (e.g., the [darkness]{.smallcaps} metaphor only captures the negative Evaluation aspect). It is at this stage that anger exerts force to the experiencer (i) to become emotional, (ii) to experience the harmful effect of the force and exhibiting various physiological responses as shown by the metonymies, and eventually (iii) to attempt a retribution/reaction [@holland_cognitive_1987, 214; @kovecses_where_2015, 84-85] (see stage 5 below).
+The existential stage of anger contains three aspects: **Intensity**, **Evaluation**, and **Harm**. They could be metaphorically captured in two different ways: (i) separately by different mappings from a single metaphor (e.g., the [fierce, captive animal]{.smallcaps} metaphor can capture the Intensity and Harm aspects) [@soriano_2013, 415-418], or (ii) exclusively by one metaphor (e.g., the [darkness]{.smallcaps} metaphor only captures the negative Evaluation aspect). It is at this stage that anger exerts force on the experiencer (i) to become emotional, (ii) to experience the harmful effect of the force and exhibiting various physiological responses as shown by the metonymies, and eventually (iii) to attempt a retribution/reaction [@holland_cognitive_1987, 214; @kovecses_where_2015, 84-85] (see stage 5 below).
 
 - aspect: Intensity
 
-    The prototypical model of emotion postulates that, at this stage, the intensity tends to escalate and reach the limit the self is able to control [@kovecses_where_2015, 85]. The following mappings capture the Intensity:
+    The prototypical model of emotion postulates that, at this stage, the intensity tends to escalate and reach the limit the self can control [@kovecses_where_2015, 85]. The following mappings capture the Intensity:
 
     - fullness of, and increase pressure to, the substance
     - high degree of fire, and level of heat in the fluid
@@ -1675,12 +1632,12 @@ Stage 3: attempt at control
 
 Following the force-dynamic schema of emotion metaphors [@kovecses_metaphor_2000, 62-63], the rational self demonstrates a force tendency towards calmness. In doing so, the self attempts to resist and/or counterforce the emotional forces, including regulating the felt intensity and/or the expression (losing control of) emotion [@soriano_2013, 417]. This stage is captured by these mappings:
 
-  - restraining captive animal
-  - suppressing/impeding substance or fluid from going out
-  - hiding the object
-  - combating the opponent
-  - avoiding confinement/impediment
-  - maintaining sane/calm behaviour
+    - restraining captive animal
+    - suppressing/impeding substance or fluid from going out
+    - hiding the object
+    - combating the opponent
+    - avoiding confinement/impediment
+    - maintaining sane/calm behaviour
 
 If all the above attempts were successful and anger ceased before the self lost control, it would represent the non-prototypical model of anger scenarios: "Successful suppression", "Spontaneous cessation", and "Terminating event" [@holland_cognitive_1987, 215].
 
@@ -1688,15 +1645,15 @@ Stage 4: lacking and losing control
 
 When the force of anger is too strong to control, the experiencer eventually loses control. These metaphorical mappings capture this aspect:
 
-  - insane behaviour
-  - reduced dimension of an object (shortage of emotional control/patience/calm)
-  - being subjugated as an inferior object
-  - losing/giving in to the adversary
-  - unleashing the fierce, captive animal
-  - unveiling the hidden object
-  - explosion of the pressurised container
-  - boiling over the heated fluid to overflow
-  - being ravaged by the destructive natural force
+    - insane behaviour
+    - reduced dimension of an object (shortage of emotional control/patience/calm)
+    - being subjugated as an inferior object
+    - losing/giving in to the adversary
+    - unleashing the fierce, captive animal
+    - unveiling the hidden object
+    - explosion of the pressurised container
+    - boiling over the heated fluid to overflow
+    - being ravaged by the destructive natural force
 
 The aspects **Difficulty to cope** and **Passivity** are also represented in this stage since loss of control over forces implies difficulty in counter-forcing them, resulting in the self being passive to the force (e.g., being subjugated, losing, being ravaged).
 
@@ -1704,8 +1661,8 @@ Stage 5: act of retribution
 
 This stage represents the **Desire to act** (to others) aspect: a reaction as "a result of the emotion itself" [@kovecses_metaphor_2000, 45; @soriano_2013, 417], rather than the desire to possess anger. Metaphorical expressions from the following mappings differently capture construal of expressing and directing the anger towards the wrongdoer (retribution) or other parties.
 
-  - releasing/channelling out the fluid at others
-  - aiming the weapon at others as targets, and punishing others with the weapon
+    - releasing/channelling out the fluid at others
+    - aiming the weapon at others as targets, and punishing others with the weapon
 
 Lakoff and Kövecses [-@holland_cognitive_1987, 214] propose that "redirected anger" (i.e., non-retributive to the wrongdoer) is a non-prototypical extension. Below are examples of the redirected anger from the above mappings: 
 
@@ -1713,7 +1670,7 @@ Lakoff and Kövecses [-@holland_cognitive_1987, 214] propose that "redirected an
 
 (@retribution_model) `r marah %>% filter(str_detect(CM_BROADER, 'weapon'), str_detect(NODE_SENTENCES, 'sasaran.+Persiku')) %>% pull(NODE_SENTENCES)` (`r marah %>% filter(str_detect(CM_BROADER, 'weapon'), str_detect(NODE_SENTENCES, 'sasaran.+Persiku')) %>% pull(FILES)`: `r marah %>% filter(str_detect(CM_BROADER, 'weapon'), str_detect(NODE_SENTENCES, 'sasaran.+Persiku')) %>% pull(SENT_ID) %>% as.character()`)
 
-The connection between the metaphor and the stages of the model tends to be one to many, as demonstrated by Soriano [-@soriano_2013]. A metaphor does not exclusively contribute to one stage, but plausibly to different stages of the model. This is because the metaphorical mappings for a given metaphor refer to different aspects corresponding to certain stages in the model. For instance, the [fire]{.smallcaps} metaphor has the mapping for the cause of anger (igniting the fire) (stage 1), the intensity of anger (high degree of heat) (stage 2), and intrinsically the danger of high extent of fire to the self and others (enacted at stage 5). Similarly, metaphorical mappings within the [fierce, captive animal]{.smallcaps} metaphor consist of, among others, restraining the animal captive (an attempt at control; stage 3), unleashing the captive animal (loss of control; stage 4), which can manifest in different reaction to the self or others (stage 5), and the attack of the animal to the victim that has implication to the harm aspect of anger.
+The connection between the metaphor and the stages of the model tends to be one to many, as demonstrated by Soriano [-@soriano_2013] and earlier by Lakoff and Kövecses [-@holland_cognitive_1987]. A metaphor does not exclusively contribute to one stage, but plausibly to different stages of the model. This is because the metaphorical mappings for a given metaphor refer to different aspects corresponding to certain stages in the model. For instance, the [fire]{.smallcaps} metaphor has the mapping for the cause of anger (igniting the fire) (stage 1), the intensity of anger (high degree of heat) (stage 2), and intrinsically the danger of high extent of fire to the self and others (enacted at stage 5). Similarly, metaphorical mappings within the [fierce, captive animal]{.smallcaps} metaphor consist of, among others, restraining the animal captive (an attempt at control; stage 3), unleashing the captive animal (loss of control; stage 4), which can manifest in different reaction to the self or others (stage 5), and the attack of the animal to the victim that has implication to the harm aspect of anger [cf. @holland_cognitive_1987, for the contribution of the [heated fluid]{.smallcaps} metaphor to the different stages of the model].
 
 # The role of context {#contexts}
 
@@ -1725,7 +1682,7 @@ Geographically, Indonesia is the largest archipelago in the world, lying across 
 
 Such salient geographical and geological landscapes of Indonesia could motivate the use and comprehension of these metaphors: [natural force]{.smallcaps}, [fire]{.smallcaps}, [heated fluid]{.smallcaps}, and [temperature/hot-cold]{.smallcaps} (e.g., *kemarahan berubah __dingin__* 'anger becomes *cold*', *aku __kepanasan__ amarah* 'I *suffer the heat of* anger'; also in [§\@ref(heat-typebased)](#heat-typebased)). This study and Rajeg [-@rajeg_metafora_2013, 110-111] found singletons of expressions specifying anger as (lava in a) volcano, a sub-case of [heated fluid]{.smallcaps} metaphor: _**gunung api** kemarahan_ '*volcano* of anger' ([§\@ref(hotfluid-tokenbased)](#hotfluid-tokenbased)), _kemarahan seperti **lahar**_ 'anger be like *lava*', _**memuntahkan lahar** amarah_ '*puking the lava* of anger', and _amarah bagai **kepundan gunung**_ 'anger be like the *(lava) crater of mountain*' [@rajeg_metafora_2013, 110-111]. Moreover, the PRoF environment could motivate the [natural force]{.smallcaps} metaphor, evoked predominantly by expressions from the [natural disaster]{.smallcaps} and [destructive natural process]{.smallcaps} frames ([§\@ref(naturalforce-tokenbased)](#naturalforce-tokenbased)) [see also @fox_body_2018, 137, who found the construal of anger as a storm arising in the person in Rotenese of Eastern Indonesia; and @rajeg_metafora_2013, who found a statistical association between [natural force]{.smallcaps} metaphor and anger]. Another evidence to link anger and its negativity to the destructive natural force comes from Reid's [-@reid_history_2015] historical study, which identified several uses of the phrase *gempa bumi* 'earthquakes lit. quake earth' and related expressions from the Malay Bible in the [*Malay Concordance Project*](https://mcp.anu.edu.au) [@reid_history_2015, 66]. These expressions are used to represent earthquake as manifestations of the wrath of God, and omens (following venerable Islamic and pre-Islamic local beliefs); Reid [-@reid_history_2015, 66] further notes that description about earthquakes appear prominently in the chronicles of Java and Bali, suggesting the long-standing awareness of such context of Indonesia physical environment. 
 
-From the socio-cultural aspect, Indonesian tends to emphasise non-individualistic/group affiliation and social solidarity. This is a reflection of Indonesia's deeply rooted socio-cultural legacy called *gotong royong* 'lit. work together' [@simarmata_gotong_2020]. Such social-cultural consideration gives rise to the importance of empathy and the concealment of emotion in social context [@heider_cultural_2011, 10-11; @fox_body_2018, 137]. To maintain social harmony, concealment of emotion and reconciliation should be the primary goal, than hostile confrontation and aggressive expression. Such regulation of emotion is also related to politeness that can benefit social interaction [@prastuti_adaptation_2020]. This is consistent with Heider's study on Minangkabau and Javanese Indonesian speakers who "mask most anger, and the open expression of anger is strongly disapproved of and negatively sanctioned" [@heider_landscapes_1991, 80]. This context motivates the use of metaphors highlighting the attempt at emotional control and expression, such as the [(un)veiled object]{.smallcaps} metaphor [see also @matsuki_1995, 149, for similar socio-cultural context in Japanese to suppress their anger]. In Rotenese of Eastern Indonesia, the [(un)veiled object]{.smallcaps} metaphor is part of "ritual admonitions" offering counsel on anger (and other emotions such as fear, shame, and doubt), where the addressee is told not to reveal anger in the neck [@fox_body_2018, 136]. In addition to the metaphor, social-communicative behaviour metonymies, especially those denoting the expressive behaviours of anger, could also be motivated by the socio-cultural aspect.
+From the socio-cultural aspect, Indonesian tends to emphasise non-individualistic/group affiliation and social solidarity. This reflects Indonesia's deeply rooted socio-cultural legacy called *gotong royong* 'lit. work together' [@simarmata_gotong_2020]. Such social-cultural consideration gives rise to the importance of empathy and the concealment of emotion in social context [@heider_cultural_2011, 10-11; @fox_body_2018, 137]. To maintain social harmony, concealment of emotion and reconciliation should be the primary goal, rather than hostile confrontation and aggressive expression. Such regulation of emotion is also related to politeness that can benefit social interaction [@prastuti_adaptation_2020]. This is consistent with Heider's study on Minangkabau and Javanese Indonesian speakers who "mask most anger, and the open expression of anger is strongly disapproved of and negatively sanctioned" [@heider_landscapes_1991, 80]. This context motivates the use of metaphors highlighting the attempt at emotional control and expression, such as the [(un)veiled object]{.smallcaps} metaphor [see also @matsuki_1995, 149, for similar socio-cultural context in Japanese to suppress their anger]. In Rotenese of Eastern Indonesia, the [(un)veiled object]{.smallcaps} metaphor is part of "ritual admonitions" offering counsel on anger (and other emotions such as fear, shame, and doubt), where the addressee is told not to reveal anger in the neck [@fox_body_2018, 136]. In addition to the metaphor, social-communicative behaviour metonymies, especially those denoting the expressive behaviours of anger, could also be motivated by the socio-cultural aspect.
 
 ## Discourse context {#discourse-context}
 
