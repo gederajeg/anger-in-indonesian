@@ -1255,7 +1255,9 @@ The metaphor occupies nearly similar rank in the two datasets (i.e., `r get_meta
 
   - `r get_lu_gloss_n_printed(mapping_naturalforce_token, "reducing")`
 
-- ceasing amount of force &rarr; ceasing anger (type=`r get_metaphor_mapping_n_lu(mapping_naturalforce_token_stats, "ceasing anger")`; token=`r get_metaphor_mapping_tokenfreq(mapping_naturalforce_token, "ceasing anger", lu_output = FALSE)`) (`r get_lu_gloss_n_printed(mapping_naturalforce_token, "ceasing anger")`)
+- ceasing amount of force &rarr; ceasing anger (type=`r get_metaphor_mapping_n_lu(mapping_naturalforce_token_stats, "ceasing anger")`; token=`r get_metaphor_mapping_tokenfreq(mapping_naturalforce_token, "ceasing anger", lu_output = FALSE)`)
+
+  - `r get_lu_gloss_n_printed(mapping_naturalforce_token, "ceasing anger")`
   
 The [natural force]{.smallcaps} metaphor focuses on the intense effect of the natural force, as evident by the productivity of this mapping. This is a more specific way of construing the harmful effect of anger than the other [harm]{.smallcaps}-related metaphor based on different frames within the same family ([§\@ref(harm-tokenbased)](#harm-tokenbased)).
 
