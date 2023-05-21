@@ -4,3 +4,7 @@
 .Ruserdata
 *.docx
 information-sheet*
+*.pdf
+*.key
+*.rtf
+*.png
