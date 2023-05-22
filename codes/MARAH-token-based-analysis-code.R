@@ -1,4 +1,7 @@
 library(tidyverse)
+# note for myself:
+# if I need to edit the main .txt database (token-based-approach-main.txt),
+# right click on the .txt file and use open-with MS Excel to not mess up with the character in the plain text!
 
 # read the metaphor data
 marah0 <- read_tsv("data/token-based-approach-main.txt")
