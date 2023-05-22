@@ -34,7 +34,11 @@ knitr::opts_chunk$set(fig.width = 6,
 
 library(tidyverse)
 library(happyr) # using some functions from this package
-leipzig_size <- read.table(file = "data/corpus_total_size_per_file.txt", header = TRUE, sep = "\t", quote = "", comment.char = "")
+leipzig_size <- read.table(file = "data/corpus_total_size_per_file.txt", 
+                           header = TRUE, 
+                           sep = "\t", 
+                           quote = "", 
+                           comment.char = "")
 source("codes/MARAH-utility-R-functions.R")
 ```
 
@@ -206,7 +210,9 @@ The most salient conceptualisation of anger in the lexical database is [fierce, 
 
   - `r paste(paste("*", mapping_animal_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(LU), "* '", mapping_animal_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-- `r mapping_animal_discuss %>% filter(str_detect(MAPPING, 'regulating')) %>% pull(MAPPING2) %>% unique() %>% str_replace_all("(.+)\\s\\<\\-\\s(.+)", "\\2 &rarr; \\1")` (type=`r mapping_animal_discuss %>% filter(str_detect(MAPPING, 'regulating')) %>% pull(n_lu) %>% unique()`) (`r paste(paste("*", mapping_animal_discuss %>% filter(str_detect(MAPPING, 'regulating')) %>% pull(LU), "* '", mapping_animal_discuss %>% filter(str_detect(MAPPING, 'regulating')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`)
+- `r mapping_animal_discuss %>% filter(str_detect(MAPPING, 'regulating')) %>% pull(MAPPING2) %>% unique() %>% str_replace_all("(.+)\\s\\<\\-\\s(.+)", "\\2 &rarr; \\1")` (type=`r mapping_animal_discuss %>% filter(str_detect(MAPPING, 'regulating')) %>% pull(n_lu) %>% unique()`)
+
+  - `r paste(paste("*", mapping_animal_discuss %>% filter(str_detect(MAPPING, 'regulating')) %>% pull(LU), "* '", mapping_animal_discuss %>% filter(str_detect(MAPPING, 'regulating')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
 The main meaning focus of this metaphor is on aggressiveness of the angered person. It is reflected in the mapping [aggressive angry behaviour is aggressive animal behaviour]{.smallcaps} because this mapping is the most productive indicated by the highest number of linguistic types (`r mapping_animal_discuss %>% slice_max(order_by = n_lu) %>% pull(n_lu) %>% unique()`). The [fierce, captive animal]{.smallcaps} is also salient in the corpus approach, but differ in its central mapping and main meaning focus ([§\@ref(animal-tokenbased)](#animal-tokenbased)).
 
@@ -232,7 +238,9 @@ The [anger is fire]{.smallcaps} metaphor is the second most salient in the type-
 
   - `r paste(paste("*", mapping_fire_discuss %>% filter(str_detect(MAPPING, 'ceasing')) %>% pull(LU), "* '", mapping_fire_discuss %>% filter(str_detect(MAPPING, 'ceasing')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-- `r mapping_fire_discuss %>% filter(str_detect(MAPPING, 'causing')) %>% pull(MAPPING2) %>% unique() %>% str_replace_all("(.+)\\s\\<\\-\\s(.+)", "\\2 &rarr; \\1")` (type=`r mapping_fire_discuss %>% filter(str_detect(MAPPING, 'causing')) %>% pull(n_lu) %>% unique()`) (`r paste(paste("*", mapping_fire_discuss %>% filter(str_detect(MAPPING, 'causing anger')) %>% pull(LU), "* '", mapping_fire_discuss %>% filter(str_detect(MAPPING, 'causing anger')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`)
+- `r mapping_fire_discuss %>% filter(str_detect(MAPPING, 'causing')) %>% pull(MAPPING2) %>% unique() %>% str_replace_all("(.+)\\s\\<\\-\\s(.+)", "\\2 &rarr; \\1")` (type=`r mapping_fire_discuss %>% filter(str_detect(MAPPING, 'causing')) %>% pull(n_lu) %>% unique()`)
+
+  - `r paste(paste("*", mapping_fire_discuss %>% filter(str_detect(MAPPING, 'causing anger')) %>% pull(LU), "* '", mapping_fire_discuss %>% filter(str_detect(MAPPING, 'causing anger')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
 Based on the number of the linguistic expressions, the meaning focus of the metaphor is on the increased intensity of anger, which is the same in the token-based dataset ([§\@ref(fire-tokenbased)](#fire-tokenbased)).
 
@@ -279,7 +287,9 @@ The [anger is disease]{.smallcaps} metaphor is realised by `r get_salience_stats
 
   - `r paste(paste("*", mapping_disease_discuss %>% filter(str_detect(MAPPING, 'effect')) %>% pull(LU), "* '", mapping_disease_discuss %>% filter(str_detect(MAPPING, 'effect')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-- `r mapping_disease_discuss %>% filter(str_detect(MAPPING, 'calm')) %>% pull(MAPPING2) %>% unique() %>% str_replace_all("(.+) \\<\\- (.+)", "\\2 &rarr; \\1")` (type=`r mapping_disease_discuss %>% filter(str_detect(MAPPING, 'calm')) %>% pull(n_lu) %>% unique()`) (`r paste(paste("*", mapping_disease_discuss %>% filter(str_detect(MAPPING, 'calm')) %>% pull(LU), "* '", mapping_disease_discuss %>% filter(str_detect(MAPPING, 'calm')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ") %>% str_replace(fixed("; to treat s.o."), "")`)
+- `r mapping_disease_discuss %>% filter(str_detect(MAPPING, 'calm')) %>% pull(MAPPING2) %>% unique() %>% str_replace_all("(.+) \\<\\- (.+)", "\\2 &rarr; \\1")` (type=`r mapping_disease_discuss %>% filter(str_detect(MAPPING, 'calm')) %>% pull(n_lu) %>% unique()`)
+
+  - `r paste(paste("*", mapping_disease_discuss %>% filter(str_detect(MAPPING, 'calm')) %>% pull(LU), "* '", mapping_disease_discuss %>% filter(str_detect(MAPPING, 'calm')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ") %>% str_replace(fixed("; to treat s.o."), "")`
 
 In the token-based dataset, the [disease]{.smallcaps} metaphor does not make into the top-20 most salient metaphors (rank `r get_metaphor_salience_rank(metaphor_salience, 'disease')`; token=`r get_salience_stats(metaphor_salience, "n_token", "disease")`; type=`r get_salience_stats(metaphor_salience, "n_type", "disease")`; mapping=`r get_salience_stats(metaphor_salience, "n_mapping", "disease")`). This indicates that the two different methods can complement one another to highlight the salient metaphor of a target domain.
 
@@ -327,9 +337,13 @@ The [pressurised substance in a container]{.smallcaps} is part of the [substance
 
   - `r paste(paste("*", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'caused to')) %>% pull(LU), "* '", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'caused to')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-- `r mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(MAPPING2) %>% unique() %>% str_replace_all("(.+) \\<\\- (.+)", "\\2 &rarr; \\1")` (type=`r mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(n_lu) %>% unique()`) (`r paste(paste("*", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(LU), "* '", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`)
+- `r mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(MAPPING2) %>% unique() %>% str_replace_all("(.+) \\<\\- (.+)", "\\2 &rarr; \\1")` (type=`r mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(n_lu) %>% unique()`)
 
-- `r mapping_pressurisedfluid_stats %>% filter(str_detect(MAPPING, "causing increased")) %>% pull(MAPPING) %>% str_replace_all("(.+) is (.+)", "\\2 &rarr; \\1")` (type=`r mapping_pressurisedfluid_stats %>% filter(str_detect(MAPPING, "causing increased")) %>% pull(n_lu)`) (`r paste(paste("*", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'causing increased')) %>% pull(LU), "* '", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'causing increased')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`)
+  - `r paste(paste("*", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(LU), "* '", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'losing control')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
+
+- `r mapping_pressurisedfluid_stats %>% filter(str_detect(MAPPING, "causing increased")) %>% pull(MAPPING) %>% str_replace_all("(.+) is (.+)", "\\2 &rarr; \\1")` (type=`r mapping_pressurisedfluid_stats %>% filter(str_detect(MAPPING, "causing increased")) %>% pull(n_lu)`)
+
+  - `r paste(paste("*", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'causing increased')) %>% pull(LU), "* '", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'causing increased')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
 The predominant metaphorical expressions show that anger is conceptualised as the blood-substance, being increased/raised due to high pressure as captured in the third and fifth mappings. These mappings reveal the main meaning focus of (caused) increased intensity of the experienced anger and is related to the generic metaphor [intensity is verticality/height]{.smallcaps} ([§\@ref(verticality-typebased)](#verticality-typebased)). The inability to control such an increase makes the person explode (the fourth mapping). In the corpus dataset ([§\@ref(pressurised-tokenbased)](#pressurised-tokenbased)), it is also ranked in the top 10.
 
@@ -353,7 +367,9 @@ The metaphor predominantly captures the cause of anger based on metaphorical exp
 
   - `r paste(paste("*", mapping_annoyance_discuss %>% filter(str_detect(MAPPING, 'irritated.person')) %>% pull(LU), "* '", mapping_annoyance_discuss %>% filter(str_detect(MAPPING, 'irritated.person')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-- `r mapping_annoyance_stats %>%  filter(str_detect(MAPPING, "person.causing.anger")) %>% pull(MAPPING)  %>% str_replace_all("-", " ") %>% str_replace_all("(.+)_(.+)", "\\2 &rarr; \\1")` (type=`r mapping_annoyance_stats %>% filter(str_detect(MAPPING, "person.causing.anger")) %>% pull(n_lu)`) (`r paste(paste("*", mapping_annoyance_discuss %>% filter(str_detect(MAPPING, 'person.causing')) %>% pull(LU), "* '", mapping_annoyance_discuss %>% filter(str_detect(MAPPING, 'person.causing')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`)
+- `r mapping_annoyance_stats %>%  filter(str_detect(MAPPING, "person.causing.anger")) %>% pull(MAPPING)  %>% str_replace_all("-", " ") %>% str_replace_all("(.+)_(.+)", "\\2 &rarr; \\1")` (type=`r mapping_annoyance_stats %>% filter(str_detect(MAPPING, "person.causing.anger")) %>% pull(n_lu)`)
+
+  - `r paste(paste("*", mapping_annoyance_discuss %>% filter(str_detect(MAPPING, 'person.causing')) %>% pull(LU), "* '", mapping_annoyance_discuss %>% filter(str_detect(MAPPING, 'person.causing')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
 
 Several types refer to generic annoyances/disturbances (e.g., *pengacauan* 'disturbance', *gangguan* 'hindrance', *pengacau* 'agitator'); they can refer to physical or psychological annoyances and are underspecified for the degree of affectedness. The effect of *salah penerimaan* 'wrong reception' could be considered as a psychological annoyance. There are specific verbal and nominal patterns based on the noun root *bawang* 'shallot; onion'. The motivation behind the choice of *bawang* could be the irritation of the eyes (leading to the production of tears) that it causes when someone chops it. The physical irritation caused by interacting with shallot/onion is mapped onto the cause of anger.
@@ -377,7 +393,9 @@ This metaphor is manifested into `r metaphor_typebased_salience %>% filter(str_d
 
   - `r paste(paste("*", mapping_bitterness_discuss %>% filter(str_detect(MAPPING, 'undesirability')) %>% pull(LU), "* '", mapping_bitterness_discuss %>% filter(str_detect(MAPPING, 'undesirability')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-- `r mapping_bitterness_stats %>% slice_min(order_by = n_lu) %>% pull(MAPPING)  %>% str_replace_all("-", " ") %>% str_replace_all("(.+)_(.+)", "\\2 &rarr; \\1")` (type=`r mapping_bitterness_stats %>% slice_min(order_by = n_lu) %>% pull(n_lu)`) (`r paste(paste("*", mapping_bitterness_discuss %>% filter(str_detect(MAPPING, 'reduced')) %>% pull(LU), "* '", mapping_bitterness_discuss %>% filter(str_detect(MAPPING, 'reduced')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ") %>% str_replace_all("[()]", "")`)
+- `r mapping_bitterness_stats %>% slice_min(order_by = n_lu) %>% pull(MAPPING)  %>% str_replace_all("-", " ") %>% str_replace_all("(.+)_(.+)", "\\2 &rarr; \\1")` (type=`r mapping_bitterness_stats %>% slice_min(order_by = n_lu) %>% pull(n_lu)`)
+
+  - `r paste(paste("*", mapping_bitterness_discuss %>% filter(str_detect(MAPPING, 'reduced')) %>% pull(LU), "* '", mapping_bitterness_discuss %>% filter(str_detect(MAPPING, 'reduced')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ") %>% str_replace_all("[()]", "")`
 
 
 The third mapping has the predominant linguistic expressions. This indicates that the [bitterness]{.smallcaps} metaphor highlights undesirability of anger, reflecting the negative evaluation of it. The final mapping suggests that the bitterness could be reduced (i.e., turned into a plainer taste), which is mapped onto reducing the undesirability (and perhaps the intensity) of anger. In the corpus dataset, the metaphor is also attested but not salient as it sits in rank `r get_metaphor_salience_rank(metaphor_salience, 'bitternes')` out of the total `r nrow(metaphor_salience)` metaphors found ([Table \@ref(tab:metaphor-table-token-based)](#metaphor-table-token-based)). Rajeg's [-@rajeg_metafora_2013] work also did not identify this metaphor for anger in his literary corpus.
@@ -402,9 +420,11 @@ This is a heated variant of the [contained substance]{.smallcaps} metaphor ([§\
 
   - `r paste(paste("*", mapping_hotfluid_discuss %>% filter(str_detect(MAPPING, 'heat\\-level')) %>% pull(LU), "* '", mapping_hotfluid_discuss %>% filter(str_detect(MAPPING, 'heat\\-level')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-- `r mapping_hotfluid_stats %>% slice_min(order_by = n_lu) %>% pull(MAPPING)  %>% str_replace_all("(.+) is (.+)", "\\2 &rarr; \\1")` (type=`r mapping_hotfluid_stats %>% slice_min(order_by = n_lu) %>% pull(n_lu)`) (`r paste(paste("*", mapping_hotfluid_discuss %>% filter(str_detect(MAPPING, 'being caused to')) %>% pull(LU), "* '", mapping_hotfluid_discuss %>% filter(str_detect(MAPPING, 'being caused to')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`)
+- `r mapping_hotfluid_stats %>% slice_min(order_by = n_lu) %>% pull(MAPPING)  %>% str_replace_all("(.+) is (.+)", "\\2 &rarr; \\1")` (type=`r mapping_hotfluid_stats %>% slice_min(order_by = n_lu) %>% pull(n_lu)`)
+
+  - `r paste(paste("*", mapping_hotfluid_discuss %>% filter(str_detect(MAPPING, 'being caused to')) %>% pull(LU), "* '", mapping_hotfluid_discuss %>% filter(str_detect(MAPPING, 'being caused to')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
   
-The predominant number of the metaphorical expressions reveal that the metaphor highlights the high degree of intensity. This is conceptualised as boiling substance. The final mapping also pertains to intensity, particularly the increasing degree of heat of the substance.
+The predominant number of metaphorical expressions reveals that the metaphor highlights the high degree of intensity. This is conceptualised as a boiling substance. The final mapping also pertains to intensity, particularly the increasing degree of heat of the substance.
 
 ### [Intensity is verticality/height]{.smallcaps} {#verticality-typebased}
 
@@ -424,7 +444,9 @@ This is a generic, orientational metaphor based on the [(caused) upward motion]{
 
   - `r paste(paste("*", mapping_verticality_discuss %>% filter(str_detect(MAPPING, 'upward motion')) %>% pull(LU), "* '", mapping_verticality_discuss %>% filter(str_detect(MAPPING, 'upward motion')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-- `r mapping_verticality_stats %>% filter(str_detect(MAPPING, "less intensity")) %>% pull(MAPPING) %>% str_replace_all("(.+) is (.+)", "\\2 &rarr; \\1")` (type=`r mapping_verticality_stats %>% filter(str_detect(MAPPING, "less intensity")) %>% pull(n_lu)`) (`r paste(paste("*", mapping_verticality_discuss %>% filter(str_detect(MAPPING, "less intensity")) %>% pull(LU), "* '", mapping_verticality_discuss %>% filter(str_detect(MAPPING, "less intensity")) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`)
+- `r mapping_verticality_stats %>% filter(str_detect(MAPPING, "less intensity")) %>% pull(MAPPING) %>% str_replace_all("(.+) is (.+)", "\\2 &rarr; \\1")` (type=`r mapping_verticality_stats %>% filter(str_detect(MAPPING, "less intensity")) %>% pull(n_lu)`)
+
+  - `r paste(paste("*", mapping_verticality_discuss %>% filter(str_detect(MAPPING, "less intensity")) %>% pull(LU), "* '", mapping_verticality_discuss %>% filter(str_detect(MAPPING, "less intensity")) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
 The main meaning focus is on the increasing intensity of anger (without necessarily reaching the highest end of the scale). This is evident from the most productive mapping evoking the [(caused) upward motion]{.smallcaps} frame. The least frequent mapping indicates a short-lived, low-intensity anger since the linguistic expression refers to anger not reaching the end point of the scale (*marah __tiada sampai__* 'short-lived anger; lit. anger not reaching end point of a scale').
 
@@ -445,7 +467,9 @@ mapping_containedfluid_discuss <- get_mappings(metaphor_typebased_mapping, 'is s
 
 - `r mapping_containedfluid %>% filter(status == 'key') %>% select(MAPPING) %>% distinct() %>% pull(MAPPING) %>% .[3] %>% str_replace_all("-", " ") %>% str_replace_all("(.+)_(.+)", "\\2 &rarr; \\1")`
 
-- `r mapping_containedfluid_stats %>% filter(str_detect(MAPPING, "located.entity")) %>% pull(MAPPING) %>% str_replace_all("-", " ") %>% str_replace_all("(.+)_(.+)", "\\2 &rarr; \\1")` (type=`r mapping_containedfluid_stats %>% filter(str_detect(MAPPING, "located.entity")) %>% pull(n_lu)`) (`r paste(paste("*", mapping_containedfluid_discuss %>% filter(str_detect(MAPPING, "located.entity")) %>% pull(LU), "* '", mapping_containedfluid_discuss %>% filter(str_detect(MAPPING, "located.entity")) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`)
+- `r mapping_containedfluid_stats %>% filter(str_detect(MAPPING, "located.entity")) %>% pull(MAPPING) %>% str_replace_all("-", " ") %>% str_replace_all("(.+)_(.+)", "\\2 &rarr; \\1")` (type=`r mapping_containedfluid_stats %>% filter(str_detect(MAPPING, "located.entity")) %>% pull(n_lu)`)
+
+  - `r paste(paste("*", mapping_containedfluid_discuss %>% filter(str_detect(MAPPING, "located.entity")) %>% pull(LU), "* '", mapping_containedfluid_discuss %>% filter(str_detect(MAPPING, "located.entity")) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
 - `r mapping_containedfluid_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING) %>% str_replace_all("(.+) is (.+)", "\\2 &rarr; \\1")` (type=`r mapping_containedfluid_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`)
 
@@ -487,13 +511,17 @@ This metaphor is based on metaphorical expressions referring to the [natural dis
 
 - natural disaster &rarr; anger
 
-- intensity of the natural force &rarr; intensity of anger (type=1) (*angin-anginan* 'windy; capricious; unpredictable')
+- intensity of the natural force &rarr; intensity of anger (type=1)
+
+  - *angin-anginan* 'windy; capricious; unpredictable'
 
 - `r mapping_naturalforce_stats %>% slice_max(order_by = n_lu) %>% pull(MAPPING) %>% str_replace_all("(.+) is (.+)", "\\2 &rarr; \\1 ")` (type=`r mapping_naturalforce_stats %>% slice_max(order_by = n_lu) %>% pull(n_lu)`)
 
   - `r paste(paste("*", mapping_naturalforce_discuss %>% filter(str_detect(MAPPING, 'to cease')) %>% pull(LU), "* '", mapping_naturalforce_discuss %>% filter(str_detect(MAPPING, 'to cease')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-- `r mapping_naturalforce_discuss %>% filter(str_detect(MAPPING, 'ceasing')) %>% pull(MAPPING2) %>% unique() %>% str_replace_all("(.+) \\<\\- (.+)", "\\2 &rarr; \\1")` (type=`r mapping_naturalforce_discuss %>% filter(str_detect(MAPPING, 'ceasing')) %>% pull(n_lu) %>% unique()`) (`r paste(paste("*", mapping_naturalforce_discuss %>% filter(str_detect(MAPPING, 'ceasing')) %>% pull(LU), "* '", mapping_naturalforce_discuss %>% filter(str_detect(MAPPING, 'ceasing')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ") %>% str_replace_all("[(]", "[") %>% str_replace_all("[)]", "]") %>% str_replace_all(".calm down.+(?=subside)", "'")`)
+- `r mapping_naturalforce_discuss %>% filter(str_detect(MAPPING, 'ceasing')) %>% pull(MAPPING2) %>% unique() %>% str_replace_all("(.+) \\<\\- (.+)", "\\2 &rarr; \\1")` (type=`r mapping_naturalforce_discuss %>% filter(str_detect(MAPPING, 'ceasing')) %>% pull(n_lu) %>% unique()`)
+
+  - `r paste(paste("*", mapping_naturalforce_discuss %>% filter(str_detect(MAPPING, 'ceasing')) %>% pull(LU), "* '", mapping_naturalforce_discuss %>% filter(str_detect(MAPPING, 'ceasing')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ") %>% str_replace_all("[(]", "[") %>% str_replace_all("[)]", "]") %>% str_replace_all(".calm down.+(?=subside)", "'")`
 
 The metaphorical expressions particularly highlight the ceasing intensity of the forces, suggesting the main meaning focus on the intensity of anger. The similar theme is found in the corpus study ([§\@ref(naturalforce-tokenbased)](#naturalforce-tokenbased)). 
 
