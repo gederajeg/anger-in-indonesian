@@ -345,7 +345,7 @@ The [pressurised substance in a container]{.smallcaps} is part of the [substance
 
   - `r paste(paste("*", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'causing increased')) %>% pull(LU), "* '", mapping_pressurisedfluid_discuss %>% filter(str_detect(MAPPING, 'causing increased')) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-The predominant metaphorical expressions show that anger is conceptualised as the blood-substance, being increased/raised due to high pressure as captured in the third and fifth mappings. These mappings reveal the main meaning focus of (caused) increased intensity of the experienced anger and is related to the generic metaphor [intensity is verticality/height]{.smallcaps} ([§\@ref(verticality-typebased)](#verticality-typebased)). The inability to control such an increase makes the person explode (the fourth mapping). In the corpus dataset ([§\@ref(pressurised-tokenbased)](#pressurised-tokenbased)), it is also ranked in the top 10.
+The predominant metaphorical expressions show that anger is conceptualised as the blood substance, being increased/raised due to high pressure as captured in the third and fifth mappings. These mappings reveal the main meaning focus of (caused) increased intensity of the experienced anger and are related to the generic metaphor [intensity is verticality/height]{.smallcaps} ([§\@ref(verticality-typebased)](#verticality-typebased)). The inability to control such an increase makes the person explode (the fourth mapping). In the corpus dataset ([§\@ref(pressurised-tokenbased)](#pressurised-tokenbased)), it is also ranked in the top 10.
 
 ### [(Cause of) anger is annoyance]{.smallcaps} {#annoyance-typebased}
 
@@ -448,7 +448,7 @@ This is a generic, orientational metaphor based on the [(caused) upward motion]{
 
   - `r paste(paste("*", mapping_verticality_discuss %>% filter(str_detect(MAPPING, "less intensity")) %>% pull(LU), "* '", mapping_verticality_discuss %>% filter(str_detect(MAPPING, "less intensity")) %>% pull(LU_GLOSS), "'", sep = ""), collapse = ", ")`
 
-The main meaning focus is on the increasing intensity of anger (without necessarily reaching the highest end of the scale). This is evident from the most productive mapping evoking the [(caused) upward motion]{.smallcaps} frame. The least frequent mapping indicates a short-lived, low-intensity anger since the linguistic expression refers to anger not reaching the end point of the scale (*marah __tiada sampai__* 'short-lived anger; lit. anger not reaching end point of a scale').
+The main meaning focus is on the increasing intensity of anger (without necessarily reaching the highest end of the scale). This is evident from the most productive mapping evoking the [(caused) upward motion]{.smallcaps} frame. The least frequent mapping indicates short-lived, low-intensity anger since the linguistic expression refers to anger not reaching the endpoint of the scale (*marah __tiada sampai__* 'short-lived anger; lit. anger not reaching the endpoint of a scale').
 
 ### [Marah is a contained substance]{.smallcaps} {#contained-substance-typebased}
 
@@ -806,7 +806,7 @@ The token-based, corpus study reveals `r nrow(marah)` tokens of metaphorical exp
 
 ## Metaphor {#tokenbased-metaphor-salience-results}
 
-[Table \@ref(tab:metaphor-table-token-based)](#metaphor-table-token-based) present all metaphor types identified from corpus-based analysis. From the total `r length(metaphor_typebased_salience$metaphor)` metaphors identified in the type-based, lexical approach ([Table \@ref(tab:metaphor-table-type-based)](#metaphor-table-type-based)), `r round((length(metaphor_in_all_database)/length(metaphor_typebased_salience$metaphor)) * 100, digits = 1)`% (i.e., `r length(metaphor_in_all_database)` metaphors) are also attested in the corpus approach ([Table \@ref(tab:metaphor-table-token-based)](#metaphor-table-token-based)). The metaphors identified only in the lexical approach (ordered decreasingly by their salience) are `r paste(paste(paste("[", metaphor_in_lexical_only, "]{.smallcaps} (", metaphor_in_lexical_only_aggregate, "%; rank=", metaphor_in_lexical_only_ranking, ")", sep = "")[1:length(metaphor_in_lexical_only)-1], collapse = ", "), ", and ", paste("[", metaphor_in_lexical_only, "]{.smallcaps} (", metaphor_in_lexical_only_aggregate, "%; rank=", metaphor_in_lexical_only_ranking, ")", sep = "")[length(metaphor_in_lexical_only)], sep = "") %>% str_replace_all(fixed("rough, solid entity"), "a substance") %>% str_replace_all(fixed("degree of control for anger is object dimension"), "degree of controlling anger is the size of patience as a container")`. The remaining `r round((length(metaphor_in_corpus_only)/nrow(metaphor_salience)) * 100, digits = 1)`% (`r length(metaphor_in_corpus_only)` types) of the token-based metaphors are absent from the lexical dataset. The corpus-based approach can thus complement the lexical approach by offering a higher likelihood to identify more metaphors.
+[Table \@ref(tab:metaphor-table-token-based)](#metaphor-table-token-based) present all metaphor types identified from corpus-based analysis. The top-20 metaphors in [Table \@ref(tab:metaphor-table-token-based)](#metaphor-table-token-based) will be discussed to roughly match the similar number of metaphors found in the lexical approach ([Table \@ref(tab:metaphor-table-type-based)](#metaphor-table-type-based)). The metaphorical mappings for each metaphor will be presented in the decreasing order of their type frequencies (i.e., the number of linguistic expressions) to ease the identification of the "main meaning focus" of the metaphor via "the metaphorical linguistic expressions that _dominate_ a metaphor" [@kovecses_metaphor_2010, 140, italics is mine].
 
 
 ```{r metaphor-table-token-based}
@@ -820,9 +820,6 @@ knitr::kable(mutate(metaphor_salience_print, `Metaphorical source domains` = str
                     `Metaphorical source domains` = str_replace_all(`Metaphorical source domains`, fixed("subjugator"), "superior")), 
              caption = "Source domains of [anger]{.smallcaps} (Token-based, corpus approach)", row.names = FALSE)
 ```
-
-The top-20 metaphors in [Table \@ref(tab:metaphor-table-token-based)](#metaphor-table-token-based) will be discussed to roughly match the similar number of metaphors found in the lexical approach ([Table \@ref(tab:metaphor-table-type-based)](#metaphor-table-type-based)). Just over half (i.e., `r round(length(metaphor_in_all_database_top20)/20 * 100)`%; N=`r length(metaphor_in_all_database_top20)`) of the metaphors in the top-20 list are shared between the two approaches. The metaphorical mappings for each metaphor will be presented in the decreasing order of their type frequencies (i.e., the number of linguistic expressions) to ease the identification of the "main meaning focus" of the metaphor via "the metaphorical linguistic expressions that _dominate_ a metaphor" [@kovecses_metaphor_2010, 140, italics is mine].
-
 
 ### [Marah is a contained substance]{.smallcaps} {#contained-substance-tokenbased}
 
@@ -1559,9 +1556,99 @@ As in the lexical dataset ([§\@ref(metonymy-category-typebased)](#metonymy-cate
 
 # Comparison of the results in the lexical and corpus-based approaches
 
-The obvious difference between the lexical and corpus-based approaches is the potential of the later to provide greater number of conceptual metaphors. Moreover, several metaphors are only attested in either approach, suggesting the call for combining the two approaches for a more comprehensive coverage. Even though the two approaches do converge for several shared conceptual metaphors, the main meaning focus of these metaphors can differ across the two approaches as discussed above (cf., e.g., the different meaning focus of the [fierce, captive animal]{.smallcaps} metaphor). Therefore, the two approaches should be viewed as complementary in enriching the characterisation of the main meaning focus of a given metaphor. Furthermore, the shared metaphors can also differ in their salience values (hence, ranking). As to the metonymy, there is a high percentage of metonymies shared from all types identified in the two approaches (cf. [§\@ref(tokenbased-metonymy-salience-results)](#tokenbased-metonymy-salience-results)). This indicates some convergences (i) between the two approaches and (ii) for the salient metonymies.
+## Differences in the number of conceptual metaphors
+
+```{r number-of-metaphors-in-the-two-approaches}
+n_cmetaphor_corpus <- nrow(metaphor_salience)
+n_cmetaphor_typebased <- nrow(metaphor_typebased_salience)
+chisqtest_n_cmetaphor <- chisq.test(c(n_cmetaphor_corpus, n_cmetaphor_typebased))
+
+# difference in the number of metaphors attested only in either approach
+n_cmetaphor_lexical_only <- length(metaphor_in_lexical_only)
+n_cmetaphor_corpus_only <- length(metaphor_in_corpus_only)
+chisqtest_n_cmetaphor_in_either_approach <- chisq.test(c(n_cmetaphor_corpus_only, n_cmetaphor_lexical_only))
+
+```
 
 
+The obvious difference between the lexical and corpus-based approaches is the potential of the later to provide significantly greater number of conceptual metaphors (`r nrow(metaphor_salience)` metaphors) than the former (`r nrow(metaphor_typebased_salience)` metaphors) (*X*^2^=`r round(chisqtest_n_cmetaphor$statistic, digit = 2)`, *df*=`r chisqtest_n_cmetaphor$parameter`, *p*~goodness~~-of-~~fit~`r pval_print(chisqtest_n_cmetaphor$p.value)`).
+
+From the total `r happyr::numbers2words(length(metaphor_typebased_salience$metaphor))` metaphors identified in the type-based, lexical approach ([Table \@ref(tab:metaphor-table-type-based)](#metaphor-table-type-based)), `r round((length(metaphor_in_all_database)/length(metaphor_typebased_salience$metaphor)) * 100, digits = 1)`% (i.e., `r numbers2words(length(metaphor_in_all_database))` metaphors) are also attested in the corpus, token-based approach ([Table \@ref(tab:metaphor-table-token-based)](#metaphor-table-token-based)). These shared metaphors are: `r paste(paste(paste("[", metaphor_in_all_database, "]{.smallcaps}", sep = "")[-length(metaphor_in_all_database)], collapse = ", "), ", and ", paste("[", metaphor_in_all_database[length(metaphor_in_all_database)], "]{.smallcaps}", sep = ""), sep = "")`. Of these shared metaphors, only `r numbers2words(length(metaphor_in_all_database_top20))` (`r round(length(metaphor_in_all_database_top20)/20 * 100)`%) make into the top-20 list in [Table \@ref(tab:metaphor-table-token-based)](#metaphor-table-token-based).
+
+
+The `r numbers2words(length(metaphor_in_lexical_only))` metaphors identified only in the lexical approach (ordered decreasingly by their salience) are `r paste(paste(paste("[", metaphor_in_lexical_only, "]{.smallcaps} (", metaphor_in_lexical_only_aggregate, "%; rank=", metaphor_in_lexical_only_ranking, ")", sep = "")[1:length(metaphor_in_lexical_only)-1], collapse = ", "), ", and ", paste("[", metaphor_in_lexical_only, "]{.smallcaps} (", metaphor_in_lexical_only_aggregate, "%; rank=", metaphor_in_lexical_only_ranking, ")", sep = "")[length(metaphor_in_lexical_only)], sep = "") %>% str_replace_all(fixed("rough, solid entity"), "a substance") %>% str_replace_all(fixed("degree of control for anger is object dimension"), "degree of controlling anger is the size of patience as a container")`. The remaining `r round((length(metaphor_in_corpus_only)/nrow(metaphor_salience)) * 100, digits = 1)`% (`r length(metaphor_in_corpus_only)` types) of the token-based metaphors are absent from the lexical dataset, which is a significant difference (*X*^2^=`r round(chisqtest_n_cmetaphor_in_either_approach$statistic, digit = 2)`, *df*=`r chisqtest_n_cmetaphor_in_either_approach$parameter`, *p*~goodness~~-of-~~fit~`r pval_print(chisqtest_n_cmetaphor_in_either_approach$p.value)`). The facts that several metaphors are only attested in either approach, and that the corpus-based approach offers a higher likelihood to identify more metaphors, showcase the call for combining the two approaches for a more comprehensive coverage.
+
+## Differences in the salience of the shared metaphors
+
+Further quantitative difference can be inspected among the shared metaphors. Namely, they can differ in their salience values and thus ranking. [Figure \@ref(fig:salience-ranking-comparison)](#salience-ranking-comparison) visualises these differences.
+
+```{r salience-ranking-comparison, fig.width = 10, dpi = 600, fig.cap="Comparison of ranking and salience of the shared metaphors between the two approaches/methods."}
+metaphor_salience1 <- metaphor_salience |> 
+  mutate(metaphor = str_replace_all(metaphor, "anger", "marah"))
+df_token_based <- metaphor_salience1 |> 
+  mutate(ranking = 1:nrow(metaphor_salience),
+         metaphor = factor(metaphor, 
+                           levels = metaphor_salience1$metaphor),
+         ranking = fct_rev(factor(ranking)))
+metaphor_typebased_salience1 <- metaphor_typebased_salience |> 
+  mutate(metaphor = str_replace_all(metaphor, "anger", "marah"))
+df_type_based <- metaphor_typebased_salience1 |> 
+  mutate(ranking = 1:nrow(metaphor_typebased_salience1),
+         metaphor = factor(metaphor, 
+                           levels = metaphor_typebased_salience1$metaphor),
+         ranking = fct_rev(factor(ranking)))
+df_both <- select(df_token_based, metaphor, aggregate, ranking) |> 
+  mutate(method = "corpus_token_based") |> 
+  bind_rows(select(df_type_based, metaphor, aggregate, ranking) |> 
+              mutate(method = "lexical_type_based")) |> 
+  mutate(method = factor(method, 
+                         levels = c("lexical_type_based", 
+                                    "corpus_token_based")))
+df_shared_metaphor <- df_both |> 
+  filter(metaphor %in% str_replace_all(metaphor_in_all_database, 
+                                       "anger", "marah"))
+
+## visualisation =====
+df_shared_metaphor |> 
+  ggplot(aes(x = method, 
+             y = ranking,
+             group = metaphor)) +
+  geom_path(aes(colour = metaphor),
+            alpha = .7) +
+  theme_light() +
+  geom_text(data = filter(df_shared_metaphor, method == "lexical_type_based"),
+            aes(label = str_replace(metaphor, "(^marah is | of marah)", ""), size = aggregate)) +
+  geom_text(data = filter(df_shared_metaphor, method == "corpus_token_based"),
+            aes(label = str_replace(metaphor, "(^marah is | of marah)", ""), size = aggregate)) +
+  labs(y = "Salience rank",
+       colour = "Shared metaphors",
+       x = "Methods",
+       size = "Aggregate value",
+       caption = "Font size represents the aggregate values while the lines capture the ranking dynamics.")
+ggsave("results/fig-1.png", 
+       width = 10,
+       height = 6.5,
+       dpi = 600,
+       unit = "in")
+```
+
+Clear differences can be seen. For instance, [substance in a container]{.smallcaps} is the most salient in the corpus, token-based approach while the same metaphor is only at the rank `r get_metaphor_salience_rank(metaphor_typebased_salience, 'is substance in a ')` in the type-based approach. Similar increase in salience from the type-based approach are shown by the [possession]{.smallcaps} and [intensity is verticality]{.smallcaps} metaphors in the corpus, token-based approach. In addition to salience, and hence, ranking increase, there are categorically specific metaphors whose salience values drastically drop in the corpus, token-based data (i.e., from within the top-10 position in the type-based list to outside the top-10 position in the token-based data); they are [physical contact/harm]{.smallcaps} (from the rank `r get_metaphor_salience_rank(metaphor_typebased_salience, 'physical contact')` to `r get_metaphor_salience_rank(metaphor_salience, 'physical contact')`), [disease]{.smallcaps} (from the rank `r get_metaphor_salience_rank(metaphor_typebased_salience, 'disease')` to `r get_metaphor_salience_rank(metaphor_salience, 'disease')`), [insanity]{.smallcaps} (from the rank `r get_metaphor_salience_rank(metaphor_typebased_salience, 'insanity')` to `r get_metaphor_salience_rank(metaphor_salience, 'insanity')`), and [bitterness]{.smallcaps} (from the rank `r get_metaphor_salience_rank(metaphor_typebased_salience, 'bitterness')` to `r get_metaphor_salience_rank(metaphor_salience, 'bitterness')`). Finally, [Figure \@ref(fig:salience-ranking-comparison)](#salience-ranking-comparison) also shows that [fierce, captive animal]{.smallcaps} and [fire]{.smallcaps} are consistently amongst the most salient metaphors in the two approaches, suggesting their centrality in the cognitive model of [anger]{.smallcaps} in Indonesian; there are also metaphors that relatively consistently occupy the lower half of the top-20 table (e.g., [natural force]{.smallcaps}, [sleeping organism]{.smallcaps}, and [(un)veiled object]{.smallcaps}).
+
+Empty labels at rank 4 and 5 in the corpus-based panel in [Figure \@ref(fig:salience-ranking-comparison)](#salience-ranking-comparison) are filled with different metaphors not attested in the type-based, lexical approach, namely [weapon]{.smallcaps} and [adversary/opponent]{.smallcaps} respectively. What is qualitatively interesting is that the focus on overall control over the emotion presented by the [insanity]{.smallcaps} metaphor in the type-based approach is also captured using different image by the [adversary/opponent]{.smallcaps} metaphor. Similarly, additional metaphor at rank 10 on the corpus, token-based panel attested only in the corpus-based approach, namely [intensity is quantity]{.smallcaps}, expands the intensity focus together with other metaphors in the top-10 list (i.e., [verticality]{.smallcaps} and the [substance]{.smallcaps}-related metaphors). In the next section, such a qualitative difference in main meaning focus, due to quantitative difference (i.e., mapping productivity), between the shared metaphor will be discussed.
+
+ 
+## Differences in the main meaning focus of the shared conceptual metaphors
+
+*Qualitative difference* -- Even though the two approaches do converge for several shared conceptual metaphors, the main meaning focus of these metaphors can differ across the two approaches as discussed above (cf., e.g., the different meaning focus of the [fierce, captive animal]{.smallcaps} metaphor). Therefore, the two approaches should be viewed as complementary in enriching the characterisation of the main meaning focus of a given metaphor. 
+
+- the use of the [size]{.smallcaps} frame
+- 3.1.1 fierce captive animal (see also 4.1.2 Fierce)
+- 4.1.18 Marah is physical harm
+- 4.1.8 Marah is a pressurised substance (last paragraph)
+
+## Metonymies
+
+As to the metonymy, there is a high percentage of metonymies shared from all types identified in the two approaches (cf. [§\@ref(tokenbased-metonymy-salience-results)](#tokenbased-metonymy-salience-results)). This indicates some convergences (i) between the two approaches and (ii) for the salient metonymies.
 
 # Metonymical basis of [anger]{.smallcaps} metaphors {#metonymic-basis}
 
