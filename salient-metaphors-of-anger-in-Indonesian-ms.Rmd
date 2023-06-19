@@ -8,6 +8,7 @@ output:
     df_print: kable
     fig_caption: yes
     fig_width: 6
+    number_sections: no
     reference_docx: "template.docx"
   html_notebook:
     code_folding: hide
@@ -1488,7 +1489,7 @@ metonymy_typebased_only <- setdiff(metonymy_typebased_salience$metonymy, metonym
 metonymy_tokenbased_typebased_ALL <- unique(metonymy_tokenbased_salience$METONYMY, metonymy_typebased_salience$metonymy)
 ```
 
-From the two datasets, there are total `r length(unique(metonymy_tokenbased_salience$METONYMY, metonymy_typebased_salience$metonymy))` unique metonymies, and most of them (i.e., `r length(intersect(metonymy_tokenbased_salience$METONYMY, metonymy_typebased_salience$metonymy))` metonymies [`r round(length(intersect(metonymy_tokenbased_salience$METONYMY, metonymy_typebased_salience$metonymy))/length(unique(metonymy_tokenbased_salience$METONYMY, metonymy_typebased_salience$metonymy)) * 100, digits = 1)`%]) are shared. This suggests a rather consistent metonymic construal for anger, especially the [strong/aggressive verbal behaviour for anger]{.smallcaps} that tops the metonymy tables in the two approaches. This prominent metonymy corroborates Heider's [-@heider_landscapes_1991, 80, 116] finding that verbal abuse is one kind of reaction of anger (in addition to physical violence). The metonymies attested only in the lexical approach are `r paste(paste(paste("[", metonymy_typebased_only, "]{.smallcaps}", sep = "")[1:length(metonymy_typebased_only)-1], collapse = ", "), ", and ", paste("[", metonymy_typebased_only, "]{.smallcaps}", sep = "")[length(metonymy_typebased_only)], sep = "")`. Meanwhile, those identified only in the corpus are `r paste(paste(paste("[", metonymy_tokenbased_only, "]{.smallcaps}", sep = "")[1:length(metonymy_tokenbased_only)-1], collapse = ", "), ", and ", paste("[", metonymy_tokenbased_only, "]{.smallcaps}", sep = "")[length(metonymy_tokenbased_only)], sep = "") %>% str_replace(fixed("speechless"), "inability to speak")`. 
+From the two datasets, there are total `r numbers2words(length(unique(metonymy_tokenbased_salience$METONYMY, metonymy_typebased_salience$metonymy)))` unique metonymies, and most of them (i.e., `r numbers2words(length(intersect(metonymy_tokenbased_salience$METONYMY, metonymy_typebased_salience$metonymy)))` metonymies [`r round(length(intersect(metonymy_tokenbased_salience$METONYMY, metonymy_typebased_salience$metonymy))/length(unique(metonymy_tokenbased_salience$METONYMY, metonymy_typebased_salience$metonymy)) * 100, digits = 1)`%]) are shared (cf. [§\@ref(metonymy-compared-both-approaches)](#metonymy-compared-both-approaches) for further comparative discussion). The relatively high number of the shared metonymy types suggests a rather consistent metonymic construal for anger in Indonesian based on data from different approaches.  
 
 ### [Strong/aggressive verbal behaviour for anger]{.smallcaps} {#verbal-tokenbased}
 
@@ -1528,7 +1529,7 @@ The [body heat]{.smallcaps} metonymy is less productive in terms of its type in 
 
 - `r get_lu_gloss_n_printed(metonymy_tokenbased, mapping_regex = "violent frustated", mapping_var = "METONYMY", metaphor_data = FALSE)`
 
-This metonymy appears to be less prominent in the corpus dataset than in the lexical one in terms of the number of metonymic expressions and, by consequence, the ranking. In the lexical approach, it is evoked by `r get_salience_stats(metonymy_typebased_salience, "n_type", "violent", metaphor_data = FALSE)` expressions (rank=`r get_metaphor_salience_rank(metonymy_typebased_salience, 'violent', FALSE)`), which is significantly greater than the number of expressions in the corpus dataset (`r get_salience_stats(metonymy_tokenbased_salience, "n_type", "violent", metaphor_data = FALSE)` types; rank=`r get_metaphor_salience_rank(metonymy_tokenbased_salience, 'violent', FALSE)`) (*p*~Binomial~ ~two~~-~~tailed~`r pval_print(binom.test(c(get_salience_stats(metonymy_typebased_salience, "n_type", "violent", metaphor_data = FALSE), get_salience_stats(metonymy_tokenbased_salience, "n_type", "violent", metaphor_data = FALSE)))$p.value)`).
+This metonymy appears to be less prominent in the corpus dataset than in the lexical one in terms of the number of metonymic expressions and, by consequence, the ranking. In the lexical approach, it is evoked by `r numbers2words(get_salience_stats(metonymy_typebased_salience, "n_type", "violent", metaphor_data = FALSE))` metonymic expressions (rank=`r get_metaphor_salience_rank(metonymy_typebased_salience, 'violent', FALSE)`), which is significantly greater than the number of expressions in the corpus dataset (`r get_salience_stats(metonymy_tokenbased_salience, "n_type", "violent", metaphor_data = FALSE)` types; rank=`r get_metaphor_salience_rank(metonymy_tokenbased_salience, 'violent', FALSE)`) (*p*~Binomial~ ~two~~-~~tailed~`r pval_print(binom.test(c(get_salience_stats(metonymy_typebased_salience, "n_type", "violent", metaphor_data = FALSE), get_salience_stats(metonymy_tokenbased_salience, "n_type", "violent", metaphor_data = FALSE)))$p.value)`).
 
 ### Other singleton metonymies
 
@@ -1580,7 +1581,7 @@ From the total `r happyr::numbers2words(length(metaphor_typebased_salience$metap
 
 The `r numbers2words(length(metaphor_in_lexical_only))` metaphors identified only in the lexical approach (ordered decreasingly by their salience) are `r paste(paste(paste("[", metaphor_in_lexical_only, "]{.smallcaps} (", metaphor_in_lexical_only_aggregate, "%; rank=", metaphor_in_lexical_only_ranking, ")", sep = "")[1:length(metaphor_in_lexical_only)-1], collapse = ", "), ", and ", paste("[", metaphor_in_lexical_only, "]{.smallcaps} (", metaphor_in_lexical_only_aggregate, "%; rank=", metaphor_in_lexical_only_ranking, ")", sep = "")[length(metaphor_in_lexical_only)], sep = "") %>% str_replace_all(fixed("rough, solid entity"), "a substance") %>% str_replace_all(fixed("degree of control for anger is object dimension"), "degree of controlling anger is the size of patience as a container")`. The remaining `r round((length(metaphor_in_corpus_only)/nrow(metaphor_salience)) * 100, digits = 1)`% (`r length(metaphor_in_corpus_only)` types) of the token-based metaphors are absent from the lexical dataset, which is a significant difference (*X*^2^=`r round(chisqtest_n_cmetaphor_in_either_approach$statistic, digit = 2)`, *df*=`r chisqtest_n_cmetaphor_in_either_approach$parameter`, *p*~goodness~~-of-~~fit~`r pval_print(chisqtest_n_cmetaphor_in_either_approach$p.value)`). The fact that several metaphors are only attested in either approach and that the corpus-based approach offers a higher likelihood to identify more metaphors, showcase the call for combining the two approaches for more comprehensive coverage.
 
-## Differences in the salience of the shared metaphors
+## Differences in the salience of the shared metaphors {#shared-salience-compare}
 
 Another quantitative difference can be inspected among the shared metaphors. Namely, they can differ in their salience values and thus ranking. [Figure \@ref(fig:salience-ranking-comparison)](#salience-ranking-comparison) visualises these differences.
 
@@ -1658,9 +1659,67 @@ Such qualitative differences stem from quantitative assessment of the productivi
 
 The two approaches overall should be viewed as complementary in enriching the characterisation of the main meaning focus of a given metaphor.
 
-## Metonymies
+## Metonymies {#metonymy-compared-both-approaches}
 
-As to the metonymy, there is a high percentage of metonymies shared from all types identified in the two approaches (cf. [§\@ref(tokenbased-metonymy-salience-results)](#tokenbased-metonymy-salience-results)). This indicates some convergences (i) between the two approaches and (ii) for the salient metonymies.
+As to the metonymy, most (i.e., `r round(length(metonymy_tokenbased_typebased_shared)/length(metonymy_tokenbased_typebased_ALL) * 100, 2)`%) of the `r numbers2words(length(metonymy_tokenbased_typebased_ALL))` metonymies from the two approaches combined are shared (as discussed in [§\@ref(tokenbased-metonymy-salience-results)](#tokenbased-metonymy-salience-results)); they are: `r paste(paste(paste("[", metonymy_tokenbased_typebased_shared, "]{.smallcaps}", sep = "")[-length(metonymy_tokenbased_typebased_shared)], collapse = ", "), ", and ", paste("[", metonymy_tokenbased_typebased_shared[length(metonymy_tokenbased_typebased_shared)], "]{.smallcaps}", sep = ""), sep = "")`. 
+This high percentage of the shared metonymies indicates some convergences between the two approaches in terms of the **types** and the salient metonymies for anger. Similar to the metaphor data, there are metonymies that appear only in the lexical, type-based data (i.e., `r paste(paste(paste("[", metonymy_typebased_only, "]{.smallcaps}", sep = "")[1:length(metonymy_typebased_only)-1], collapse = ", "), ", and ", paste("[", metonymy_typebased_only, "]{.smallcaps}", sep = "")[length(metonymy_typebased_only)], sep = "")`) and in the corpus, token-based data (i.e., `r paste(paste(paste("[", metonymy_tokenbased_only, "]{.smallcaps}", sep = "")[1:length(metonymy_tokenbased_only)-1], collapse = ", "), ", and ", paste("[", metonymy_tokenbased_only, "]{.smallcaps}", sep = "")[length(metonymy_tokenbased_only)], sep = "") %>% str_replace(fixed("speechless"), "inability to speak")`). 
+
+As in the salience comparison of the metaphors ([§\@ref(shared-salience-compare)](#shared-salience-compare)), the metonymy also shows dynamics in their salience ranking across the two approaches (see [Figure \@ref(fig:salience-ranking-comparison-metonymy)](#salience-ranking-comparison-metonymy)).
+
+```{r salience-ranking-comparison-metonymy, fig.width = 11, dpi = 600, fig.cap="Comparison of ranking and salience of the shared metonymies between the two approaches/methods."}
+meto_token_salience <- metonymy_tokenbased_salience_category |> 
+  mutate(METONYMY = str_replace_all(METONYMY, "anger", "marah"),
+         ranking = 1:nrow(metonymy_tokenbased_salience_category),
+         METONYMY = factor(METONYMY, 
+                           levels = str_replace_all(metonymy_tokenbased_salience_category$METONYMY, "anger", "marah")),
+         ranking = fct_rev(factor(ranking)))
+meto_type_salience <- metonymy_typebased_salience_category |> 
+  mutate(metonymy = str_replace_all(metonymy, "anger", "marah"),
+         ranking = 1:nrow(metonymy_typebased_salience_category),
+         metonymy = factor(metonymy, 
+                           levels = str_replace_all(metonymy_typebased_salience_category$metonymy, "anger", "marah")),
+         ranking = fct_rev(factor(ranking)))
+df_meto_both <- meto_token_salience |> 
+  select(metonymy = METONYMY, aggregate, ranking) |> 
+  mutate(method = "corpus_token_based") |> 
+  bind_rows(meto_type_salience |> 
+              select(metonymy, aggregate = n_perc_type, ranking) |> 
+              mutate(method = "lexical_type_based")) |> 
+  mutate(method = factor(method, 
+                         levels = c("lexical_type_based", 
+                                    "corpus_token_based")))
+
+df_meto_shared <- df_meto_both |> 
+  filter(metonymy %in% str_replace_all(metonymy_tokenbased_typebased_shared,
+                                       "anger", "marah"))
+
+## visualisation =====
+df_meto_shared |> 
+  ggplot(aes(x = method, 
+             y = ranking,
+             group = metonymy)) +
+  geom_path(aes(colour = metonymy),
+            alpha = .7) +
+  theme_light() +
+  geom_text(data = filter(df_meto_shared, method == "lexical_type_based"),
+            aes(label = str_replace(metonymy, "for marah$", ""), size = aggregate)) +
+  geom_text(data = filter(df_meto_shared, method == "corpus_token_based"),
+            aes(label = str_replace(metonymy, "for marah$", ""), size = aggregate)) +
+  labs(y = "Salience rank",
+       colour = "Shared metonymies",
+       x = "Methods",
+       size = "Aggregate value",
+       caption = "Font size represents the aggregate values while the lines capture the ranking dynamics.")
+ggsave("results/fig-2.png", 
+       width = 11,
+       height = 6.5,
+       dpi = 600,
+       unit = "in")
+```
+
+It is shown that [strong/aggressive verbal behaviour for anger]{.smallcaps} tops the metonymy tables in the two approaches, but has higher salience value in the corpus, token-based approach (cf. the different font sizes). The prominence of [strong/aggressive verbal behaviour for anger]{.smallcaps} metonymy corroborates Heider's [-@heider_landscapes_1991, 80, 116] finding that verbal abuse is one kind of reaction of anger (in addition to physical violence).
+
+Another interesting dynamics is the noticeable rise of salience and ranking of the [redness in the facial area for anger]{.smallcaps} metonymy in the corpus, token-based data. Together with the second-most prominent [aggressive visual behaviour for anger]{.smallcaps} metonymy, [redness in the facial area]{.smallcaps} highlights the visibility aspect of anger in the corpus, token-based data. Lastly, [Figure \@ref(fig:salience-ranking-comparison-metonymy)](#salience-ranking-comparison-metonymy) also shows a drop in ranking and salience of metonymies in the corpus, token-based approach, namely [violent frustrated behaviour]{.smallcaps} (the second most salient in the type-based approach), [lip/teeth biting/pressing]{.smallcaps}, and [visual interference]{.smallcaps}. In terms of the broader types of the metonymies, we have seen in [§\@ref(metonymy-category-typebased)](#metonymy-category-typebased) and [§\@ref(metonymy-category-tokenbased)](#metonymy-category-tokenbased) that the Social-Communicative Behaviour type is still more prominent (in terms of the number of metonymic expressions and token frequency) than the Physiological Response type, which, nevertheless, is represented by higher number of metonymies.
 
 # Metonymical basis of [anger]{.smallcaps} metaphors {#metonymic-basis}
 
