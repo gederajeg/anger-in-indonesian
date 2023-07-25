@@ -1633,6 +1633,12 @@ ggsave("results/fig-1.png",
        height = 6.5,
        dpi = 600,
        unit = "in")
+ggsave("results/fig-1.tiff", 
+       width = 10,
+       height = 6.5,
+       dpi = 600,
+       unit = "in",
+       device = "tiff")
 ```
 
 Clear differences can be seen. For instance, [substance in a container]{.smallcaps} is the most salient in the corpus, token-based approach while the same metaphor is only at rank `r get_metaphor_salience_rank(metaphor_typebased_salience, 'is substance in a ')` in the type-based approach. A similar increase in salience from the type-based approach is shown by the [possession]{.smallcaps} and [intensity is verticality]{.smallcaps} metaphors in the corpus, token-based approach. In addition to salience, and hence, ranking increase, there are categorically specific metaphors whose salience values drastically drop in the corpus, token-based data (i.e., from within the top-10 position in the type-based list to outside the top-10 position in the token-based data); they are [physical contact/harm]{.smallcaps} (from the rank `r get_metaphor_salience_rank(metaphor_typebased_salience, 'physical contact')` to `r get_metaphor_salience_rank(metaphor_salience, 'physical contact')`), [disease]{.smallcaps} (from the rank `r get_metaphor_salience_rank(metaphor_typebased_salience, 'disease')` to `r get_metaphor_salience_rank(metaphor_salience, 'disease')`), [insanity]{.smallcaps} (from the rank `r get_metaphor_salience_rank(metaphor_typebased_salience, 'insanity')` to `r get_metaphor_salience_rank(metaphor_salience, 'insanity')`), and [bitterness]{.smallcaps} (from the rank `r get_metaphor_salience_rank(metaphor_typebased_salience, 'bitterness')` to `r get_metaphor_salience_rank(metaphor_salience, 'bitterness')`). Finally, [Figure \@ref(fig:salience-ranking-comparison)](#salience-ranking-comparison) also shows that [fierce, captive animal]{.smallcaps} and [fire]{.smallcaps} are consistently amongst the most salient metaphors in the two approaches, suggesting their centrality in the cognitive model of [anger]{.smallcaps} in Indonesian; there are also metaphors that relatively consistently occupy the lower half of the top-20 table (e.g., [natural force]{.smallcaps}, [sleeping organism]{.smallcaps}, and [(un)veiled object]{.smallcaps}).
@@ -1715,6 +1721,12 @@ ggsave("results/fig-2.png",
        height = 6.5,
        dpi = 600,
        unit = "in")
+ggsave("results/fig-2.tiff", 
+       width = 11,
+       height = 6.5,
+       dpi = 600,
+       unit = "in",
+       device = "tiff")
 ```
 
 It is shown that [strong/aggressive verbal behaviour for anger]{.smallcaps} tops the metonymy tables in the two approaches, but has higher salience value in the corpus, token-based approach (cf. the different font sizes). The prominence of [strong/aggressive verbal behaviour for anger]{.smallcaps} metonymy corroborates Heider's [-@heider_landscapes_1991, 80, 116] finding that verbal abuse is one kind of reaction of anger (in addition to physical violence).
