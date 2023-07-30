@@ -45,3 +45,9 @@ metaphor_tokenbased_mapping <- metaphor_tokenbased_mapping %>%
                                             "intentional loss of control over anger is causing explosion of container"),
                            "(intentional) loss of control over anger is (causing) explosion of container")
          )
+
+# adversary metaphor (token-based dataset)
+metaphor_tokenbased_mapping <- metaphor_tokenbased_mapping |> 
+  mutate(MAPPING = replace(MAPPING, 
+                           MAPPING_ID == "MAP3" & MP %in% c("<w>kompromi dengan</w> node", "<w>konfrontasi terhadap</w> node"),
+                           "attempt to control anger is combating opponent (e.g., fighting, confronting)"))
