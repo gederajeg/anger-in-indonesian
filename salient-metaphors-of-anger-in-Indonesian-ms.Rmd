@@ -4,12 +4,6 @@ csl: "unified-style-sheet-for-linguistics.csl"
 bibliography: "anger-references.bib"
 link-citations: yes
 output: 
-  bookdown::word_document2:
-    df_print: kable
-    fig_caption: yes
-    fig_width: 6
-    number_sections: no
-    reference_docx: "template.docx"
   html_notebook:
     code_folding: hide
     fig_caption: yes
@@ -17,6 +11,12 @@ output:
     number_sections: yes
     toc: yes
     toc_float: yes
+  bookdown::word_document2:
+    df_print: kable
+    fig_caption: yes
+    fig_width: 6
+    number_sections: no
+    reference_docx: "template.docx"
 author: 'Gede Primahadi Wijaya Rajeg <a itemprop="sameAs" content="https://orcid.org/0000-0002-2047-8621" href="https://orcid.org/0000-0002-2047-8621" target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon"></a>'
 ---
 
@@ -828,7 +828,8 @@ knitr::kable(mutate(metaphor_salience_print, `Metaphorical source domains` = str
 mapping_containedfluid_token <- filter(metaphor_tokenbased_mapping, str_detect(CM_BROADER, "is substance in a container$")) %>% 
   mutate(status = if_else(str_detect(MAPPING, "(_located\\-substance)"), "key", "no"),
          status = if_else(str_detect(MAPPING, "experiencer_container"), "key", status),
-         status = if_else(str_detect(MAPPING, "(substance.fullness.level)"), "key", status))
+         status = if_else(str_detect(MAPPING, "(substance.fullness.level)"), "key", status),
+         MP_GLOSS = str_replace_all(MP_GLOSS, "\\sbe channelled(?!\\*)", " *be channelled*"))
 mapping_containedfluid_token_stats <- get_metaphor_mapping_stat_typefreq(mapping_containedfluid_token)
 mapping_containedfluid_token_discuss <- get_mappings(metaphor_tokenbased_mapping, 'is substance in a container$') %>% left_join(mapping_containedfluid_token %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_containedfluid_token_stats)
 ```
@@ -975,7 +976,8 @@ The last mapping refers to a non-prototypical model of anger, namely "constructi
 
 ```{r mapping-adversary-token, message = FALSE, include = FALSE}
 mapping_adversary_token <- filter(metaphor_tokenbased_mapping, str_detect(CM_BROADER, "adversary$")) %>% 
-  mutate(status = if_else(str_detect(MAPPING, "fighter[12]"), "key", "no"))
+  mutate(status = if_else(str_detect(MAPPING, "fighter[12]"), "key", "no"),
+         MP = str_replace_all(MP, "\\bnnode\\b", "node"))
 mapping_adversary_token_stats <- get_metaphor_mapping_stat_typefreq(mapping_adversary_token)
 mapping_adversary_token_discuss <- get_mappings(metaphor_tokenbased_mapping, 'adversary$') %>% left_join(mapping_adversary_token %>% filter(status=='no') %>% select(LU, LU_GLOSS, MAPPING)) %>% filter(!is.na(LU)) %>% left_join(mapping_adversary_token_stats)
 
@@ -991,18 +993,17 @@ The [adversary/opponent]{.smallcaps} metaphor is absent in the lexical dataset. 
 
   - `r get_lu_gloss_n_printed(mapping_adversary_token, "losing")`
 
-- winning over the opponent &rarr; managing anger (type=`r get_metaphor_mapping_n_lu(mapping_adversary_token_stats, "winning")`; token=`r get_metaphor_mapping_tokenfreq(mapping_adversary_token, "winning", lu_output = FALSE)`)
+- combating opponent &rarr; attempt to control anger (e.g., fighting, confronting) (type=`r get_metaphor_mapping_n_lu(mapping_adversary_token_stats, "combating")`; token=`r get_metaphor_mapping_tokenfreq(mapping_adversary_token, "combating", lu_output = FALSE)`)
 
-  - `r get_lu_gloss_n_printed(mapping_adversary_token, "winning")`
-  
+  - `r get_lu_gloss_n_printed(mapping_adversary_token, "combating")`
+
 - being protected from the opponent &rarr; evading anger (type=`r get_metaphor_mapping_n_lu(mapping_adversary_token_stats, "evading")`; token=`r get_metaphor_mapping_tokenfreq(mapping_adversary_token, "evading", lu_output = FALSE)`)
 
   - `r get_lu_gloss_n_printed(mapping_adversary_token, "evading")`
 
-  
-- combating opponent &rarr; attempt to control anger (e.g., fighting, confronting) (type=`r get_metaphor_mapping_n_lu(mapping_adversary_token_stats, "combating")`; token=`r get_metaphor_mapping_tokenfreq(mapping_adversary_token, "combating", lu_output = FALSE)`)
+- winning over the opponent &rarr; managing anger (type=`r get_metaphor_mapping_n_lu(mapping_adversary_token_stats, "winning")`; token=`r get_metaphor_mapping_tokenfreq(mapping_adversary_token, "winning", lu_output = FALSE)`)
 
-  - `r get_lu_gloss_n_printed(mapping_adversary_token, "combating")`
+  - `r get_lu_gloss_n_printed(mapping_adversary_token, "winning")`
 
 - potential danger of the opponent &rarr; potential effect of anger (type=`r get_metaphor_mapping_n_lu(mapping_adversary_token_stats, "^potential")`; token=`r get_metaphor_mapping_tokenfreq(mapping_adversary_token, "^potential", lu_output = FALSE)`)
 
